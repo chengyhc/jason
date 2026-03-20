@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天津一日游行程安排 | ZA浪漫之旅</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #457b9d;
+            --accent-color: #2a9d8f;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --text-color: #333;
+            --border-color: #dee2e6;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #b23a48);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "✨";
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            right: 20px;
+            top: 20px;
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .date-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #a8dadc, #8ecae6);
+            border-left: 5px solid var(--accent-color);
+            padding: 25px;
+            margin: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .highlight-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .highlight-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .itinerary-section {
+            padding: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .timeline-table thead {
+            background: linear-gradient(135deg, var(--secondary-color), #355070);
+            color: white;
+        }
+        
+        .timeline-table th {
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .timeline-table th:not(:last-child)::after {
+            content: "|";
+            position: absolute;
+            right: 0;
+            color: rgba(255,255,255,0.3);
+        }
+        
+        .timeline-table tbody tr {
+            transition: all 0.3s ease;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .timeline-table tbody tr:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        
+        .timeline-table td {
+            padding: 15px;
+            vertical-align: top;
+        }
+        
+        .time-cell {
+            font-weight: bold;
+            color: var(--primary-color);
+            width: 80px;
+        }
+        
+        .duration-cell {
+            color: var(--accent-color);
+            font-weight: 600;
+            width: 70px;
+        }
+        
+        .icon {
+            display: inline-block;
+            width: 24px;
+            text-align: center;
+            margin-right: 8px;
+        }
+        
+        .tips-section {
+            background: linear-gradient(135deg, #fff9db, #ffec99);
+            padding: 30px;
+            margin: 30px;
+            border-radius: 15px;
+            border: 2px dashed var(--accent-color);
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .tip-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .tip-title {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin: 15px 0;
+            opacity: 0.9;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .download-btn:hover {
+            background: #d00000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.3);
+        }
+        
+        .online-view-note {
+            background: linear-gradient(135deg, #e9f5db, #d8f3dc);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 30px;
+            text-align: center;
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .couple-note {
+            background: linear-gradient(135deg, #ffafcc, #ffc8dd);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 30px;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .timeline-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .timeline-table th,
+            .timeline-table td {
+                padding: 10px;
+            }
+            
+            .highlight-grid,
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                border-radius: 10px;
+            }
+            
+            .itinerary-section,
+            .highlight-box,
+            .tips-section,
+            .online-view-note,
+            .couple-note {
+                padding: 20px;
+                margin: 15px;
+            }
+        }
+        
+        .print-only {
+            display: none;
+        }
+        
+        @media print {
+            .download-btn {
+                display: none;
+            }
+            
+            .print-only {
+                display: block;
+                text-align: center;
+                margin-top: 20px;
+                font-size: 0.9rem;
+                color: #666;
+            }
+        }
+        
+        .usage-instructions {
+            background: linear-gradient(135deg, #e0fbfc, #caf0f8);
+            padding: 20px;
+            margin: 20px 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--secondary-color);
+        }
+        
+        .instructions-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .instructions-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .instructions-list li::before {
+            content: "✓";
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>天津一日游行程安排</h1>
+            <div class="subtitle">万国建筑 × 海河夜景 × 津门非遗 | ZA专属</div>
+            <div class="date-badge">行程日期：2026年3月21日 | 丙午马年新春之旅</div>
+        </header>
+        
+        <div class="online-view-note">
+            <h3>🌐 在线查看说明</h3>
+            <p>这是一个完整的HTML文件，您可以直接在浏览器中查看所有内容。如果您想保存到本地，请使用页面底部的下载按钮。</p>
+        </div>
+        
+        <div class="highlight-box">
+            <div class="highlight-title">
+                <span>✨</span>
+                <strong>行程亮点</strong>
+            </div>
+            <p>专为情侣设计的天津一日浪漫之旅，当日往返，不留遗憾</p>
+            <div class="highlight-grid">
+                <div class="highlight-item">
+                    <span>🏛️</span>
+                    <span>万国建筑巡礼</span>
+                </div>
+                <div class="highlight-item">
+                    <span>🌉</span>
+                    <span>海河浪漫夜景</span>
+                </div>
+                <div class="highlight-item">
+                    <span>🎨</span>
+                    <span>津门非遗体验</span>
+                </div>
+                <div class="highlight-item">
+                    <span>🚗</span>
+                    <span>全程自驾灵活</span>
+                </div>
+                <div class="highlight-item">
+                    <span>⏰</span>
+                    <span>节奏舒缓晚归</span>
+                </div>
+                <div class="highlight-item">
+                    <span>🏠</span>
+                    <span>无需住宿当日返</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="couple-note">
+            💑 特别为情侣设计的甜蜜互动点位，让每一刻都充满浪漫回忆
+        </div>
+        
+        <div class="usage-instructions">
+            <h3>📋 使用说明</h3>
+            <ul class="instructions-list">
+                <li>此页面包含完整的行程安排、时间表和实用贴士</li>
+                <li>所有内容可直接在浏览器中查看和交互</li>
+                <li>支持电脑、平板和手机端浏览</li>
+                <li>点击底部按钮可下载HTML文件到本地</li>
+                <li>表格行有悬停效果，增强浏览体验</li>
+            </ul>
+        </div>
+        
+        <section class="itinerary-section">
+            <h2 class="section-title">
+                <span>📅</span>
+                详细行程时间表
+            </h2>
+            
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>时间</th>
+                        <th>事项</th>
+                        <th>时长</th>
+                        <th>详情与贴士</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="time-cell">06:00</td>
+                        <td><span class="icon">⏰</span>起床准备</td>
+                        <td class="duration-cell">30min</td>
+                        <td>洗漱、整理随身物品（身份证、充电宝、相机、薄外套）</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">06:30</td>
+                        <td><span class="icon">🍽️</span>早餐</td>
+                        <td class="duration-cell">30min</td>
+                        <td>家中简餐或小区早餐店（推荐：驴肉火烧+小米粥，暖胃启程）</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">07:00</td>
+                        <td><span class="icon">🚗</span>自驾出发</td>
+                        <td class="duration-cell">—</td>
+                        <td><strong>保定长城家园→天津市区</strong><br>导航设"五大道民园广场停车场"<br>路线：水源路→英才街→朝阳南大街→G1812沧榆高速→G4京港澳高速→S3700津雄高速→G18荣乌高速→市区（全程约195km）</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">09:30</td>
+                        <td><span class="icon">🏛️</span>抵达天津·五大道</td>
+                        <td class="duration-cell">1.5h</td>
+                        <td><strong>📍民园广场地下停车场（¥10/小时）</strong><br>🌿 漫步重庆道、大理道，欣赏英式/意式小洋楼，打卡"疙瘩楼"<br>💑 <em>情侣互动：在民园广场草坪合影，租借复古自行车（¥30/30min）</em></td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">11:10</td>
+                        <td><span class="icon">🏺</span>瓷房子外观</td>
+                        <td class="duration-cell">30min</td>
+                        <td><strong>📍赤峰道72号（车程10min）</strong><br>📸 外观震撼瓷艺建筑（无需入内节省时间）<br>💡 最佳机位：马路对面台阶</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">11:40</td>
+                        <td><span class="icon">🍝</span>意大利风情区</td>
+                        <td class="duration-cell">1.5h</td>
+                        <td><strong>📍马可波罗广场（车程10min）</strong><br>午餐推荐：<strong>普天和酒楼</strong>（津菜）或 <strong>Caffè Italia</strong>（意式简餐）<br>🍷 饭后漫步：喂鸽子、拍拱廊街景、打卡梁启超故居外景</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">13:20</td>
+                        <td><span class="icon">🌉</span>北安桥 & 海河步道</td>
+                        <td class="duration-cell">50min</td>
+                        <td><strong>📍步行10min至北安桥</strong><br>📸 拍照点：桥下观景台（安全前提下），拍钟楼与桥体同框<br>🚶 沿海河向东漫步至古文化街（约1.2km，河风拂面超浪漫）</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">14:20</td>
+                        <td><span class="icon">🏮</span>古文化街</td>
+                        <td class="duration-cell">1.5h</td>
+                        <td>🏮 天后宫祈福（免费）、泥人张彩塑、杨柳青年画体验<br>🎁 采购特产：桂发祥十八街麻花（认准"红盒"）、果仁张、耳朵眼炸糕（现做热乎）</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">16:00</td>
+                        <td><span class="icon">☕</span>休憩时光</td>
+                        <td class="duration-cell">40min</td>
+                        <td>☕ 街角"直隶咖啡"小坐（文创咖啡+窗景），整理照片、补充水分</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">16:50</td>
+                        <td><span class="icon">🎡</span>天津之眼（日景+夜景）</td>
+                        <td class="duration-cell">1.5h</td>
+                        <td><strong>📍步行10min至永乐桥下</strong><br>🌙 <strong>重点安排：</strong>先拍日景轮廓→等待18:30亮灯→拍摄璀璨夜景<br>💑 <em>情侣彩蛋：桥下"同心锁"区域挂纪念牌（看你咯）</em></td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">18:30</td>
+                        <td><span class="icon">🍽️</span>晚餐</td>
+                        <td class="duration-cell">1h</td>
+                        <td>推荐<strong>"津菜典藏"（古文化街店）</strong><br>✅ 必点：罾蹦鲤鱼（酥脆带声）、八珍豆腐、老爆三</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">19:40</td>
+                        <td><span class="icon">🌃</span>海河夜景沉浸</td>
+                        <td class="duration-cell">1h</td>
+                        <td>🌉 沿河向西漫步至大沽桥，欣赏"津门新地标"灯光秀<br>📸 解放桥开合夜景（周末可能有开桥仪式）</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">20:50</td>
+                        <td><span class="icon">🚗</span>返程准备</td>
+                        <td class="duration-cell">10min</td>
+                        <td>取车（建议停古文化街"通北路停车场"，¥8/小时）</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">21:00</td>
+                        <td><span class="icon">🚗</span>自驾返保</td>
+                        <td class="duration-cell">—</td>
+                        <td>导航回"长城家园"，夜间路况佳，预计2.5小时，不对，路上我们要充电，预计3个小时吧</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">23:30</td>
+                        <td><span class="icon">🏠</span>抵达家中</td>
+                        <td class="duration-cell">—</td>
+                        <td>安全到家，结束完美一日</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <div class="tips-section">
+            <h2 class="section-title" style="border-bottom-color: var(--accent-color); color: var(--accent-color);">
+                <span>💡</span>
+                关键贴士（专为ZA优化）
+            </h2>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3 class="tip-title"><span>🚗</span>交通贴士</h3>
+                    <p>• 使用高德"景区热力图"避开拥堵</p>
+                    <p>• 天津市区单行道多，跟导航勿随意变道</p>
+                    <p>• ✅ 返程前充满电（找可充电的停车场）</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3 class="tip-title"><span>📸</span>拍照指南</h3>
+                    <p>• 北安桥：低角度仰拍显腿长</p>
+                    <p>• 天津之眼：用2倍焦段拍"桥+摩天轮"全景</p>
+                    <p>• 👗 穿搭：浅色系衣物更出片（五大道米黄墙、海河蓝调背景）</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3 class="tip-title"><span>🍜</span>美食推荐</h3>
+                    <p>• 天津菜偏咸鲜，点餐时备注"少盐"</p>
+                    <p>• 耳朵眼炸糕趁热吃！</p>
+                    <p>• 🍵 饭后解腻：买杯"茶汤李"杏仁茶（古文化街老字号）你现在不能吃凉的</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3 class="tip-title"><span>⚠️</span>重要提醒</h3>
+                    <p>• 3月21日天津预报：8℃~16℃，微风</p>
+                    <p>• 带防风外套+舒适平底鞋</p>
+                    <p>• 🎫 所有景点外观免费，古文化街内小景点按需选择（天后宫¥10）</p>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p><strong>行程设计思路：</strong>以"建筑文化（五大道）→ 民俗文化（古文化街）→ 城市浪漫（海河夜景）"为脉络，严格控制单点停留时长避免疲惫，预留弹性时间用于情侣互动与即兴探索。</p>
+            <p>💑 记得带上你的大疆，记录专属时光 ✨</p>
+            
+            <button class="download-btn" onclick="downloadHTML()">
+                📥 下载此行程指南（HTML格式）
+            </button>
+            
+            <div class="print-only">
+                打印时间：<script>document.write(new Date().toLocaleDateString('zh-CN'));</script>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function downloadHTML() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = '天津一日游行程_' + new Date().toLocaleDateString('zh-CN').replace(/\//g, '-') + '.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            const btn = document.querySelector('.download-btn');
+            const originalText = btn.textContent;
+            btn.textContent = '✅ 下载成功！';
+            btn.style.background = '#2a9d8f';
+            
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+            }, 2000);
+        }
+        
+        document.querySelectorAll('.timeline-table tbody tr').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 6px 16px rgba(0,0,0,0.1)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateElements = document.querySelectorAll('.current-date');
+            dateElements.forEach(el => {
+                el.textContent = new Date().toLocaleDateString('zh-CN', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    weekday: 'long'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
