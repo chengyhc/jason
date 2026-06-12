@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026美加墨世界杯 A组第2轮 — 墨西哥 VS 韩国 深度前瞻</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif; background: #0a0e17; color: #e0e0e0; line-height: 1.75; padding: 24px; }
+  .container { max-width: 900px; margin: 0 auto; background: #131a2b; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 40px rgba(0,0,0,.5); }
+  .header { background: linear-gradient(135deg, #1a2744 0%, #0f3460 50%, #1a2744 100%); padding: 40px 36px 28px; text-align: center; border-bottom: 3px solid #e94560; }
+  .header h1 { font-size: 28px; color: #fff; letter-spacing: 2px; }
+  .header .subtitle { font-size: 15px; color: #90a4ae; margin-top: 8px; }
+  .match-bar { display: flex; justify-content: center; align-items: center; gap: 36px; padding: 24px 36px; background: #1a2332; }
+  .match-bar .team { text-align: center; }
+  .match-bar .team .flag { font-size: 48px; }
+  .match-bar .team .name { font-size: 20px; font-weight: 700; color: #fff; margin-top: 6px; }
+  .match-bar .vs { font-size: 22px; color: #e94560; font-weight: 900; }
+  .match-info { text-align: center; padding: 6px; font-size: 13px; color: #78909c; background: #1a2332; }
+  .section { padding: 28px 36px; border-bottom: 1px solid #1e2d42; }
+  .section:last-child { border-bottom: none; }
+  .section-title { font-size: 20px; font-weight: 700; color: #e94560; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section-title::before { content: ''; display: inline-block; width: 4px; height: 22px; background: #e94560; border-radius: 2px; }
+
+  .prediction-card { background: linear-gradient(135deg, #1e3a5f, #1a2744); border: 1px solid #2a4a7f; border-radius: 12px; padding: 24px; margin: 16px 0; }
+  .prediction-card .main-result { font-size: 26px; font-weight: 800; color: #4fc3f7; text-align: center; margin-bottom: 8px; }
+  .prediction-card .scores { text-align: center; font-size: 16px; color: #b0bec5; }
+  .confidence { display: flex; justify-content: center; gap: 4px; margin-top: 12px; }
+  .confidence .star { color: #ffc107; font-size: 22px; }
+  .confidence .star.empty { color: #455a64; }
+
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  th, td { padding: 10px 12px; text-align: center; border-bottom: 1px solid #1e2d42; }
+  th { background: #1a2744; color: #4fc3f7; font-weight: 600; }
+  td { color: #b0bec5; }
+  tr:hover td { background: rgba(79,195,247,.04); }
+
+  .highlight-box { background: #1a2332; border-left: 4px solid #e94560; padding: 16px 20px; margin: 12px 0; border-radius: 0 8px 8px 0; }
+  .highlight-box.green { border-left-color: #4caf50; }
+  .highlight-box.blue { border-left-color: #2196f3; }
+  .highlight-box.orange { border-left-color: #ff9800; }
+  .highlight-box strong { color: #fff; }
+
+  .arg-item { background: #1a2332; padding: 16px 20px; border-radius: 8px; margin-bottom: 10px; }
+  .arg-item .num { display: inline-block; width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 50%; background: #e94560; color: #fff; font-weight: 700; font-size: 14px; margin-right: 10px; flex-shrink: 0; }
+  .arg-item .content { color: #b0bec5; font-size: 14px; }
+
+  .timeline { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin: 12px 0; }
+  .timeline .slot { background: #1a2332; padding: 10px 18px; border-radius: 8px; text-align: center; min-width: 140px; }
+  .timeline .slot .time { font-size: 13px; color: #78909c; }
+  .timeline .slot .event { font-size: 15px; color: #4fc3f7; font-weight: 600; }
+
+  .tag { display: inline-block; padding: 2px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; margin: 2px 4px; }
+  .tag.red { background: rgba(233,69,96,.15); color: #e94560; }
+  .tag.green { background: rgba(76,175,80,.15); color: #4caf50; }
+  .tag.blue { background: rgba(33,150,243,.15); color: #2196f3; }
+  .tag.orange { background: rgba(255,152,0,.15); color: #ff9800; }
+
+  .footer { text-align: center; padding: 20px; font-size: 12px; color: #546e7a; }
+  .divider { border: none; border-top: 1px solid #1e2d42; margin: 16px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ========== 头部 ========== -->
+<div class="header">
+  <h1>⚽ 2026 FIFA 世界杯 — A组第2轮 深度前瞻</h1>
+  <div class="subtitle">国际足球数据分析师 &amp; 战术专家 | 五维体系评估报告</div>
+</div>
+
+<div class="match-bar">
+  <div class="team">
+    <div class="flag">🇲🇽</div>
+    <div class="name">墨西哥</div>
+    <div style="font-size:12px;color:#78909c;margin-top:4px;">FIFA排名 #15</div>
+  </div>
+  <div class="vs">VS</div>
+  <div class="team">
+    <div class="flag">🇰🇷</div>
+    <div class="name">韩国</div>
+    <div style="font-size:12px;color:#78909c;margin-top:4px;">FIFA排名 #25</div>
+  </div>
+</div>
+<div class="match-info">北京时间 2026年6月19日 09:00 ｜ 墨西哥瓜达拉哈拉·阿克伦体育场（海拔≈1566m）｜ 主裁判：待定</div>
+
+<!-- ========== A组积分榜 ========== -->
+<div class="section">
+  <div class="section-title">A组积分榜（第1轮后）</div>
+  <table>
+    <tr><th>排名</th><th>球队</th><th>场</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>净胜</th><th>积分</th></tr>
+    <tr><td>1</td><td>🇲🇽 墨西哥</td><td>1</td><td>1</td><td>0</td><td>0</td><td>2</td><td>0</td><td>+2</td><td><strong style="color:#4caf50;">3</strong></td></tr>
+    <tr><td>2</td><td>🇰🇷 韩国</td><td>1</td><td>1</td><td>0</td><td>0</td><td>2</td><td>1</td><td>+1</td><td><strong style="color:#4caf50;">3</strong></td></tr>
+    <tr><td>3</td><td>🇨🇿 捷克</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>2</td><td>-1</td><td>0</td></tr>
+    <tr><td>4</td><td>🇿🇦 南非</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>2</td><td>-2</td><td>0</td></tr>
+  </table>
+</div>
+
+<!-- ========== 一、核心结论 ========== -->
+<div class="section">
+  <div class="section-title">一、核心结论先行</div>
+
+  <div class="prediction-card">
+    <div class="main-result">预测结果：墨西哥胜（次选 平局）</div>
+    <div class="scores">
+      最可能比分（按概率排序）：<strong style="color:#4fc3f7;">2-1（墨西哥）</strong> &gt; <strong style="color:#4fc3f7;">1-1</strong> &gt; <strong style="color:#4fc3f7;">2-0（墨西哥）</strong>
+    </div>
+    <div class="confidence">
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
+      <span style="margin-left:8px;font-size:14px;color:#b0bec5;">信心指数：★★★☆☆（中等偏上）</span>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px;">
+    <div style="text-align:center;background:#1a2332;padding:16px;border-radius:10px;">
+      <div style="font-size:32px;font-weight:800;color:#4caf50;">45%</div>
+      <div style="font-size:13px;color:#78909c;margin-top:4px;">墨西哥胜概率</div>
+    </div>
+    <div style="text-align:center;background:#1a2332;padding:16px;border-radius:10px;">
+      <div style="font-size:32px;font-weight:800;color:#2196f3;">30%</div>
+      <div style="font-size:13px;color:#78909c;margin-top:4px;">平局概率</div>
+    </div>
+    <div style="text-align:center;background:#1a2332;padding:16px;border-radius:10px;">
+      <div style="font-size:32px;font-weight:800;color:#e94560;">25%</div>
+      <div style="font-size:13px;color:#78909c;margin-top:4px;">韩国胜概率</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="font-size:14px;color:#b0bec5;line-height:1.9;">
+    <strong style="color:#fff;">进球数区间预测：</strong>2-3球（倾向2-3球）｜ <strong style="color:#fff;">大小球：</strong>倾向小2.5球
+  </div>
+</div>
+
+<!-- ========== 二、第1轮回顾 ========== -->
+<div class="section">
+  <div class="section-title">二、第1轮表现回顾</div>
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">🇲🇽 墨西哥 2-0 南非（阿兹特克体育场，海拔2240m）</h3>
+  <div class="highlight-box green">
+    <p><strong>进球：</strong>胡利安·基尼奥内斯（9'）、劳尔·希门尼斯（67' 头球）</p>
+    <p style="margin-top:6px;"><strong>红牌：</strong>西托莱（49'，南非）、兹瓦内（84'，南非）、蒙特斯（90+2'，墨西哥）</p>
+    <p style="margin-top:6px;"><strong>关键事实：</strong>墨西哥从开场即占据绝对优势，本可打入更多进球。35岁老将希门尼斯打入个人世界杯首球。17岁小将吉尔伯托·莫拉替补登场完成世界杯首秀，为本届赛事最年轻出场球员。埃德松·阿尔瓦雷斯（脚踝伤势恢复中）未首发，坐镇替补席。</p>
+  </div>
+  <table>
+    <tr><th>首发阵容</th><td colspan="5">兰赫尔；雷耶斯、巴斯克斯、蒙特斯、加利亚多；利拉、菲达尔戈、古铁雷斯；阿尔瓦拉多、基尼奥内斯、希门尼斯</td></tr>
+    <tr><th>替补</th><td colspan="5">莫拉（66'换菲达尔戈）、查韦斯（66'换古铁雷斯）、阿尔瓦雷斯（76'换利拉）、冈萨雷斯（76'换希门尼斯）、维加（79'换基尼奥内斯）</td></tr>
+  </table>
+  <div class="highlight-box orange" style="margin-top:10px;">
+    <strong>⚠️ 关键影响：</strong>中卫蒙特斯染红，本场自动停赛！防线必须重组。
+  </div>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">🇰🇷 韩国 2-1 捷克（阿克伦体育场，瓜达拉哈拉）</h3>
+  <div class="highlight-box green">
+    <p><strong>进球：</strong>黄仁范（67'，助攻：李刚仁）、吴贤揆（80'，助攻：黄仁范）</p>
+    <p style="margin-top:6px;"><strong>失球：</strong>克雷伊奇（59' 头球，曹法尔大力界外球）</p>
+    <p style="margin-top:6px;"><strong>关键事实：</strong>绍切克77分钟头球破门因越位被吹。半场0-0。韩国控球率62%，射正6次 vs 捷克4次。孙兴慜多次破门良机被门将科瓦尔化解，69分钟被换下。黄仁范当选全场最佳（1球1助攻）。全队仅1张黄牌（90+7'）。</p>
+  </div>
+  <table>
+    <tr><th>首发阵容</th><td colspan="5">金承奎；李泰硕、金玟哉、李翰范、李明载；朴镕宇、白昇浩；李在成、李刚仁、孙兴慜；黄仁范</td></tr>
+    <tr><th>替补</th><td colspan="5">黄喜灿（63'换李在成）、吴贤揆（69'换孙兴慜）、严智星（69'换李泰硕）、朴镇燮（84'换白昇浩）、金镇圭（84'换黄仁范）</td></tr>
+  </table>
+  <div class="highlight-box blue" style="margin-top:10px;">
+    <strong>💡 隐性优势：</strong>韩国已在阿克伦体育场完成一场比赛，对场地条件、海拔适应度更佳。墨西哥首轮在更高海拔的墨西哥城（2240m）作战，反而可能需要重新适应瓜达拉哈拉（1566m）的节奏。
+  </div>
+</div>
+
+<!-- ========== 三、深度逻辑拆解 ========== -->
+<div class="section">
+  <div class="section-title">三、深度逻辑拆解 — 四大核心论据</div>
+
+  <!-- 论据1 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">1</span>
+    <strong style="color:#fff;font-size:16px;">主场优势压倒性 — 瓜达拉哈拉化身"魔鬼主场"</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>墨西哥在瓜达拉哈拉作战，约48000名观众中绝大多数为墨西哥球迷。阿克伦体育场的氛围对韩国而言将是极其敌对的环境。2018年世界杯墨西哥2-1击败韩国的比赛同样是在类似氛围下进行——主场球迷的呐喊将墨西哥的高位逼抢强度推至另一个层级。</p>
+      <p style="margin-top:8px;">阿吉雷的4-3-3体系依赖全场高压，主场球迷的能量直接转化为球员的跑动距离和逼抢强度。韩国在第1轮虽已体验过阿克伦球场，但那场比赛中观众以中立球迷为主，与面对48000名狂热墨西哥球迷截然不同。</p>
+      <div class="highlight-box orange" style="margin-top:10px;">
+        <strong>关键事实：</strong>墨西哥在瓜达拉哈拉的历史战绩极为强势，阿克伦体育场（查维斯主场）对墨西哥国家队而言是仅次于阿兹特克的"第二堡垒"。主场优势预计为墨西哥带来约10-15%的胜率加成。
+      </div>
+    </div>
+  </div>
+
+  <!-- 论据2 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">2</span>
+    <strong style="color:#fff;font-size:16px;">阿尔瓦雷斯回归 — 墨西哥中场从"优秀"升级为"精英"</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>埃德松·阿尔瓦雷斯（费内巴切/前西汉姆）脚踝伤势恢复，本场大概率首发。他的出场将彻底改变墨西哥中场格局：</p>
+      <table>
+        <tr><th>中场对比</th><th>第1轮（无阿尔瓦雷斯）</th><th>本场（阿尔瓦雷斯首发）</th></tr>
+        <tr><td>防守硬度</td><td>利拉+古铁雷斯（中等）</td><td><strong style="color:#4caf50;">阿尔瓦雷斯+利拉（精英级）</strong></td></tr>
+        <tr><td>球权争夺</td><td>依赖逼抢而非拦截</td><td><strong style="color:#4caf50;">阿尔瓦雷斯单兵拦截+出球</strong></td></tr>
+        <tr><td>对位韩国中场</td><td>势均力敌</td><td><strong style="color:#4caf50;">明显占优</strong></td></tr>
+      </table>
+      <p style="margin-top:8px;">阿尔瓦雷斯的球权争夺能力 + 菲达尔戈的创造力 + 利拉的跑动覆盖 = 中场全面压制。韩国的黄仁范/白昇浩将面对比对阵捷克时强硬得多的中场对抗，韩国62%控球率的表现在本场很难复制。</p>
+      <div class="highlight-box green" style="margin-top:10px;">
+        <strong>隐性变量：</strong>若阿尔瓦雷斯首发但体能未达100%，其统治力可能打折。一个未达最佳状态的阿尔瓦雷斯仍优于大多数替代方案，但若需提前下场，墨西哥将失去中场锚点。
+      </div>
+    </div>
+  </div>
+
+  <!-- 论据3 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">3</span>
+    <strong style="color:#fff;font-size:16px;">韩国防空软肋 vs 墨西哥传中体系 — 命中"命门"</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>墨西哥第1轮的两个进球均源自传中：基尼奥内斯利用逼抢抢断后破门，希门尼斯接阿尔瓦拉多传中头球建功。墨西哥的进攻体系天然依赖边路传中+中路抢点。</p>
+      <p style="margin-top:8px;">韩国第1轮被克雷伊奇头球攻破——这恰恰是韩国长期以来的软肋。曹侑珉（足底筋膜撕裂，整届报销）和金泰贤（脚踝扭伤，小组赛缺阵）的伤缺使韩国中卫深度雪上加霜。金玟哉+李翰范的组合虽在第1轮守住大部分高空球，但面对墨西哥更密集的边路传中轰炸，防空压力将成倍增加。</p>
+      <div class="highlight-box" style="margin-top:10px;">
+        <strong>战术匹配：</strong>蒙特斯停赛对墨西哥的空中威胁影响有限——墨西哥的空中优势主要来自希门尼斯（争顶能力）和边锋的传中质量，而非中卫。阿吉雷必定会针对韩国的防空短板制定边路传中战术。
+      </div>
+    </div>
+  </div>
+
+  <!-- 论据4 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">4</span>
+    <strong style="color:#fff;font-size:16px;">世界杯"血脉压制" — 墨西哥对韩国的历史宿命</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>墨西哥在世界杯正赛中对韩国保持全胜：</p>
+      <table>
+        <tr><th>日期</th><th>比赛</th><th>比分</th><th>赛事</th></tr>
+        <tr><td>2025年9月</td><td>墨西哥 vs 韩国</td><td>2-2</td><td>友谊赛</td></tr>
+        <tr><td>2020年11月</td><td>墨西哥 vs 韩国</td><td>3-2</td><td>友谊赛</td></tr>
+        <tr><td>2018年6月</td><td>墨西哥 vs 韩国</td><td><strong style="color:#4caf50;">2-1</strong></td><td>世界杯F组</td></tr>
+        <tr><td>2014年1月</td><td>墨西哥 vs 韩国</td><td>4-0</td><td>友谊赛</td></tr>
+        <tr><td>2006年2月</td><td>韩国 vs 墨西哥</td><td>1-0</td><td>友谊赛</td></tr>
+        <tr><td>1998年6月</td><td>韩国 vs 墨西哥</td><td><strong style="color:#4caf50;">1-3</strong></td><td>世界杯E组</td></tr>
+      </table>
+      <p style="margin-top:8px;">总交锋：1胜1平4负。世界杯两战全败（1998年1-3、2018年1-2）。2018年世界杯中，墨西哥的反击战术精准打击了韩国的高位防线，阿吉雷必将深入研究那场比赛的录像。</p>
+      <div class="highlight-box blue" style="margin-top:10px;">
+        <strong>韩国的反驳：</strong>2025年9月友谊赛2-2战平墨西哥，证明韩国有能力与墨西哥抗衡。黄仁范目前状态火热（第1轮全场最佳），若韩国能顶住墨西哥上半场的逼抢风暴，下半场体能优势（平均年龄26.3岁 vs 墨西哥偏老）将成为关键变量。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 四、进球剧本推演 ========== -->
+<div class="section">
+  <div class="section-title">四、进球剧本推演</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+    <div class="highlight-box">
+      <strong>总进球数区间：</strong><span style="color:#4fc3f7;font-size:18px;">2-3球</span><br>
+      <span style="font-size:13px;color:#b0bec5;">倾向2-3球，大小球倾向小2.5</span>
+    </div>
+    <div class="highlight-box green">
+      <strong>最可能比分：</strong><span style="color:#4caf50;font-size:18px;">2-1（墨西哥）</span><br>
+      <span style="font-size:13px;color:#b0bec5;">墨西哥主场优势+传中战术奏效</span>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;">
+    <strong style="color:#fff;font-size:16px;margin-bottom:12px;display:block;">进球时间轴推演：</strong>
+    <div class="timeline">
+      <div class="slot" style="border-left:3px solid #e94560;">
+        <div class="time">0'-20'</div>
+        <div class="event">墨西哥高压期</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">主场气势+逼抢风暴</div>
+      </div>
+      <div class="slot" style="border-left:3px solid #ff9800;">
+        <div class="time">20'-45'</div>
+        <div class="event">韩国稳住阵脚</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">李刚仁组织零星反击</div>
+      </div>
+      <div class="slot" style="border-left:3px solid #2196f3;">
+        <div class="time">45'-65'</div>
+        <div class="event">墨西哥破门窗口</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">传中/头球或逼抢抢断</div>
+      </div>
+      <div class="slot" style="border-left:3px solid #4caf50;">
+        <div class="time">65'-80'</div>
+        <div class="event">韩国反扑期</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">吴贤揆/黄喜灿替补冲击</div>
+      </div>
+      <div class="slot" style="border-left:3px solid #e94560;">
+        <div class="time">80'-90+'</div>
+        <div class="event">决胜阶段</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">韩国追平或墨西哥反击锁定</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;">
+    <strong style="color:#fff;font-size:16px;">关键破门球员预测：</strong>
+    <table style="margin-top:10px;">
+      <tr><th>球员</th><th>球队</th><th>破门方式</th><th>概率评估</th></tr>
+      <tr><td><strong>劳尔·希门尼斯</strong></td><td>🇲🇽 墨西哥</td><td>头球 / 传中抢点</td><td><span class="tag red">高</span></td></tr>
+      <tr><td><strong>黄仁范</strong></td><td>🇰🇷 韩国</td><td>远射 / 盘带突破</td><td><span class="tag orange">中高</span></td></tr>
+      <tr><td><strong>胡利安·基尼奥内斯</strong></td><td>🇲🇽 墨西哥</td><td>反击内切 / 边路突破</td><td><span class="tag orange">中</span></td></tr>
+      <tr><td><strong>吴贤揆</strong></td><td>🇰🇷 韩国</td><td>替补抢点 / 门前嗅觉</td><td><span class="tag orange">中</span></td></tr>
+      <tr><td><strong>李刚仁</strong></td><td>🇰🇷 韩国</td><td>任意球 / 远射</td><td><span class="tag blue">中低</span></td></tr>
+      <tr><td><strong>吉尔伯托·莫拉</strong></td><td>🇲🇽 墨西哥</td><td>替补X因素 / 突然提速</td><td><span class="tag blue">中低</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ========== 五、五维评估详情 ========== -->
+<div class="section">
+  <div class="section-title">五、五维评估详情</div>
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度一：球队基本面与近期状态</h3>
+  <table>
+    <tr><th>指标</th><th>🇲🇽 墨西哥</th><th>🇰🇷 韩国</th></tr>
+    <tr><td>FIFA排名</td><td>第15位</td><td>第25位</td></tr>
+    <tr><td>全队身价</td><td>约2.0-2.2亿欧</td><td>约1.4-2.1亿欧</td></tr>
+    <tr><td>近10场战绩</td><td><span class="tag green">7胜2平1负</span></td><td>6胜1平3负</td></tr>
+    <tr><td>世界杯第1轮</td><td>2-0胜南非</td><td>2-1胜捷克</td></tr>
+    <tr><td>场均进球</td><td>1.8球</td><td>2.0球</td></tr>
+    <tr><td>场均失球</td><td><span class="tag green">0.5球</span></td><td>1.2球</td></tr>
+  </table>
+
+  <div class="highlight-box orange">
+    <strong>伤病/停赛评估：</strong>
+    <p>🇲🇽 <strong>墨西哥（防线受损）</strong>：蒙特斯（主力中卫，红牌停赛）→ 防线必须重组，巴斯克斯移位搭档雷耶斯；马拉贡（主力门将，赛前受伤）→ 兰赫尔继续担任首发；马塞尔·鲁伊斯（中场，赛前受伤缺阵）。</p>
+    <p style="margin-top:6px;">🇰🇷 <strong>韩国（中卫深度不足）</strong>：曹侑珉（主力中卫，整届报销）+ 金泰贤（中卫，小组赛缺阵）→ 仅剩金玟哉+李翰范搭档，替补中卫经验匮乏。</p>
+  </div>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度二：战术体系与历史交锋</h3>
+  <table>
+    <tr><th>对比项</th><th>🇲🇽 墨西哥（阿吉雷）</th><th>🇰🇷 韩国（洪明甫）</th></tr>
+    <tr><td>主打阵型</td><td>4-3-3 / 5-3-2</td><td>4-2-3-1 / 3-4-3</td></tr>
+    <tr><td>战术风格</td><td>高位逼抢 + 边路传中</td><td>反击 + 控球推进</td></tr>
+    <tr><td>核心进攻手段</td><td>边路传中 + 逼抢抢断 + 希门尼斯抢点</td><td>快速转换 + 孙兴慜/黄仁范突破</td></tr>
+    <tr><td>防守弱点</td><td><span class="tag red">中卫深度（蒙特斯停赛）/ 门将替补</span></td><td><span class="tag red">防空薄弱 / 慢热开局</span></td></tr>
+    <tr><td>克制关系</td><td><span class="tag green">传中战术命中韩国防空短板</span></td><td><span class="tag red">历史交锋处于下风</span></td></tr>
+  </table>
+
+  <h4 style="color:#fff;margin:12px 0 8px;">历史交锋（含世界杯正赛）：</h4>
+  <table>
+    <tr><th>日期</th><th>比赛</th><th>比分</th><th>赛事</th></tr>
+    <tr><td>2025年9月</td><td>墨西哥 vs 韩国</td><td>2-2</td><td>友谊赛</td></tr>
+    <tr><td>2020年11月</td><td>墨西哥 vs 韩国</td><td>3-2</td><td>友谊赛</td></tr>
+    <tr><td>2018年6月</td><td>墨西哥 vs 韩国</td><td><strong style="color:#e94560;">2-1</strong></td><td>世界杯F组</td></tr>
+    <tr><td>2014年1月</td><td>墨西哥 vs 韩国</td><td><strong style="color:#e94560;">4-0</strong></td><td>友谊赛</td></tr>
+    <tr><td>2006年2月</td><td>韩国 vs 墨西哥</td><td>1-0</td><td>友谊赛</td></tr>
+    <tr><td>1998年6月</td><td>韩国 vs 墨西哥</td><td><strong style="color:#e94560;">1-3</strong></td><td>世界杯E组</td></tr>
+  </table>
+  <p style="font-size:13px;color:#78909c;margin-top:6px;">历史总交锋：韩国1胜1平4负。世界杯两战全败。墨西哥在正赛中对韩国形成"血脉压制"。</p>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度三：2026世界杯专属环境变量</h3>
+  <table>
+    <tr><th>变量</th><th>具体情况</th><th>影响评估</th></tr>
+    <tr><td><strong>海拔高度</strong></td><td>瓜达拉哈拉海拔≈1566m</td><td>韩国已在阿克伦完成1场比赛 ✅；墨西哥首轮在更高海拔（2240m）作战，反而可能需适应"低海拔" ⚠️</td></tr>
+    <tr><td><strong>天气状况</strong></td><td>预计25-30°C，湿度偏高</td><td>双方均受影响，但韩国平均年龄更小（26.3岁），体能恢复略优</td></tr>
+    <tr><td><strong>主场氛围</strong></td><td>约48000人，90%+墨西哥球迷</td><td>巨大主场优势，墨西哥逼抢强度被球迷能量推高 🔥</td></tr>
+    <tr><td><strong>行程/休息</strong></td><td>两队均在瓜达拉哈拉</td><td>韩国留在原地 ✅；墨西哥从墨西哥城转场 ⚠️；韩国比墨西哥少休息约7小时（韩国6月12日10:00开赛，墨西哥6月12日03:00开赛）</td></tr>
+  </table>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度四：赛制与战意因素</h3>
+  <div class="highlight-box">
+    <p><strong>48队12组新赛制：</strong>每组前2名直接出线，8个成绩最好的小组第三亦可晋级（共32队进淘汰赛）。</p>
+    <p style="margin-top:8px;"><strong>墨西哥：</strong>赢球=6分，几乎锁定出线名额。主场作战，必须拿下。但平局也非灾难（4分大概率出线）。</p>
+    <p style="margin-top:8px;"><strong>韩国：</strong>赢球=6分，同样几乎锁定出线。平局=4分，出线形势依然乐观。输球则末轮对南非变为生死战。</p>
+    <p style="margin-top:8px;"><strong>关键博弈：</strong>双方都可以接受平局（4分大概率双双出线），但墨西哥在主场承受着必须进攻的球迷压力，这反而可能让韩国获得反击空间。</p>
+  </div>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度五：机构与市场风向</h3>
+  <table>
+    <tr><th>指标</th><th>数值</th></tr>
+    <tr><td>欧指（预期）</td><td>墨西哥胜 1.90-2.10 ｜ 平 3.40-3.60 ｜ 韩国胜 3.50-4.00</td></tr>
+    <tr><td>亚洲盘口</td><td>预期墨西哥让0.5球，主场优势已计入</td></tr>
+    <tr><td>大小球</td><td>预期2.25-2.5球，倾向小球</td></tr>
+    <tr><td>综合概率模型</td><td>墨西哥胜≈45% ｜ 平局≈30% ｜ 韩国胜≈25%</td></tr>
+  </table>
+  <div class="highlight-box blue" style="margin-top:10px;">
+    <strong>市场解读：</strong>墨西哥主场优势已被定价但并未过度。韩国第1轮逆转取胜的表现可能吸引部分资金流向客队，但墨西哥的整体实力+主场因素仍使其成为明确的热门。大小球盘口偏小，反映市场预期这是一场以中场争夺为主的比赛，而非对攻大战。
+  </div>
+</div>
+
+<!-- ========== 六、隐藏X因素 ========== -->
+<div class="section">
+  <div class="section-title">六、隐藏X因素</div>
+
+  <div class="arg-item" style="border-left:3px solid #ff9800;">
+    <span class="tag orange" style="margin-bottom:8px;">X1</span>
+    <strong style="color:#fff;">蒙特斯停赛 — 墨西哥防线重组的不确定性</strong>
+    <div class="content" style="margin-top:6px;">
+      蒙特斯红牌停赛迫使阿吉雷重组后防线。巴斯克斯将移至中卫搭档位置，霍尔赫·桑切斯或伊斯雷尔·雷耶斯填补空缺。临时调整的防线默契度不足，韩国的反击速度（黄喜灿、严智星）可能精准打击这一软肋。尤其在高逼抢体系下，中卫配合失误可能直接导致失球。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #e94560;">
+    <span class="tag red" style="margin-bottom:8px;">X2</span>
+    <strong style="color:#fff;">阿尔瓦雷斯的体能状态 — "半血"还是"满血"？</strong>
+    <div class="content" style="margin-top:6px;">
+      阿尔瓦雷斯脚踝伤势虽已恢复，但第1轮仅替补登场14分钟。若本场首发但体能未达100%，其覆盖范围和拦截效率可能受限。一个"半血"阿尔瓦雷斯仍优于大多数替代方案，但若需提前下场，墨西哥将失去中场锚点，韩国的反击将获得更大空间。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #2196f3;">
+    <span class="tag blue" style="margin-bottom:8px;">X3</span>
+    <strong style="color:#fff;">孙兴慜的回应 — 最后一届世界杯的"绝地反击"？</strong>
+    <div class="content" style="margin-top:6px;">
+      孙兴慜第1轮多次错失良机并被换下，赛后必然憋着一股劲。这可能是他最后一届世界杯，一个被激发的孙兴慜极其危险——但若再次浪费机会，韩国的进攻效率将大打折扣。洪明甫如何使用孙兴慜（首发还是替补奇兵？）将成为关键战术选择。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #4caf50;">
+    <span class="tag green" style="margin-bottom:8px;">X4</span>
+    <strong style="color:#fff;">瓜达拉哈拉海拔 — 韩国的"秘密优势"</strong>
+    <div class="content" style="margin-top:6px;">
+      韩国已在阿克伦体育场完成一场比赛，对场地条件、草皮弹性、球速变化有了实战感知。墨西哥首轮在海拔2240m的墨西哥城作战，空气更稀薄、球速更快。反常的是，韩国可能比墨西哥更适应瓜达拉哈拉1566m的"中等海拔"条件——墨西哥习惯了更稀薄的空气，反而需要调整节奏。此外，韩国比墨西哥少休息约7小时，体能恢复时间略短，但年轻阵容的恢复能力更强。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 七、总结 ========== -->
+<div class="section">
+  <div class="section-title">七、总结：三种最可能剧本</div>
+
+  <div style="margin-top:12px;">
+    <div class="highlight-box green">
+      <strong>🟢 剧本A（概率35%）：墨西哥 2-1</strong>
+      <p style="margin-top:6px;">墨西哥通过希门尼斯头球或逼抢抢断率先破门。韩国凭借黄仁范或反击扳平比分。墨西哥在最后20分钟通过替补球员（莫拉/冈萨雷斯）或定位球再度领先。主场球迷推动"三色旗"拿下关键3分。</p>
+    </div>
+    <div class="highlight-box" style="border-left-color:#2196f3;">
+      <strong>🔵 剧本B（概率30%）：平局 1-1</strong>
+      <p style="margin-top:6px;">墨西哥上半场占据优势但仅攻入一球。韩国防守顽强，下半场通过反击或定位球扳平。双方各取1分——墨西哥4分、韩国4分，两队均大概率出线，末轮只需再拿1分即可确保晋级。</p>
+    </div>
+    <div class="highlight-box" style="border-left-color:#ff9800;">
+      <strong>🟡 剧本C（概率20%）：墨西哥 2-0</strong>
+      <p style="margin-top:6px;">墨西哥的高压逼抢彻底压制韩国。希门尼斯+基尼奥内斯/阿尔瓦拉多各入一球。韩国防线无法承受持续高强度冲击，进攻球员被孤立。墨西哥以2连胜0失球的完美姿态锁定出线名额。</p>
+    </div>
+    <div class="highlight-box" style="border-left-color:#e94560;">
+      <strong>🔴 冷门剧本D（概率15%）：韩国 1-2 或 2-1</strong>
+      <p style="margin-top:6px;">韩国顶住墨西哥开局的高压，利用反击精准打击蒙特斯停赛后的防线漏洞。黄仁范和吴贤揆先后破门。墨西哥在主场球迷的焦虑中越踢越急。瓜达拉哈拉上演历史性冷门。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八、前次预测经验复盘 ========== -->
+<div class="section">
+  <div class="section-title">八、前次预测经验复盘（韩国 vs 捷克）</div>
+
+  <table>
+    <tr><th>经验编号</th><th>经验内容</th><th>本场应用</th></tr>
+    <tr><td>E01</td><td>首战谨慎原则</td><td>两队均已完赛1场，第2轮谨慎度降低，更开放的比赛预期</td></tr>
+    <tr><td>E02</td><td>替补影响力被低估</td><td>吴贤揆和吉尔伯托·莫拉列为潜在破门球员</td></tr>
+    <tr><td>E03</td><td>控球率修正</td><td>韩国对捷克实际62%控球率已纳入分析，本场面对墨西哥中场难以复制</td></tr>
+    <tr><td>E04</td><td>进球预测去星级化</td><td>黄仁范基于当前状态排名高于孙兴慜</td></tr>
+    <tr><td>E05</td><td>平局概率克制</td><td>墨西哥主场优势使其胜率高于平局</td></tr>
+    <tr><td>E06</td><td>防线伤病分层评估</td><td>韩国中卫问题已记录但未过度影响赛果判断</td></tr>
+    <tr><td>E07</td><td>界外球/传中威胁</td><td>墨西哥传中战术被特别突出强调</td></tr>
+  </table>
+</div>
+
+<div class="footer">
+  本报告基于公开数据源（FIFA官网、转会市场、主流赔率机构、气象数据、官方伤停公告）综合研判<br>
+  所有数据截至北京时间2026年6月18日 ｜ 临场阵容变化可能影响最终结果<br>
+  报告制作：资深国际足球数据分析师 &amp; 战术专家 ｜ 2026年6月18日
+</div>
+
+</div>
+</body>
+</html>
