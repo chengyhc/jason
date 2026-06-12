@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026美加墨世界杯 D组第1轮 — 美国 VS 巴拉圭 深度前瞻</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif; background: #0a0e17; color: #e0e0e0; line-height: 1.75; padding: 24px; }
+  .container { max-width: 900px; margin: 0 auto; background: #131a2b; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 40px rgba(0,0,0,.5); }
+  .header { background: linear-gradient(135deg, #1a2744 0%, #0f3460 50%, #1a2744 100%); padding: 40px 36px 28px; text-align: center; border-bottom: 3px solid #e94560; }
+  .header h1 { font-size: 28px; color: #fff; letter-spacing: 2px; }
+  .header .subtitle { font-size: 15px; color: #90a4ae; margin-top: 8px; }
+  .match-bar { display: flex; justify-content: center; align-items: center; gap: 36px; padding: 24px 36px; background: #1a2332; }
+  .match-bar .team { text-align: center; }
+  .match-bar .team .flag { font-size: 48px; }
+  .match-bar .team .name { font-size: 20px; font-weight: 700; color: #fff; margin-top: 6px; }
+  .match-bar .vs { font-size: 22px; color: #e94560; font-weight: 900; }
+  .match-info { text-align: center; padding: 6px; font-size: 13px; color: #78909c; background: #1a2332; }
+  .section { padding: 28px 36px; border-bottom: 1px solid #1e2d42; }
+  .section:last-child { border-bottom: none; }
+  .section-title { font-size: 20px; font-weight: 700; color: #e94560; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section-title::before { content: ''; display: inline-block; width: 4px; height: 22px; background: #e94560; border-radius: 2px; }
+
+  .prediction-card { background: linear-gradient(135deg, #1e3a5f, #1a2744); border: 1px solid #2a4a7f; border-radius: 12px; padding: 24px; margin: 16px 0; }
+  .prediction-card .main-result { font-size: 26px; font-weight: 800; color: #4fc3f7; text-align: center; margin-bottom: 8px; }
+  .prediction-card .scores { text-align: center; font-size: 16px; color: #b0bec5; }
+  .confidence { display: flex; justify-content: center; gap: 4px; margin-top: 12px; }
+  .confidence .star { color: #ffc107; font-size: 22px; }
+  .confidence .star.empty { color: #455a64; }
+
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  th, td { padding: 10px 12px; text-align: center; border-bottom: 1px solid #1e2d42; }
+  th { background: #1a2744; color: #4fc3f7; font-weight: 600; }
+  td { color: #b0bec5; }
+  tr:hover td { background: rgba(79,195,247,.04); }
+
+  .highlight-box { background: #1a2332; border-left: 4px solid #e94560; padding: 16px 20px; margin: 12px 0; border-radius: 0 8px 8px 0; }
+  .highlight-box.green { border-left-color: #4caf50; }
+  .highlight-box.blue { border-left-color: #2196f3; }
+  .highlight-box.orange { border-left-color: #ff9800; }
+  .highlight-box strong { color: #fff; }
+
+  .arg-item { background: #1a2332; padding: 16px 20px; border-radius: 8px; margin-bottom: 10px; }
+  .arg-item .num { display: inline-block; width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 50%; background: #e94560; color: #fff; font-weight: 700; font-size: 14px; margin-right: 10px; flex-shrink: 0; }
+  .arg-item .content { color: #b0bec5; font-size: 14px; }
+
+  .timeline { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin: 12px 0; }
+  .timeline .slot { background: #1a2332; padding: 10px 18px; border-radius: 8px; text-align: center; min-width: 140px; }
+  .timeline .slot .time { font-size: 13px; color: #78909c; }
+  .timeline .slot .event { font-size: 15px; color: #4fc3f7; font-weight: 600; }
+
+  .tag { display: inline-block; padding: 2px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; margin: 2px 4px; }
+  .tag.red { background: rgba(233,69,96,.15); color: #e94560; }
+  .tag.green { background: rgba(76,175,80,.15); color: #4caf50; }
+  .tag.blue { background: rgba(33,150,243,.15); color: #2196f3; }
+  .tag.orange { background: rgba(255,152,0,.15); color: #ff9800; }
+
+  .footer { text-align: center; padding: 20px; font-size: 12px; color: #546e7a; }
+  .divider { border: none; border-top: 1px solid #1e2d42; margin: 16px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ========== 头部 ========== -->
+<div class="header">
+  <h1>⚽ 2026 FIFA 世界杯 — D组第1轮 深度前瞻</h1>
+  <div class="subtitle">国际足球数据分析师 &amp; 战术专家 | 五维体系评估报告</div>
+</div>
+
+<div class="match-bar">
+  <div class="team">
+    <div class="flag">🇺🇸</div>
+    <div class="name">美国</div>
+    <div style="font-size:12px;color:#78909c;margin-top:4px;">FIFA排名 #16</div>
+  </div>
+  <div class="vs">VS</div>
+  <div class="team">
+    <div class="flag">🇵🇾</div>
+    <div class="name">巴拉圭</div>
+    <div style="font-size:12px;color:#78909c;margin-top:4px;">FIFA排名 #40</div>
+  </div>
+</div>
+<div class="match-info">北京时间 2026年6月13日 09:00 ｜ 美国洛杉矶·SoFi体育场（容量约70,000人）｜ D组：美国、巴拉圭、澳大利亚、土耳其</div>
+
+<!-- ========== 一、核心结论 ========== -->
+<div class="section">
+  <div class="section-title">一、核心结论先行</div>
+
+  <div class="prediction-card">
+    <div class="main-result">预测结果：美国胜（次选 平局）</div>
+    <div class="scores">
+      最可能比分（按概率排序）：<strong style="color:#4fc3f7;">2-1（美国）</strong> &gt; <strong style="color:#4fc3f7;">1-0（美国）</strong> &gt; <strong style="color:#4fc3f7;">1-1</strong>
+    </div>
+    <div class="confidence">
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
+      <span style="margin-left:8px;font-size:14px;color:#b0bec5;">信心指数：★★★☆☆（中等偏上）</span>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px;">
+    <div style="text-align:center;background:#1a2332;padding:16px;border-radius:10px;">
+      <div style="font-size:32px;font-weight:800;color:#2196f3;">50%</div>
+      <div style="font-size:13px;color:#78909c;margin-top:4px;">美国胜概率</div>
+    </div>
+    <div style="text-align:center;background:#1a2332;padding:16px;border-radius:10px;">
+      <div style="font-size:32px;font-weight:800;color:#4caf50;">28%</div>
+      <div style="font-size:13px;color:#78909c;margin-top:4px;">平局概率</div>
+    </div>
+    <div style="text-align:center;background:#1a2332;padding:16px;border-radius:10px;">
+      <div style="font-size:32px;font-weight:800;color:#e94560;">22%</div>
+      <div style="font-size:13px;color:#78909c;margin-top:4px;">巴拉圭胜概率</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="font-size:14px;color:#b0bec5;line-height:1.9;">
+    <strong style="color:#fff;">进球数区间预测：</strong>1-3球（倾向2-3球）｜ <strong style="color:#fff;">半全场：</strong>胜-胜（首选）/ 平-胜（次选）｜ <strong style="color:#fff;">大小球：</strong>略倾向大2.5球
+  </div>
+</div>
+
+<!-- ========== 二、深度逻辑拆解 ========== -->
+<div class="section">
+  <div class="section-title">二、深度逻辑拆解 — 四大核心论据</div>
+
+  <!-- 论据1 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">1</span>
+    <strong style="color:#fff;font-size:16px;">主场优势 + 阵容身价碾压 — 天赋鸿沟难以逾越</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>SoFi体育场将涌入约70,000名观众，绝大多数是美国球迷，主场氛围堪称"第十二人"。美国全队身价约<strong>3.86亿欧元</strong>，是巴拉圭（约1.55亿欧元）的<strong>2.5倍</strong>。普利西奇（AC米兰）、巴洛贡（摩纳哥）、麦肯尼（尤文图斯）、亚当斯（伯恩茅斯）——全部效力于欧洲顶级联赛。反观巴拉圭头号球星阿尔米隆，在纽卡斯尔也仅是轮换球员。天赋差距是客观存在的。</p>
+      <div class="highlight-box green" style="margin-top:10px;">
+        <strong>关键事实：</strong>美国近5次对阵巴拉圭全部获胜（总战绩6胜2平2负），唯一一次世界杯交锋是1930年首届世界杯，美国3-0大胜。心理优势明显。
+      </div>
+    </div>
+  </div>
+
+  <!-- 论据2 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">2</span>
+    <strong style="color:#fff;font-size:16px;">巴拉圭中场毁灭性打击 — 创造力引擎全面瘫痪</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>恩西索（大腿伤，小组赛大概率缺席）+ 库瓦斯（停赛）+ 比利亚桑蒂（十字韧带撕裂，未入选）+ 加赖萨（休战）= 巴拉圭中场<strong>被彻底肢解</strong>。恩西索是巴拉圭的核心创造力来源，他的缺席是毁灭性的——没有他的传球，阿尔米隆在前场将无人输送弹药。巴拉圭赖以生存的反击威胁被严重削弱，可能无法创造任何有意义的进攻机会。</p>
+      <div class="highlight-box orange" style="margin-top:10px;">
+        <strong>伤病对比：</strong>
+        <p>🇺🇸 <strong>美国（基本齐整）</strong>：✅ 里查兹（水晶宫，中卫）脚踝伤已恢复，通过体能测试，可出战但未必首发；⚠️ 雷纳轻微肌肉拉伤，可能替补；⚠️ 普利西奇2026年俱乐部+国家队仅入1球，状态存疑。</p>
+        <p style="margin-top:6px;">🇵🇾 <strong>巴拉圭（中场重创）</strong>：❌ 恩西索（核心前腰，大腿伤，小组赛大概率缺席）；❌ 库瓦斯（后腰，停赛）；❌ 比利亚桑蒂（中场，十字韧带撕裂）；❌ 加赖萨（中场，休战）。四人缺阵令中场创造力归零。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 论据3 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">3</span>
+    <strong style="color:#fff;font-size:16px;">美国漏洞防线 vs 巴拉圭进攻无力 — 烂盾碰钝矛</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>美国近4场热身赛狂丢11球（2-5比利时、0-2葡萄牙、1-2德国），防线堪称"筛子"。但巴拉圭呢？世预赛18场仅进14球，场均<strong>0.78球</strong>——没有恩西索后创造力更差。即便美国防线千疮百孔，巴拉圭可能也没有足够的进攻质量来利用这些漏洞。这是一场<strong>烂盾碰钝矛</strong>的较量。</p>
+      <div class="highlight-box blue" style="margin-top:10px;">
+        <strong>综合判断：</strong>美国防线虽差，但巴拉圭的进攻更差。巴拉圭世预赛18场仅14个进球，其中37%来自定位球。运动战进球能力极其有限，即便面对美国漏洞百出的防线，也未必能制造足够威胁。
+      </div>
+    </div>
+  </div>
+
+  <!-- 论据4 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">4</span>
+    <strong style="color:#fff;font-size:16px;">波切蒂诺的战术灵活性 vs 阿尔法罗的防守铁壁</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>波切蒂诺在3-5-2和4-3-3之间灵活切换。3-5-2阵型中，边翼卫（德斯特+罗宾逊）提供宽度，同时保护中卫组合。如果里查兹首发，三中卫体系将大幅增强。<strong>巴拉圭的低位防守将很难被击穿</strong>，但美国拥有多个创造力选项（普利西奇、蒂尔曼、麦肯尼）可以从不同角度发起进攻。</p>
+      <p style="margin-top:8px;">然而，巴拉圭的防守绝非等闲：世预赛18场仅丢10球，1-0击败巴西、逼平阿根廷。这是一支为"窒息对手"而生的球队。<strong>如果巴拉圭率先通过定位球得分（37%进球来自定位球），他们可以摆大巴死守到底。</strong></p>
+      <div class="highlight-box" style="margin-top:10px;">
+        <strong>反方论据：</strong>巴拉圭的防守铁壁不可低估。世预赛6场平局（包括对阿根廷、巴西），证明他们有能力在强队面前"磨"出结果。若美国久攻不下产生急躁情绪，巴拉圭的反击和定位球可能成为致命武器。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 三、进球剧本推演 ========== -->
+<div class="section">
+  <div class="section-title">三、进球剧本推演</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+    <div class="highlight-box">
+      <strong>总进球数区间：</strong><span style="color:#4fc3f7;font-size:18px;">1-3球</span><br>
+      <span style="font-size:13px;color:#b0bec5;">倾向2-3球，美国大概率破门</span>
+    </div>
+    <div class="highlight-box green">
+      <strong>最可能比分：</strong><span style="color:#4caf50;font-size:18px;">2-1（美国）</span><br>
+      <span style="font-size:13px;color:#b0bec5;">美国先破门，巴拉圭定位球扳平，美国再入一球</span>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;">
+    <strong style="color:#fff;font-size:16px;margin-bottom:12px;display:block;">进球时间轴推演：</strong>
+    <div class="timeline">
+      <div class="slot" style="border-left:3px solid #2196f3;">
+        <div class="time">0'-30'</div>
+        <div class="event">美国控场期</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">高位逼抢+试探进攻</div>
+      </div>
+      <div class="slot" style="border-left:3px solid #ff9800;">
+        <div class="time">30'-60'</div>
+        <div class="event">巴拉圭防守反击</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">定位球/反击偷袭</div>
+      </div>
+      <div class="slot" style="border-left:3px solid #e94560;">
+        <div class="time">60'-80'</div>
+        <div class="event">美国强攻窗口</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">替补登场+个人能力破局</div>
+      </div>
+      <div class="slot" style="border-left:3px solid #4caf50;">
+        <div class="time">80'-90+'</div>
+        <div class="event">决胜阶段</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">定位球/绝杀/绝平</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;">
+    <strong style="color:#fff;font-size:16px;">关键破门球员预测：</strong>
+    <table style="margin-top:10px;">
+      <tr><th>球员</th><th>球队</th><th>破门方式</th><th>概率评估</th></tr>
+      <tr><td><strong>巴洛贡</strong></td><td>🇺🇸 美国</td><td>禁区内抢点射门</td><td><span class="tag red">高</span></td></tr>
+      <tr><td><strong>普利西奇</strong></td><td>🇺🇸 美国</td><td>内切射门 / 任意球</td><td><span class="tag orange">中高</span></td></tr>
+      <tr><td><strong>萨纳夫里亚</strong></td><td>🇵🇾 巴拉圭</td><td>定位球头球 / 抢点</td><td><span class="tag orange">中</span></td></tr>
+      <tr><td><strong>蒂尔曼</strong></td><td>🇺🇸 美国</td><td>后插上禁区射门</td><td><span class="tag orange">中</span></td></tr>
+      <tr><td><strong>阿尔米隆</strong></td><td>🇵🇾 巴拉圭</td><td>反击速度突破</td><td><span class="tag blue">中低</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ========== 四、五维评估详情 ========== -->
+<div class="section">
+  <div class="section-title">四、五维评估详情</div>
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度一：球队基本面与近期状态</h3>
+  <table>
+    <tr><th>指标</th><th>🇺🇸 美国</th><th>🇵🇾 巴拉圭</th></tr>
+    <tr><td>FIFA排名</td><td>第16位</td><td>第40位</td></tr>
+    <tr><td>全队身价</td><td>约3.81-3.86亿欧</td><td>约1.35-1.57亿欧</td></tr>
+    <tr><td>近10场战绩</td><td>5胜1平4负</td><td>4胜2平4负</td></tr>
+    <tr><td>近5场</td><td>2胜0平3负</td><td>3胜0平2负</td></tr>
+    <tr><td>世预赛战绩</td><td><span class="tag blue">东道主自动晋级</span></td><td><span class="tag green">南美区第6（28分，同巴西）18场7胜7平4负</span></td></tr>
+    <tr><td>世界杯履历</td><td>11次参赛，最佳：季军（1930），4次16强</td><td>9次参赛，最佳：8强（2010），缺席近3届</td></tr>
+    <tr><td>场均进球</td><td>2.2球/场</td><td>0.78球/场</td></tr>
+    <tr><td>场均失球</td><td>2.4球/场</td><td><span class="tag green">0.56球/场</span></td></tr>
+  </table>
+
+  <div class="highlight-box orange">
+    <strong>伤病评估：</strong>
+    <p>🇺🇸 <strong>美国（基本齐整，个别隐患）</strong>：✅ 里查兹（水晶宫，中卫）脚踝伤已恢复，通过体能测试，可出战但未必首发；⚠️ 雷纳轻微肌肉拉伤，可能替补；⚠️ 普利西奇2026年俱乐部+国家队仅入1球，状态存疑但无伤病。</p>
+    <p style="margin-top:6px;">🇵🇾 <strong>巴拉圭（中场毁灭性打击）</strong>：❌ 恩西索（核心前腰，大腿伤，小组赛大概率缺席）— 这是毁灭性损失，他是球队主要创造力来源；❌ 库瓦斯（后腰，停赛）；❌ 比利亚桑蒂（中场，十字韧带撕裂，未入选）；❌ 加赖萨（中场，休战）。中场四人缺阵，创造力与防守硬度同时受损。</p>
+  </div>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度二：战术体系与历史交锋</h3>
+  <table>
+    <tr><th>对比项</th><th>🇺🇸 美国（波切蒂诺）</th><th>🇵🇾 巴拉圭（阿尔法罗）</th></tr>
+    <tr><td>主打阵型</td><td>3-5-2 / 4-3-3</td><td>4-5-1 / 5-4-1</td></tr>
+    <tr><td>战术风格</td><td>高位逼抢 + 控球推进</td><td>低位防守 + 反击</td></tr>
+    <tr><td>核心进攻手段</td><td>普利西奇内切 + 巴洛贡抢点 + 边翼卫套边</td><td>阿尔米隆反击 + 定位球（37%进球）</td></tr>
+    <tr><td>防守弱点</td><td><span class="tag red">中卫深度不足 / 定位球防守差</span></td><td><span class="tag red">进攻创造力匮乏（恩西索缺阵）</span></td></tr>
+    <tr><td>克制关系</td><td><span class="tag green">控球+多点进攻克制低位防守</span></td><td><span class="tag green">定位球+反击克制漏洞防线</span></td></tr>
+  </table>
+
+  <h4 style="color:#fff;margin:12px 0 8px;">预测首发阵容：</h4>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+    <div class="highlight-box blue">
+      <strong>🇺🇸 美国（3-5-2）</strong>
+      <p style="font-size:13px;color:#b0bec5;margin-top:6px;">
+        弗里斯；弗里曼、麦肯齐、里姆；德斯特、麦肯尼、亚当斯、蒂尔曼、A·罗宾逊；巴洛贡、普利西奇
+      </p>
+      <p style="font-size:12px;color:#78909c;margin-top:4px;">备选4-3-3：弗里斯；德斯特、麦肯齐、里查兹/里姆、A·罗宾逊；亚当斯、麦肯尼、蒂尔曼；普利西奇、巴洛贡、维阿</p>
+    </div>
+    <div class="highlight-box" style="border-left-color:#e94560;">
+      <strong>🇵🇾 巴拉圭（4-5-1）</strong>
+      <p style="font-size:13px;color:#b0bec5;margin-top:6px;">
+        费尔南德斯；阿尔德雷特、G·戈麦斯、巴布埃纳、埃斯皮诺萨；阿尔米隆、博巴迪利亚、罗哈斯、D·戈麦斯、索萨；萨纳夫里亚
+      </p>
+      <p style="font-size:12px;color:#78909c;margin-top:4px;">中场严重减员，实际首发可能大幅调整</p>
+    </div>
+  </div>
+
+  <h4 style="color:#fff;margin:12px 0 8px;">历史交锋：</h4>
+  <table>
+    <tr><th>日期</th><th>比赛</th><th>比分</th><th>赛事</th></tr>
+    <tr><td>2025年11月</td><td>美国 vs 巴拉圭</td><td><strong style="color:#2196f3;">2-1</strong>（美国胜）</td><td>友谊赛</td></tr>
+    <tr><td>1930年</td><td>美国 vs 巴拉圭</td><td><strong style="color:#2196f3;">3-0</strong>（美国大胜）</td><td>世界杯（乌拉圭）</td></tr>
+  </table>
+  <p style="font-size:13px;color:#78909c;margin-top:6px;">历史总交锋：美国6胜2平2负，近5次交手全部获胜。唯一世界杯交锋为1930年首届世界杯，美国3-0大胜。</p>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度三：2026世界杯专属环境变量</h3>
+  <table>
+    <tr><th>变量</th><th>具体情况</th><th>影响评估</th></tr>
+    <tr><td><strong>主场氛围</strong></td><td>SoFi体育场约70,000人，绝大多数美国球迷</td><td>对美国极大加成 ✅；巴拉圭客场压力巨大 ⚠️</td></tr>
+    <tr><td><strong>天气状况</strong></td><td>气温20-25°C，晴朗</td><td>完美比赛条件，双方均无天气劣势</td></tr>
+    <tr><td><strong>海拔高度</strong></td><td>海平面</td><td>无高原因素，不影响体能</td></tr>
+    <tr><td><strong>长途旅行</strong></td><td>美国本土作战</td><td>美国零旅行消耗 ✅；巴拉圭从南美长途跋涉 ⚠️</td></tr>
+  </table>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度四：赛制与战意因素</h3>
+  <div class="highlight-box">
+    <p><strong>48队12组新赛制：</strong>每组前2名直接出线，8个成绩最好的小组第三亦可晋级（共32队进淘汰赛）。D组中美国作为东道主，首战必须全取3分才能掌握出线主动权。</p>
+    <p style="margin-top:8px;"><strong>美国：</strong>东道主身份带来巨大压力，主场球迷期待胜利。波切蒂诺执教后球队风格逐渐成型，首战必须赢球以树立信心、锁定小组头名。</p>
+    <p style="margin-top:8px;"><strong>巴拉圭：</strong>时隔16年重返世界杯（缺席2014、2018、2022三届），全队无包袱、心态放松。已经超额完成了出线目标，首战拿1分即可接受。这种"无压力"心态反而可能让他们超水平发挥。</p>
+  </div>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度五：机构与市场风向</h3>
+  <table>
+    <tr><th>指标</th><th>数值</th></tr>
+    <tr><td>欧指（即时）</td><td>美国胜 1.90-2.00 ｜ 平 3.30-3.50 ｜ 巴拉圭胜 3.80-4.20</td></tr>
+    <tr><td>亚洲盘口</td><td>美国让0.5-0.75球，水位略降</td></tr>
+    <tr><td>大小球</td><td>2.5球盘口，略倾向大球</td></tr>
+    <tr><td>综合数据模型</td><td>美国胜≈50% ｜ 平局≈28% ｜ 巴拉圭胜≈22%</td></tr>
+  </table>
+  <div class="highlight-box blue" style="margin-top:10px;">
+    <strong>市场解读：</strong>博彩市场给予美国明显让步（约-0.5至-0.75球），反映机构对美国主场优势+阵容实力的认可。巴拉圭赔率3.80-4.20处于较高区间，市场对其爆冷能力持谨慎态度。但平局赔率3.30-3.50并不算高，暗示巴拉圭的防守能力仍被尊重。
+  </div>
+</div>
+
+<!-- ========== 五、隐藏X因素 ========== -->
+<div class="section">
+  <div class="section-title">五、隐藏X因素</div>
+
+  <div class="arg-item" style="border-left:3px solid #2196f3;">
+    <span class="tag blue" style="margin-bottom:8px;">X1</span>
+    <strong style="color:#fff;">里查兹的体能 — 防线质变的关键开关</strong>
+    <div class="content" style="margin-top:6px;">
+      里查兹（水晶宫中卫）脚踝伤虽已通过体能测试，但是否首发仍是未知数。若他首发，美国三中卫体系将大幅增强，巴拉圭的定位球威胁将被有效遏制。若他替补，麦肯齐+里姆的组合在面对萨纳夫里亚和G·戈麦斯的高空轰炸时将非常脆弱。一个球员的出场与否，可能改变整场比赛的防守格局。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #ff9800;">
+    <span class="tag orange" style="margin-bottom:8px;">X2</span>
+    <strong style="color:#fff;">普利西奇的状态 — 2026年仅1球的隐忧</strong>
+    <div class="content" style="margin-top:6px;">
+      普利西奇在2026年俱乐部+国家队仅打入1球，这对于美国头号球星而言是严重的状态滑坡。如果他能在世界杯舞台上重新找回射门感觉，巴拉圭的防线将难以遏制。但若状态持续低迷，美国的进攻威胁将大打折扣，比赛可能陷入僵局。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #e94560;">
+    <span class="tag red" style="margin-bottom:8px;">X3</span>
+    <strong style="color:#fff;">恩西索的缺席 — 反击最后一传的缺失</strong>
+    <div class="content" style="margin-top:6px;">
+      恩西索的缺阵不仅影响进攻创造力，更直接削弱了巴拉圭反击的终结能力。阿尔米隆的速度仍在，但没有恩西索的精准直塞和最后一传，阿尔米隆在前场将陷入孤立无援的境地。巴拉圭最致命的武器——快速反击——可能因此失去锋芒。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #4caf50;">
+    <span class="tag green" style="margin-bottom:8px;">X4</span>
+    <strong style="color:#fff;">定位球攻防 — 一个角球改变一切</strong>
+    <div class="content" style="margin-top:6px;">
+      巴拉圭37%的进球来自定位球，而美国恰恰在定位球防守上存在漏洞。如果巴拉圭通过角球或任意球率先破门，他们可以立即转入5-4-1铁桶阵死守。一个定位球可能改变整场比赛的走势——这也是巴拉圭最现实的得分途径。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 六、总结 ========== -->
+<div class="section">
+  <div class="section-title">六、总结：四种最可能剧本</div>
+
+  <div style="margin-top:12px;">
+    <div class="highlight-box green">
+      <strong>🟢 剧本A（概率35%）：美国 2-1</strong>
+      <p style="margin-top:6px;">美国率先通过巴洛贡或普利西奇破门（1-0），巴拉圭利用定位球由戈麦斯/萨纳夫里亚头球扳平（1-1），美国下半场凭借个人能力再入一球锁定胜局（2-1）。主场球迷的呐喊推动球队走向胜利。</p>
+    </div>
+    <div class="highlight-box" style="border-left-color:#2196f3;">
+      <strong>🔵 剧本B（概率25%）：美国 1-0</strong>
+      <p style="margin-top:6px;">紧张低质量的比赛。巴拉圭防守深沉，美国难以突破。一次普利西奇/巴洛贡的个人闪光决定比赛。巴拉圭残缺的中场无法创造任何机会。典型的"东道主首战小胜"剧本。</p>
+    </div>
+    <div class="highlight-box" style="border-left-color:#4caf50;">
+      <strong>🟢 剧本C（概率20%）：美国 2-0</strong>
+      <p style="margin-top:6px;">美国的阵容质量彻底碾压巴拉圭。里查兹回归稳固防线，巴拉圭在缺少恩西索后进攻完全瘫痪。轻松的主场胜利，波切蒂诺的战术体系运转流畅。</p>
+    </div>
+    <div class="highlight-box" style="border-left-color:#e94560;">
+      <strong>🔴 冷门剧本D（概率20%）：平局 1-1 或 巴拉圭 1-0</strong>
+      <p style="margin-top:6px;">巴拉圭的防守铁壁屹立不倒，美国久攻不下愈发急躁。巴拉圭通过定位球偷得一球后摆大巴死守。或者0-0闷平，双方互相抵消。巴拉圭世预赛6场平局（包括对阿根廷、巴西）证明他们有能力在强队面前"磨"出结果。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 七、前次预测经验教训 ========== -->
+<div class="section">
+  <div class="section-title">七、前次预测经验教训应用</div>
+
+  <div class="arg-item" style="border-left:3px solid #78909c;">
+    <span class="tag blue" style="margin-bottom:8px;">E01</span>
+    <strong style="color:#fff;">首战谨慎原则</strong>
+    <div class="content" style="margin-top:6px;">两支球队都将在比赛初期保持紧张，上半场可能较为沉闷。已将此因素纳入进球时间轴推演。</div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #78909c;">
+    <span class="tag blue" style="margin-bottom:8px;">E02</span>
+    <strong style="color:#fff;">替补影响力</strong>
+    <div class="content" style="margin-top:6px;">维阿和佩皮可能成为美国的关键替补，60分钟后登场提供冲击力和速度变化。替补阶段的进球概率已被纳入推演。</div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #78909c;">
+    <span class="tag blue" style="margin-bottom:8px;">E04</span>
+    <strong style="color:#fff;">进球预测降星处理</strong>
+    <div class="content" style="margin-top:6px;">普利西奇2026年状态低迷已被明确标注，巴洛贡的破门概率被排在普利西奇之上，而非简单按名气排序。</div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #78909c;">
+    <span class="tag blue" style="margin-bottom:8px;">E05</span>
+    <strong style="color:#fff;">平局概率校准</strong>
+    <div class="content" style="margin-top:6px;">平局概率保持在28%，美国的主场优势足以支撑更高的胜率预测，但巴拉圭的防守能力使平局概率不可忽视。</div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #78909c;">
+    <span class="tag blue" style="margin-bottom:8px;">E06</span>
+    <strong style="color:#fff;">防守伤病分层评估</strong>
+    <div class="content" style="margin-top:6px;">里查兹的回归可能改变美国整条防线的面貌，已将"里查兹是否首发"作为独立X因素（X1）进行评估。</div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #78909c;">
+    <span class="tag blue" style="margin-bottom:8px;">E07</span>
+    <strong style="color:#fff;">定位球专项扫描</strong>
+    <div class="content" style="margin-top:6px;">巴拉圭37%的定位球进球率已被特别标注，并作为X4因素单独分析。美国定位球防守漏洞与巴拉圭定位球进攻优势的碰撞，可能成为比赛转折点。</div>
+  </div>
+</div>
+
+<div class="footer">
+  本报告基于公开数据源（FIFA官网、转会市场、主流赔率机构、官方伤停公告）综合研判<br>
+  所有数据截至北京时间2026年6月12日23:00 ｜ 临场阵容变化可能影响最终结果<br>
+  报告制作：资深国际足球数据分析师 &amp; 战术专家 ｜ 2026年6月12日
+</div>
+
+</div>
+</body>
+</html>

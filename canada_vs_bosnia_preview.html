@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026美加墨世界杯 B组第1轮 — 加拿大 VS 波黑 深度前瞻</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif; background: #0a0e17; color: #e0e0e0; line-height: 1.75; padding: 24px; }
+  .container { max-width: 900px; margin: 0 auto; background: #131a2b; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 40px rgba(0,0,0,.5); }
+  .header { background: linear-gradient(135deg, #1a2744 0%, #0f3460 50%, #1a2744 100%); padding: 40px 36px 28px; text-align: center; border-bottom: 3px solid #e94560; }
+  .header h1 { font-size: 28px; color: #fff; letter-spacing: 2px; }
+  .header .subtitle { font-size: 15px; color: #90a4ae; margin-top: 8px; }
+  .match-bar { display: flex; justify-content: center; align-items: center; gap: 36px; padding: 24px 36px; background: #1a2332; }
+  .match-bar .team { text-align: center; }
+  .match-bar .team .flag { font-size: 48px; }
+  .match-bar .team .name { font-size: 20px; font-weight: 700; color: #fff; margin-top: 6px; }
+  .match-bar .vs { font-size: 22px; color: #e94560; font-weight: 900; }
+  .match-info { text-align: center; padding: 6px; font-size: 13px; color: #78909c; background: #1a2332; }
+  .section { padding: 28px 36px; border-bottom: 1px solid #1e2d42; }
+  .section:last-child { border-bottom: none; }
+  .section-title { font-size: 20px; font-weight: 700; color: #e94560; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section-title::before { content: ''; display: inline-block; width: 4px; height: 22px; background: #e94560; border-radius: 2px; }
+
+  .prediction-card { background: linear-gradient(135deg, #1e3a5f, #1a2744); border: 1px solid #2a4a7f; border-radius: 12px; padding: 24px; margin: 16px 0; }
+  .prediction-card .main-result { font-size: 26px; font-weight: 800; color: #4fc3f7; text-align: center; margin-bottom: 8px; }
+  .prediction-card .scores { text-align: center; font-size: 16px; color: #b0bec5; }
+  .confidence { display: flex; justify-content: center; gap: 4px; margin-top: 12px; }
+  .confidence .star { color: #ffc107; font-size: 22px; }
+  .confidence .star.empty { color: #455a64; }
+
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  th, td { padding: 10px 12px; text-align: center; border-bottom: 1px solid #1e2d42; }
+  th { background: #1a2744; color: #4fc3f7; font-weight: 600; }
+  td { color: #b0bec5; }
+  tr:hover td { background: rgba(79,195,247,.04); }
+
+  .highlight-box { background: #1a2332; border-left: 4px solid #e94560; padding: 16px 20px; margin: 12px 0; border-radius: 0 8px 8px 0; }
+  .highlight-box.green { border-left-color: #4caf50; }
+  .highlight-box.blue { border-left-color: #2196f3; }
+  .highlight-box.orange { border-left-color: #ff9800; }
+  .highlight-box strong { color: #fff; }
+
+  .arg-item { background: #1a2332; padding: 16px 20px; border-radius: 8px; margin-bottom: 10px; }
+  .arg-item .num { display: inline-block; width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 50%; background: #e94560; color: #fff; font-weight: 700; font-size: 14px; margin-right: 10px; flex-shrink: 0; }
+  .arg-item .content { color: #b0bec5; font-size: 14px; }
+
+  .timeline { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin: 12px 0; }
+  .timeline .slot { background: #1a2332; padding: 10px 18px; border-radius: 8px; text-align: center; min-width: 140px; }
+  .timeline .slot .time { font-size: 13px; color: #78909c; }
+  .timeline .slot .event { font-size: 15px; color: #4fc3f7; font-weight: 600; }
+
+  .tag { display: inline-block; padding: 2px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; margin: 2px 4px; }
+  .tag.red { background: rgba(233,69,96,.15); color: #e94560; }
+  .tag.green { background: rgba(76,175,80,.15); color: #4caf50; }
+  .tag.blue { background: rgba(33,150,243,.15); color: #2196f3; }
+  .tag.orange { background: rgba(255,152,0,.15); color: #ff9800; }
+
+  .footer { text-align: center; padding: 20px; font-size: 12px; color: #546e7a; }
+  .divider { border: none; border-top: 1px solid #1e2d42; margin: 16px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ========== 头部 ========== -->
+<div class="header">
+  <h1>⚽ 2026 FIFA 世界杯 — B组第1轮 深度前瞻</h1>
+  <div class="subtitle">国际足球数据分析师 &amp; 战术专家 | 五维体系评估报告</div>
+</div>
+
+<div class="match-bar">
+  <div class="team">
+    <div class="flag">🇨🇦</div>
+    <div class="name">加拿大</div>
+    <div style="font-size:12px;color:#78909c;margin-top:4px;">FIFA排名 #30</div>
+  </div>
+  <div class="vs">VS</div>
+  <div class="team">
+    <div class="flag">🇧🇦</div>
+    <div class="name">波黑</div>
+    <div style="font-size:12px;color:#78909c;margin-top:4px;">FIFA排名 #65</div>
+  </div>
+</div>
+<div class="match-info">北京时间 2026年6月13日 03:00 ｜ 加拿大多伦多·BMO球场（容量≈45,000-54,000人）｜ B组：加拿大、波黑、卡塔尔、瑞士</div>
+
+<!-- ========== 一、核心结论 ========== -->
+<div class="section">
+  <div class="section-title">一、核心结论先行</div>
+
+  <div class="prediction-card">
+    <div class="main-result">预测结果：加拿大小胜（次选 平局）</div>
+    <div class="scores">
+      最可能比分（按概率排序）：<strong style="color:#4fc3f7;">1-0（加拿大）</strong> &gt; <strong style="color:#4fc3f7;">1-1</strong> &gt; <strong style="color:#4fc3f7;">2-1（加拿大）</strong>
+    </div>
+    <div class="confidence">
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
+      <span style="margin-left:8px;font-size:14px;color:#b0bec5;">信心指数：★★★☆☆（中等）</span>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px;">
+    <div style="text-align:center;background:#1a2332;padding:16px;border-radius:10px;">
+      <div style="font-size:32px;font-weight:800;color:#2196f3;">48%</div>
+      <div style="font-size:13px;color:#78909c;margin-top:4px;">加拿大胜概率</div>
+    </div>
+    <div style="text-align:center;background:#1a2332;padding:16px;border-radius:10px;">
+      <div style="font-size:32px;font-weight:800;color:#4caf50;">30%</div>
+      <div style="font-size:13px;color:#78909c;margin-top:4px;">平局概率</div>
+    </div>
+    <div style="text-align:center;background:#1a2332;padding:16px;border-radius:10px;">
+      <div style="font-size:32px;font-weight:800;color:#e94560;">22%</div>
+      <div style="font-size:13px;color:#78909c;margin-top:4px;">波黑胜概率</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="font-size:14px;color:#b0bec5;line-height:1.9;">
+    <strong style="color:#fff;">进球数区间预测：</strong>1-2球（倾向1球）｜ <strong style="color:#fff;">大小球：</strong>小2.5球（强烈倾向小球）｜ <strong style="color:#fff;">剧本走向：</strong>加拿大主场猛攻，波黑低位防守吸收压力。若加拿大前30分钟破门则大概率取胜；若半场0-0，波黑信心大增，平局概率飙升。
+  </div>
+</div>
+
+<!-- ========== 二、深度逻辑拆解 ========== -->
+<div class="section">
+  <div class="section-title">二、深度逻辑拆解 — 四大核心论据</div>
+
+  <!-- 论据1 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">1</span>
+    <strong style="color:#fff;font-size:16px;">主场优势 + 历史突破动力 — 加拿大世界杯首胜的"最佳窗口"</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>这是加拿大<strong>史上第一场本土世界杯比赛</strong>。BMO球场45,000+名球迷将创造震耳欲聋的主场氛围。更关键的是，加拿大世界杯历史战绩为<strong>0胜0平6负</strong>——6场以上参赛球队中的最差纪录。全队上下对"世界杯首胜"的渴望已到极点，马希执教以来打造的韧性体系（近8场不败，6场零封）让这场突破比以往任何时候都更接近现实。</p>
+      <p style="margin-top:8px;">加拿大主场战绩极为恐怖：<strong>28场主场比赛仅1负（18胜9平）</strong>。多伦多的红色海洋将成为第12人。波黑虽然韧性十足，但从未在如此敌对的环境中比赛——附加赛对威尔士和意大利时，他们至少还有部分球迷支持。</p>
+      <div class="highlight-box green" style="margin-top:10px;">
+        <strong>关键事实：</strong>加拿大近8场比赛6场零封，2026年仅失3球。波黑2026年6场比赛仅打入4球（场均0.67球）。如果加拿大率先破门，波黑几乎没有逆转的火力支撑。
+      </div>
+    </div>
+  </div>
+
+  <!-- 论据2 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">2</span>
+    <strong style="color:#fff;font-size:16px;">防守铁壁 vs 进攻疲软 — 低比分格局的底层逻辑</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>数据模型揭示了一个清晰的低比分趋势：</p>
+      <table>
+        <tr><th>指标</th><th>🇨🇦 加拿大</th><th>🇧🇦 波黑</th></tr>
+        <tr><td>2026场均进球</td><td>1.2球</td><td><strong style="color:#e94560;">0.67球</strong></td></tr>
+        <tr><td>2026场均失球</td><td><strong style="color:#4caf50;">0.4球</strong></td><td>0.83球</td></tr>
+        <tr><td>近8场零封次数</td><td><strong style="color:#4caf50;">6次</strong></td><td>2次</td></tr>
+        <tr><td>近6场战绩</td><td>2胜3平0负（不败）</td><td>0胜6平0负（六连平）</td></tr>
+        <tr><td>近10场战绩</td><td>5胜3平2负</td><td>3胜6平1负</td></tr>
+      </table>
+      <p style="margin-top:8px;">加拿大在马希治下已蜕变为<strong>以防守为基石的球队</strong>，近8场仅失2球。波黑则陷入了<strong>"进球荒+不败悖论"</strong>——6连平说明防守尚可，但进攻端创造力严重不足。这场对决的底层逻辑是：<strong style="color:#4fc3f7;">加拿大攻不进很多球，波黑更攻不进，低比分几乎板上钉钉。</strong></p>
+    </div>
+  </div>
+
+  <!-- 论据3 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">3</span>
+    <strong style="color:#fff;font-size:16px;">戴维斯伤缺 — 左路进攻"断臂"带来的战术失衡</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>加拿大遭遇致命打击：队长兼左后卫<strong>阿方索·戴维斯</strong>（拜仁慕尼黑）因腿筋伤势确认缺席。戴维斯不仅是加拿大防守核心，更是<strong>左路进攻的第一发起点</strong>——他的冲刺速度和前插能力是加拿大反击体系的关键一环。替代者拉雷亚更偏防守型，左路进攻将大幅萎缩。</p>
+      <p style="margin-top:8px;">更雪上加霜的是，主力中卫<strong>邦比托</strong>（胫骨伤）被移出26人名单，中场<strong>弗洛雷斯</strong>（十字韧带撕裂）赛事报销，中场核心<strong>科内</strong>因发烧缺席训练，首战存疑。加拿大的防线和中场同时面临重组。</p>
+      <div class="highlight-box orange" style="margin-top:10px;">
+        <strong>战术影响：</strong>戴维斯缺阵后，加拿大左路变为"死区"，进攻将高度依赖右路的布坎南（比利亚雷亚尔）。波黑可以将防守资源集中倾斜到右侧，限制布坎南的内切路线，从而大幅降低加拿大的进攻威胁。科内若无法出场，中场控制力将进一步下降。
+      </div>
+    </div>
+  </div>
+
+  <!-- 论据4 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">4</span>
+    <strong style="color:#fff;font-size:16px;">波黑"僵尸队"韧性 — 无法被杀死的对手</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>波黑是一支<strong>无法被杀死的球队</strong>。6连平的战绩看似平庸，但附加赛先后在点球大战中淘汰威尔士和意大利，展现出超凡的心理韧性。这支球队在绝境中的抗压能力远超纸面实力所反映的水平。</p>
+      <p style="margin-top:8px;">40岁的<strong>哲科</strong>仍是世界级支点中锋，他的头球能力和背身做球在低比分比赛中是致命武器。德米罗维奇（斯图加特，德甲12球）提供了第二进攻点。科拉希纳茨（亚特兰大）和阿赫梅德霍季奇组成经验丰富的中卫搭档。在一场可能只有1个进球决定胜负的比赛中，<strong>哲科的一次角球抢点就足以改写结局</strong>。</p>
+      <div class="highlight-box blue" style="margin-top:10px;">
+        <strong>综合判断：</strong>加拿大纸面实力占优（排名、身价、主场），但伤病潮严重削弱了首发阵容。波黑全员健康，战术纪律性极强，哲科的定位球威胁恰好命中加拿大临时中卫搭档的软肋。低比分格局下，波黑的韧性绝非"陪跑"——他们有能力从多伦多带走分数。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 三、进球剧本推演 ========== -->
+<div class="section">
+  <div class="section-title">三、进球剧本推演</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+    <div class="highlight-box">
+      <strong>总进球数区间：</strong><span style="color:#4fc3f7;font-size:18px;">1-2球</span><br>
+      <span style="font-size:13px;color:#b0bec5;">强烈倾向小球，小2.5球概率极高</span>
+    </div>
+    <div class="highlight-box green">
+      <strong>最可能比分：</strong><span style="color:#4caf50;font-size:18px;">1-0（加拿大）</span><br>
+      <span style="font-size:13px;color:#b0bec5;">加拿大防守稳固，一球小胜最合理</span>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;">
+    <strong style="color:#fff;font-size:16px;margin-bottom:12px;display:block;">进球时间轴推演：</strong>
+    <div class="timeline">
+      <div class="slot" style="border-left:3px solid #e94560;">
+        <div class="time">0'-30'</div>
+        <div class="event">加拿大猛攻窗口</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">主场气势+高位逼抢</div>
+      </div>
+      <div class="slot" style="border-left:3px solid #ff9800;">
+        <div class="time">30'-45'</div>
+        <div class="event">波黑站稳脚跟</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">低位防线逐渐适应节奏</div>
+      </div>
+      <div class="slot" style="border-left:3px solid #2196f3;">
+        <div class="time">45'-70'</div>
+        <div class="event">战术博弈期</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">定位球成最大威胁</div>
+      </div>
+      <div class="slot" style="border-left:3px solid #4caf50;">
+        <div class="time">70'-90+'</div>
+        <div class="event">决胜/保平阶段</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">替补冲击/哲科最后一搏</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;">
+    <strong style="color:#fff;font-size:16px;">关键破门球员预测：</strong>
+    <table style="margin-top:10px;">
+      <tr><th>球员</th><th>球队</th><th>破门方式</th><th>概率评估</th></tr>
+      <tr><td><strong>乔纳森·大卫</strong></td><td>🇨🇦 加拿大</td><td>反击单刀 / 门前抢点</td><td><span class="tag red">高</span></td></tr>
+      <tr><td><strong>哲科</strong></td><td>🇧🇦 波黑</td><td>定位球头球抢点</td><td><span class="tag orange">中高</span></td></tr>
+      <tr><td><strong>拉林</strong></td><td>🇨🇦 加拿大</td><td>边路传中头球</td><td><span class="tag orange">中</span></td></tr>
+      <tr><td><strong>德米罗维奇</strong></td><td>🇧🇦 波黑</td><td>二点补射 / 远射</td><td><span class="tag blue">中低</span></td></tr>
+      <tr><td><strong>布坎南</strong></td><td>🇨🇦 加拿大</td><td>右路内切射门</td><td><span class="tag blue">中低</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ========== 四、五维评估详情 ========== -->
+<div class="section">
+  <div class="section-title">四、五维评估详情</div>
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度一：球队基本面与近期状态</h3>
+  <table>
+    <tr><th>指标</th><th>🇨🇦 加拿大</th><th>🇧🇦 波黑</th></tr>
+    <tr><td>FIFA排名</td><td>第30位</td><td>第65位</td></tr>
+    <tr><td>全队身价</td><td>约2.0-2.5亿欧</td><td>约1.27-1.5亿欧</td></tr>
+    <tr><td>近10场战绩</td><td>5胜3平2负</td><td>3胜6平1负</td></tr>
+    <tr><td>近6场</td><td><span class="tag green">2胜3平0负（不败）</span></td><td><span class="tag orange">0胜6平0负（六连平）</span></td></tr>
+    <tr><td>世预赛/附加赛</td><td>中北美区直接出线</td><td>附加赛点球连克威尔士、意大利</td></tr>
+    <tr><td>场均进球(2026)</td><td>1.2球/场</td><td><span class="tag red">0.67球/场</span></td></tr>
+    <tr><td>场均失球(2026)</td><td><span class="tag green">0.4球/场</span></td><td>0.83球/场</td></tr>
+    <tr><td>零封率</td><td><span class="tag green">75%（近8场6零封）</span></td><td>33%</td></tr>
+  </table>
+
+  <div class="highlight-box orange">
+    <strong>伤病评估：</strong>
+    <p>🇨🇦 <strong>加拿大（重创）</strong>：❌ 阿方索·戴维斯（队长/左后卫，拜仁，腿筋伤，确认缺席）+ ❌ 邦比托（主力中卫，胫骨伤，移出26人名单）+ ❌ 弗洛雷斯（中场，十字韧带撕裂，赛事报销）+ ⚠️ 科内（中场核心，发烧缺席训练，首战存疑）→ 防线和中场同时重组，左路进攻体系崩塌。</p>
+    <p style="margin-top:6px;">🇧🇦 <strong>波黑（基本齐整）</strong>：✅ 全员健康，无重大缺席。⚠️ 塔巴科维奇（脚部骨折，出场存疑）。核心哲科、德米罗维奇、科拉希纳茨全勤可用。</p>
+  </div>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度二：战术体系与历史交锋</h3>
+  <table>
+    <tr><th>对比项</th><th>🇨🇦 加拿大（马希）</th><th>🇧🇦 波黑（巴尔巴雷兹）</th></tr>
+    <tr><td>主打阵型</td><td>4-4-2</td><td>4-3-3 / 4-2-3-1</td></tr>
+    <tr><td>战术风格</td><td>高位逼抢 + 直接进攻</td><td>低位防守 + 反击</td></tr>
+    <tr><td>核心进攻手段</td><td>大卫/拉林双前锋 + 边路突破</td><td>哲科支点做球 + 定位球</td></tr>
+    <tr><td>防守弱点</td><td><span class="tag red">左路瘫痪（无戴维斯）/ 临时中卫搭档</span></td><td>进攻创造力不足 / 边路防守薄弱</td></tr>
+    <tr><td>克制关系</td><td><span class="tag red">怕定位球高空轰炸（命中短板）</span></td><td><span class="tag red">怕持续高位压迫（体能消耗大）</span></td></tr>
+  </table>
+
+  <h4 style="color:#fff;margin:12px 0 8px;">历史交锋（仅友谊赛，无正赛参考价值）：</h4>
+  <table>
+    <tr><th>日期</th><th>比赛</th><th>比分</th></tr>
+    <tr><td>2018年3月</td><td>友谊赛 · 加拿大 vs 波黑</td><td><strong style="color:#e94560;">1-2</strong>（波黑胜）</td></tr>
+  </table>
+  <p style="font-size:13px;color:#78909c;margin-top:6px;">历史总交锋：仅1场，波黑友谊赛2-1取胜。8年前友谊赛参考意义极低，双方阵容已大幅更迭。</p>
+
+  <div style="margin-top:16px;">
+    <strong style="color:#fff;font-size:14px;">预测首发阵容：</strong>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;">
+      <div class="highlight-box" style="font-size:13px;">
+        <strong>🇨🇦 加拿大（4-4-2）</strong><br>
+        克雷波；约翰斯顿、科尼利厄斯、德富热罗尔、拉雷亚；布坎南、科内/埃斯塔基奥、埃斯塔基奥/奥索里奥、米勒；J·大卫、拉林
+      </div>
+      <div class="highlight-box blue" style="font-size:13px;">
+        <strong>🇧🇦 波黑（4-3-3）</strong><br>
+        瓦西利；德迪奇、卡蒂奇、哈吉卡杜尼奇、科拉希纳茨；塔希罗维奇、吉戈维奇、哈吉阿赫梅托维奇；德米罗维奇、哲科、霍季奇
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度三：2026世界杯专属环境变量</h3>
+  <table>
+    <tr><th>变量</th><th>具体情况</th><th>影响评估</th></tr>
+    <tr><td><strong>主场氛围</strong></td><td>BMO球场45,000+名加拿大球迷</td><td>巨大主场优势 ✅；加拿大28个主场仅1负</td></tr>
+    <tr><td><strong>天气状况</strong></td><td>气温20-25°C，晴朗</td><td>完美比赛条件，无极端天气干扰</td></tr>
+    <tr><td><strong>海拔高度</strong></td><td>海平面</td><td>无高原因素，体能消耗正常</td></tr>
+    <tr><td><strong>长途飞行/时差</strong></td><td>加拿大本土作战，波黑从欧洲远征</td><td>加拿大零旅行消耗 ✅；波黑跨大西洋旅行 ⚠️</td></tr>
+    <tr><td><strong>比赛时间</strong></td><td>当地时间6月12日晚场</td><td>加拿大习惯的晚间比赛节奏</td></tr>
+  </table>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度四：赛制与战意因素</h3>
+  <div class="highlight-box">
+    <p><strong>48队12组新赛制：</strong>每组前2名直接出线，8个成绩最好的小组第三亦可晋级（共32队进淘汰赛）。B组中瑞士实力最强，加拿大与波黑争夺剩余出线名额，首轮3分至关重要。</p>
+    <p style="margin-top:8px;"><strong>加拿大：</strong>必须赢球打破世界杯0胜魔咒，主场球迷期待胜利。首战若不能全取3分，后续对阵瑞士将更加被动。压力与动力并存。</p>
+    <p style="margin-top:8px;"><strong>波黑：</strong>作为独立国家首次连续两届参加世界杯，已超额完成预期。全队无包袱、心态放松。平局完全可以接受，这种"光脚不怕穿鞋"的心态反而可能让他们发挥更好。</p>
+  </div>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度五：机构与市场风向</h3>
+  <table>
+    <tr><th>指标</th><th>数值</th></tr>
+    <tr><td>欧指（即时）</td><td>加拿大胜 1.95-2.10 ｜ 平 3.25-3.40 ｜ 波黑胜 3.80-4.20</td></tr>
+    <tr><td>亚洲盘口</td><td>加拿大让0.5球，水位略降</td></tr>
+    <tr><td>大小球</td><td>初盘2.25球 → 即时维持，小球水位偏低（倾向小球）</td></tr>
+    <tr><td>综合数据模型</td><td>加拿大胜≈48% ｜ 平局≈30% ｜ 波黑胜≈22%</td></tr>
+  </table>
+  <div class="highlight-box blue" style="margin-top:10px;">
+    <strong>市场解读：</strong>博彩市场给予加拿大明确让步（约-0.5球），但赔率并未压得太低，反映机构对加拿大伤病潮的担忧。平局赔率3.25-3.40处于中高水平，但考虑到波黑6连平的"平局大师"属性，30%的平局概率并不算低。小2.5球是市场共识，双方进攻效率均不足以支撑大比分。
+  </div>
+</div>
+
+<!-- ========== 五、隐藏X因素 ========== -->
+<div class="section">
+  <div class="section-title">五、隐藏X因素</div>
+
+  <div class="arg-item" style="border-left:3px solid #ff9800;">
+    <span class="tag orange" style="margin-bottom:8px;">X1</span>
+    <strong style="color:#fff;">戴维斯缺阵 — 左路变为"死区"</strong>
+    <div class="content" style="margin-top:6px;">
+      阿方索·戴维斯的缺席不仅是防守损失，更是进攻体系的结构性破坏。他是加拿大左路进攻的第一发起点，冲刺速度和前插能力无人可替。拉雷亚替代后左路进攻将大幅萎缩，加拿大进攻变得可预测——全部集中在右路布坎南一侧。波黑可以将防守资源集中倾斜，大幅降低加拿大进攻效率。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #e94560;">
+    <span class="tag red" style="margin-bottom:8px;">X2</span>
+    <strong style="color:#fff;">哲科的告别之战 — 40岁最后一届世界杯，动力爆表</strong>
+    <div class="content" style="margin-top:6px;">
+      哲科已40岁，这是他个人第二届（几乎确定也是最后一届）世界杯。作为波黑历史最佳射手和队长，他的告别动力不可估量。在低比分比赛中，哲科的一次角球抢点、一次背身做球、一次定位球争顶都可能成为决定性瞬间。40岁的身体或许跑不动90分钟，但禁区内的嗅觉和头球技术不会退化。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #2196f3;">
+    <span class="tag blue" style="margin-bottom:8px;">X3</span>
+    <strong style="color:#fff;">加拿大世界杯魔咒压力 — 0胜6负，主场球迷既是动力也是负担</strong>
+    <div class="content" style="margin-top:6px;">
+      加拿大世界杯0胜6负的历史包袱不容忽视。45,000+名球迷的期待既是第12人，也可能成为第13人的压力。如果比赛进入60分钟仍0-0，主场球迷的焦虑情绪可能传导到场上，球员可能急于求成导致阵型前压，恰好给波黑反击空间。马希需要在"进攻求胜"和"防守稳固"之间找到精确平衡。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #4caf50;">
+    <span class="tag green" style="margin-bottom:8px;">X4</span>
+    <strong style="color:#fff;">科内体能 — 若无法出场，中场控制力骤降</strong>
+    <div class="content" style="margin-top:6px;">
+      伊斯梅尔·科内因发烧缺席赛前训练，首战存疑。他是加拿大中场核心，承担组织调度和攻防转换枢纽角色。若无法出场，埃斯塔基奥将承担更多组织责任，但中场整体控制力和节奏把握能力将明显下降。波黑中场塔希罗维奇+吉戈维奇的硬度组合可能在中场争夺中占据上风。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 六、总结 ========== -->
+<div class="section">
+  <div class="section-title">六、总结：四种最可能剧本</div>
+
+  <div style="margin-top:12px;">
+    <div class="highlight-box green">
+      <strong>🟢 剧本A（概率35%）：加拿大 1-0</strong>
+      <p style="margin-top:6px;">加拿大高位逼抢制造早期机会，大卫或拉林破门。波黑全力反扑但无法突破加拿大铁壁防线。低比分、高紧张度的比赛，加拿大终于迎来世界杯历史首胜。马希的防守体系经受住考验。</p>
+    </div>
+    <div class="highlight-box" style="border-left-color:#2196f3;">
+      <strong>🔵 剧本B（概率28%）：平局 1-1</strong>
+      <p style="margin-top:6px;">加拿大主导比赛但无法终结悬念，波黑通过定位球由哲科头球破门先拔头筹。加拿大凭借大卫或自身定位球扳平。双方各取1分——加拿大世界杯不胜魔咒延续，波黑7连平。</p>
+    </div>
+    <div class="highlight-box" style="border-left-color:#ff9800;">
+      <strong>🟡 剧本C（概率18%）：加拿大 2-0</strong>
+      <p style="margin-top:6px;">加拿大实力全面碾压。大卫早早破门，下半场再入一球锁定胜局。波黑进攻被完全压制，哲科孤立无援。东道主用一场声明式胜利宣告崛起。</p>
+    </div>
+    <div class="highlight-box" style="border-left-color:#e94560;">
+      <strong>🔴 冷门剧本D（概率19%）：波黑 1-0 或 1-2</strong>
+      <p style="margin-top:6px;">加拿大临时中卫搭档在哲科的高空轰炸下暴露破绽，哲科定位球头球破门。波黑深度防守+反击，加拿大世界杯魔咒继续。"僵尸队"再次展现不死韧性，从多伦多带走3分。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 七、前次预测经验教训应用 ========== -->
+<div class="section">
+  <div class="section-title">七、前次预测经验教训应用</div>
+
+  <div class="arg-item" style="border-left:3px solid #4fc3f7;">
+    <span class="tag blue" style="margin-bottom:8px;">E01</span>
+    <strong style="color:#fff;">首轮比赛谨慎原则</strong>
+    <div class="content" style="margin-top:6px;">
+      世界杯小组赛首轮，双方均倾向保守。本场加拿大虽有主场优势，但伤病潮限制了进攻上限；波黑更是以防守为根基。低比分格局（1-2球）是大概率事件，已充分纳入预测模型。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #4fc3f7;">
+    <span class="tag blue" style="margin-bottom:8px;">E02</span>
+    <strong style="color:#fff;">替补球员影响力</strong>
+    <div class="content" style="margin-top:6px;">
+      拉林若未首发，下半场替补登场后的冲击力将成为加拿大打破僵局的关键武器。波黑方面，替补席深度有限，但哈里斯·塔巴科维奇若能出场，可能提供额外的进攻选择。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #4fc3f7;">
+    <span class="tag blue" style="margin-bottom:8px;">E05</span>
+    <strong style="color:#fff;">平局概率校准</strong>
+    <div class="content" style="margin-top:6px;">
+      尽管波黑6连平的"平局大师"属性令人印象深刻，但未过度加权平局概率。30%的平局概率已充分考虑波黑的韧性，但加拿大主场优势和实力差距使得加拿大胜仍是首选。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #4fc3f7;">
+    <span class="tag blue" style="margin-bottom:8px;">E06</span>
+    <strong style="color:#fff;">防守伤病分层评估</strong>
+    <div class="content" style="margin-top:6px;">
+      加拿大的伤病（戴维斯、邦比托）主要影响"失球风险"而非"比赛结果"。临时中卫搭档意味着加拿大更可能丢球，但马希的防守体系和主场优势仍足以支撑小胜。伤病影响已体现在比分预测（1-0而非2-0）而非结果预测中。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #4fc3f7;">
+    <span class="tag blue" style="margin-bottom:8px;">E07</span>
+    <strong style="color:#fff;">定位球威胁专项标注</strong>
+    <div class="content" style="margin-top:6px;">
+      哲科的头球能力从角球和任意球中特别标注。加拿大临时中卫搭档（科尼利厄斯+德富热罗尔）缺乏默契，定位球防守时的人盯人分配可能出现漏洞。这是波黑最现实的破门路径，已在剧本推演中重点体现。
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  本报告基于公开数据源（FIFA官网、转会市场、主流赔率机构、官方伤停公告）综合研判<br>
+  所有数据截至北京时间2026年6月12日 ｜ 临场阵容变化可能影响最终结果<br>
+  报告制作：资深国际足球数据分析师 &amp; 战术专家 ｜ 2026年6月12日
+</div>
+
+</div>
+</body>
+</html>
