@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026美加墨世界杯 A组第1轮 — 韩国 VS 捷克 深度前瞻</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif; background: #0a0e17; color: #e0e0e0; line-height: 1.75; padding: 24px; }
+  .container { max-width: 900px; margin: 0 auto; background: #131a2b; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 40px rgba(0,0,0,.5); }
+  .header { background: linear-gradient(135deg, #1a2744 0%, #0f3460 50%, #1a2744 100%); padding: 40px 36px 28px; text-align: center; border-bottom: 3px solid #e94560; }
+  .header h1 { font-size: 28px; color: #fff; letter-spacing: 2px; }
+  .header .subtitle { font-size: 15px; color: #90a4ae; margin-top: 8px; }
+  .match-bar { display: flex; justify-content: center; align-items: center; gap: 36px; padding: 24px 36px; background: #1a2332; }
+  .match-bar .team { text-align: center; }
+  .match-bar .team .flag { font-size: 48px; }
+  .match-bar .team .name { font-size: 20px; font-weight: 700; color: #fff; margin-top: 6px; }
+  .match-bar .vs { font-size: 22px; color: #e94560; font-weight: 900; }
+  .match-info { text-align: center; padding: 6px; font-size: 13px; color: #78909c; background: #1a2332; }
+  .section { padding: 28px 36px; border-bottom: 1px solid #1e2d42; }
+  .section:last-child { border-bottom: none; }
+  .section-title { font-size: 20px; font-weight: 700; color: #e94560; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section-title::before { content: ''; display: inline-block; width: 4px; height: 22px; background: #e94560; border-radius: 2px; }
+
+  .prediction-card { background: linear-gradient(135deg, #1e3a5f, #1a2744); border: 1px solid #2a4a7f; border-radius: 12px; padding: 24px; margin: 16px 0; }
+  .prediction-card .main-result { font-size: 26px; font-weight: 800; color: #4fc3f7; text-align: center; margin-bottom: 8px; }
+  .prediction-card .scores { text-align: center; font-size: 16px; color: #b0bec5; }
+  .confidence { display: flex; justify-content: center; gap: 4px; margin-top: 12px; }
+  .confidence .star { color: #ffc107; font-size: 22px; }
+  .confidence .star.empty { color: #455a64; }
+
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  th, td { padding: 10px 12px; text-align: center; border-bottom: 1px solid #1e2d42; }
+  th { background: #1a2744; color: #4fc3f7; font-weight: 600; }
+  td { color: #b0bec5; }
+  tr:hover td { background: rgba(79,195,247,.04); }
+
+  .highlight-box { background: #1a2332; border-left: 4px solid #e94560; padding: 16px 20px; margin: 12px 0; border-radius: 0 8px 8px 0; }
+  .highlight-box.green { border-left-color: #4caf50; }
+  .highlight-box.blue { border-left-color: #2196f3; }
+  .highlight-box.orange { border-left-color: #ff9800; }
+  .highlight-box strong { color: #fff; }
+
+  .arg-item { background: #1a2332; padding: 16px 20px; border-radius: 8px; margin-bottom: 10px; }
+  .arg-item .num { display: inline-block; width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 50%; background: #e94560; color: #fff; font-weight: 700; font-size: 14px; margin-right: 10px; flex-shrink: 0; }
+  .arg-item .content { color: #b0bec5; font-size: 14px; }
+
+  .timeline { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin: 12px 0; }
+  .timeline .slot { background: #1a2332; padding: 10px 18px; border-radius: 8px; text-align: center; min-width: 140px; }
+  .timeline .slot .time { font-size: 13px; color: #78909c; }
+  .timeline .slot .event { font-size: 15px; color: #4fc3f7; font-weight: 600; }
+
+  .tag { display: inline-block; padding: 2px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; margin: 2px 4px; }
+  .tag.red { background: rgba(233,69,96,.15); color: #e94560; }
+  .tag.green { background: rgba(76,175,80,.15); color: #4caf50; }
+  .tag.blue { background: rgba(33,150,243,.15); color: #2196f3; }
+  .tag.orange { background: rgba(255,152,0,.15); color: #ff9800; }
+
+  .footer { text-align: center; padding: 20px; font-size: 12px; color: #546e7a; }
+  .divider { border: none; border-top: 1px solid #1e2d42; margin: 16px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ========== 头部 ========== -->
+<div class="header">
+  <h1>⚽ 2026 FIFA 世界杯 — A组第1轮 深度前瞻</h1>
+  <div class="subtitle">国际足球数据分析师 &amp; 战术专家 | 五维体系评估报告</div>
+</div>
+
+<div class="match-bar">
+  <div class="team">
+    <div class="flag">🇰🇷</div>
+    <div class="name">韩国</div>
+    <div style="font-size:12px;color:#78909c;margin-top:4px;">FIFA排名 #25</div>
+  </div>
+  <div class="vs">VS</div>
+  <div class="team">
+    <div class="flag">🇨🇿</div>
+    <div class="name">捷克</div>
+    <div style="font-size:12px;color:#78909c;margin-top:4px;">FIFA排名 #39</div>
+  </div>
+</div>
+<div class="match-info">北京时间 2026年6月12日 10:00 ｜ 墨西哥瓜达拉哈拉·阿克伦体育场（海拔≈1566m）｜ 主裁判：奥马尔（埃及）</div>
+
+<!-- ========== 一、核心结论 ========== -->
+<div class="section">
+  <div class="section-title">一、核心结论先行</div>
+
+  <div class="prediction-card">
+    <div class="main-result">预测结果：平局（次选 韩国小胜）</div>
+    <div class="scores">
+      最可能比分（按概率排序）：<strong style="color:#4fc3f7;">1-1</strong> &gt; <strong style="color:#4fc3f7;">2-1（韩国）</strong> &gt; <strong style="color:#4fc3f7;">1-0（韩国）</strong>
+    </div>
+    <div class="confidence">
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span>
+      <span style="margin-left:8px;font-size:14px;color:#b0bec5;">信心指数：★★★☆☆（中等偏上）</span>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px;">
+    <div style="text-align:center;background:#1a2332;padding:16px;border-radius:10px;">
+      <div style="font-size:32px;font-weight:800;color:#4caf50;">38%</div>
+      <div style="font-size:13px;color:#78909c;margin-top:4px;">平局概率</div>
+    </div>
+    <div style="text-align:center;background:#1a2332;padding:16px;border-radius:10px;">
+      <div style="font-size:32px;font-weight:800;color:#2196f3;">40%</div>
+      <div style="font-size:13px;color:#78909c;margin-top:4px;">韩国胜概率</div>
+    </div>
+    <div style="text-align:center;background:#1a2332;padding:16px;border-radius:10px;">
+      <div style="font-size:32px;font-weight:800;color:#e94560;">22%</div>
+      <div style="font-size:13px;color:#78909c;margin-top:4px;">捷克胜概率</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="font-size:14px;color:#b0bec5;line-height:1.9;">
+    <strong style="color:#fff;">进球数区间预测：</strong>1-3球（倾向2球）｜ <strong style="color:#fff;">半全场：</strong>平-胜（首选）/ 平-平（次选）｜ <strong style="color:#fff;">大小球：</strong>小2.5球（机构盘口已从2.25降至2球，小球水位偏低）
+  </div>
+</div>
+
+<!-- ========== 二、深度逻辑拆解 ========== -->
+<div class="section">
+  <div class="section-title">二、深度逻辑拆解 — 四大核心论据</div>
+
+  <!-- 论据1 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">1</span>
+    <strong style="color:#fff;font-size:16px;">韩国防线核心临时伤缺 — 高空防空体系被"打穿地基"</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>主力中卫<strong>曹侑珉</strong>在对阵特立尼达和多巴哥的热身赛中右脚足底筋膜撕裂，确认无缘整届世界杯。他是世预赛全勤主力，与金玟哉长期搭档形成默契。更严重的是，赛前训练中<strong>金泰贤</strong>（主力中卫/左中卫）左脚踝扭伤，首战确定缺阵。短短10天内，韩国两大中卫同时伤退，仅剩<strong>金玟哉</strong>（拜仁）+ 临阵补招的21岁小将<strong>赵伟济</strong>（仅2次国家队出场）搭档防线。</p>
+      <p style="margin-top:8px;">捷克恰恰是本届世界杯<strong>高空能力最强的球队之一</strong>：希克（191cm）、绍切克（192cm）、克雷伊奇（189cm）组成"三高核心"，全队8名外场球员身高超190cm，近40%进球来自定位球。赵伟济面对这种空中轰炸，经验与对抗能力存在明显短板。</p>
+      <div class="highlight-box orange" style="margin-top:10px;">
+        <strong>关键事实：</strong>韩国近5场热身赛被对手头球打入4球，防空隐患已多次暴露；本场捷克定位球+边路传中战术恰好命中韩国"命门"。
+      </div>
+    </div>
+  </div>
+
+  <!-- 论据2 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">2</span>
+    <strong style="color:#fff;font-size:16px;">节奏错配 — 捷克"开局猛攻型"vs 韩国"慢热后发型"</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>数据模型揭示了一个极具价值的节奏差异：</p>
+      <table>
+        <tr><th>指标</th><th>韩国</th><th>捷克</th></tr>
+        <tr><td>上半场场均进球</td><td>0.5球</td><td><strong style="color:#e94560;">1.3球</strong></td></tr>
+        <tr><td>下半场场均进球</td><td><strong style="color:#4caf50;">1.0球</strong></td><td>0.6球</td></tr>
+        <tr><td>射门进球效率</td><td>6.7次/球（14.9%）</td><td>7.3次/球（13.7%）</td></tr>
+        <tr><td>场均射门次数</td><td>10.1次</td><td>13.8次</td></tr>
+        <tr><td>场均失球</td><td>1.2球</td><td>0.8球</td></tr>
+      </table>
+      <p style="margin-top:8px;">捷克是典型的<strong>"前30分钟闪电战"</strong>球队，若控球率推到54.6%以上即为其进球窗口；韩国则是<strong>"60分钟后发力"</strong>的慢热型。这一节奏错配意味着：上半场捷克大概率先声夺人，韩国在下半场利用体能优势反扑。若双方各抓住一个窗口，最自然的剧本就是 <strong style="color:#4fc3f7;">1-1 握手言和</strong>。</p>
+    </div>
+  </div>
+
+  <!-- 论据3 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">3</span>
+    <strong style="color:#fff;font-size:16px;">高原适应 + 年龄差 — 下半场体能天平倒向韩国</strong>
+    <div class="content" style="margin-top:8px;">
+      <p><strong>高原适应：</strong>瓜达拉哈拉海拔约1566米，球速加快，空气含氧量降低约15%。韩国队提前24天抵达盐湖城（海拔约1400米）进行针对性高原集训，主帅洪明甫对高原训练成果表示"非常满意"。捷克仅赛前5天入驻，全队平均年龄28.7岁，多名核心超过30岁（绍切克31岁、希克30岁、达里达35岁），高原环境下70分钟后体能下滑几乎是必然。</p>
+      <div class="highlight-box green" style="margin-top:10px;">
+        <strong>隐性优势：</strong>韩国平均年龄26.3岁，较捷克年轻2.4岁。60分钟后韩国替补席的体能储备与冲击力将成为决定性因素。韩国足协开出"晋级8强奖励30亿韩元（约合1347万元人民币）"的悬赏，士气激励充分。
+      </div>
+    </div>
+  </div>
+
+  <!-- 论据4 -->
+  <div class="arg-item" style="margin-bottom:14px;">
+    <span class="num">4</span>
+    <strong style="color:#fff;font-size:16px;">捷克的"硬仗心理"vs 韩国的"强队软肋"</strong>
+    <div class="content" style="margin-top:8px;">
+      <p>捷克从欧洲区附加赛突围，两轮均鏖战至点球大战，先后爆冷淘汰爱尔兰与丹麦，展现出极强的心理韧性和抗压能力。74岁老帅库贝克临危接手，全队的战术纪律性（场均犯规17.1次，但红黄牌仅0.9张）极为出色，说明犯规多发生在边路推进区而非防守核心区域。</p>
+      <p style="margin-top:8px;">然而，韩国面对顶级身体对抗时防线崩盘的前例并不鲜见：2026年3月热身赛0-4惨败科特迪瓦、1月0-3负乌拉圭。虽然近两场热身赛5-0和1-0连胜零封，但对手实力偏弱，数据存在"泡沫"。<strong>当高质量对抗+防空短板同时出现时，韩国防线承受巨大考验。</strong></p>
+      <div class="highlight-box blue" style="margin-top:10px;">
+        <strong>综合判断：</strong>韩国纸面实力（FIFA排名、身价、旅欧人数）占优，但捷克在心理韧性、防空高度、阵容完整度三方面形成对冲。双方都不能输，首战大概率谨慎开局，定位球将决定最终走向。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 三、进球剧本推演 ========== -->
+<div class="section">
+  <div class="section-title">三、进球剧本推演</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+    <div class="highlight-box">
+      <strong>总进球数区间：</strong><span style="color:#4fc3f7;font-size:18px;">1-3球</span><br>
+      <span style="font-size:13px;color:#b0bec5;">倾向2球，大小球盘口2球小球水位偏低</span>
+    </div>
+    <div class="highlight-box green">
+      <strong>最可能比分：</strong><span style="color:#4caf50;font-size:18px;">1-1</span><br>
+      <span style="font-size:13px;color:#b0bec5;">双方各抓住一个得分窗口</span>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;">
+    <strong style="color:#fff;font-size:16px;margin-bottom:12px;display:block;">进球时间轴推演：</strong>
+    <div class="timeline">
+      <div class="slot" style="border-left:3px solid #e94560;">
+        <div class="time">0'-30'</div>
+        <div class="event">捷克猛攻窗口</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">定位球/头球威胁</div>
+      </div>
+      <div class="slot" style="border-left:3px solid #ff9800;">
+        <div class="time">30'-60'</div>
+        <div class="event">战术博弈期</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">双方调整节奏</div>
+      </div>
+      <div class="slot" style="border-left:3px solid #2196f3;">
+        <div class="time">60'-80'</div>
+        <div class="event">韩国发力窗口</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">体能优势+反击提速</div>
+      </div>
+      <div class="slot" style="border-left:3px solid #4caf50;">
+        <div class="time">80'-90+'</div>
+        <div class="event">决胜/绝平阶段</div>
+        <div style="font-size:12px;color:#78909c;margin-top:4px;">替补登场/定位球</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;">
+    <strong style="color:#fff;font-size:16px;">关键破门球员预测：</strong>
+    <table style="margin-top:10px;">
+      <tr><th>球员</th><th>球队</th><th>破门方式</th><th>概率评估</th></tr>
+      <tr><td><strong>孙兴慜</strong></td><td>🇰🇷 韩国</td><td>左路内切远射 / 反击单刀</td><td><span class="tag red">高</span></td></tr>
+      <tr><td><strong>希克</strong></td><td>🇨🇿 捷克</td><td>头球 / 定位球抢点</td><td><span class="tag red">高</span></td></tr>
+      <tr><td><strong>绍切克</strong></td><td>🇨🇿 捷克</td><td>角球后插上头球</td><td><span class="tag orange">中</span></td></tr>
+      <tr><td><strong>曹圭成</strong></td><td>🇰🇷 韩国</td><td>门前抢点 / 二点补射</td><td><span class="tag orange">中</span></td></tr>
+      <tr><td><strong>黄喜灿</strong></td><td>🇰🇷 韩国</td><td>右肋突破后射门</td><td><span class="tag blue">中低</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ========== 四、五维评估详情 ========== -->
+<div class="section">
+  <div class="section-title">四、五维评估详情</div>
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度一：球队基本面与近期状态</h3>
+  <table>
+    <tr><th>指标</th><th>🇰🇷 韩国</th><th>🇨🇿 捷克</th></tr>
+    <tr><td>FIFA排名</td><td>第25位</td><td>第39位</td></tr>
+    <tr><td>全队身价</td><td>约1.4-2.1亿欧</td><td>约1.09-1.8亿欧</td></tr>
+    <tr><td>近10场战绩</td><td>5胜1平4负</td><td>5胜3平2负</td></tr>
+    <tr><td>近6场</td><td>4胜2负</td><td><span class="tag green">4胜2平（不败）</span></td></tr>
+    <tr><td>世预赛战绩</td><td><span class="tag green">10战7胜3平（亚洲唯一不败）</span></td><td>附加赛点球连克爱尔兰、丹麦</td></tr>
+    <tr><td>场均进球(2026)</td><td>2.0球/场</td><td>1.5球/场</td></tr>
+    <tr><td>场均失球(2026)</td><td>2.67球/场</td><td><span class="tag green">0.83球/场</span></td></tr>
+    <tr><td>零封率</td><td>50%</td><td><span class="tag green">67%</span></td></tr>
+  </table>
+
+  <div class="highlight-box orange">
+    <strong>伤病评估：</strong>
+    <p>🇰🇷 <strong>韩国（防线重创）</strong>：曹侑珉（主力中卫，足底筋膜撕裂，整届报销）+ 金泰贤（左中卫，脚踝扭伤，首战缺阵）→ 防线临时重组，默契度归零。</p>
+    <p style="margin-top:6px;">🇨🇿 <strong>捷克（基本齐整）</strong>：库赫塔（前锋，踝扭伤，首战缺阵）；赫洛热克伤愈归队。核心希克、绍切克、曹法尔全勤。</p>
+  </div>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度二：战术体系与历史交锋</h3>
+  <table>
+    <tr><th>对比项</th><th>🇰🇷 韩国（洪明甫）</th><th>🇨🇿 捷克（库贝克）</th></tr>
+    <tr><td>主打阵型</td><td>4-2-3-1 / 3-4-3</td><td>3-4-2-1 / 3-4-3</td></tr>
+    <tr><td>战术风格</td><td>高位逼抢 + 高速反击</td><td>低位防守 + 高空轰炸</td></tr>
+    <tr><td>核心进攻手段</td><td>边路突破 + 肋部穿插 + 孙兴慜内切</td><td>边路传中 + 定位球（占40%进球）</td></tr>
+    <tr><td>防守弱点</td><td><span class="tag red">防空薄弱 / 定位球防守漏洞</span></td><td>边路回追慢 / 地面渗透弱</td></tr>
+    <tr><td>克制关系</td><td><span class="tag red">怕高空轰炸（命中短板）</span></td><td><span class="tag red">怕连续高速突破</span></td></tr>
+  </table>
+
+  <h4 style="color:#fff;margin:12px 0 8px;">历史交锋（仅友谊赛，无正赛参考价值）：</h4>
+  <table>
+    <tr><th>日期</th><th>比赛</th><th>比分</th></tr>
+    <tr><td>1998年5月</td><td>友谊赛 · 韩国 vs 捷克</td><td>2-2</td></tr>
+    <tr><td>2001年8月</td><td>友谊赛 · 捷克 vs 韩国</td><td><strong style="color:#e94560;">5-0</strong>（捷克大胜）</td></tr>
+    <tr><td>2016年6月</td><td>友谊赛 · 捷克 vs 韩国</td><td>1-2（韩国胜）</td></tr>
+  </table>
+  <p style="font-size:13px;color:#78909c;margin-top:6px;">历史总交锋：1胜1平1负，平分秋色。但阵容已大幅更迭，仅孙兴慜等少数老将留存，参考意义有限。</p>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度三：2026世界杯专属环境变量</h3>
+  <table>
+    <tr><th>变量</th><th>具体情况</th><th>影响评估</th></tr>
+    <tr><td><strong>海拔高度</strong></td><td>瓜达拉哈拉海拔≈1566m（中等海拔）</td><td>韩国提前24天高原集训 ✅；捷克仅赛前5天入驻 ⚠️</td></tr>
+    <tr><td><strong>天气状况</strong></td><td>气温21-27°C，湿度74-88%，降雨概率64%</td><td>湿热环境加速体能消耗；捷克高龄阵容下半场承压更大</td></tr>
+    <tr><td><strong>场地草皮</strong></td><td>偏硬草皮</td><td>有利于韩国地面快速传切；对捷克高空传中落点控制略有不利</td></tr>
+    <tr><td><strong>长途飞行/时差</strong></td><td>两队均跨洲旅行至墨西哥</td><td>韩国提前抵达适应，时差影响已消除；捷克近期行程密集，疲劳积累略多</td></tr>
+    <tr><td><strong>裁判风格</strong></td><td>埃及裁判奥马尔 · 吹罚尺度宽松</td><td>对主打身体缠斗的捷克有利；犯规不易吃到红黄牌</td></tr>
+  </table>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度四：赛制与战意因素</h3>
+  <div class="highlight-box">
+    <p><strong>48队12组新赛制：</strong>每组前2名直接出线，8个成绩最好的小组第三亦可晋级（共32队进淘汰赛）。A组中墨西哥（东道主）基本锁定头名，韩国与捷克争夺剩余一个直接出线名额，首轮3分至关重要。</p>
+    <p style="margin-top:8px;"><strong>韩国：</strong>连续12届参赛，大赛经验丰富。孙兴慜最后一届世界杯，全队荣誉驱动极强。首战必须拿分，否则出线形势被动。</p>
+    <p style="margin-top:8px;"><strong>捷克：</strong>时隔20年重返世界杯，全队无包袱、心态放松。附加赛两轮点球闯关展现出的心理韧性，使其在高压环境下反而可能超水平发挥。</p>
+  </div>
+
+  <hr class="divider">
+
+  <h3 style="color:#4fc3f7;font-size:16px;margin:16px 0 8px;">维度五：机构与市场风向</h3>
+  <table>
+    <tr><th>指标</th><th>数值</th></tr>
+    <tr><td>欧指（即时）</td><td>韩国胜 2.05-2.40 ｜ 平 3.30-3.60 ｜ 捷克胜 2.57-3.90</td></tr>
+    <tr><td>亚洲盘口</td><td>初盘平手（韩国低水），即时韩国让0.25球，水位略降</td></tr>
+    <tr><td>大小球</td><td>初盘2.25球 → 即时降至2球，小球水位0.80-0.86（倾向小球）</td></tr>
+    <tr><td>Opta概率模型</td><td>韩国小组头名21.52% ｜ 捷克小组头名17.44%</td></tr>
+    <tr><td>综合数据模型</td><td>韩国胜≈40% ｜ 平局≈36% ｜ 捷克胜≈24%</td></tr>
+  </table>
+  <div class="highlight-box blue" style="margin-top:10px;">
+    <strong>市场解读：</strong>博彩市场对韩国仅给予微弱让步（约+0.25球），反映机构对韩国硬实力的不完全信任。平局赔率3.30-3.60显著低于正常分布，约36-38%的平局概率是本届小组赛首轮中排名前列的高平局预期。资金面从客胜向主/平倾斜，但平局热度持续走高。
+  </div>
+</div>
+
+<!-- ========== 五、隐藏X因素 ========== -->
+<div class="section">
+  <div class="section-title">五、隐藏X因素</div>
+
+  <div class="arg-item" style="border-left:3px solid #ff9800;">
+    <span class="tag orange" style="margin-bottom:8px;">X1</span>
+    <strong style="color:#fff;">降雨概率偏高 — 技术流打折扣</strong>
+    <div class="content" style="margin-top:6px;">
+      比赛日瓜达拉哈拉降雨概率达64%，场地可能湿滑。这将降低地面传控的精准度，间接削弱韩国的技术流优势，同时高空球受天气影响较小，对捷克定位球战术的干扰反而有限。若开场即有降雨，平局概率进一步上升。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #e94560;">
+    <span class="tag red" style="margin-bottom:8px;">X2</span>
+    <strong style="color:#fff;">红黄牌变量 — 宽松尺度下的"犯规博弈"</strong>
+    <div class="content" style="margin-top:6px;">
+      捷克场均犯规17.1次（远高于韩国的11.8次），但裁判奥马尔吹罚尺度宽松。如果裁判对捷克的中圈高压逼抢和身体对抗"睁一只眼闭一只眼"，李刚仁在中圈弧顶的拿球空间将被严重压缩，韩国进攻导线可能被切断。反之，若裁判突然收紧尺度，捷克可能因累积黄牌而变得保守。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #2196f3;">
+    <span class="tag blue" style="margin-bottom:8px;">X3</span>
+    <strong style="color:#fff;">孙兴慜体能管控 — 33岁的"最后一舞"</strong>
+    <div class="content" style="margin-top:6px;">
+      孙兴慜已33岁，这是他个人第五届（也是最后一届）世界杯。在湿热高原环境下，他的体能分配将直接影响全场走势。洪明甫需在前60分钟保存他的体力，60分钟后再让其主导反击。若过早消耗殆尽，韩国进攻质量将大幅下降。
+    </div>
+  </div>
+
+  <div class="arg-item" style="border-left:3px solid #4caf50;">
+    <span class="tag green" style="margin-bottom:8px;">X4</span>
+    <strong style="color:#fff;">捷克世界杯经验匮乏 — 首战心理波动</strong>
+    <div class="content" style="margin-top:6px;">
+      捷克全队26人平均仅1.1场世界杯正赛经验，自2006年以来无人参加过世界杯。首战面对数万观众的紧张氛围，年轻球员可能出现心理波动。附加赛点球大战积累的韧性固然可贵，但世界杯首战的未知压力仍是不可忽视的变量。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 六、三条线总结 ========== -->
+<div class="section">
+  <div class="section-title">六、总结：三种最可能剧本</div>
+
+  <div style="margin-top:12px;">
+    <div class="highlight-box green">
+      <strong>🟢 剧本A（概率38%）：平局 1-1</strong>
+      <p style="margin-top:6px;">上半场捷克利用定位球/希克头球先声夺人（1-0），下半场韩国凭借体能优势+孙兴慜反击扳平（1-1）。双方各拿1分，符合首轮谨慎格局。</p>
+    </div>
+    <div class="highlight-box" style="border-left-color:#2196f3;">
+      <strong>🔵 剧本B（概率35%）：韩国小胜 2-1</strong>
+      <p style="margin-top:6px;">韩国限制住捷克定位球，上半场0-0闷平。下半场60分钟后韩国提速反击，孙兴慜+曹圭成先后破门（2-0），捷克最后时刻定位球追回一球（2-1）。韩国凭借高原适应和年轻体能锁定胜局。</p>
+    </div>
+    <div class="highlight-box" style="border-left-color:#ff9800;">
+      <strong>🟡 剧本C（概率15%）：韩国小胜 1-0</strong>
+      <p style="margin-top:6px;">全场闷战，捷克定位球被韩国严密防守化解。韩国在下半场由孙兴慜个人能力打入制胜球。裁判宽松尺度下，捷克犯规虽多但未能转化为进球机会。</p>
+    </div>
+    <div class="highlight-box" style="border-left-color:#e94560;">
+      <strong>🔴 冷门剧本D（概率12%）：捷克胜 1-2</strong>
+      <p style="margin-top:6px;">韩国中卫临时组合在捷克连续高空轰炸中崩溃，希克+绍切克各入一球。韩国虽有反击但效率不足。捷克带着3分走出瓜达拉哈拉。</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  本报告基于公开数据源（FIFA官网、转会市场、主流赔率机构、气象数据、官方伤停公告）综合研判<br>
+  所有数据截至北京时间2026年6月11日23:00 ｜ 临场阵容变化可能影响最终结果<br>
+  报告制作：资深国际足球数据分析师 &amp; 战术专家 ｜ 2026年6月12日
+</div>
+
+</div>
+</body>
+</html>
