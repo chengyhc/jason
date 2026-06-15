@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科特迪瓦 VS 厄瓜多尔 — 2026世界杯深度前瞻</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --text-primary: #e8e8ed;
+            --text-secondary: #9898a8;
+            --text-muted: #5c5c6e;
+            --accent-gold: #d4a843;
+            --accent-ivory: #f5a623;
+            --accent-ecuador: #0038a8;
+            --border-color: #2a2a3a;
+            --success: #3dd68c;
+            --warning: #f5a623;
+            --danger: #e53935;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .match-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+        .match-date {
+            font-size: 14px;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        .match-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #ffffff 0%, #b8b8c8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .match-subtitle { font-size: 16px; color: var(--text-secondary); }
+        .teams-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .team { text-align: center; }
+        .team-badge {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 48px;
+        }
+        .team-ivory .team-badge {
+            background: linear-gradient(135deg, #f5a623 0%, #e8920d 100%);
+            border: 3px solid #fff;
+        }
+        .team-ecuador .team-badge {
+            background: linear-gradient(135deg, #0038a8 0%, #0050d4 100%);
+            border: 3px solid #fcd116;
+        }
+        .team-name { font-size: 24px; font-weight: 700; margin-bottom: 5px; }
+        .team-group { font-size: 13px; color: var(--text-muted); }
+        .vs-divider { font-size: 28px; font-weight: 300; color: var(--text-muted); }
+        .prediction-summary {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .summary-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .summary-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+        .prediction-main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        .prediction-card {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .prediction-card.primary {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 20px rgba(212, 168, 67, 0.15);
+        }
+        .prediction-card:hover { transform: translateY(-2px); }
+        .prediction-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .prediction-score { font-size: 36px; font-weight: 700; margin-bottom: 5px; }
+        .prediction-team { font-size: 14px; color: var(--text-secondary); }
+        .prediction-prob { font-size: 20px; font-weight: 600; color: var(--accent-gold); }
+        .dimensions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+        .dimension-item {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 3px solid var(--accent-gold);
+        }
+        .dimension-name { font-size: 12px; color: var(--text-muted); margin-bottom: 5px; }
+        .dimension-value { font-size: 18px; font-weight: 600; }
+        .dimension-bar {
+            height: 6px;
+            background: var(--bg-primary);
+            border-radius: 3px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+        .dimension-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+        .fill-ivory { background: linear-gradient(90deg, #f5a623, #e8920d); }
+        .fill-ecuador { background: linear-gradient(90deg, #0038a8, #0050d4); }
+        .fill-neutral { background: linear-gradient(90deg, var(--accent-gold), #e8c068); }
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title .icon { font-size: 20px; }
+        .team-analysis {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .team-block {
+            padding: 20px;
+            border-radius: 10px;
+            background: var(--bg-secondary);
+        }
+        .team-block h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .team-ivory h4 { color: #f5a623; }
+        .team-ecuador h4 { color: #4da6ff; }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+        }
+        .stat-row:last-child { border-bottom: none; }
+        .stat-label { color: var(--text-secondary); }
+        .stat-value { font-weight: 600; }
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .player-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+        }
+        .player-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .player-info h5 { font-size: 14px; margin-bottom: 2px; }
+        .player-info span { font-size: 12px; color: var(--text-muted); }
+        .player-role {
+            margin-left: auto;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+        }
+        .tactical-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .tactical-block {
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+        }
+        .tactical-block h4 {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: var(--accent-gold);
+        }
+        .tactical-list { list-style: none; }
+        .tactical-list li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .tactical-list li:last-child { border-bottom: none; }
+        .tactical-list li::before {
+            content: '●';
+            color: var(--accent-gold);
+            font-size: 8px;
+            margin-top: 6px;
+        }
+        .script-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .script-timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+        .script-item {
+            position: relative;
+            padding: 15px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .script-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 20px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            border: 2px solid var(--bg-primary);
+        }
+        .script-time { font-size: 12px; color: var(--accent-gold); margin-bottom: 5px; }
+        .script-title { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+        .script-desc { font-size: 13px; color: var(--text-secondary); }
+        .factors-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .factor-card {
+            padding: 15px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border-left: 3px solid var(--warning);
+        }
+        .factor-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--warning);
+        }
+        .factor-desc { font-size: 13px; color: var(--text-secondary); }
+        .lessons-list { list-style: none; }
+        .lesson-item {
+            padding: 12px 15px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .lesson-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        .lesson-icon.new { color: var(--success); }
+        .lesson-icon.validate { color: var(--accent-gold); }
+        .lesson-text { font-size: 14px; color: var(--text-secondary); }
+        .prob-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .prob-table th, .prob-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .prob-table th {
+            color: var(--text-muted);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .prob-table td { font-size: 14px; }
+        .prob-table .score { font-weight: 700; font-size: 16px; }
+        .prob-table .prob { color: var(--accent-gold); font-weight: 600; }
+        .injury-box {
+            padding: 15px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .injury-box h5 {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .injury-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .injury-out { color: var(--danger); }
+        .injury-doubt { color: var(--warning); }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            font-size: 12px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 30px;
+        }
+        @media (max-width: 768px) {
+            .match-title { font-size: 24px; }
+            .teams-container { gap: 30px; flex-direction: column; }
+            .vs-divider { display: none; }
+            .prediction-main { grid-template-columns: 1fr; }
+            .team-analysis { grid-template-columns: 1fr; }
+            .tactical-grid { grid-template-columns: 1fr; }
+            .factors-grid { grid-template-columns: 1fr; }
+            .players-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="match-header">
+        <div class="match-date">2026年6月15日 07:00 北京时间</div>
+        <h1 class="match-title">科特迪瓦 VS 厄瓜多尔</h1>
+        <p class="match-subtitle">2026世界杯E组第1轮 · 费城体育场 · 锐矛对坚盾</p>
+    </header>
+
+    <main class="container">
+        <!-- Prediction Summary -->
+        <section class="prediction-summary">
+            <h2 class="summary-title">预测结论</h2>
+            <div class="prediction-main">
+                <div class="prediction-card primary">
+                    <div class="prediction-label">首选预测</div>
+                    <div class="prediction-score">1-1 平局</div>
+                    <div class="prediction-team">首战谨慎，攻守相抵</div>
+                    <div class="prediction-prob">35%</div>
+                </div>
+                <div class="prediction-card">
+                    <div class="prediction-label">次选预测</div>
+                    <div class="prediction-score">科特迪瓦 2-1 厄瓜多尔</div>
+                    <div class="prediction-team">大象军团小胜</div>
+                    <div class="prediction-prob">30%</div>
+                </div>
+                <div class="prediction-card">
+                    <div class="prediction-label">第三选项</div>
+                    <div class="prediction-score">厄瓜多尔 1-0 科特迪瓦</div>
+                    <div class="prediction-team">南美铁盾反击制胜</div>
+                    <div class="prediction-prob">20%</div>
+                </div>
+            </div>
+            <div class="dimensions-grid">
+                <div class="dimension-item">
+                    <div class="dimension-name">球队基本面</div>
+                    <div class="dimension-value">科特迪瓦 68 vs 厄瓜多尔 72</div>
+                    <div class="dimension-bar">
+                        <div class="dimension-fill fill-ecuador" style="width: 72%;"></div>
+                    </div>
+                </div>
+                <div class="dimension-item">
+                    <div class="dimension-name">战术体系适配</div>
+                    <div class="dimension-value">科特迪瓦 70 vs 厄瓜多尔 75</div>
+                    <div class="dimension-bar">
+                        <div class="dimension-fill fill-ecuador" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="dimension-item">
+                    <div class="dimension-name">世界杯环境变量</div>
+                    <div class="dimension-value">科特迪瓦 65 vs 厄瓜多尔 70</div>
+                    <div class="dimension-bar">
+                        <div class="dimension-fill fill-neutral" style="width: 68%;"></div>
+                    </div>
+                </div>
+                <div class="dimension-item">
+                    <div class="dimension-name">赛制战意</div>
+                    <div class="dimension-value">科特迪瓦 75 vs 厄瓜多尔 72</div>
+                    <div class="dimension-bar">
+                        <div class="dimension-fill fill-ivory" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="dimension-item">
+                    <div class="dimension-name">机构市场风向</div>
+                    <div class="dimension-value">科特迪瓦 60 vs 厄瓜多尔 65</div>
+                    <div class="dimension-bar">
+                        <div class="dimension-fill fill-ecuador" style="width: 65%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Analysis -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">⚔️</span>
+                球队近况对比
+            </h2>
+            <div class="team-analysis">
+                <div class="team-block team-ivory">
+                    <h4>🐘 科特迪瓦（大象军团）</h4>
+                    <div class="stat-row">
+                        <span class="stat-label">FIFA排名</span>
+                        <span class="stat-value">第33位</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">全队身价</span>
+                        <span class="stat-value">5.2亿欧</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">近期战绩</span>
+                        <span class="stat-value" style="color: var(--success);">4连胜</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">近期亮点</span>
+                        <span class="stat-value">2-1逆转法国</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">世界杯历史</span>
+                        <span class="stat-value">3次参赛，均小组第三</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">时隔12年重返世界杯</span>
+                        <span class="stat-value">是</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">预选赛</span>
+                        <span class="stat-value">10战全胜零失球</span>
+                    </div>
+                </div>
+                <div class="team-block team-ecuador">
+                    <h4>🦅 厄瓜多尔（高原雄鹰）</h4>
+                    <div class="stat-row">
+                        <span class="stat-label">FIFA排名</span>
+                        <span class="stat-value">第24位</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">全队身价</span>
+                        <span class="stat-value">3.67亿欧</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">近期战绩</span>
+                        <span class="stat-value" style="color: var(--success);">19场不败！</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">近期亮点</span>
+                        <span class="stat-value">1-1荷兰、1-1摩洛哥</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">世界杯历史</span>
+                        <span class="stat-value">4次参赛，2006年16强</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">连续5届参赛</span>
+                        <span class="stat-value">经验丰富</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">南美预选赛</span>
+                        <span class="stat-value">亚军，18场仅丢5球</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Injury Report -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">🏥</span>
+                关键伤停报告
+            </h2>
+            <div class="team-analysis">
+                <div class="injury-box">
+                    <h5 style="color: var(--accent-ivory);">🐘 科特迪瓦伤停</h5>
+                    <div class="injury-item">
+                        <span>恩迪卡（罗马，主力中卫）</span>
+                        <span class="injury-out">❌ 确认缺席</span>
+                    </div>
+                    <div class="injury-item">
+                        <span>阿莱（战术调整落选）</span>
+                        <span class="injury-out">❌ 落选</span>
+                    </div>
+                    <div class="injury-item">
+                        <span>扎哈（战术调整落选）</span>
+                        <span class="injury-out">❌ 落选</span>
+                    </div>
+                    <div class="injury-item">
+                        <span>塞里（脚踝伤势，状态下滑）</span>
+                        <span class="injury-doubt">⚠️ 替补待命</span>
+                    </div>
+                    <p style="font-size: 13px; color: var(--danger); margin-top: 10px;">⚡ 核心影响：恩迪卡缺阵导致中卫临时组合，防线默契度严重受损！这是厄瓜多尔反击的最大突破口。</p>
+                </div>
+                <div class="injury-box">
+                    <h5 style="color: var(--accent-ecuador);">🦅 厄瓜多尔伤停</h5>
+                    <div class="injury-item">
+                        <span>恩纳·瓦伦西亚（队长，小腿伤）</span>
+                        <span class="injury-doubt">⚠️ 赛前评估</span>
+                    </div>
+                    <div class="injury-item">
+                        <span>其他主力</span>
+                        <span style="color: var(--success);">✅ 全员健康</span>
+                    </div>
+                    <p style="font-size: 13px; color: var(--warning); margin-top: 10px;">⚡ 核心影响：瓦伦西亚若缺阵，进攻端将失去精神核心和支点，依赖凯塞多和普拉塔承担更多进攻责任。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Players -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">⭐</span>
+                关键球员对决
+            </h2>
+            <div class="players-grid">
+                <div class="player-card">
+                    <div class="player-avatar">🚹</div>
+                    <div class="player-info">
+                        <h5>凯西（Franck Kessié）</h5>
+                        <span>吉达国民 / 中场枢纽 / 队长</span>
+                    </div>
+                    <span class="player-role">攻防转换</span>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">🚹</div>
+                    <div class="player-info">
+                        <h5>凯塞多（Moisés Caicedo）</h5>
+                        <span>切尔西 / 中场大脑 / 1.46亿欧</span>
+                    </div>
+                    <span class="player-role">节奏控制</span>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">🚹</div>
+                    <div class="player-info">
+                        <h5>迪奥曼德（Yan Diomandé）</h5>
+                        <span>RB莱比锡 / 前锋 / 9000万欧</span>
+                    </div>
+                    <span class="player-role">锋线尖刀</span>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">🚹</div>
+                    <div class="player-info">
+                        <h5>帕乔（Willian Pacho）</h5>
+                        <span>巴黎圣日耳曼 / 中卫 / 欧冠冠军</span>
+                    </div>
+                    <span class="player-role">防线基石</span>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">🚹</div>
+                    <div class="player-info">
+                        <h5>阿玛德·迪亚洛（Amad Diallo）</h5>
+                        <span>曼联 / 边锋 / 爆点</span>
+                    </div>
+                    <span class="player-role">边路突破</span>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">🚹</div>
+                    <div class="player-info">
+                        <h5>因卡皮耶（Piero Hincapié）</h5>
+                        <span>阿森纳 / 中卫 / 防守核心</span>
+                    </div>
+                    <span class="player-role">后防铁壁</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tactical Analysis -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">📋</span>
+                战术体系分析
+            </h2>
+            <div class="tactical-grid">
+                <div class="tactical-block">
+                    <h4>🐘 科特迪瓦：4-3-3 锐矛阵型</h4>
+                    <ul class="tactical-list">
+                        <li>边路爆破为核心：迪奥曼德+阿玛德两翼齐飞</li>
+                        <li>凯西中场调度，塞科·福法纳前插支援</li>
+                        <li>高位压迫，利用速度冲击对手防线身后</li>
+                        <li>弱点：中卫临时组合默契不足，易被反击打穿</li>
+                        <li>定位球进攻有身高优势，但防守定位球存疑</li>
+                    </ul>
+                </div>
+                <div class="tactical-block">
+                    <h4>🦅 厄瓜多尔：4-2-3-1 坚盾体系</h4>
+                    <ul class="tactical-list">
+                        <li>帕乔+因卡皮耶欧冠级中卫组合，防空顶级</li>
+                        <li>凯塞多单后腰拦截+出球，攻防转换枢纽</li>
+                        <li>低位防守+快速反击，普拉塔+明达速度型反击</li>
+                        <li>埃斯图皮尼安左路助攻能力强</li>
+                        <li>弱点：进攻效率偏低（场均约1球），终结能力不足</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Matchup -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">🎯</span>
+                核心对位分析
+            </h2>
+            <div class="tactical-grid">
+                <div class="tactical-block">
+                    <h4>迪奥曼德 VS 因卡皮耶/帕乔</h4>
+                    <ul class="tactical-list">
+                        <li>迪奥曼德速度+盘带是科特迪瓦最大武器</li>
+                        <li>帕乔+因卡皮耶组合欧冠级别，对抗和卡位顶级</li>
+                        <li>关键：迪奥曼德能否用速度打穿厄瓜多尔高位防线</li>
+                        <li>若厄瓜多尔低位防守，迪奥曼德突破空间受限</li>
+                    </ul>
+                </div>
+                <div class="tactical-block">
+                    <h4>凯西 VS 凯塞多：中场天王山</h4>
+                    <ul class="tactical-list">
+                        <li>凯西（100+场国家队）经验碾压，攻防枢纽</li>
+                        <li>凯塞多（1.46亿欧）拦截+出球，节奏控制大师</li>
+                        <li>谁控制中场，谁控制比赛走向</li>
+                        <li>凯塞多若限制凯西前插，科特迪瓦进攻将大打折扣</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Match Script -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">🎬</span>
+                进球剧本预测
+            </h2>
+            <div class="script-timeline">
+                <div class="script-item">
+                    <div class="script-time">0'-20' · 试探期</div>
+                    <div class="script-title">双方谨慎开局，中场争夺为主</div>
+                    <div class="script-desc">科特迪瓦控球主导但推进谨慎，厄瓜多尔低位防守不急于压上。凯西与凯塞多中场缠斗，双方均未找到突破口。首战谨慎系数（E01）生效。</div>
+                </div>
+                <div class="script-item">
+                    <div class="script-time">25'-40' · 科特迪瓦发力</div>
+                    <div class="script-title">迪奥曼德/阿玛德边路突破制造威胁</div>
+                    <div class="script-desc">科特迪瓦边路速度开始发挥作用，迪奥曼德内切或传中制造混乱。厄瓜多尔防线稳固但可能出现定位球机会。科特迪瓦1-0领先（角球/定位球）。</div>
+                </div>
+                <div class="script-item">
+                    <div class="script-time">55'-70' · 厄瓜多尔反击</div>
+                    <div class="script-title">厄瓜多尔利用科特迪瓦中卫漏洞扳平</div>
+                    <div class="script-desc">科特迪瓦中卫临时组合（恩迪卡缺阵）暴露默契问题，厄瓜多尔反击打穿防线。普拉塔或明达速度型球员抓住机会，1-1扳平。</div>
+                </div>
+                <div class="script-item">
+                    <div class="script-time">75'-90' · 拉锯战</div>
+                    <div class="script-title">双方体能下降，替补奇兵成关键</div>
+                    <div class="script-desc">科特迪瓦替补阿丁格拉/迪亚洛提供新鲜血液，厄瓜多尔则依靠整体防守。双方各有机会但均未能改写比分，1-1收场。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hidden Factors -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">🔮</span>
+                隐藏X因素
+            </h2>
+            <div class="factors-grid">
+                <div class="factor-card">
+                    <div class="factor-title">恩迪卡缺阵的连锁反应</div>
+                    <div class="factor-desc">科特迪瓦预选赛10战零失球的中卫组合被迫拆散，替补中卫与门将磨合不足。厄瓜多尔的反击正是针对这一软肋。</div>
+                </div>
+                <div class="factor-card">
+                    <div class="factor-title">厄瓜多尔19场不败的心理优势</div>
+                    <div class="factor-desc">19场不败赋予球队极强的心理韧性，即使落后也不会慌乱。这与日本2-2逼平荷兰的韧性逻辑一致（E12韧性溢价）。</div>
+                </div>
+                <div class="factor-card">
+                    <div class="factor-title">瓦伦西亚的出场决定</div>
+                    <div class="factor-desc">36岁队长若能首发，将为厄瓜多尔提供前场支点和精神领袖。若缺阵，进攻端将失去最重要的终结点，可能被迫更保守。</div>
+                </div>
+                <div class="factor-card">
+                    <div class="factor-title">首次交锋的未知数</div>
+                    <div class="factor-desc">两队历史上从未交手，缺乏对位参照。科特迪瓦面对南美球队3战全败，厄瓜多尔面对非洲球队经验有限——历史数据参考价值低。</div>
+                </div>
+                <div class="factor-card">
+                    <div class="factor-title">费城场地与气候</div>
+                    <div class="factor-desc">费城6月湿热天气可能影响两队体能。科特迪瓦球员更适应热带气候，但厄瓜多尔高原训练背景也不容忽视。</div>
+                </div>
+                <div class="factor-card">
+                    <div class="factor-title">E组出线形势压力</div>
+                    <div class="factor-desc">德国7-1大胜库拉索后已锁定出线主动权，科特迪瓦和厄瓜多尔首战拿分至关重要。输球方将面临极大出线压力。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Probability Table -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">📊</span>
+                详细概率分布
+            </h2>
+            <table class="prob-table">
+                <thead>
+                    <tr>
+                        <th>比分预测</th>
+                        <th>概率</th>
+                        <th>备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="score">1-1 平局</td>
+                        <td class="prob">35%</td>
+                        <td>首战谨慎+攻守相抵，最可能剧本</td>
+                    </tr>
+                    <tr>
+                        <td class="score">科特迪瓦 2-1</td>
+                        <td class="prob">20%</td>
+                        <td>进攻火力突破厄瓜多尔防线</td>
+                    </tr>
+                    <tr>
+                        <td class="score">厄瓜多尔 1-0</td>
+                        <td class="prob">15%</td>
+                        <td>铁盾防守+反击一击致命</td>
+                    </tr>
+                    <tr>
+                        <td class="score">科特迪瓦 1-0</td>
+                        <td class="prob">12%</td>
+                        <td>小胜，定位球制胜</td>
+                    </tr>
+                    <tr>
+                        <td class="score">0-0 平局</td>
+                        <td class="prob">10%</td>
+                        <td>双方进攻均哑火</td>
+                    </tr>
+                    <tr>
+                        <td class="score">其他比分</td>
+                        <td class="prob">8%</td>
+                        <td>含科特迪瓦2-0、厄瓜多尔2-1等</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Experience Lessons -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="icon">📝</span>
+                本场比赛经验关联
+            </h2>
+            <ul class="lessons-list">
+                <li class="lesson-item">
+                    <span class="lesson-icon validate">✓</span>
+                    <span class="lesson-text"><strong>E01首战谨慎系数</strong> — 双方均为E组首战，预计开局20分钟以试探为主，进球概率偏低</span>
+                </li>
+                <li class="lesson-item">
+                    <span class="lesson-icon validate">✓</span>
+                    <span class="lesson-text"><strong>E02替补奇兵权重</strong> — 阿丁格拉、迪亚洛（科特迪瓦）和安古洛（厄瓜多尔）可能成为下半场奇兵</span>
+                </li>
+                <li class="lesson-item">
+                    <span class="lesson-icon validate">✓</span>
+                    <span class="lesson-text"><strong>E06防线伤缺分层</strong> — 恩迪卡缺阵影响"丢球方式"（中卫默契问题），但科特迪瓦进攻端可弥补</span>
+                </li>
+                <li class="lesson-item">
+                    <span class="lesson-icon new">✨</span>
+                    <span class="lesson-text"><strong>E08极端实力差距</strong> — 本场不适用（实力接近），但E组德国7-1库拉索验证了此规则</span>
+                </li>
+                <li class="lesson-item">
+                    <span class="lesson-icon new">✨</span>
+                    <span class="lesson-text"><strong>E10下半场闪电窗口</strong> — 穆西亚拉47分钟破门验证，本场下半场开局5分钟同样高危</span>
+                </li>
+                <li class="lesson-item">
+                    <span class="lesson-icon new">✨</span>
+                    <span class="lesson-text"><strong>E12韧性溢价</strong> — 厄瓜多尔19场不败+日本2-2荷兰验证，不可低估韧性型球队的抢分能力</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>2026世界杯深度前瞻报告 | 科特迪瓦 VS 厄瓜多尔</p>
+        <p>分析时间：2026年6月15日 | 数据截至6月15日赛前</p>
+    </footer>
+</body>
+</html>
