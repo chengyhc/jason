@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瑞典 VS 突尼斯 — 2026世界杯深度前瞻</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --text-primary: #e8e8ed;
+            --text-secondary: #9898a8;
+            --text-muted: #5c5c6e;
+            --accent-gold: #d4a843;
+            --accent-sweden: #006aa7;
+            --accent-tunisia: #e70013;
+            --border-color: #2a2a3a;
+            --success: #3dd68c;
+            --warning: #f5a623;
+            --danger: #e53935;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .match-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+        .match-date { font-size: 14px; color: var(--accent-gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; }
+        .match-title {
+            font-size: 32px; font-weight: 700; margin-bottom: 10px;
+            background: linear-gradient(90deg, #ffffff 0%, #b8b8c8 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .match-subtitle { font-size: 16px; color: var(--text-secondary); }
+        .teams-container { display: flex; justify-content: center; align-items: center; gap: 60px; padding: 30px; margin-bottom: 30px; }
+        .team { text-align: center; }
+        .team-badge { width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 48px; }
+        .team-sweden .team-badge { background: linear-gradient(135deg, #006aa7 0%, #fecc00 100%); border: 3px solid #fecc00; }
+        .team-tunisia .team-badge { background: linear-gradient(135deg, #e70013 0%, #ffffff 100%); border: 3px solid #e70013; }
+        .team-name { font-size: 24px; font-weight: 700; margin-bottom: 5px; }
+        .team-group { font-size: 13px; color: var(--text-muted); }
+        .vs-divider { font-size: 28px; font-weight: 300; color: var(--text-muted); }
+        .prediction-summary { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 30px; margin-bottom: 30px; }
+        .summary-title { font-size: 18px; font-weight: 600; margin-bottom: 20px; color: var(--accent-gold); display: flex; align-items: center; gap: 10px; }
+        .summary-title::before { content: ''; width: 4px; height: 20px; background: var(--accent-gold); border-radius: 2px; }
+        .prediction-main { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 25px; }
+        .prediction-card { background: var(--bg-secondary); border-radius: 10px; padding: 20px; text-align: center; border: 1px solid var(--border-color); transition: transform 0.2s; }
+        .prediction-card.primary { border-color: var(--accent-gold); box-shadow: 0 0 20px rgba(212, 168, 67, 0.15); }
+        .prediction-card:hover { transform: translateY(-2px); }
+        .prediction-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .prediction-score { font-size: 36px; font-weight: 700; margin-bottom: 5px; }
+        .prediction-team { font-size: 14px; color: var(--text-secondary); }
+        .prediction-prob { font-size: 20px; font-weight: 600; color: var(--accent-gold); }
+        .dimensions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+        .dimension-item { background: var(--bg-secondary); border-radius: 8px; padding: 15px; border-left: 3px solid var(--accent-gold); }
+        .dimension-name { font-size: 12px; color: var(--text-muted); margin-bottom: 5px; }
+        .dimension-value { font-size: 18px; font-weight: 600; }
+        .dimension-bar { height: 6px; background: var(--bg-primary); border-radius: 3px; margin-top: 8px; overflow: hidden; }
+        .dimension-fill { height: 100%; border-radius: 3px; transition: width 0.5s ease; }
+        .fill-sweden { background: linear-gradient(90deg, #006aa7, #fecc00); }
+        .fill-tunisia { background: linear-gradient(90deg, #e70013, #ff6b6b); }
+        .fill-neutral { background: linear-gradient(90deg, var(--accent-gold), #e8c068); }
+        .section { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; margin-bottom: 20px; }
+        .section-title { font-size: 16px; font-weight: 600; margin-bottom: 15px; color: var(--text-primary); display: flex; align-items: center; gap: 10px; }
+        .section-title .icon { font-size: 20px; }
+        .team-analysis { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .team-block { padding: 20px; border-radius: 10px; background: var(--bg-secondary); }
+        .team-block h4 { font-size: 16px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border-color); }
+        .team-sweden h4 { color: #006aa7; }
+        .team-tunisia h4 { color: #e70013; }
+        .stat-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 14px; }
+        .stat-row:last-child { border-bottom: none; }
+        .stat-label { color: var(--text-secondary); }
+        .stat-value { font-weight: 600; }
+        .players-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .player-card { display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-secondary); border-radius: 8px; }
+        .player-avatar { width: 45px; height: 45px; border-radius: 50%; background: var(--bg-primary); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+        .player-info h5 { font-size: 14px; margin-bottom: 2px; }
+        .player-info span { font-size: 12px; color: var(--text-muted); }
+        .player-role { margin-left: auto; font-size: 11px; padding: 3px 8px; border-radius: 4px; background: var(--bg-primary); color: var(--text-secondary); }
+        .tactical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .tactical-block { padding: 20px; background: var(--bg-secondary); border-radius: 10px; }
+        .tactical-block h4 { font-size: 14px; margin-bottom: 12px; color: var(--accent-gold); }
+        .tactical-list { list-style: none; }
+        .tactical-list li { padding: 8px 0; font-size: 14px; color: var(--text-secondary); border-bottom: 1px solid var(--border-color); display: flex; align-items: flex-start; gap: 8px; }
+        .tactical-list li:last-child { border-bottom: none; }
+        .tactical-list li::before { content: '●'; color: var(--accent-gold); font-size: 8px; margin-top: 6px; }
+        .script-timeline { position: relative; padding-left: 30px; }
+        .script-timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: var(--border-color); }
+        .script-item { position: relative; padding: 15px; background: var(--bg-secondary); border-radius: 8px; margin-bottom: 15px; }
+        .script-item::before { content: ''; position: absolute; left: -25px; top: 20px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-gold); border: 2px solid var(--bg-primary); }
+        .script-time { font-size: 12px; color: var(--accent-gold); margin-bottom: 5px; }
+        .script-title { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+        .script-desc { font-size: 13px; color: var(--text-secondary); }
+        .factors-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .factor-card { padding: 15px; background: var(--bg-secondary); border-radius: 8px; border-left: 3px solid var(--warning); }
+        .factor-title { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--warning); }
+        .factor-desc { font-size: 13px; color: var(--text-secondary); }
+        .lessons-list { list-style: none; }
+        .lesson-item { padding: 12px 15px; background: var(--bg-secondary); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 12px; }
+        .lesson-icon { width: 24px; height: 24px; border-radius: 50%; background: var(--bg-primary); display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+        .lesson-icon.new { color: var(--success); }
+        .lesson-icon.validate { color: var(--accent-gold); }
+        .lesson-text { font-size: 14px; color: var(--text-secondary); }
+        .prob-table { width: 100%; border-collapse: collapse; }
+        .prob-table th, .prob-table td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color); }
+        .prob-table th { color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+        .prob-table td { font-size: 14px; }
+        .prob-table .score { font-weight: 700; font-size: 16px; }
+        .prob-table .prob { color: var(--accent-gold); font-weight: 600; }
+        .injury-box { padding: 15px; background: var(--bg-secondary); border-radius: 8px; margin-bottom: 10px; }
+        .injury-box h5 { font-size: 14px; margin-bottom: 8px; }
+        .injury-item { display: flex; justify-content: space-between; padding: 5px 0; font-size: 13px; color: var(--text-secondary); }
+        .injury-out { color: var(--danger); }
+        .injury-doubt { color: var(--warning); }
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 12px; border-top: 1px solid var(--border-color); margin-top: 30px; }
+        @media (max-width: 768px) {
+            .match-title { font-size: 24px; }
+            .teams-container { gap: 30px; flex-direction: column; }
+            .vs-divider { display: none; }
+            .prediction-main { grid-template-columns: 1fr; }
+            .team-analysis { grid-template-columns: 1fr; }
+            .tactical-grid { grid-template-columns: 1fr; }
+            .factors-grid { grid-template-columns: 1fr; }
+            .players-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="match-header">
+        <div class="match-date">2026年6月15日 10:00 北京时间</div>
+        <h1 class="match-title">瑞典 VS 突尼斯</h1>
+        <p class="match-subtitle">2026世界杯F组第1轮 · 蒙特雷体育场 · 北欧双枪VS北非铁壁</p>
+    </header>
+
+    <main class="container">
+        <section class="prediction-summary">
+            <h2 class="summary-title">预测结论</h2>
+            <div class="prediction-main">
+                <div class="prediction-card primary">
+                    <div class="prediction-label">首选预测</div>
+                    <div class="prediction-score">瑞典 2-0 突尼斯</div>
+                    <div class="prediction-team">双枪破铁壁</div>
+                    <div class="prediction-prob">38%</div>
+                </div>
+                <div class="prediction-card">
+                    <div class="prediction-label">次选预测</div>
+                    <div class="prediction-score">瑞典 1-0 突尼斯</div>
+                    <div class="prediction-team">小胜过关</div>
+                    <div class="prediction-prob">28%</div>
+                </div>
+                <div class="prediction-card">
+                    <div class="prediction-label">爆冷选项</div>
+                    <div class="prediction-score">1-1 平局</div>
+                    <div class="prediction-team">突尼斯铁壁死守</div>
+                    <div class="prediction-prob">20%</div>
+                </div>
+            </div>
+            <div class="dimensions-grid">
+                <div class="dimension-item">
+                    <div class="dimension-name">球队基本面</div>
+                    <div class="dimension-value">瑞典 75 vs 突尼斯 55</div>
+                    <div class="dimension-bar"><div class="dimension-fill fill-sweden" style="width: 75%;"></div></div>
+                </div>
+                <div class="dimension-item">
+                    <div class="dimension-name">战术体系适配</div>
+                    <div class="dimension-value">瑞典 70 vs 突尼斯 68</div>
+                    <div class="dimension-bar"><div class="dimension-fill fill-neutral" style="width: 70%;"></div></div>
+                </div>
+                <div class="dimension-item">
+                    <div class="dimension-name">世界杯环境变量</div>
+                    <div class="dimension-value">瑞典 72 vs 突尼斯 60</div>
+                    <div class="dimension-bar"><div class="dimension-fill fill-sweden" style="width: 72%;"></div></div>
+                </div>
+                <div class="dimension-item">
+                    <div class="dimension-name">赛制战意</div>
+                    <div class="dimension-value">瑞典 78 vs 突尼斯 70</div>
+                    <div class="dimension-bar"><div class="dimension-fill fill-sweden" style="width: 78%;"></div></div>
+                </div>
+                <div class="dimension-item">
+                    <div class="dimension-name">机构市场风向</div>
+                    <div class="dimension-value">瑞典 80 vs 突尼斯 40</div>
+                    <div class="dimension-bar"><div class="dimension-fill fill-sweden" style="width: 80%;"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><span class="icon">⚔️</span>球队近况对比</h2>
+            <div class="team-analysis">
+                <div class="team-block team-sweden">
+                    <h4>🇸🇪 瑞典（寒冰军团）</h4>
+                    <div class="stat-row"><span class="stat-label">FIFA排名</span><span class="stat-value">第39位</span></div>
+                    <div class="stat-row"><span class="stat-label">全队身价</span><span class="stat-value">4.28亿欧</span></div>
+                    <div class="stat-row"><span class="stat-label">近期战绩</span><span class="stat-value">2胜2平2负</span></div>
+                    <div class="stat-row"><span class="stat-label">晋级之路</span><span class="stat-value" style="color: var(--warning);">世预赛垫底→附加赛奇迹</span></div>
+                    <div class="stat-row"><span class="stat-label">世界杯历史</span><span class="stat-value">13次参赛，1958年亚军</span></div>
+                    <div class="stat-row"><span class="stat-label">核心锋线</span><span class="stat-value" style="color: var(--success);">伊萨克+约克雷斯（1.65亿欧）</span></div>
+                    <div class="stat-row"><span class="stat-label">最大隐患</span><span class="stat-value" style="color: var(--danger);">连续11场丢球，防线不稳</span></div>
+                </div>
+                <div class="team-block team-tunisia">
+                    <h4>🇹🇳 突尼斯（迦太基之鹰）</h4>
+                    <div class="stat-row"><span class="stat-label">FIFA排名</span><span class="stat-value">第45位</span></div>
+                    <div class="stat-row"><span class="stat-label">全队身价</span><span class="stat-value">6755万欧</span></div>
+                    <div class="stat-row"><span class="stat-label">近期战绩</span><span class="stat-value">1胜3平2负</span></div>
+                    <div class="stat-row"><span class="stat-label">晋级之路</span><span class="stat-value" style="color: var(--success);">10战9胜1平零失球！</span></div>
+                    <div class="stat-row"><span class="stat-label">世界杯历史</span><span class="stat-value" style="color: var(--danger);">7次参赛，从未出线</span></div>
+                    <div class="stat-row"><span class="stat-label">核心中场</span><span class="stat-value">斯希里+赫迪拉+汉尼拔</span></div>
+                    <div class="stat-row"><span class="stat-label">最大隐患</span><span class="stat-value" style="color: var(--danger);">热身赛0-5比利时崩盘</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><span class="icon">🏥</span>关键伤停报告</h2>
+            <div class="team-analysis">
+                <div class="injury-box">
+                    <h5 style="color: var(--accent-sweden);">🇸🇪 瑞典伤停</h5>
+                    <div class="injury-item"><span>库卢塞夫斯基（热刺，右翼）</span><span class="injury-out">❌ 膝伤报销</span></div>
+                    <div class="injury-item"><span>霍尔姆（尤文，后卫）</span><span class="injury-out">❌ 退出大名单</span></div>
+                    <div class="injury-item"><span>古德蒙德松（利兹联，左翼卫）</span><span class="injury-doubt">⚠️ 流感，出战成疑</span></div>
+                    <div class="injury-item"><span>林德洛夫（维拉，中卫）</span><span class="injury-doubt">⚠️ 小伤，大概率首发</span></div>
+                    <p style="font-size: 13px; color: var(--danger); margin-top: 10px;">⚡ 核心影响：库卢塞夫斯基报销是最大打击！瑞典失去边路爆点和创造力，进攻将更依赖伊萨克+约克雷斯的个人能力。</p>
+                </div>
+                <div class="injury-box">
+                    <h5 style="color: var(--accent-tunisia);">🇹🇳 突尼斯伤停</h5>
+                    <div class="injury-item"><span>汉尼拔·梅布里（中场）</span><span class="injury-doubt">⚠️ 撞击伤，可能替补</span></div>
+                    <div class="injury-item"><span>其他主力</span><span style="color: var(--success);">✅ 基本健康</span></div>
+                    <p style="font-size: 13px; color: var(--warning); margin-top: 10px;">⚡ 核心影响：汉尼拔若替补，突尼斯中场创造力下降，但斯希里+赫迪拉的防守硬度不受影响。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><span class="icon">⭐</span>关键球员对决</h2>
+            <div class="players-grid">
+                <div class="player-card">
+                    <div class="player-avatar">🚹</div>
+                    <div class="player-info"><h5>伊萨克（Alexander Isak）</h5><span>利物浦 / 前锋 / 1亿欧</span></div>
+                    <span class="player-role">金左脚</span>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">🚹</div>
+                    <div class="player-info"><h5>约克雷斯（Viktor Gyökeres）</h5><span>阿森纳 / 前锋 / 6500万欧</span></div>
+                    <span class="player-role">暴力终结</span>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">🚹</div>
+                    <div class="player-info"><h5>斯希里（Ellyes Skhiri）</h5><span>法兰克福 / 后腰 / 战术枢纽</span></div>
+                    <span class="player-role">节拍器</span>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">🚹</div>
+                    <div class="player-info"><h5>汉尼拔·梅布里（Hannibal Mejbri）</h5><span>伯恩利 / 中场 / 1600万欧</span></div>
+                    <span class="player-role">创造力</span>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">🚹</div>
+                    <div class="player-info"><h5>林德洛夫（Victor Lindelöf）</h5><span>阿斯顿维拉 / 中卫 / 队长</span></div>
+                    <span class="player-role">后防核心</span>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">🚹</div>
+                    <div class="player-info"><h5>赫迪拉（Rani Khedira）</h5><span>柏林联合 / 后腰 / 经验丰富</span></div>
+                    <span class="player-role">拦截铁腰</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><span class="icon">📋</span>战术体系分析</h2>
+            <div class="tactical-grid">
+                <div class="tactical-block">
+                    <h4>🇸🇪 瑞典：3-4-1-2 双枪主导</h4>
+                    <ul class="tactical-list">
+                        <li>伊萨克+约克雷斯双前锋交叉换位，拉扯防线</li>
+                        <li>尼格伦/贝里瓦尔前腰位连接中场与锋线</li>
+                        <li>两翼卫伯恩哈德松+古德蒙德松上下往返</li>
+                        <li>定位球+传中是核心武器（身高碾压）</li>
+                        <li>弱点：三中卫磨合不足，连续11场丢球</li>
+                    </ul>
+                </div>
+                <div class="tactical-block">
+                    <h4>🇹🇳 突尼斯：5-4-1 铁壁收缩</h4>
+                    <ul class="tactical-list">
+                        <li>五后卫低位防守，压缩中路空间</li>
+                        <li>斯希里+赫迪拉双后腰拦截保护</li>
+                        <li>断球后通过斯希里长传发动反击</li>
+                        <li>汉尼拔（若出场）提供中场推进创造力</li>
+                        <li>弱点：进攻火力极弱，近3场零进球</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><span class="icon">🎯</span>核心对位：双枪VS铁壁</h2>
+            <div class="tactical-grid">
+                <div class="tactical-block">
+                    <h4>伊萨克+约克雷斯 VS 塔尔比+雷基克</h4>
+                    <ul class="tactical-list">
+                        <li>瑞典双锋总身价1.65亿欧 vs 突尼斯整条防线约2000万欧</li>
+                        <li>约克雷斯身体对抗+伊萨克速度，双管齐下</li>
+                        <li>突尼斯中卫身高不足，瑞典传中+定位球将是致命武器</li>
+                        <li>关键：瑞典能否在密集防守中找到传中空间</li>
+                    </ul>
+                </div>
+                <div class="tactical-block">
+                    <h4>瑞典三中卫 VS 突尼斯反击</h4>
+                    <ul class="tactical-list">
+                        <li>瑞典三中卫连续11场丢球，身后空间是软肋</li>
+                        <li>突尼斯反击速度型球员（阿舒里、萨德）可利用</li>
+                        <li>林德洛夫若伤势影响，防线指挥将受影响</li>
+                        <li>关键：突尼斯能否在反击中抓住有限机会</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><span class="icon">🎬</span>进球剧本预测</h2>
+            <div class="script-timeline">
+                <div class="script-item">
+                    <div class="script-time">0'-25' · 僵持期</div>
+                    <div class="script-title">瑞典控球压制，突尼斯铁壁死守</div>
+                    <div class="script-desc">瑞典主导控球，频繁传中寻找双锋。突尼斯五后卫低位防守，压缩空间。双方均未制造实质威胁，0-0进入中段。首战谨慎系数（E01）生效。</div>
+                </div>
+                <div class="script-item">
+                    <div class="script-time">30'-45' · 破冰期</div>
+                    <div class="script-title">约克雷斯利用定位球/传中首开记录</div>
+                    <div class="script-desc">瑞典角球或边路传中，约克雷斯利用身体优势在禁区内抢点破门。突尼斯防空劣势暴露，瑞典1-0领先。</div>
+                </div>
+                <div class="script-item">
+                    <div class="script-time">55'-70' · 锁定期</div>
+                    <div class="script-title">伊萨克反击中扩大比分</div>
+                    <div class="script-desc">突尼斯被迫压上寻找扳平机会，瑞典抓住反击空间。伊萨克利用速度突破防线，冷静推射远角得手。瑞典2-0。</div>
+                </div>
+                <div class="script-item">
+                    <div class="script-time">75'-90' · 收官期</div>
+                    <div class="script-title">突尼斯无力回天，瑞典稳守胜局</div>
+                    <div class="script-desc">突尼斯进攻端火力枯竭（近3场零进球），无法组织有效反击。瑞典换人巩固防守，2-0收场。</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><span class="icon">🔮</span>隐藏X因素</h2>
+            <div class="factors-grid">
+                <div class="factor-card">
+                    <div class="factor-title">瑞典"从地狱爬回来"的心理韧性</div>
+                    <div class="factor-desc">世预赛垫底→附加赛绝杀波兰晋级，这支瑞典队拥有极强的逆境反弹能力。波特上任后球队气质发生变化。</div>
+                </div>
+                <div class="factor-card">
+                    <div class="factor-title">突尼斯0-5比利时的心理阴影</div>
+                    <div class="factor-desc">热身赛0-5惨败比利时可能严重打击士气。面对同样拥有英超级锋线的瑞典，突尼斯是否会重蹈覆辙？</div>
+                </div>
+                <div class="factor-card">
+                    <div class="factor-title">阿根廷裁判的严格尺度</div>
+                    <div class="factor-desc">主裁判福尔肯佩雷斯执法偏严，对犯规吹罚较紧。这有利于技术型球队（瑞典），不利于靠身体对抗的球队（突尼斯）。</div>
+                </div>
+                <div class="factor-card">
+                    <div class="factor-title">F组"死亡之组"的首战压力</div>
+                    <div class="factor-desc">F组有荷兰、日本、瑞典、突尼斯，首战输球几乎等于出局。双方都不敢冒险，可能加剧保守倾向。</div>
+                </div>
+                <div class="factor-card">
+                    <div class="factor-title">突尼斯"从未出线"的历史魔咒</div>
+                    <div class="factor-desc">7次参赛从未小组出线，这种历史包袱可能让球员在关键时刻缺乏自信，也可能激发"打破魔咒"的斗志。</div>
+                </div>
+                <div class="factor-card">
+                    <div class="factor-title">约克雷斯的状态决定上限</div>
+                    <div class="factor-desc">约克雷斯刚随阿森纳夺得英超冠军，状态火热。附加赛2场4球是瑞典晋级的绝对功臣。他若爆发，突尼斯防线难以招架。</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><span class="icon">📊</span>详细概率分布</h2>
+            <table class="prob-table">
+                <thead><tr><th>比分预测</th><th>概率</th><th>备注</th></tr></thead>
+                <tbody>
+                    <tr><td class="score">瑞典 2-0 突尼斯</td><td class="prob">38%</td><td>双枪破铁壁，定位球+反击</td></tr>
+                    <tr><td class="score">瑞典 1-0 突尼斯</td><td class="prob">28%</td><td>小胜，僵局中一击致命</td></tr>
+                    <tr><td class="score">1-1 平局</td><td class="prob">15%</td><td>突尼斯铁壁死守成功</td></tr>
+                    <tr><td class="score">瑞典 3-0 突尼斯</td><td class="prob">10%</td><td>大胜，突尼斯防线崩盘</td></tr>
+                    <tr><td class="score">瑞典 2-1 突尼斯</td><td class="prob">5%</td><td>突尼斯偷一球但无力回天</td></tr>
+                    <tr><td class="score">其他比分</td><td class="prob">4%</td><td>含突尼斯爆冷胜等</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title"><span class="icon">📝</span>本场比赛经验关联</h2>
+            <ul class="lessons-list">
+                <li class="lesson-item"><span class="lesson-icon validate">✓</span><span class="lesson-text"><strong>E01首战谨慎系数</strong> — 双方F组首战，上半场大概率僵持，进球集中在下半场</span></li>
+                <li class="lesson-item"><span class="lesson-icon validate">✓</span><span class="lesson-text"><strong>E02替补奇兵权重</strong> — 埃兰加（瑞典）和汉尼拔（突尼斯）可能成为下半场变数</span></li>
+                <li class="lesson-item"><span class="lesson-icon validate">✓</span><span class="lesson-text"><strong>E06防线伤缺分层</strong> — 库卢塞夫斯基缺阵影响"进攻方式"而非"比赛结果"，瑞典仍有双枪</span></li>
+                <li class="lesson-item"><span class="lesson-icon new">✨</span><span class="lesson-text"><strong>E10下半场闪电窗口</strong> — 瑞典习惯60分钟后发力，突尼斯前30分钟零进球率，下半场开局高危</span></li>
+                <li class="lesson-item"><span class="lesson-icon new">✨</span><span class="lesson-text"><strong>热身赛崩盘≠正赛崩盘</strong> — 突尼斯0-5比利时令人担忧，但预选赛10场零失球的底蕴仍在，不可完全否定</span></li>
+                <li class="lesson-item"><span class="lesson-icon new">✨</span><span class="lesson-text"><strong>身价差6倍但FIFA排名接近</strong> — 瑞典身价碾压但排名仅差6位，说明纸面实力≠实战能力</span></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>2026世界杯深度前瞻报告 | 瑞典 VS 突尼斯</p>
+        <p>分析时间：2026年6月15日 | 数据截至6月15日赛前</p>
+    </footer>
+</body>
+</html>
