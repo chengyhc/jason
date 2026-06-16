@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026美加墨世界杯 · 第六比赛日深度前瞻</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #f5c518;
+            --green: #00b894;
+            --blue: #0984e3;
+            --text: #eaeaea;
+            --text-secondary: #b0b0b0;
+            --card-bg: #1e2a3a;
+            --border: #2d3f54;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0;
+        }
+        .header {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+        }
+        .header h1 {
+            font-size: 2.2em;
+            background: linear-gradient(90deg, var(--gold), #ff6b6b, var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        .header .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.05em;
+        }
+        .header .date-badge {
+            display: inline-block;
+            margin-top: 12px;
+            background: var(--accent);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+
+        /* 已完赛摘要 */
+        .completed-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 28px;
+            border: 1px solid var(--border);
+        }
+        .completed-section h2 {
+            color: var(--gold);
+            font-size: 1.2em;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        .completed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+        }
+        .completed-card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 8px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .completed-card .teams { font-size: 0.92em; }
+        .completed-card .score {
+            font-weight: 700;
+            font-size: 1.15em;
+            color: var(--gold);
+            min-width: 50px;
+            text-align: center;
+        }
+        .completed-card .group-tag {
+            font-size: 0.75em;
+            color: var(--text-secondary);
+        }
+
+        /* 比赛分析卡片 */
+        .match-card {
+            background: var(--card-bg);
+            border-radius: 14px;
+            margin-bottom: 32px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .match-header {
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .match-header.fra-sen { background: linear-gradient(135deg, #002395 0%, #006233 100%); }
+        .match-header.irq-nor { background: linear-gradient(135deg, #c8102e 0%, #002868 100%); }
+        .match-header.arg-alg { background: linear-gradient(135deg, #74acdf 0%, #006233 100%); }
+        .match-header.aut-jor { background: linear-gradient(135deg, #ed2939 0%, #000 100%); }
+
+        .match-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .match-meta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 0.88em;
+            color: rgba(255,255,255,0.85);
+        }
+        .match-meta span::before { margin-right: 4px; }
+
+        .match-body { padding: 24px; }
+
+        /* 核心结论 */
+        .verdict-box {
+            background: linear-gradient(135deg, rgba(233,69,96,0.12), rgba(245,197,24,0.08));
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .verdict-box h3 {
+            color: var(--accent);
+            font-size: 1.15em;
+            margin-bottom: 12px;
+        }
+        .verdict-main {
+            font-size: 1.35em;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+        .verdict-scores {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        .score-chip {
+            background: rgba(245,197,24,0.15);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+        .score-chip .prob { font-size: 0.8em; color: var(--text-secondary); margin-left: 6px; }
+        .star-rating { color: var(--gold); font-size: 1.2em; letter-spacing: 2px; }
+
+        /* 分析模块 */
+        .analysis-section {
+            margin-bottom: 22px;
+        }
+        .analysis-section h4 {
+            color: var(--blue);
+            font-size: 1.05em;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 3px solid var(--blue);
+        }
+        .analysis-section p, .analysis-section li {
+            color: var(--text-secondary);
+            font-size: 0.93em;
+            line-height: 1.8;
+        }
+        .analysis-section ul {
+            padding-left: 20px;
+        }
+        .analysis-section li { margin-bottom: 6px; }
+        .analysis-section li strong { color: var(--text); }
+
+        /* 数据对比表 */
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 0.9em;
+        }
+        .stats-table th {
+            background: rgba(9,132,227,0.15);
+            color: var(--blue);
+            padding: 8px 12px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .stats-table th:first-child { text-align: left; }
+        .stats-table td {
+            padding: 7px 12px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .stats-table td:first-child { text-align: left; color: var(--text); font-weight: 500; }
+        .stats-table td:nth-child(2) { color: #74b9ff; }
+        .stats-table td:nth-child(3) { color: #55efc4; }
+        .highlight-val { color: var(--gold) !important; font-weight: 700; }
+
+        /* 伤病/环境 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 14px;
+            margin: 12px 0;
+        }
+        .info-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+        }
+        .info-card h5 {
+            font-size: 0.92em;
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+        .info-card p, .info-card li {
+            font-size: 0.85em;
+            color: var(--text-secondary);
+        }
+        .info-card ul { padding-left: 16px; }
+
+        /* 进球剧本 */
+        .goal-script {
+            background: rgba(0,184,148,0.08);
+            border: 1px solid var(--green);
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        .goal-script h5 { color: var(--green); margin-bottom: 8px; }
+
+        /* X因素 */
+        .x-factor {
+            background: rgba(233,69,96,0.08);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        .x-factor h5 { color: var(--accent); margin-bottom: 8px; }
+
+        /* 机构风向 */
+        .odds-bar {
+            display: flex;
+            gap: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 12px 0;
+            height: 36px;
+        }
+        .odds-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #fff;
+        }
+        .odds-win { background: #0984e3; }
+        .odds-draw { background: #636e72; }
+        .odds-lose { background: #e17055; }
+
+        /* 战术图示 */
+        .formation-box {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 12px 0;
+        }
+        .formation {
+            flex: 1;
+            min-width: 260px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 14px;
+            border: 1px solid var(--border);
+        }
+        .formation h5 {
+            font-size: 0.92em;
+            margin-bottom: 8px;
+        }
+        .formation .team-name { color: var(--gold); }
+        .formation .formation-code { color: var(--blue); font-size: 0.88em; }
+        .formation .player-list {
+            font-size: 0.82em;
+            color: var(--text-secondary);
+            line-height: 1.9;
+        }
+        .formation .player-list .pos { color: var(--green); font-weight: 600; margin-right: 4px; }
+
+        /* 底部声明 */
+        .disclaimer {
+            text-align: center;
+            padding: 24px;
+            color: var(--text-secondary);
+            font-size: 0.82em;
+            border-top: 1px solid var(--border);
+            margin-top: 32px;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.5em; }
+            .match-title { font-size: 1.2em; }
+            .verdict-main { font-size: 1.1em; }
+            .match-body { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>2026 美加墨世界杯 · 第六比赛日深度前瞻</h1>
+    <p class="subtitle">I组 & J组首轮 · 四场对决全维度推演</p>
+    <span class="date-badge">2026年6月16日（美东时间）</span>
+</div>
+
+<div class="container">
+
+    <!-- 已完赛摘要 -->
+    <div class="completed-section">
+        <h2>今日已完赛（北京时间6月16日）</h2>
+        <div class="completed-grid">
+            <div class="completed-card">
+                <div>
+                    <div class="teams">西班牙 vs 佛得角</div>
+                    <div class="group-tag">H组首轮</div>
+                </div>
+                <div class="score">0-0</div>
+            </div>
+            <div class="completed-card">
+                <div>
+                    <div class="teams">比利时 vs 埃及</div>
+                    <div class="group-tag">G组首轮</div>
+                </div>
+                <div class="score">1-1</div>
+            </div>
+            <div class="completed-card">
+                <div>
+                    <div class="teams">沙特阿拉伯 vs 乌拉圭</div>
+                    <div class="group-tag">H组首轮</div>
+                </div>
+                <div class="score">1-1</div>
+            </div>
+            <div class="completed-card">
+                <div>
+                    <div class="teams">伊朗 vs 新西兰</div>
+                    <div class="group-tag">G组首轮 · 进行中</div>
+                </div>
+                <div class="score">--</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- 比赛一：法国 vs 塞内加尔 -->
+    <!-- ============================================ -->
+    <div class="match-card">
+        <div class="match-header fra-sen">
+            <div class="match-title">法国 vs 塞内加尔</div>
+            <div class="match-meta">
+                <span>I组首轮</span>
+                <span>MetLife体育场 · 新泽西</span>
+                <span>当地时间15:00 / 北京时间6月17日03:00</span>
+            </div>
+        </div>
+        <div class="match-body">
+
+            <!-- 核心结论 -->
+            <div class="verdict-box">
+                <h3>核心结论</h3>
+                <div class="verdict-main">预测：法国胜</div>
+                <div class="verdict-scores">
+                    <span class="score-chip">2-1<span class="prob">概率最高</span></span>
+                    <span class="score-chip">2-0<span class="prob">次选</span></span>
+                    <span class="score-chip">1-1<span class="prob">冷门</span></span>
+                </div>
+                <div>信心指数：<span class="star-rating">★★★★☆</span>（4/5星）</div>
+            </div>
+
+            <!-- 阵容对比 -->
+            <div class="formation-box">
+                <div class="formation">
+                    <h5><span class="team-name">法国</span> <span class="formation-code">4-2-3-1</span></h5>
+                    <div class="player-list">
+                        <span class="pos">GK</span>迈尼昂（AC米兰）<br>
+                        <span class="pos">RB</span>孔德（巴萨）<br>
+                        <span class="pos">CB</span>乌帕梅卡诺（拜仁）/ 萨利巴⚠️（阿森纳，背伤）<br>
+                        <span class="pos">LB</span>特奥·埃尔南德斯（利雅得新月）<br>
+                        <span class="pos">CDM</span>楚阿梅尼（皇马）<br>
+                        <span class="pos">CM</span>拉比奥（米兰）<br>
+                        <span class="pos">RW</span>奥利塞（拜仁）<br>
+                        <span class="pos">AM</span>登贝莱（巴黎）<br>
+                        <span class="pos">LW</span>杜埃（巴黎）<br>
+                        <span class="pos">ST</span>姆巴佩（皇马，队长）
+                    </div>
+                </div>
+                <div class="formation">
+                    <h5><span class="team-name">塞内加尔</span> <span class="formation-code">4-3-3</span></h5>
+                    <div class="player-list">
+                        <span class="pos">GK</span>门迪（吉达国民）<br>
+                        <span class="pos">RB</span>迪乌夫（斯特拉斯堡）<br>
+                        <span class="pos">CB</span>尼亚卡特（里昂）<br>
+                        <span class="pos">CB</span>库利巴利⚠️（利雅得新月，伤愈复出）<br>
+                        <span class="pos">LB</span>迪亚塔（加拉塔萨雷）<br>
+                        <span class="pos">CM</span>帕普·盖伊（比利亚雷亚尔）<br>
+                        <span class="pos">CM</span>伊德里萨·盖伊（埃弗顿）<br>
+                        <span class="pos">CM</span>迪亚拉（桑德兰）<br>
+                        <span class="pos">RW</span>恩迪亚耶（埃弗顿）<br>
+                        <span class="pos">LW</span>马内⚠️（利雅得胜利，轻伤）<br>
+                        <span class="pos">ST</span>杰克逊（切尔西/拜仁）
+                    </div>
+                </div>
+            </div>
+
+            <!-- 数据对比 -->
+            <table class="stats-table">
+                <tr><th>维度</th><th>法国</th><th>塞内加尔</th></tr>
+                <tr><td>FIFA排名</td><td class="highlight-val">第1</td><td>第15</td></tr>
+                <tr><td>全队身价</td><td class="highlight-val">~14.8亿欧</td><td>~4.6亿欧</td></tr>
+                <tr><td>近5场战绩</td><td class="highlight-val">4胜1负</td><td>1胜2平2负</td></tr>
+                <tr><td>近10场场均进球</td><td class="highlight-val">2.1</td><td>1.6</td></tr>
+                <tr><td>近10场场均失球</td><td>0.7</td><td>0.8</td></tr>
+                <tr><td>世界杯历史最佳</td><td class="highlight-val">冠军(1998/2018)</td><td>八强(2002)</td></tr>
+            </table>
+
+            <!-- 深度逻辑拆解 -->
+            <div class="analysis-section">
+                <h4>深度逻辑拆解</h4>
+                <ul>
+                    <li><strong>身价碾压但非碾压局：</strong>法国全队身价约14.8亿欧（全球第一），五大联赛球员占比85%+，但塞内加尔并非弱旅——2025非洲杯冠军班底，多数球员效力欧洲联赛，低位防反体系成熟。身价差主要体现在替补深度上，塞内加尔主力与替补实力差距明显。</li>
+                    <li><strong>2002年幽灵效应：</strong>两队唯一一次世界杯交锋即2002年揭幕战，塞内加尔1-0爆冷击败卫冕冠军法国，导致法国小组垫底出局。24年后重逢，法国不会重蹈轻敌覆辙，但塞内加尔的心理优势是真实的——他们"赢过"这个对手。</li>
+                    <li><strong>萨利巴背伤是法国最大变数：</strong>阿森纳中卫萨利巴从欧冠决赛带伤入队，背伤虽已恢复训练但状态存疑。若其不在百分百状态，乌帕梅卡诺转身慢的弱点将被塞内加尔长传反击针对——马内持球→杰克逊插肋部的反击链路仅需2.5秒，正好是乌帕梅卡诺转身的空窗期。</li>
+                    <li><strong>法国无传统中锋=破铁桶阵依赖球星单干：</strong>法国阵地战没有高点做支点，遇上塞内加尔5-4-1低位压缩时，容易陷入"围而不攻"的焦躁。焦躁恰好是冷门的温床，但姆巴佩的个人能力（国家队56球，距吉鲁保持的队史纪录57球仅差1球，距克洛泽世界杯进球纪录16球还差4球）足以在任何时刻改变比赛。</li>
+                </ul>
+            </div>
+
+            <!-- 环境变量 -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <h5>海拔与场地</h5>
+                    <p>MetLife体育场海拔约10米，无高原影响。全封闭恒温场馆，草皮质量稳定。容量82,500人，决赛场地。</p>
+                </div>
+                <div class="info-card">
+                    <h5>天气条件</h5>
+                    <p>纽约当日预报晴，微风，无降雨。比赛时段体感温度18-22℃，湿度50-60%。凉爽天气利于双方保持全场体能，高强度对抗可正常发挥。</p>
+                </div>
+                <div class="info-card">
+                    <h5>赛程与备战</h5>
+                    <p>法国6月8日最后热身3-1胜北爱尔兰，备战充分。塞内加尔热身0-0平沙特、2-3负美国，备战状态不算理想。双方均为小组首战，休息充足。</p>
+                </div>
+                <div class="info-card">
+                    <h5>伤病影响权重</h5>
+                    <ul>
+                        <li>萨利巴（法国，背伤）→ 影响权重：★★★☆☆ 带伤首发，状态打折</li>
+                        <li>库利巴利（塞内加尔，大腿伤愈）→ 影响权重：★★★☆☆ 4月伤后仅替补8分钟</li>
+                        <li>马内（塞内加尔，腓骨轻伤）→ 影响权重：★★☆☆☆ 影响冲刺频率</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 机构风向 -->
+            <div class="analysis-section">
+                <h4>机构与市场风向</h4>
+                <p>主流机构初盘：法国胜1.47-1.50 / 平局4.50 / 塞内加尔胜7.00-7.25。让球：法国-1。大小球：2.5球。竞彩方面法国赢球低至1.47，但新浪彩票建议"大单防平"，认为法国存在热度风险。Opta模型预测法国夺冠概率19%（仅次于西班牙26%）。</p>
+                <div class="odds-bar">
+                    <div class="odds-segment odds-win" style="flex:62">法国胜 62%</div>
+                    <div class="odds-segment odds-draw" style="flex:28">平局 28%</div>
+                    <div class="odds-segment odds-lose" style="flex:10">塞内加尔胜 10%</div>
+                </div>
+            </div>
+
+            <!-- 赛制与战意 -->
+            <div class="analysis-section">
+                <h4>赛制与战意因素</h4>
+                <p>I组（法国、塞内加尔、挪威、伊拉克）被Opta评为全部12组最强"死亡之组"，评分81.8分。任何一场比赛的任何一个结果都可能改写出线格局。法国作为夺冠热门，首轮必须全取3分稳固出线形势；塞内加尔若能从法国身上拿1分，后续对阵挪威和伊拉克将占据主动。48队新赛制下小组前2名直接晋级32强，8个最佳第三名也可晋级，因此1分并非毫无价值——这可能导致塞内加尔更倾向保守策略。</p>
+            </div>
+
+            <!-- 进球剧本 -->
+            <div class="goal-script">
+                <h5>进球剧本推演</h5>
+                <p><strong>总进球区间：</strong>2-3球（概率最高）</p>
+                <p><strong>剧本走向：</strong>法国上半场围攻，姆巴佩或登贝莱在禁区边缘制造杀机先开账（15-30分钟），1-0进入下半场。塞内加尔60分钟后通过长传反击或马内个人闪光扳平，但法国替补深度（巴尔科拉、图拉姆等）在最后20分钟冲垮体力下降的非洲冠军，最终2-1小胜。</p>
+                <p><strong>关键破门球员：</strong>姆巴佩（国家队56球距队史纪录仅差1球，距克洛泽世界杯进球纪录差4球，首战必全力冲击纪录）、登贝莱（2025年金球奖得主，近期状态火热）、马内（大赛经验丰富，反击终结者）</p>
+                <p><strong>可能进球时段：</strong>15-30分钟（法国首球）、55-70分钟（塞内加尔反击扳平窗口）、75-90分钟（法国替补深度收割）</p>
+            </div>
+
+            <!-- X因素 -->
+            <div class="x-factor">
+                <h5>隐藏X因素</h5>
+                <ul>
+                    <li><strong>裁判尺度：</strong>主裁判为伊朗人阿里雷扎·法加尼，以严格执法著称，对高位逼抢中的身体对抗判罚较严，可能限制法国中场绞杀的侵略性。</li>
+                    <li><strong>萨利巴伤势恶化风险：</strong>若比赛中背伤复发被迫换下，法国后防线将面临重组，科纳特替补登场后与乌帕梅卡诺的默契度不足，可能被塞内加尔反击针对。</li>
+                    <li><strong>2002心理幽灵：</strong>若法国前20分钟未能进球，塞内加尔将越踢越有信心，法国的烦躁指数同步上升——焦躁是冷门的最佳催化剂。</li>
+                    <li><strong>特奥身后空当：</strong>特奥·埃尔南德斯前插幅度极大，身后留给杰克逊或萨尔冲刺的空间是真实的，一次对角线长传就可能改变比赛。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- 比赛二：伊拉克 vs 挪威 -->
+    <!-- ============================================ -->
+    <div class="match-card">
+        <div class="match-header irq-nor">
+            <div class="match-title">伊拉克 vs 挪威</div>
+            <div class="match-meta">
+                <span>I组首轮</span>
+                <span>吉列体育场 · 波士顿</span>
+                <span>当地时间17:00 / 北京时间6月17日06:00</span>
+            </div>
+        </div>
+        <div class="match-body">
+
+            <div class="verdict-box">
+                <h3>核心结论</h3>
+                <div class="verdict-main">预测：挪威胜</div>
+                <div class="verdict-scores">
+                    <span class="score-chip">0-2<span class="prob">概率最高</span></span>
+                    <span class="score-chip">1-2<span class="prob">次选</span></span>
+                    <span class="score-chip">0-3<span class="prob">备选</span></span>
+                </div>
+                <div>信心指数：<span class="star-rating">★★★★☆</span>（4/5星）</div>
+            </div>
+
+            <table class="stats-table">
+                <tr><th>维度</th><th>伊拉克</th><th>挪威</th></tr>
+                <tr><td>FIFA排名</td><td>第68</td><td class="highlight-val">第12</td></tr>
+                <tr><td>全队身价</td><td>~0.35亿欧</td><td class="highlight-val">~5.87亿欧</td></tr>
+                <tr><td>近5场战绩</td><td>1胜2平2负</td><td>2胜2平1负</td></tr>
+                <tr><td>近10场场均进球</td><td>0.9</td><td class="highlight-val">3.2</td></tr>
+                <tr><td>近10场场均失球</td><td>0.9</td><td>0.5</td></tr>
+                <tr><td>世界杯历史</td><td>1986年唯一一次参赛</td><td class="highlight-val">1998年十六强</td></tr>
+            </table>
+
+            <div class="analysis-section">
+                <h4>深度逻辑拆解</h4>
+                <ul>
+                    <li><strong>哈兰德的世界杯首秀：</strong>24岁的哈兰德身价2亿欧，世预赛8战全胜轰16球，场均超过1球的效率在整个欧洲无人能敌。厄德高（阿森纳队长）中场组织+哈兰德禁区统治力的组合，是伊拉克后防线从未面对过的级别。</li>
+                    <li><strong>伊拉克的防守韧性不可忽视：</strong>伊拉克热身赛1-1逼平西班牙，35岁门将哈桑即将第103次国家队出场，后防线在亚洲区预选赛经受住了日本和澳大利亚的冲击。主打5-4-1密集大巴，遇强韧性拉满。</li>
+                    <li><strong>挪威大赛慢热传统：</strong>挪威上次参加世界杯是1998年，大赛经验匮乏。若伊拉克死守上半场不失，下半场哈兰德的冲击力+体能优势大概率收割，但上半场可能出现僵局。</li>
+                    <li><strong>身价差距16倍但非碾压局：</strong>伊拉克近10场仅失9球防守硬朗，但面对英超级别锋线恐难招架。凉爽天气（波士顿，海拔36米）利好高强度对抗。</li>
+                </ul>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h5>环境变量</h5>
+                    <p>波士顿吉列体育场，海拔36米，无高原影响。当日气温18-24℃，微风，利于高强度对抗。露天场馆。</p>
+                </div>
+                <div class="info-card">
+                    <h5>赛制与战意</h5>
+                    <p>身处死亡之组I组，伊拉克若想出线必须从挪威身上争取至少1分。但实力差距过大，更现实的策略是全力防守争取小负，再在后两场对阵法国和塞内加尔时寻找机会。</p>
+                </div>
+            </div>
+
+            <div class="goal-script">
+                <h5>进球剧本推演</h5>
+                <p><strong>总进球区间：</strong>2-3球</p>
+                <p><strong>剧本走向：</strong>上半场伊拉克5-4-1铁桶阵死守，挪威控球但攻坚效率一般，0-0或挪威1-0领先。下半场哈兰德体能优势显现，60-80分钟连入1-2球收割。伊拉克可能通过反击偷1球。</p>
+                <p><strong>关键破门球员：</strong>哈兰德（首秀至少进1球概率极高）、厄德高（直塞助攻）、阿拉维（伊拉克反击点）</p>
+            </div>
+
+            <div class="x-factor">
+                <h5>隐藏X因素</h5>
+                <ul>
+                    <li><strong>挪威大赛经验匮乏：</strong>全队无人有世界杯参赛经历，开场紧张可能导致失误。</li>
+                    <li><strong>伊拉克逼平西班牙的模板：</strong>若伊拉克复刻对西班牙的防守纪律，挪威可能陷入攻坚困境。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- 比赛三：阿根廷 vs 阿尔及利亚 -->
+    <!-- ============================================ -->
+    <div class="match-card">
+        <div class="match-header arg-alg">
+            <div class="match-title">阿根廷 vs 阿尔及利亚</div>
+            <div class="match-meta">
+                <span>J组首轮</span>
+                <span>Arrowhead体育场 · 堪萨斯城</span>
+                <span>当地时间20:00 / 北京时间6月17日09:00</span>
+            </div>
+        </div>
+        <div class="match-body">
+
+            <div class="verdict-box">
+                <h3>核心结论</h3>
+                <div class="verdict-main">预测：阿根廷胜</div>
+                <div class="verdict-scores">
+                    <span class="score-chip">2-0<span class="prob">概率最高</span></span>
+                    <span class="score-chip">2-1<span class="prob">次选</span></span>
+                    <span class="score-chip">1-0<span class="prob">备选</span></span>
+                </div>
+                <div>信心指数：<span class="star-rating">★★★★☆</span>（4/5星）</div>
+            </div>
+
+            <div class="formation-box">
+                <div class="formation">
+                    <h5><span class="team-name">阿根廷</span> <span class="formation-code">4-2-3-1</span></h5>
+                    <div class="player-list">
+                        <span class="pos">GK</span>马丁内斯⚠️（手指骨折，可出场）<br>
+                        <span class="pos">RB</span>莫利纳（马竞）<br>
+                        <span class="pos">CB</span>罗梅罗（热刺）<br>
+                        <span class="pos">CB</span>奥塔门迪（本菲卡，38岁）<br>
+                        <span class="pos">LB</span>梅迪纳（替代伤缺的塔利亚菲科）<br>
+                        <span class="pos">CM</span>德保罗（马竞）<br>
+                        <span class="pos">CM</span>恩佐·费尔南德斯（切尔西）<br>
+                        <span class="pos">CM</span>麦卡利斯特（利物浦）<br>
+                        <span class="pos">RW</span>阿尔马达（里昂）<br>
+                        <span class="pos">AM</span>梅西⚠️（腿筋轻伤，可出场）<br>
+                        <span class="pos">ST</span>劳塔罗/阿尔瓦雷斯（竞争首发）
+                    </div>
+                </div>
+                <div class="formation">
+                    <h5><span class="team-name">阿尔及利亚</span> <span class="formation-code">4-3-3</span></h5>
+                    <div class="player-list">
+                        <span class="pos">GK</span>齐达内（梅斯）<br>
+                        <span class="pos">RB</span>贝尔加利（里尔）<br>
+                        <span class="pos">CB</span>曼迪（比利亚雷亚尔）<br>
+                        <span class="pos">CB</span>谢尔圭（替代伤缺的本塞拜尼）<br>
+                        <span class="pos">LB</span>艾特-努里（狼队）<br>
+                        <span class="pos">CM</span>本塔莱布（里昂）<br>
+                        <span class="pos">CM</span>布达维（朗斯）<br>
+                        <span class="pos">RW</span>马赫雷斯（队长，吉达联合）<br>
+                        <span class="pos">AM</span>马扎（霍芬海姆）<br>
+                        <span class="pos">ST</span>阿穆拉（沃尔夫斯堡）<br>
+                        <span class="pos">LW</span>古伊里（肩伤愈后可出场）
+                    </div>
+                </div>
+            </div>
+
+            <table class="stats-table">
+                <tr><th>维度</th><th>阿根廷</th><th>阿尔及利亚</th></tr>
+                <tr><td>FIFA排名</td><td class="highlight-val">第1</td><td>第28</td></tr>
+                <tr><td>全队身价</td><td class="highlight-val">~8.2亿欧</td><td>~3.8亿欧</td></tr>
+                <tr><td>近7场战绩</td><td class="highlight-val">7胜0负</td><td>4胜2平1负</td></tr>
+                <tr><td>近7场场均进球</td><td class="highlight-val">2.4</td><td>1.9</td></tr>
+                <tr><td>近7场场均失球</td><td class="highlight-val">0.3</td><td>0.6</td></tr>
+                <tr><td>世界杯历史最佳</td><td class="highlight-val">冠军(1978/1986/2022)</td><td>十六强(2014)</td></tr>
+            </table>
+
+            <div class="analysis-section">
+                <h4>深度逻辑拆解</h4>
+                <ul>
+                    <li><strong>卫冕冠军的底蕴与隐患并存：</strong>阿根廷近7场热身赛全胜且仅失1球，攻防稳定性拉满。但核心阵容年龄偏大——梅西38岁、奥塔门迪38岁、马丁内斯手指骨折带伤、塔利亚菲科比目鱼肌撕裂确定缺席。下半场体能存在隐患，面对密集防守时攻坚效率存在变数。</li>
+                    <li><strong>阿尔及利亚绝非软柿子：</strong>"北非之狐"热身赛1-0爆冷击败荷兰，后防线连续4场零封。19名球员效力欧洲五大联赛，身体对抗能力出众。主打4-3-3防守反击，马赫雷斯个人能力+古伊里速度型前锋冲击，是典型的"能咬人一口"的球队。2014年世界杯差点淘汰最终冠军德国。</li>
+                    <li><strong>左后卫空缺是阿根廷最大软肋：</strong>塔利亚菲科是队内唯一正印左后卫，他的缺席迫使斯卡洛尼启用梅迪纳或利桑德罗·马丁内斯客串。这一侧正是马赫雷斯习惯的进攻通道，阿尔及利亚的反击将重点针对这一侧。</li>
+                    <li><strong>2022年沙特2-1阿根廷的阴影：</strong>卫冕冠军上届首战即遭沙特爆冷，"冠军魔咒"是真实存在的统计现象。Goldman Sachs模型指出阿根廷受"winner's slump"惩罚。但斯卡洛尼已吸取教训，首战必然全力抢分。</li>
+                </ul>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h5>海拔与场地</h5>
+                    <p>Arrowhead体育场海拔约250米，影响极小。堪萨斯城6月晚间气温22-26℃，晴间多云，十分利于球员发挥。露天场馆。</p>
+                </div>
+                <div class="info-card">
+                    <h5>伤病影响权重</h5>
+                    <ul>
+                        <li>塔利亚菲科（阿根廷，比目鱼肌撕裂）→ 影响权重：★★★★☆ 唯一正印左后卫缺席</li>
+                        <li>梅西（阿根廷，腿筋轻伤）→ 影响权重：★★★☆☆ 确认可出场但高强度受限</li>
+                        <li>马丁内斯（阿根廷，手指骨折）→ 影响权重：★★☆☆☆ 可出场但扑救可能受影响</li>
+                        <li>本塞拜尼（阿尔及利亚，脚踝伤）→ 影响权重：★★★☆☆ 主力中卫缺席</li>
+                        <li>古伊里（阿尔及利亚，肩伤愈后）→ 影响权重：★★☆☆☆ 状态待观察</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h5>赛制与战意</h5>
+                    <p>J组（阿根廷、阿尔及利亚、奥地利、约旦），阿根廷实力遥遥领先。首轮对阵最强小组对手阿尔及利亚，赢球将基本锁定出线主动权。阿尔及利亚若能拿1分，后续对阵奥地利和约旦仍有出线希望。</p>
+                </div>
+                <div class="info-card">
+                    <h5>历史交锋</h5>
+                    <p>两队仅在2007年友谊赛交手1次，阿根廷4-3逆转险胜——7球大比分说明阿尔及利亚面对南美技术流球队并不怯场。世界杯正赛首次碰面。</p>
+                </div>
+            </div>
+
+            <div class="analysis-section">
+                <h4>机构与市场风向</h4>
+                <p>竞彩：阿根廷胜1.26 / 平局4.40 / 阿尔及利亚胜9.20。半全场"胜胜"赔率仅1.80，看好阿根廷上半场就建立优势。总进球2球赔率3.40最低、3球赔率3.60紧随其后。比分玩法：阿根廷2-0赔率4.75、1-0赔率5.60，阿根廷2-1赔率7.00。大比分赢球及阿尔及利亚爆冷赔率偏高。</p>
+                <div class="odds-bar">
+                    <div class="odds-segment odds-win" style="flex:70">阿根廷胜 70%</div>
+                    <div class="odds-segment odds-draw" style="flex:20">平局 20%</div>
+                    <div class="odds-segment odds-lose" style="flex:10">阿尔及利亚胜 10%</div>
+                </div>
+            </div>
+
+            <div class="goal-script">
+                <h5>进球剧本推演</h5>
+                <p><strong>总进球区间：</strong>2-3球</p>
+                <p><strong>剧本走向：</strong>阿根廷上半场通过梅西的组织和劳塔罗/阿尔瓦雷斯的终结先拔头筹（20-40分钟），1-0进入半场。下半场阿尔及利亚反击威胁增大，马赫雷斯可能创造1-2次绝佳机会，但阿根廷后防线经验丰富。阿根廷通过定位球或替补球员（阿尔瓦雷斯/迪巴拉）再入一球锁定胜局。</p>
+                <p><strong>关键破门球员：</strong>梅西（大概率进1球或助攻1球）、劳塔罗/阿尔瓦雷斯（竞争首发中锋，门前终结者）、马赫雷斯（阿尔及利亚反击核心）</p>
+                <p><strong>可能进球时段：</strong>20-40分钟（阿根廷首球）、55-70分钟（阿尔及利亚反击窗口）、75-85分钟（阿根廷锁定胜局）</p>
+            </div>
+
+            <div class="x-factor">
+                <h5>隐藏X因素</h5>
+                <ul>
+                    <li><strong>梅西腿筋伤势：</strong>38岁的梅西带轻伤出场，若高强度对抗中伤势加重被迫提前离场，阿根廷进攻组织将严重受损。斯卡洛尼表示"每日观察"，可能灵活决定梅西是否首发或替补出场。</li>
+                    <li><strong>左后卫黑洞：</strong>梅迪纳客串左后卫是被迫选择，马赫雷斯若集中攻击这一侧，可能迫使阿根廷整体防线左倾，为阿尔及利亚右路创造空间。</li>
+                    <li><strong>卫冕冠军魔咒：</strong>统计显示卫冕冠军在下届世界杯普遍表现下滑（"winner's slump"），2022年阿根廷自己就曾首战1-2负于沙特。首战紧张+轻敌的复合风险不可忽视。</li>
+                    <li><strong>堪萨斯城闷热：</strong>虽预报气温适中，但堪萨斯城6月湿度偏高，对年龄偏大的阿根廷核心阵容体能消耗更大。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- 比赛四：奥地利 vs 约旦 -->
+    <!-- ============================================ -->
+    <div class="match-card">
+        <div class="match-header aut-jor">
+            <div class="match-title">奥地利 vs 约旦</div>
+            <div class="match-meta">
+                <span>J组首轮</span>
+                <span>Levi's体育场 · 旧金山</span>
+                <span>当地时间20:00 / 北京时间6月17日12:00</span>
+            </div>
+        </div>
+        <div class="match-body">
+
+            <div class="verdict-box">
+                <h3>核心结论</h3>
+                <div class="verdict-main">预测：奥地利胜</div>
+                <div class="verdict-scores">
+                    <span class="score-chip">2-0<span class="prob">概率最高</span></span>
+                    <span class="score-chip">1-0<span class="prob">次选</span></span>
+                    <span class="score-chip">3-0<span class="prob">备选</span></span>
+                </div>
+                <div>信心指数：<span class="star-rating">★★★★★</span>（5/5星）</div>
+            </div>
+
+            <table class="stats-table">
+                <tr><th>维度</th><th>奥地利</th><th>约旦</th></tr>
+                <tr><td>FIFA排名</td><td class="highlight-val">第22</td><td>第87</td></tr>
+                <tr><td>全队身价</td><td class="highlight-val">~3.8亿欧</td><td>~0.25亿欧</td></tr>
+                <tr><td>近5场战绩</td><td class="highlight-val">3胜0负（热身全胜零丢球）</td><td>0胜5负（热身连败）</td></tr>
+                <tr><td>世界杯历史</td><td>时隔28年重返世界杯</td><td class="highlight-val">队史首次参赛</td></tr>
+            </table>
+
+            <div class="analysis-section">
+                <h4>深度逻辑拆解</h4>
+                <ul>
+                    <li><strong>全维度碾压：</strong>奥地利身价是约旦的15倍，三条线深度完胜。阿拉巴+莱默尔+萨比策中轴线完整，朗尼克高位逼抢体系成熟。近3场热身全胜且零丢球，攻防均衡。</li>
+                    <li><strong>约旦锋无力问题极其严重：</strong>两大前锋伤缺，进攻端创造力匮乏，只能依靠反击与定位球寻找机会。热身接连不敌瑞士、哥伦比亚，防线承压能力有限。全程收缩5-4-1铁桶阵。</li>
+                    <li><strong>约旦亚洲杯亚军底蕴：</strong>塔马里的个人能力是约旦唯一的进攻亮点，可能偷1球，但大概率被碾压。</li>
+                    <li><strong>凉爽天气利好奥地利：</strong>旧金山Levi's体育场海拔约2米，气温15-20℃，朗尼克体系在凉爽天气下可100%发挥高位逼抢强度。</li>
+                </ul>
+            </div>
+
+            <div class="goal-script">
+                <h5>进球剧本推演</h5>
+                <p><strong>总进球区间：</strong>2-3球</p>
+                <p><strong>剧本走向：</strong>奥地利全场控球主导，上半场通过高位逼抢迫使约旦失误先入1球，下半场再入1球锁定胜局。约旦可能通过塔马里反击偷1球。</p>
+                <p><strong>关键破门球员：</strong>萨比策（中场远射）、莱默尔（后插上）、阿瑙托维奇（支点中锋）</p>
+            </div>
+
+            <div class="x-factor">
+                <h5>隐藏X因素</h5>
+                <ul>
+                    <li><strong>约旦首次参赛的未知性：</strong>队史第一次踏上世界杯舞台，球员可能超常发挥也可能严重紧张。</li>
+                    <li><strong>奥地利时隔28年回归的压力：</strong>长期缺席世界杯可能导致开场紧张，但朗尼克的战术纪律性应能化解。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- 综合赛事观察 -->
+    <!-- ============================================ -->
+    <div class="match-card">
+        <div class="match-header" style="background: linear-gradient(135deg, #2d3436, #636e72);">
+            <div class="match-title">第六比赛日综合观察</div>
+            <div class="match-meta">
+                <span>新赛制下的出线形势分析</span>
+            </div>
+        </div>
+        <div class="match-body">
+            <div class="analysis-section">
+                <h4>48队新赛制的影响</h4>
+                <p>2026世界杯首次采用48队分12组的新赛制，小组前2名直接晋级32强，8个最佳第三名也可晋级。这意味着：</p>
+                <ul>
+                    <li><strong>首轮保守倾向增加：</strong>由于第三名也有出线机会，弱队首轮更倾向保守求平而非冒险争胜。今日已完赛的三场（西班牙0-0佛得角、比利时1-1埃及、沙特1-1乌拉圭）全部出现平局或冷门，印证了这一趋势。</li>
+                    <li><strong>强队首轮压力更大：</strong>在死亡之组（如I组），首轮失利可能直接导致出线危机，强队不敢有任何松懈。</li>
+                    <li><strong>净胜球的重要性下降：</strong>由于第三名比较机制，积分比净胜球更关键，1-0小胜与3-0大胜的实际差距缩小。</li>
+                </ul>
+            </div>
+
+            <div class="analysis-section">
+                <h4>今日已完赛冷门频发的原因分析</h4>
+                <ul>
+                    <li><strong>西班牙0-0佛得角：</strong>佛得角门将沃西尼亚屡次救险，成为本届世界杯首场0-0。佛得角的5-4-1铁桶阵成功限制西班牙传控。</li>
+                    <li><strong>比利时1-1埃及：</strong>萨拉赫助攻阿舒尔先拔头筹，卢卡库替补登场造成乌龙扳平。埃及的反击效率给比利时防线制造巨大压力。</li>
+                    <li><strong>沙特1-1乌拉圭：</strong>沙特阿姆里先入球，阿劳霍79分钟扳平。南美球队在本届世界杯仍无胜绩（4场2负2平）。</li>
+                    <li><strong>趋势：</strong>弱队防守纪律性提升+新赛制保守倾向=首轮冷门频率高于历史平均水平。法国和阿根廷需引以为戒。</li>
+                </ul>
+            </div>
+
+            <div class="analysis-section">
+                <h4>环境变量综合评估</h4>
+                <table class="stats-table">
+                    <tr><th>比赛</th><th>场地</th><th>海拔</th><th>天气</th><th>场馆类型</th></tr>
+                    <tr><td>法国vs塞内加尔</td><td>MetLife</td><td>~10m</td><td>晴 18-22℃</td><td>露天</td></tr>
+                    <tr><td>伊拉克vs挪威</td><td>吉列</td><td>~36m</td><td>晴 18-24℃</td><td>露天</td></tr>
+                    <tr><td>阿根廷vs阿尔及利亚</td><td>Arrowhead</td><td>~250m</td><td>多云 22-26℃</td><td>露天</td></tr>
+                    <tr><td>奥地利vs约旦</td><td>Levi's</td><td>~2m</td><td>晴 15-20℃</td><td>露天</td></tr>
+                </table>
+                <p style="margin-top:8px;">四场比赛均无显著高原影响（海拔最高仅250米），天气条件均利于正常发挥。不存在墨西哥城2240米高原那样的极端环境变量。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <p>本报告数据来源：FIFA官方、ESPN、队报、新浪彩票、央视体育、OneFootball、Goldman Sachs World Cup Model等公开渠道。</p>
+        <p>所有分析与预测仅基于公开数据推演，不构成任何投注建议。足球比赛存在高度不确定性，请理性看待。</p>
+        <p>报告生成时间：2026年6月16日 | 数据截止时间：2026年6月16日12:00 (CST)</p>
+    </div>
+
+</div>
+
+</body>
+</html>
