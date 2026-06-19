@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026美加墨世界杯 · 6月19日深度前瞻与赛事回顾</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #f5c518;
+            --green: #00b894;
+            --blue: #0984e3;
+            --text: #f1f1f1;
+            --text-dim: #a0a0b0;
+            --card-bg: #1e2a3a;
+            --card-border: #2d3f54;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, #0f3460 100%);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(180deg, rgba(233,69,96,0.15) 0%, transparent 100%);
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2.2em;
+            background: linear-gradient(90deg, var(--gold), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+        .header .subtitle { color: var(--text-dim); font-size: 1em; }
+        .header .date-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-top: 10px;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav a {
+            padding: 8px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+        .nav a:hover, .nav a.active {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Section */
+        .section {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        .section-title {
+            font-size: 1.4em;
+            color: var(--gold);
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+            margin-bottom: 18px;
+        }
+        .section-title .emoji { margin-right: 6px; }
+
+        /* Match Card */
+        .match-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d1b4e 100%);
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .match-hero .match-label {
+            font-size: 0.85em;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .match-hero .match-teams {
+            font-size: 2em;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        .match-hero .match-teams .vs { color: var(--accent); margin: 0 15px; }
+        .match-hero .match-info {
+            color: var(--text-dim);
+            font-size: 0.9em;
+            margin-top: 8px;
+        }
+        .match-hero .match-info span { margin: 0 10px; }
+
+        /* Prediction Box */
+        .prediction-box {
+            background: linear-gradient(135deg, rgba(233,69,96,0.2), rgba(245,197,24,0.1));
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .prediction-box .verdict {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .prediction-box .verdict .star { color: var(--gold); }
+        .prediction-box .scores {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .prediction-box .score-item {
+            background: rgba(0,0,0,0.3);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+        .prediction-box .score-item .prob { color: var(--green); font-size: 0.8em; margin-left: 6px; }
+        .confidence-bar {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            height: 12px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .confidence-fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+        }
+
+        /* Grid */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; }
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+        }
+
+        /* Stat Card */
+        .stat-card {
+            background: rgba(0,0,0,0.25);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        .stat-card .stat-value { font-size: 1.8em; font-weight: 700; color: var(--gold); }
+        .stat-card .stat-label { font-size: 0.8em; color: var(--text-dim); margin-top: 4px; }
+
+        /* Team Card */
+        .team-card {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 18px;
+        }
+        .team-card h3 { color: var(--gold); margin-bottom: 10px; font-size: 1.1em; }
+        .team-card ul { list-style: none; padding: 0; }
+        .team-card ul li { padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9em; }
+        .team-card ul li:last-child { border-bottom: none; }
+        .team-card ul li .label { color: var(--text-dim); }
+
+        /* Comparison Table */
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        .comp-table th, .comp-table td {
+            padding: 10px 12px;
+            text-align: center;
+            border-bottom: 1px solid var(--card-border);
+            font-size: 0.9em;
+        }
+        .comp-table th { color: var(--gold); font-weight: 600; }
+        .comp-table td:first-child { text-align: left; color: var(--text-dim); }
+        .comp-table .highlight { color: var(--green); font-weight: 600; }
+        .comp-table .warn { color: var(--accent); font-weight: 600; }
+
+        /* Logic Points */
+        .logic-point {
+            background: rgba(0,0,0,0.2);
+            border-left: 3px solid var(--accent);
+            padding: 12px 16px;
+            margin-bottom: 12px;
+            border-radius: 0 8px 8px 0;
+        }
+        .logic-point h4 { color: var(--accent); margin-bottom: 5px; font-size: 0.95em; }
+        .logic-point p { font-size: 0.88em; color: var(--text-dim); }
+
+        /* Goal Scenario */
+        .goal-scenario {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .goal-item {
+            flex: 1;
+            min-width: 200px;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .goal-item h4 { color: var(--blue); margin-bottom: 8px; }
+        .goal-item p { font-size: 0.88em; color: var(--text-dim); }
+
+        /* X-Factor */
+        .xfactor {
+            background: rgba(233,69,96,0.1);
+            border: 1px dashed var(--accent);
+            border-radius: 10px;
+            padding: 18px;
+        }
+        .xfactor h4 { color: var(--accent); margin-bottom: 8px; }
+        .xfactor ul { list-style: none; padding: 0; }
+        .xfactor ul li { padding: 6px 0; font-size: 0.88em; color: var(--text-dim); }
+        .xfactor ul li::before { content: "⚠ "; color: var(--accent); }
+
+        /* Result Card */
+        .result-card {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        .result-card .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .result-card .result-teams {
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+        .result-card .result-score {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .result-card .result-detail {
+            font-size: 0.85em;
+            color: var(--text-dim);
+            margin-top: 8px;
+        }
+        .result-card .scorer-list {
+            margin-top: 10px;
+            font-size: 0.88em;
+        }
+        .result-card .scorer-list span {
+            display: inline-block;
+            background: rgba(0,184,148,0.15);
+            color: var(--green);
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin: 3px 4px;
+            font-size: 0.85em;
+        }
+
+        /* Tag */
+        .tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+        .tag-live { background: var(--accent); color: #fff; }
+        .tag-done { background: var(--green); color: #fff; }
+        .tag-upcoming { background: var(--blue); color: #fff; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-dim);
+            font-size: 0.8em;
+            border-top: 1px solid var(--card-border);
+            margin-top: 30px;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--primary); }
+        ::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 4px; }
+
+        /* Animation */
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.6; } }
+        .pulse { animation: pulse 2s infinite; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>2026 美加墨世界杯 · 赛事深度前瞻</h1>
+            <div class="subtitle">小组赛第二轮 · 6月19日全场次分析报告</div>
+            <div class="date-badge">数据截止：北京时间 2026年6月19日 08:00</div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav">
+            <a href="#preview" class="active">焦点前瞻：墨西哥 VS 韩国</a>
+            <a href="#results">今日赛果回顾</a>
+        </div>
+
+        <!-- ==================== 焦点前瞻：墨西哥 VS 韩国 ==================== -->
+        <div id="preview">
+
+            <!-- Match Hero -->
+            <div class="match-hero">
+                <div class="match-label">A组第二轮 · 小组头名之战</div>
+                <div class="match-teams">
+                    墨西哥 <span class="vs">VS</span> 韩国
+                </div>
+                <div class="match-info">
+                    <span>📍 瓜达拉哈拉·阿克伦体育场</span>
+                    <span>🕐 北京时间 6月19日 09:00</span>
+                    <span>🏔️ 海拔约1560米</span>
+                </div>
+                <div style="margin-top:12px;">
+                    <span class="tag tag-upcoming pulse">即将开赛</span>
+                </div>
+            </div>
+
+            <!-- 核心结论 -->
+            <div class="section">
+                <div class="section-title"><span class="emoji">🎯</span>核心结论先行</div>
+                <div class="prediction-box">
+                    <div class="verdict">
+                        预测方向：主胜（墨西哥胜） <span class="star">★★★★</span>
+                    </div>
+                    <div class="scores">
+                        <div class="score-item">2-1 <span class="prob">概率最高 36%</span></div>
+                        <div class="score-item">1-0 <span class="prob">次选 22%</span></div>
+                        <div class="score-item">2-0 <span class="prob">第三 15%</span></div>
+                    </div>
+                    <div style="text-align:center; font-size:0.9em; color:var(--text-dim); margin-bottom:8px;">
+                        信心指数：4/5 星 — 高原主场+历史交锋优势支撑，但中卫停赛带来不确定性
+                    </div>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" style="width: 78%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 五大维度深度拆解 -->
+            <div class="section">
+                <div class="section-title"><span class="emoji">📊</span>维度一：球队基本面与近期状态</div>
+                <div class="grid-2">
+                    <div class="team-card">
+                        <h3>🇲🇽 墨西哥</h3>
+                        <ul>
+                            <li><span class="label">FIFA排名：</span>第10位</li>
+                            <li><span class="label">全队身价：</span>约1.94亿欧元</li>
+                            <li><span class="label">近5场：</span>4胜1平0负，进11球失2球</li>
+                            <li><span class="label">首轮表现：</span>2-0南非，控球率60%，射门16:5</li>
+                            <li><span class="label">近10场主场：</span>7胜2平1负，场均失球0.5</li>
+                            <li><span class="label">关键伤病：</span>主力中卫蒙特斯<span class="warn">红牌停赛</span>；洛萨诺轻伤出战存疑</li>
+                        </ul>
+                    </div>
+                    <div class="team-card">
+                        <h3>🇰🇷 韩国</h3>
+                        <ul>
+                            <li><span class="label">FIFA排名：</span>第18位</li>
+                            <li><span class="label">全队身价：</span>约1.4亿欧元</li>
+                            <li><span class="label">近5场：</span>3胜0平2负，进7球失4球</li>
+                            <li><span class="label">首轮表现：</span>2-1逆转捷克，控球率62%</li>
+                            <li><span class="label">近10场客场：</span>2平3负未胜，异地作战短板明显</li>
+                            <li><span class="label">关键伤病：</span>中卫曹侑珉<span class="warn">足底筋膜撕裂退出</span>；金太炫<span class="warn">脚踝扭伤缺阵</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top:15px;">
+                    <table class="comp-table">
+                        <tr><th>对比维度</th><th>墨西哥</th><th>韩国</th><th>优势方</th></tr>
+                        <tr><td>首轮控球率</td><td>60%</td><td>62%</td><td>持平</td></tr>
+                        <tr><td>首轮射门/射正</td><td>16/4</td><td>15/6</td><td>韩国效率略优</td></tr>
+                        <tr><td>近5场场均进球</td><td>2.2</td><td>1.4</td><td class="highlight">墨西哥</td></tr>
+                        <tr><td>近5场场均失球</td><td>0.4</td><td>0.8</td><td class="highlight">墨西哥</td></tr>
+                        <tr><td>零封场次（近5场）</td><td>4场</td><td>1场</td><td class="highlight">墨西哥</td></tr>
+                        <tr><td>旅欧球员数量</td><td>约10人</td><td>约17人</td><td class="highlight">韩国</td></tr>
+                        <tr><td>高空对抗能力</td><td>强</td><td>弱</td><td class="highlight">墨西哥</td></tr>
+                        <tr><td>反击转化效率</td><td>中等</td><td>高（占比62%）</td><td class="highlight">韩国</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title"><span class="emoji">⚔️</span>维度二：战术体系与历史交锋</div>
+                <div class="grid-2">
+                    <div class="team-card">
+                        <h3>墨西哥 4-2-3-1 / 4-3-3 传控体系</h3>
+                        <ul>
+                            <li>核心打法：高控球+边路套边传中，希门尼斯支点抢点</li>
+                            <li>进攻依赖：基尼奥内斯边路突破（首轮7次过人）、希门尼斯头球终结</li>
+                            <li>中场枢纽：埃德松·阿尔瓦雷斯调度+利拉串联</li>
+                            <li>定位球威胁：世预赛关键进球多来自角球</li>
+                            <li>隐患：蒙特斯停赛后中卫重组，回追速度下降；边后卫前压后肋部空间暴露</li>
+                        </ul>
+                    </div>
+                    <div class="team-card">
+                        <h3>韩国 3-4-2-1 / 3-4-3 低位防反</h3>
+                        <ul>
+                            <li>核心打法：中场拦截+边路速度反击，孙兴慜/李刚仁前场自由人</li>
+                            <li>进攻依赖：孙兴慜速度突破、李刚仁中路组织（首轮3次关键传球）</li>
+                            <li>中场枢纽：黄仁范攻防转换（首轮1球1助）、李在城跑动覆盖</li>
+                            <li>定位球威胁：金玟哉高空争顶，定位球得分占比31%</li>
+                            <li>隐患：双中卫缺阵致防线重组，防空能力断崖下滑；孙兴慜首轮6射1正状态低迷</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top:15px;">
+                    <table class="comp-table">
+                        <tr><th>历史交锋</th><th>时间</th><th>比分</th><th>赛事</th></tr>
+                        <tr><td>1</td><td>2025.09</td><td>2-2</td><td>友谊赛</td></tr>
+                        <tr><td>2</td><td>2020.11</td><td>3-2 墨胜</td><td>友谊赛</td></tr>
+                        <tr><td>3</td><td>2018.06</td><td>2-1 墨胜</td><td>世界杯小组赛</td></tr>
+                        <tr><td>4</td><td>2014.01</td><td>4-0 墨胜</td><td>友谊赛</td></tr>
+                        <tr><td>5</td><td>1998.06</td><td>3-1 墨胜</td><td>世界杯小组赛</td></tr>
+                    </table>
+                    <p style="font-size:0.88em; color:var(--text-dim); margin-top:10px;">
+                        <strong>关键事实：</strong>墨西哥在世界杯正赛中对韩国2战全胜（1998年3-1、2018年2-1），历史交锋13场8胜1平4负占据心理优势。但2025年友谊赛2-2战平表明韩国近年实力提升，对抗差距缩小。韩国从未在世界杯赛场击败墨西哥。
+                    </p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title"><span class="emoji">🏔️</span>维度三：2026世界杯专属环境变量</div>
+                <div class="grid-3">
+                    <div class="stat-card">
+                        <div class="stat-value">1560m</div>
+                        <div class="stat-label">瓜达拉哈拉海拔</div>
+                        <div style="font-size:0.78em; color:var(--accent); margin-top:5px;">韩国球员60分钟后体能断崖</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">21-24°C</div>
+                        <div class="stat-label">比赛时段气温</div>
+                        <div style="font-size:0.78em; color:var(--green); margin-top:5px;">湿度58%·适宜比赛</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">4天</div>
+                        <div class="stat-label">两轮间隔休整</div>
+                        <div style="font-size:0.78em; color:var(--text-dim); margin-top:5px;">双方间隔相同·无差异</div>
+                    </div>
+                </div>
+                <div style="margin-top:15px;">
+                    <div class="logic-point">
+                        <h4>高原效应 — 本场最大环境变量</h4>
+                        <p>瓜达拉哈拉海拔约1560米（部分数据源标注2240米），墨西哥球员长期适应高原低氧环境，心肺负荷影响极小。韩国球员习惯平原环境，历史数据显示60分钟后跑动速度、冲刺频次明显下降。韩国下半场场均进球1.2球（远高于上半场0.3球），但高原环境下这一爆发窗口可能被压缩至65-75分钟，之后体能急剧下滑。</p>
+                    </div>
+                    <div class="logic-point">
+                        <h4>东道主主场氛围</h4>
+                        <p>预计涌入5万+主场球迷，阿克伦体育场噪音压制韩国后场沟通。墨西哥作为东道主，主场出线为硬性目标，容错空间极小。FIFA已引入每半场3分钟饮水间歇，对低海拔球队略有缓解但无法根本解决体能问题。</p>
+                    </div>
+                    <div class="logic-point">
+                        <h4>赛程与备赛</h4>
+                        <p>两队首轮均在墨西哥境内作战（墨西哥城/瓜达拉哈拉），无需跨国飞行，不存在时差和长途旅行影响。墨西哥首轮在墨西哥城（海拔2240米）比赛，本场降至瓜达拉哈拉，海拔反而降低；韩国首轮在瓜达拉哈拉，场地适应无差异。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title"><span class="emoji">🏆</span>维度四：赛制与战意因素</div>
+                <div class="logic-point">
+                    <h4>小组头名之战 — 胜者提前锁定出线</h4>
+                    <p>A组首轮：墨西哥3分(+2)、韩国3分(+1)、捷克1分(-1)、南非1分(-2)。本场胜者积6分提前一轮锁定淘汰赛席位，且大概率以小组第一出线，淘汰赛面对较弱的小组第三，走线优势极大。败者末轮仍需血拼，容错空间骤减。双方战意拉满，无放水空间。</p>
+                </div>
+                <div class="logic-point">
+                    <h4>48队新赛制下的出线容错</h4>
+                    <p>2026世界杯扩军至48队，12个小组前2名+8个成绩最好的第3名晋级32强。即使本场落败，末轮取胜仍有较大回旋余地。但小组头名直接关系到1/8决赛对位路径，双方均不会保守。预计开场双方先稳住防守试探，下半场随体能消耗与比分压力放开对攻。</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title"><span class="emoji">📈</span>维度五：机构与市场风向</div>
+                <div class="grid-2">
+                    <div class="team-card">
+                        <h3>主流市场预期</h3>
+                        <ul>
+                            <li><span class="label">主胜概率：</span>约52%（Elo模型）</li>
+                            <li><span class="label">平局概率：</span>约27%</li>
+                            <li><span class="label">客胜概率：</span>约21%</li>
+                            <li><span class="label">亚洲让球：</span>墨西哥让0.5球</li>
+                            <li><span class="label">总进球预期：</span>2-3球（概率70%）</li>
+                        </ul>
+                    </div>
+                    <div class="team-card">
+                        <h3>市场异动与冷门风险</h3>
+                        <ul>
+                            <li>主胜回报从中性升至偏高位置，资金面对墨西哥信心收敛</li>
+                            <li>1X2维度墨西哥主胜同步走高，市场对墨西哥减仓</li>
+                            <li>进球数从2/2.5降至2球，大球水位下行</li>
+                            <li><span class="warn">冷门信号：</span>韩国下半场场均进球1.2球，反击属性让小球方向不稳</li>
+                            <li><span class="warn">过热风险：</span>墨西哥主场热度高，但中卫停赛信息已被市场定价</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 深度逻辑拆解 -->
+            <div class="section">
+                <div class="section-title"><span class="emoji">🧠</span>深度逻辑拆解</div>
+                <div class="logic-point">
+                    <h4>论据一：高原主场+传控体系形成双重压制</h4>
+                    <p>墨西哥控球率常年56%以上，在高原主场加持下，开场20-30分钟的逼抢强度将直接决定比赛走向。韩国中场出球失误率偏高（首轮被捷克4次射正即丢1球），一旦前30分钟被墨西哥压制丢球，高原环境下追平难度倍增。墨西哥近10个主场仅失5球，主场防守极为强悍。</p>
+                </div>
+                <div class="logic-point">
+                    <h4>论据二：双方防线均受损，但墨西哥进攻端更完整</h4>
+                    <p>墨西哥蒙特斯停赛致中卫重组，韩国曹侑珉+金太炫双中卫缺阵更致命——仅金玟哉单中卫支撑，防空和协防体系断裂。墨西哥希门尼斯、基尼奥内斯、阿尔瓦雷斯全员健康，进攻框架完整；韩国孙兴慜首轮6射1正状态低迷，进攻存在"左路依赖症"。</p>
+                </div>
+                <div class="logic-point">
+                    <h4>论据三：时间结构错位 — 60-75分钟为关键窗口</h4>
+                    <p>墨西哥下半场场均失球0.3（比上半场0.1翻3倍），韩国下半场场均进球1.2（比上半场0.3高4倍）。60-75分钟是韩国反击施压窗口，也是阿吉雷换人调整最需拿捏的时段。若韩国未能在75分钟前取得进球，高原体能消耗将使反击威胁骤降。</p>
+                </div>
+                <div class="logic-point">
+                    <h4>论据四：历史交锋心理优势+世界杯赛场从未输韩国</h4>
+                    <p>墨西哥世界杯对韩国2战全胜，各项赛事近4场3胜1平不败。韩国面对拉美球队时防线容易暴露漏洞（0-4科特迪瓦、0-1奥地利），身体对抗强硬的对手是其软肋。但2025年友谊赛2-2表明韩国近年适应性提升，不会轻易被击穿。</p>
+                </div>
+            </div>
+
+            <!-- 进球剧本推演 -->
+            <div class="section">
+                <div class="section-title"><span class="emoji">⚽</span>进球剧本推演</div>
+                <div class="goal-scenario">
+                    <div class="goal-item">
+                        <h4>总进球数区间</h4>
+                        <p>2-3球（概率70%）。泊松模型：墨西哥λ=1.42，韩国λ=1.03。双方同时进球概率68%。</p>
+                    </div>
+                    <div class="goal-item">
+                        <h4>进球时间段预测</h4>
+                        <p>墨西哥：上半场20-35分钟（主场压迫期）+下半场60-75分钟（韩国体能下滑期）<br>韩国：60-75分钟反击窗口期</p>
+                    </div>
+                    <div class="goal-item">
+                        <h4>关键破门球员</h4>
+                        <p>🇲🇽 劳尔·希门尼斯（支点抢点）、基尼奥内斯（边路突破内切）<br>🇰🇷 孙兴慜（反击速度）、李刚仁（远射/定位球）、黄仁范（后插上）</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 隐藏X因素 -->
+            <div class="section">
+                <div class="section-title"><span class="emoji">🔮</span>隐藏X因素</div>
+                <div class="xfactor">
+                    <h4>可能改变比赛走势的潜在变量</h4>
+                    <ul>
+                        <li><strong>裁判尺度：</strong>墨西哥场均犯规12.6次、红黄牌2.4张，纪律性是隐患；韩国场均获得任意球12.8次（多于墨西哥10.6次），若裁判吹罚偏严，墨西哥定位球防守压力增大</li>
+                        <li><strong>蒙特斯停赛的连锁反应：</strong>替补中卫（路易斯·罗莫/查韦斯）与巴斯克斯搭档默契不足，转身偏慢、出球失误率上升，韩国反击正好瞄准这一区域</li>
+                        <li><strong>孙兴慜状态回暖：</strong>首轮6射1正远低于正常水平，若本场找回射门靴，韩国反击威胁将成倍放大</li>
+                        <li><strong>高原极端天气：</strong>若比赛日出现雷暴或异常高温，饮水间歇频次增加，对低海拔球队略有缓解</li>
+                        <li><strong>VAR介入频率：</strong>今日加拿大VS卡塔尔一战VAR两次介入改判红牌，本届世界杯VAR尺度偏严，禁区边缘犯规可能被升级处理</li>
+                        <li><strong>埃德松·阿尔瓦雷斯状态：</strong>部分信息源提及其2月脚踝手术后恢复，若中场拦截硬度下降，韩国中场向前输送将更加顺畅</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 预计首发 -->
+            <div class="section">
+                <div class="section-title"><span class="emoji">📋</span>预计首发阵容</div>
+                <div class="grid-2">
+                    <div class="team-card">
+                        <h3>🇲🇽 墨西哥（4-1-2-3）</h3>
+                        <ul>
+                            <li>GK：1-何塞·兰赫尔</li>
+                            <li>RB：2-豪尔赫·桑切斯</li>
+                            <li>CB：5-巴斯克斯</li>
+                            <li>CB：7-路易斯·罗莫（替蒙特斯）</li>
+                            <li>LB：23-赫苏斯·加利亚多</li>
+                            <li>DM：6-利拉</li>
+                            <li>CM：4-埃德松·阿尔瓦雷斯</li>
+                            <li>CM：26-布里安·古铁雷斯</li>
+                            <li>RW：25-罗伯托·阿尔瓦拉多</li>
+                            <li>ST：9-劳尔·希门尼斯</li>
+                            <li>LW：16-胡利安·基尼奥内斯</li>
+                        </ul>
+                    </div>
+                    <div class="team-card">
+                        <h3>🇰🇷 韩国（3-4-2-1）</h3>
+                        <ul>
+                            <li>GK：赵贤祐</li>
+                            <li>CB：金玟哉</li>
+                            <li>CB：李韩汎（替金太炫）</li>
+                            <li>CB：李期奕</li>
+                            <li>RWB：薛英佑</li>
+                            <li>LWB：李太锡</li>
+                            <li>CM：黄仁范</li>
+                            <li>CM：白升浩</li>
+                            <li>AM：李刚仁</li>
+                            <li>AM：李在城</li>
+                            <li>ST：孙兴慜</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== 今日赛果回顾 ==================== -->
+        <div id="results">
+            <div class="section">
+                <div class="section-title"><span class="emoji">📰</span>6月19日已完赛赛果回顾</div>
+
+                <!-- 捷克 VS 南非 -->
+                <div class="result-card">
+                    <div class="result-header">
+                        <div>
+                            <span class="tag tag-done">已结束</span>
+                            <span class="result-teams">捷克 VS 南非</span>
+                        </div>
+                        <div class="result-score">1 - 1</div>
+                    </div>
+                    <div class="result-detail">
+                        A组第二轮 · 亚特兰大体育场 · 北京时间 00:00
+                    </div>
+                    <div class="scorer-list">
+                        <span>🇨🇿 萨迪莱克 开场闪电进球</span>
+                        <span>🇿🇦 南非扳平</span>
+                    </div>
+                    <p style="font-size:0.85em; color:var(--text-dim); margin-top:10px;">
+                        双方各取1分。南非双中场核心西索勒、兹瓦内停赛致中场完全断层，但仍凭借顽强防守逼平捷克。捷克定位球战术制造多次威胁但未能转化为胜势。A组积分：墨西哥3分、韩国3分、捷克1分、南非1分。
+                    </p>
+                </div>
+
+                <!-- 瑞士 VS 波黑 -->
+                <div class="result-card">
+                    <div class="result-header">
+                        <div>
+                            <span class="tag tag-done">已结束</span>
+                            <span class="result-teams">瑞士 VS 波黑</span>
+                        </div>
+                        <div class="result-score">4 - 1</div>
+                    </div>
+                    <div class="result-detail">
+                        B组第二轮 · 洛杉矶体育场 · 北京时间 03:00
+                    </div>
+                    <div class="scorer-list">
+                        <span>🇨🇭 曼赞比 74' 90' 替补双响</span>
+                        <span>🇨🇭 巴尔加斯 84'</span>
+                        <span>🇨🇭 扎卡 90+7' 点球</span>
+                        <span>🇧🇦 马哈米奇 90+3'</span>
+                    </div>
+                    <p style="font-size:0.85em; color:var(--text-dim); margin-top:10px;">
+                        瑞士下半场发力，71分钟连换三人立竿见影。波黑后卫穆哈雷莫维奇80分钟直红离场成为转折点，瑞士随后连入3球锁定胜局。波黑跨北美东西海岸飞行4000公里致体能透支，老将哲科孤立无援。B组积分：加拿大4分、瑞士4分、波黑1分、卡塔尔1分。
+                    </p>
+                </div>
+
+                <!-- 加拿大 VS 卡塔尔 -->
+                <div class="result-card">
+                    <div class="result-header">
+                        <div>
+                            <span class="tag tag-done">已结束</span>
+                            <span class="result-teams">加拿大 VS 卡塔尔</span>
+                        </div>
+                        <div class="result-score">6 - 0</div>
+                    </div>
+                    <div class="result-detail">
+                        B组第二轮 · 温哥华BC Place体育场 · 北京时间 06:00
+                    </div>
+                    <div class="scorer-list">
+                        <span>🇨🇦 拉林 16'</span>
+                        <span>🇨🇦 乔纳森·戴维 29' 45+3' 90+2' 帽子戏法</span>
+                        <span>🇨🇦 内森·萨利巴 64' 任意球</span>
+                        <span>🇶🇦 曼奈伊 75' 乌龙</span>
+                    </div>
+                    <p style="font-size:0.85em; color:var(--text-dim); margin-top:10px;">
+                        东道主加拿大取得队史世界杯首胜！乔纳森·戴维帽子戏法成为最大功臣。卡塔尔输球又输人——霍马姆·艾哈迈德33分钟直红、马迪博53分钟直红（导致加拿大中场科内疑似骨折重伤），9人应战彻底崩盘。萨利巴进球后高举科内球衣为其祈福，为本届世界杯最感人瞬间之一。加拿大成为本届首支晋级16强球队，卡塔尔成为首支确定淘汰队伍。
+                    </p>
+                    <div class="grid-3" style="margin-top:10px;">
+                        <div class="stat-card">
+                            <div class="stat-value">67%</div>
+                            <div class="stat-label">加拿大控球率</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">28:2</div>
+                            <div class="stat-label">射门比</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">2红</div>
+                            <div class="stat-label">卡塔尔红牌</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- B组积分榜 -->
+            <div class="section">
+                <div class="section-title"><span class="emoji">📊</span>B组实时积分榜</div>
+                <table class="comp-table">
+                    <tr><th>排名</th><th>球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进/失</th><th>净胜球</th><th>积分</th></tr>
+                    <tr><td>1</td><td>加拿大</td><td>2</td><td>1</td><td>1</td><td>0</td><td>7/1</td><td class="highlight">+6</td><td class="highlight">4</td></tr>
+                    <tr><td>2</td><td>瑞士</td><td>2</td><td>1</td><td>1</td><td>0</td><td>5/2</td><td>+3</td><td>4</td></tr>
+                    <tr><td>3</td><td>波黑</td><td>2</td><td>0</td><td>1</td><td>1</td><td>2/5</td><td>-3</td><td>1</td></tr>
+                    <tr><td>4</td><td>卡塔尔</td><td>2</td><td>0</td><td>1</td><td>1</td><td>1/7</td><td class="warn">-6</td><td>1</td></tr>
+                </table>
+            </div>
+
+            <!-- A组积分榜 -->
+            <div class="section">
+                <div class="section-title"><span class="emoji">📊</span>A组实时积分榜（墨西哥VS韩国赛前）</div>
+                <table class="comp-table">
+                    <tr><th>排名</th><th>球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进/失</th><th>净胜球</th><th>积分</th></tr>
+                    <tr><td>1</td><td>墨西哥</td><td>1</td><td>1</td><td>0</td><td>0</td><td>2/0</td><td class="highlight">+2</td><td class="highlight">3</td></tr>
+                    <tr><td>2</td><td>韩国</td><td>1</td><td>1</td><td>0</td><td>0</td><td>2/1</td><td>+1</td><td>3</td></tr>
+                    <tr><td>3</td><td>捷克</td><td>2</td><td>0</td><td>1</td><td>1</td><td>2/3</td><td>-1</td><td>1</td></tr>
+                    <tr><td>4</td><td>南非</td><td>2</td><td>0</td><td>1</td><td>1</td><td>1/3</td><td class="warn">-2</td><td>1</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>2026美加墨世界杯 · 深度赛事分析报告</p>
+            <p>数据来源：FIFA官方、直播吧、新浪体育、Opta、OneFootball、CCTV世界杯频道等权威公开信息</p>
+            <p>所有预测结论均为数据模型分析结果，不构成任何投注建议</p>
+            <p style="margin-top:8px;">报告生成时间：2026年6月19日 · 仅供研究参考</p>
+        </div>
+    </div>
+</body>
+</html>
