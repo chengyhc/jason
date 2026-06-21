@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026美加墨世界杯 · 6月21日深度前瞻报告</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #f5c518;
+            --green: #00b894;
+            --blue: #0984e3;
+            --text: #eaeaea;
+            --text-dim: #a0a0a0;
+            --card-bg: #1e2a3a;
+            --border: #2d3f54;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 50px 20px 40px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            border-bottom: 3px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(233,69,96,0.08) 0%, transparent 60%);
+            animation: pulse 6s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        .header h1 {
+            font-size: 2.2em;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--gold), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 1;
+        }
+        .header .subtitle {
+            color: var(--text-dim);
+            font-size: 1.05em;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .header .date-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            font-size: 0.95em;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Match Section */
+        .match-section {
+            margin: 40px 0;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .match-header {
+            background: linear-gradient(135deg, #0f3460, #16213e);
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .match-header .match-title {
+            font-size: 1.5em;
+            font-weight: 800;
+        }
+        .match-header .match-info {
+            font-size: 0.9em;
+            color: var(--text-dim);
+        }
+        .match-header .match-info span {
+            display: inline-block;
+            margin-left: 15px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 700;
+        }
+        .badge-live { background: var(--accent); color: #fff; }
+        .badge-upcoming { background: var(--green); color: #fff; }
+        .badge-finished { background: var(--text-dim); color: #fff; }
+
+        .match-body { padding: 30px; }
+
+        /* Score Prediction */
+        .prediction-box {
+            background: linear-gradient(135deg, rgba(233,69,96,0.12), rgba(9,132,227,0.12));
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        .prediction-box h3 {
+            color: var(--gold);
+            font-size: 1.15em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .verdict {
+            font-size: 1.6em;
+            font-weight: 900;
+            text-align: center;
+            padding: 15px 0;
+            margin: 10px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .verdict .winner { color: var(--green); }
+        .verdict .draw { color: var(--gold); }
+        .scores-row {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        .score-item {
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            padding: 12px 22px;
+            border-radius: 10px;
+            min-width: 90px;
+        }
+        .score-item .score {
+            font-size: 1.5em;
+            font-weight: 900;
+            color: var(--gold);
+        }
+        .score-item .prob {
+            font-size: 0.8em;
+            color: var(--text-dim);
+            margin-top: 4px;
+        }
+        .score-item .rank {
+            font-size: 0.75em;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        .confidence {
+            text-align: center;
+            margin-top: 12px;
+        }
+        .stars {
+            font-size: 1.4em;
+            color: var(--gold);
+            letter-spacing: 3px;
+        }
+
+        /* Analysis Grid */
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        @media (max-width: 700px) {
+            .analysis-grid { grid-template-columns: 1fr; }
+        }
+        .analysis-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .analysis-card h4 {
+            color: var(--blue);
+            font-size: 1em;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        .analysis-card p, .analysis-card li {
+            font-size: 0.92em;
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+        .analysis-card ul {
+            padding-left: 18px;
+        }
+        .analysis-card li { margin-bottom: 4px; }
+
+        /* Key Arguments */
+        .key-arguments {
+            margin-bottom: 25px;
+        }
+        .key-arguments h3 {
+            color: var(--accent);
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .argument-item {
+            background: rgba(233,69,96,0.06);
+            border-left: 3px solid var(--accent);
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            border-radius: 0 8px 8px 0;
+        }
+        .argument-item .arg-title {
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+        .argument-item .arg-detail {
+            font-size: 0.9em;
+            color: var(--text-dim);
+        }
+
+        /* Goal Scenario */
+        .goal-scenario {
+            background: rgba(0,184,148,0.08);
+            border: 1px solid rgba(0,184,148,0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .goal-scenario h3 {
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+        .goal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 12px;
+        }
+        @media (max-width: 600px) {
+            .goal-grid { grid-template-columns: 1fr; }
+        }
+        .goal-item {
+            text-align: center;
+            background: rgba(255,255,255,0.04);
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .goal-item .label {
+            font-size: 0.8em;
+            color: var(--text-dim);
+        }
+        .goal-item .value {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--green);
+            margin-top: 4px;
+        }
+
+        /* X-Factor */
+        .x-factor {
+            background: rgba(245,197,24,0.06);
+            border: 1px solid rgba(245,197,24,0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .x-factor h3 {
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+        .x-factor ul { padding-left: 18px; }
+        .x-factor li {
+            font-size: 0.9em;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+        .x-factor li strong {
+            color: var(--gold);
+        }
+
+        /* Group Table */
+        .group-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+        .group-table th {
+            background: rgba(9,132,227,0.15);
+            color: var(--blue);
+            padding: 10px 12px;
+            text-align: center;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border);
+        }
+        .group-table td {
+            padding: 10px 12px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-dim);
+        }
+        .group-table tr:hover td {
+            background: rgba(255,255,255,0.03);
+        }
+        .group-table .team-name {
+            text-align: left;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        /* Environment Box */
+        .env-box {
+            background: rgba(9,132,227,0.08);
+            border: 1px solid rgba(9,132,227,0.2);
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .env-box h4 {
+            color: var(--blue);
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+        .env-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+        }
+        .env-item {
+            text-align: center;
+            padding: 8px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 6px;
+        }
+        .env-item .env-label {
+            font-size: 0.75em;
+            color: var(--text-dim);
+        }
+        .env-item .env-value {
+            font-size: 1.05em;
+            font-weight: 700;
+            color: var(--text);
+            margin-top: 2px;
+        }
+
+        /* Divider */
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            margin: 50px 0;
+            border-radius: 2px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-dim);
+            font-size: 0.85em;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .footer .disclaimer {
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Highlight */
+        .hl { color: var(--gold); font-weight: 700; }
+        .hl-green { color: var(--green); font-weight: 700; }
+        .hl-red { color: var(--accent); font-weight: 700; }
+        .hl-blue { color: var(--blue); font-weight: 700; }
+
+        /* Comparison Bar */
+        .comparison {
+            margin: 20px 0;
+        }
+        .comp-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: 10px;
+        }
+        .comp-label {
+            width: 80px;
+            font-size: 0.85em;
+            color: var(--text-dim);
+            text-align: right;
+            flex-shrink: 0;
+        }
+        .comp-bar-wrap {
+            flex: 1;
+            display: flex;
+            height: 22px;
+            border-radius: 11px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.05);
+        }
+        .comp-bar-a {
+            background: linear-gradient(90deg, var(--accent), #c0392b);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8px;
+            font-size: 0.75em;
+            font-weight: 700;
+            color: #fff;
+            min-width: 30px;
+        }
+        .comp-bar-draw {
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7em;
+            font-weight: 700;
+            color: #000;
+            min-width: 20px;
+        }
+        .comp-bar-b {
+            background: linear-gradient(90deg, #2980b9, var(--blue));
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 8px;
+            font-size: 0.75em;
+            font-weight: 700;
+            color: #fff;
+            min-width: 30px;
+        }
+        .comp-teams {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+            color: var(--text-dim);
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>2026 美加墨世界杯 · 深度前瞻</h1>
+    <div class="subtitle">6月21日 E组 & F组 小组赛第二轮 · 专业五维分析模型</div>
+    <div class="date-badge">2026年6月21日 · 北京时间 08:00 / 12:00</div>
+</div>
+
+<div class="container">
+
+    <!-- ======================== MATCH 1: 厄瓜多尔 VS 库拉索 ======================== -->
+    <div class="match-section">
+        <div class="match-header">
+            <div>
+                <div class="match-title">厄瓜多尔 🇪🇨 VS 库拉索 🇨🇼</div>
+                <div class="match-info">
+                    <span>E组 · 第2轮</span>
+                    <span>北京时间 08:00</span>
+                    <span>堪萨斯城 Arrowhead Stadium</span>
+                </div>
+            </div>
+            <span class="badge badge-upcoming">即将开赛</span>
+        </div>
+        <div class="match-body">
+
+            <!-- E组积分榜 -->
+            <h3 style="color:var(--blue); margin-bottom:10px;">E组实时积分榜（首轮战罢）</h3>
+            <table class="group-table">
+                <thead>
+                    <tr><th>排名</th><th class="team-name">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进/失</th><th>净胜球</th><th>积分</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td class="team-name">🇩🇪 德国</td><td>1</td><td>1</td><td>0</td><td>0</td><td>7/1</td><td>+6</td><td>3</td></tr>
+                    <tr><td>2</td><td class="team-name">🇨🇮 科特迪瓦</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1/0</td><td>+1</td><td>3</td></tr>
+                    <tr><td>3</td><td class="team-name">🇪🇨 厄瓜多尔</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0/1</td><td>-1</td><td>0</td></tr>
+                    <tr><td>4</td><td class="team-name">🇨🇼 库拉索</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1/7</td><td>-6</td><td>0</td></tr>
+                </tbody>
+            </table>
+
+            <!-- 核心结论 -->
+            <div class="prediction-box">
+                <h3>核心结论</h3>
+                <div class="verdict">
+                    预测结果：<span class="winner">厄瓜多尔胜</span>
+                </div>
+                <div class="scores-row">
+                    <div class="score-item">
+                        <div class="rank">首选</div>
+                        <div class="score">2-0</div>
+                        <div class="prob">概率 28%</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="rank">次选</div>
+                        <div class="score">3-0</div>
+                        <div class="prob">概率 22%</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="rank">备选</div>
+                        <div class="score">2-1</div>
+                        <div class="prob">概率 12%</div>
+                    </div>
+                </div>
+                <div class="confidence">
+                    信心指数：<span class="stars">★★★★☆</span>
+                </div>
+            </div>
+
+            <!-- 胜负概率对比 -->
+            <div class="comparison">
+                <div class="comp-row">
+                    <div class="comp-label">胜平负</div>
+                    <div class="comp-bar-wrap">
+                        <div class="comp-bar-a" style="width:86%">86%</div>
+                        <div class="comp-bar-draw" style="width:9%">9%</div>
+                        <div class="comp-bar-b" style="width:5%">5%</div>
+                    </div>
+                </div>
+                <div class="comp-teams">
+                    <span>厄瓜多尔胜</span>
+                    <span>平局</span>
+                    <span>库拉索胜</span>
+                </div>
+            </div>
+
+            <!-- 深度逻辑拆解 -->
+            <div class="key-arguments">
+                <h3>深度逻辑拆解</h3>
+                <div class="argument-item">
+                    <div class="arg-title">1. 防守铁壁 vs 纸糊防线：实力鸿沟不可逾越</div>
+                    <div class="arg-detail">厄瓜多尔世预赛18轮仅丢5球，防守效率冠绝南美；凯塞多（切尔西）、因卡皮耶（勒沃库森）、帕乔（巴黎）组成的中后场身价超2.3亿欧元。反观库拉索首轮被德国7次洞穿球门，近5场丢18球，防线形同虚设。双方整体身价比约为 <span class="hl">3.7亿 vs 2870万欧元</span>，差距超13倍。</div>
+                </div>
+                <div class="argument-item">
+                    <div class="arg-title">2. 厄瓜多尔进攻效率是唯一隐忧，但对手足够"配合"</div>
+                    <div class="arg-detail">厄瓜多尔首轮12次射门仅1次射正，xG 1.03却零进球，终结效率不足8%。但库拉索首轮对德国的定位球防守多次漏人，中卫缺乏顶级联赛经验，面对厄瓜多尔的高空轰炸和定位球战术（中卫头球能力强），防线大概率再次崩溃。</div>
+                </div>
+                <div class="argument-item">
+                    <div class="arg-title">3. 出线形势逼迫厄瓜多尔必须全力进攻捞净胜球</div>
+                    <div class="arg-detail">两队首轮均0分垫底，败者基本锁定出局。厄瓜多尔末轮将对阵已提前出线的德国，本场不仅要赢，还需尽可能多捞净胜球以弥补-1的劣势。战意层面，厄瓜多尔求胜欲望远超库拉索——后者净胜球-6，出线仅存理论可能。</div>
+                </div>
+                <div class="argument-item">
+                    <div class="arg-title">4. 库拉索世界杯新军经验匮乏，五后卫铁桶阵难挡持续施压</div>
+                    <div class="arg-detail">库拉索全国人口仅15.8万，队史首次闯入世界杯正赛。多数球员效力荷乙、英冠等次级联赛，首轮对德国控球率仅35%。面对厄瓜多尔大概率摆出5-4-1铁桶阵，但首轮已证明其密集防守质量极低，一旦先丢球，心理防线将迅速瓦解。</div>
+                </div>
+            </div>
+
+            <!-- 五维分析 -->
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h4>球队基本面与近期状态</h4>
+                    <ul>
+                        <li><strong>厄瓜多尔</strong>（FIFA排名23）：近5场4胜1负，场均进2.4球失0.8球；首轮0-1被科特迪瓦绝杀，12射1正效率极低</li>
+                        <li><strong>库拉索</strong>（FIFA排名83）：近5场1胜4负，场均丢3.6球；首轮1-7惨败德国，科梅嫩西亚打入队史世界杯首球</li>
+                        <li><strong>伤停</strong>：厄瓜多尔全员健康；库拉索阵容齐整，戈雷摆脱膝盖小伤可出战</li>
+                    </ul>
+                </div>
+                <div class="analysis-card">
+                    <h4>战术体系与历史交锋</h4>
+                    <ul>
+                        <li>厄瓜多尔4-4-2：凯塞多坐镇中场，防守纪律性极强；进攻依赖36岁老将瓦伦西亚跑位+定位球</li>
+                        <li>库拉索预计5-4-1：密集防守+科梅嫩西亚速度反击，但首轮防线漏洞百出</li>
+                        <li>两队成年国家队层面首次正式交手；友谊赛性质6次交手厄瓜多尔5胜1平进14球失2球</li>
+                    </ul>
+                </div>
+                <div class="analysis-card">
+                    <h4>2026世界杯专属环境变量</h4>
+                    <ul>
+                        <li><strong>场地</strong>：堪萨斯城Arrowhead Stadium，海拔约270米，无高原影响</li>
+                        <li><strong>天气</strong>：6月21日预计29°C/20°C，雷阵雨，湿度82%，降水量22.7mm——湿滑场地利于技术流厄瓜多尔地面传控</li>
+                        <li><strong>赛程</strong>：两队首轮均在美国东部比赛，转场堪萨斯城旅途消耗相当</li>
+                        <li><strong>裁判</strong>：中国裁判马宁主哨，助理裁判周飞，傅明担任VAR——中国裁判组世界杯正赛首秀</li>
+                    </ul>
+                </div>
+                <div class="analysis-card">
+                    <h4>赛制与战意因素</h4>
+                    <ul>
+                        <li>48队12组新赛制下，小组前二+8个最佳第三名出线</li>
+                        <li>厄瓜多尔0分-1净胜球，本场必须全取3分+尽可能多捞净胜球，末轮对德国才有主动权</li>
+                        <li>库拉索0分-6净胜球，出线仅存理论可能，更多为荣誉而战</li>
+                        <li>Opta超级计算机模拟：厄瓜多尔胜率86.1%，平局9.2%，库拉索胜4.7%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 机构与市场风向 -->
+            <div class="env-box">
+                <h4>机构与市场风向</h4>
+                <div class="env-grid">
+                    <div class="env-item">
+                        <div class="env-label">胜平负（厄瓜多尔胜）</div>
+                        <div class="env-value">1.18</div>
+                    </div>
+                    <div class="env-item">
+                        <div class="env-label">胜平负（平局）</div>
+                        <div class="env-value">7.00</div>
+                    </div>
+                    <div class="env-item">
+                        <div class="env-label">胜平负（库拉索胜）</div>
+                        <div class="env-value">13.00</div>
+                    </div>
+                    <div class="env-item">
+                        <div class="env-label">亚洲让球</div>
+                        <div class="env-value">厄瓜多尔-2.25</div>
+                    </div>
+                    <div class="env-item">
+                        <div class="env-label">大小球</div>
+                        <div class="env-value">3.5球</div>
+                    </div>
+                    <div class="env-item">
+                        <div class="env-label">最热比分</div>
+                        <div class="env-value">3-0 (SP 5.53)</div>
+                    </div>
+                </div>
+                <p style="margin-top:12px; font-size:0.88em; color:var(--text-dim);">让球盘从初始1.5球升至2.25球，市场对厄瓜多尔大胜信心持续增强。厄瓜多尔胜赔1.18为极低水平，反映市场对冷门几乎不设防。需警惕：极低赔率下存在"赢球输盘"风险——厄瓜多尔赢1-2球但无法覆盖2.25球让步。</p>
+            </div>
+
+            <!-- 进球剧本 -->
+            <div class="goal-scenario">
+                <h3>进球剧本推演</h3>
+                <div class="goal-grid">
+                    <div class="goal-item">
+                        <div class="label">总进球数区间</div>
+                        <div class="value">2-3球</div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="label">最可能进球时段</div>
+                        <div class="value">30-60分钟</div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="label">关键破门球员</div>
+                        <div class="value">瓦伦西亚 / 凯塞多</div>
+                    </div>
+                </div>
+                <p style="margin-top:12px; font-size:0.9em; color:var(--text-dim);">
+                    厄瓜多尔xG模型预期进球约2.4球，库拉索反击预期进球约0.6球。预计厄瓜多尔上半场通过定位球或瓦伦西亚抢点先拔头筹，下半场利用体能优势扩大比分。库拉索若能偷得一球，最可能来自科梅嫩西亚的反击速度或定位球二次进攻。全场总进球预期约3.0球。
+                </p>
+            </div>
+
+            <!-- X因素 -->
+            <div class="x-factor">
+                <h3>隐藏X因素</h3>
+                <ul>
+                    <li><strong>雷阵雨天气</strong>：堪萨斯城6月21日降水概率高，湿滑场地可能导致传球失误增加，对技术流厄瓜多尔的地面传控造成一定干扰，但也可能放大库拉索防线的滑倒和失位风险</li>
+                    <li><strong>马宁裁判组首秀</strong>：中国裁判马宁首次主吹世界杯正赛，执法尺度偏严（中超场均黄牌4.8张），可能对库拉索的粗野防守动作出牌更频繁，给厄瓜多尔更多定位球机会</li>
+                    <li><strong>厄瓜多尔终结效率危机</strong>：首轮12射1正的极端低效若延续，可能让库拉索死守成功——一旦上半场无法破门，急躁情绪可能蔓延</li>
+                    <li><strong>库拉索"光脚不怕穿鞋"心理</strong>：作为人口仅15.8万的世界杯新军，已无任何包袱，可能在绝境中爆发出超水平发挥</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- ======================== MATCH 2: 突尼斯 VS 日本 ======================== -->
+    <div class="match-section">
+        <div class="match-header">
+            <div>
+                <div class="match-title">突尼斯 🇹🇳 VS 日本 🇯🇵</div>
+                <div class="match-info">
+                    <span>F组 · 第2轮</span>
+                    <span>北京时间 12:00</span>
+                    <span>蒙特雷 BBVA体育场</span>
+                </div>
+            </div>
+            <span class="badge badge-upcoming">即将开赛</span>
+        </div>
+        <div class="match-body">
+
+            <!-- F组积分榜 -->
+            <h3 style="color:var(--blue); margin-bottom:10px;">F组实时积分榜（第二轮进行中）</h3>
+            <table class="group-table">
+                <thead>
+                    <tr><th>排名</th><th class="team-name">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进/失</th><th>净胜球</th><th>积分</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td class="team-name">🇳🇱 荷兰</td><td>2</td><td>1</td><td>1</td><td>0</td><td>7/3</td><td>+4</td><td>4</td></tr>
+                    <tr><td>2</td><td class="team-name">🇸🇪 瑞典</td><td>2</td><td>1</td><td>0</td><td>1</td><td>6/6</td><td>0</td><td>3</td></tr>
+                    <tr><td>3</td><td class="team-name">🇯🇵 日本</td><td>1</td><td>0</td><td>1</td><td>0</td><td>2/2</td><td>0</td><td>1</td></tr>
+                    <tr><td>4</td><td class="team-name">🇹🇳 突尼斯</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1/5</td><td>-4</td><td>0</td></tr>
+                </tbody>
+            </table>
+
+            <!-- 核心结论 -->
+            <div class="prediction-box">
+                <h3>核心结论</h3>
+                <div class="verdict">
+                    预测结果：<span class="winner">日本胜</span>
+                </div>
+                <div class="scores-row">
+                    <div class="score-item">
+                        <div class="rank">首选</div>
+                        <div class="score">2-0</div>
+                        <div class="prob">概率 25%</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="rank">次选</div>
+                        <div class="score">1-0</div>
+                        <div class="prob">概率 22%</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="rank">备选</div>
+                        <div class="score">2-1</div>
+                        <div class="prob">概率 15%</div>
+                    </div>
+                </div>
+                <div class="confidence">
+                    信心指数：<span class="stars">★★★☆☆</span>
+                </div>
+            </div>
+
+            <!-- 胜负概率对比 -->
+            <div class="comparison">
+                <div class="comp-row">
+                    <div class="comp-label">胜平负</div>
+                    <div class="comp-bar-wrap">
+                        <div class="comp-bar-a" style="width:18%">18%</div>
+                        <div class="comp-bar-draw" style="width:17%">17%</div>
+                        <div class="comp-bar-b" style="width:65%">65%</div>
+                    </div>
+                </div>
+                <div class="comp-teams">
+                    <span>突尼斯胜</span>
+                    <span>平局</span>
+                    <span>日本胜</span>
+                </div>
+            </div>
+
+            <!-- 深度逻辑拆解 -->
+            <div class="key-arguments">
+                <h3>深度逻辑拆解</h3>
+                <div class="argument-item">
+                    <div class="arg-title">1. 日本连伤四大核心，但体系韧性经受过极限考验</div>
+                    <div class="arg-detail">日本已失去队长远藤航（脚伤退出）、左路爆点三笘薰（腿筋退出）、前场核心南野拓实（伤退）、右路创造力久保建英（首轮左膝受伤，轮椅下场，本场确认缺席）。四名核心缺阵对进攻端打击极大——但首轮两次落后荷兰两次扳平（第89分钟镰田大地绝平），证明森保一的3-4-2-1体系具备极强的心理弹性和战术纪律。堂安律、镰田大地将承担更多创造责任。</div>
+                </div>
+                <div class="argument-item">
+                    <div class="arg-title">2. 突尼斯换帅"核爆"效应：勒纳尔能否复制沙特奇迹？</div>
+                    <div class="arg-detail">突尼斯首轮1-5惨败瑞典后，主帅拉穆奇成为世界杯历史上首位"一场即下课"的教练。继任者勒纳尔曾率沙特2-1逆转阿根廷，对非洲足球极度熟悉（曾率赞比亚、科特迪瓦登顶非洲杯）。他执教沙特期间3次对阵日本战绩1胜1平1负，2021年世预赛主场1-0击败日本。但仅有数天磨合时间，连球员名字都未必叫全——"精神激励"能维持多久是最大疑问。</div>
+                </div>
+                <div class="argument-item">
+                    <div class="arg-title">3. 蒙特雷高温+海拔：日本长途奔袭的体能隐患</div>
+                    <div class="arg-detail">比赛地蒙特雷海拔约530米，6月21日预计气温35°C/24°C，体感温度可达38°C。日本队需从美国达拉斯长途赴墨，存在旅途消耗和时差调整问题；突尼斯则以逸待劳，首轮即在蒙特雷比赛，对当地气候和BBVA体育场（蒙特雷队主场，看台垂直斜坡设计营造强烈压迫感）更加适应。高温环境下，日本的高位逼抢体系体能消耗将显著增加。</div>
+                </div>
+                <div class="argument-item">
+                    <div class="arg-title">4. 世界杯第1000场比赛的特殊战意加成</div>
+                    <div class="arg-detail">本场是世界杯历史第1000场比赛，FIFA为裁判组设计了特别版橙色球衣。这一里程碑时刻将激发双方球员额外的荣誉感和战意。对日本而言，赢球即可积4分掌握出线主动权；对突尼斯而言，输球即基本出局——背水一战的求生欲可能让比赛比预期更开放、更激烈。</div>
+                </div>
+            </div>
+
+            <!-- 五维分析 -->
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h4>球队基本面与近期状态</h4>
+                    <ul>
+                        <li><strong>日本</strong>（FIFA排名18）：近10场6胜3平1负，场均进2.0球失0.5球；首轮2-2逼平荷兰，两次落后两次扳平</li>
+                        <li><strong>突尼斯</strong>（FIFA排名46）：近10场3胜3平4负，场均进1.1球失1.7球；首轮1-5惨败瑞典，门将沙马克预期扑救差值-2.88</li>
+                        <li><strong>日本伤停</strong>：远藤航、三笘薰、南野拓实退出大名单；久保建英首轮受伤缺席——<span class="hl-red">四大核心缺阵</span></li>
+                        <li><strong>突尼斯伤停</strong>：全员健康，26人完整待命；勒纳尔可排出最强阵容</li>
+                    </ul>
+                </div>
+                <div class="analysis-card">
+                    <h4>战术体系与历史交锋</h4>
+                    <ul>
+                        <li>日本3-4-2-1：高位逼抢+快速转换，镰田大地、堂安律承担创造责任，上田绮世单箭头；久保缺阵后右路冲击力大幅下降</li>
+                        <li>突尼斯预计4-3-3/5-4-1：勒纳尔风格为低位防守+快速反击，汉尼拔·梅布里为进攻大脑，哈兹里为锋线老将</li>
+                        <li>近3次交手日本2胜1负占优：2022年麒麟杯突尼斯3-0胜日本（日本队史对非洲最差战绩），2023年友谊赛日本2-0复仇</li>
+                        <li>世界杯历史：2002年小组赛日本2-0胜突尼斯</li>
+                    </ul>
+                </div>
+                <div class="analysis-card">
+                    <h4>2026世界杯专属环境变量</h4>
+                    <ul>
+                        <li><strong>场地</strong>：蒙特雷BBVA体育场，海拔约530米，对低海拔习惯球队有轻微影响</li>
+                        <li><strong>天气</strong>：6月21日预计35°C/24°C，体感38°C，午后有小雨可能——<span class="hl-red">极端高温</span>对日本高位逼抢体能消耗极大</li>
+                        <li><strong>赛程</strong>：日本从达拉斯飞蒙特雷（约1.5小时），突尼斯首轮即在蒙特雷以逸待劳</li>
+                        <li><strong>裁判</strong>：罗马尼亚裁判科瓦奇主哨，场均4.6张黄牌、9张红牌/38场，判罚21次点球——<span class="hl">尺度严格</span>，有利于技术型日本</li>
+                    </ul>
+                </div>
+                <div class="analysis-card">
+                    <h4>赛制与战意因素</h4>
+                    <ul>
+                        <li>日本赢球积4分：出线形势大幅明朗，末轮稳扎稳打即可晋级</li>
+                        <li>突尼斯赢球积3分：保留末轮生机，但需看其他场次脸色</li>
+                        <li>平局：日本2分末轮必须赢瑞典，突尼斯1分基本出局</li>
+                        <li>日本连续10场世界杯无法零封，突尼斯近5场正式比赛均出现双方进球——本场大概率双方均有进球</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 机构与市场风向 -->
+            <div class="env-box">
+                <h4>机构与市场风向</h4>
+                <div class="env-grid">
+                    <div class="env-item">
+                        <div class="env-label">胜平负（突尼斯胜）</div>
+                        <div class="env-value">+450</div>
+                    </div>
+                    <div class="env-item">
+                        <div class="env-label">胜平负（平局）</div>
+                        <div class="env-value">+280</div>
+                    </div>
+                    <div class="env-item">
+                        <div class="env-label">胜平负（日本胜）</div>
+                        <div class="env-value">-155</div>
+                    </div>
+                    <div class="env-item">
+                        <div class="env-label">大小球</div>
+                        <div class="env-value">2.5球</div>
+                    </div>
+                    <div class="env-item">
+                        <div class="env-label">Dimers概率（日本胜）</div>
+                        <div class="env-value">64.4%</div>
+                    </div>
+                    <div class="env-item">
+                        <div class="env-label">Dimers概率（突尼斯胜）</div>
+                        <div class="env-value">13.6%</div>
+                    </div>
+                </div>
+                <p style="margin-top:12px; font-size:0.88em; color:var(--text-dim);">市场主流看好日本取胜，但日本-155的赔率并未压至极低水平，反映市场对日本四大核心缺阵的担忧。突尼斯+450的冷门赔率具有一定吸引力——勒纳尔换帅效应+以逸待劳+高温因素构成冷门温床。需特别关注：若临场日本赔率继续走低，可能存在过热风险；若突尼斯赔率进一步升高，则可能蕴含价值。</p>
+            </div>
+
+            <!-- 进球剧本 -->
+            <div class="goal-scenario">
+                <h3>进球剧本推演</h3>
+                <div class="goal-grid">
+                    <div class="goal-item">
+                        <div class="label">总进球数区间</div>
+                        <div class="value">1-3球</div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="label">最可能进球时段</div>
+                        <div class="value">60-85分钟</div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="label">关键破门球员</div>
+                        <div class="value">镰田大地 / 堂安律</div>
+                    </div>
+                </div>
+                <p style="margin-top:12px; font-size:0.9em; color:var(--text-dim);">
+                    预计上半场双方互相试探，突尼斯低位防守+日本缺少久保建英的右路突破，进攻组织可能陷入僵局。下半场60分钟后，突尼斯高温下体能下降，日本通过换人（板仓滉、浅野拓磨等）提速，镰田大地或堂安律在中路/肋部找到空当完成致命一击。突尼斯若能进球，最可能来自汉尼拔·梅布里的远射或哈兹里的定位球抢点。日本连续10场世界杯无法零封，突尼斯有偷球能力。
+                </p>
+            </div>
+
+            <!-- X因素 -->
+            <div class="x-factor">
+                <h3>隐藏X因素</h3>
+                <ul>
+                    <li><strong>勒纳尔"换帅如换刀"效应</strong>：世界杯历史上从未有过首场后换帅的先例，勒纳尔仅有数天时间磨合，但他在2022年率沙特逆转阿根廷证明了自己是"大赛奇迹制造者"。若突尼斯上半场不丢球，勒纳尔的中场激励可能让下半场完全不同</li>
+                    <li><strong>蒙特雷极端高温</strong>：35°C体感38°C的高温对日本高位逼抢体系是严峻考验，FIFA已引入每半场3分钟饮水暂停——但高温对持续跑动型打法的不利是结构性的。日本可能被迫降低逼抢强度，更多依赖控球和阵地战</li>
+                    <li><strong>科瓦奇严格执法尺度</strong>：场均4.6张黄牌、38场9红21点球的严哨风格，对粗野防守型球队不利（突尼斯首轮犯规次数偏多），但日本技术流球员在严格尺度下通常受益</li>
+                    <li><strong>日本四大核心缺阵的"蝴蝶效应"</strong>：久保建英缺阵后右路创造力真空，森保一可能变阵——若调整不当，进攻可能完全哑火；但日本板凳深度（堂安律、伊东纯也、浅野拓磨）足以支撑一套有竞争力的首发</li>
+                    <li><strong>世界杯第1000场比赛的心理加成</strong>：里程碑时刻可能让双方球员在开场阶段过于亢奋，导致节奏失控或过早犯规吃牌</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 已完赛速报 -->
+    <div class="match-section">
+        <div class="match-header" style="background: linear-gradient(135deg, #2d3436, #636e72);">
+            <div>
+                <div class="match-title">已完赛速报</div>
+                <div class="match-info">6月21日凌晨场次</div>
+            </div>
+            <span class="badge badge-finished">已结束</span>
+        </div>
+        <div class="match-body">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                <div style="background:rgba(255,255,255,0.03); border-radius:10px; padding:20px; text-align:center;">
+                    <div style="font-size:0.85em; color:var(--text-dim); margin-bottom:8px;">F组第2轮 · 休斯顿</div>
+                    <div style="font-size:1.3em; font-weight:800;">
+                        荷兰 <span class="hl-green">5</span> - 1 瑞典
+                    </div>
+                    <div style="font-size:0.82em; color:var(--text-dim); margin-top:8px;">
+                        布罗比双响(5', 23') · 加克波双响(52', 68')<br>
+                        萨默维尔远射(87') · 埃兰加扳回(75')
+                    </div>
+                </div>
+                <div style="background:rgba(255,255,255,0.03); border-radius:10px; padding:20px; text-align:center;">
+                    <div style="font-size:0.85em; color:var(--text-dim); margin-bottom:8px;">E组第2轮 · 多伦多</div>
+                    <div style="font-size:1.3em; font-weight:800;">
+                        德国 <span class="hl-green">2</span> - 1 科特迪瓦
+                    </div>
+                    <div style="font-size:0.82em; color:var(--text-dim); margin-top:8px;">
+                        凯西30'先拔头筹 · 温达夫68'扳平<br>
+                        温达夫90+补时绝杀 · 德国提前出线
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>数据来源：FIFA官方、Opta超级计算机、主流博彩机构实时赔率、各国足协官方公告</p>
+        <p>天气数据：和风天气、Met Office、KSHB当地气象台</p>
+        <p class="disclaimer">声明：本报告基于公开数据的专业分析，仅供足球爱好者参考。不构成任何投注建议，请理性观赛。</p>
+        <p style="margin-top:8px;">报告生成时间：2026年6月21日 · 北京时间</p>
+    </div>
+
+</div>
+
+</body>
+</html>
