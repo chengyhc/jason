@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026美加墨世界杯 · 6月25日深度前瞻报告</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #f5c518;
+            --text: #eaeaea;
+            --text-muted: #a0a0b0;
+            --card-bg: #1e2a45;
+            --border: #2a3a5c;
+            --green: #00c853;
+            --orange: #ff9800;
+            --blue: #2196f3;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(233,69,96,0.1) 0%, transparent 50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .header h1 {
+            font-size: 2.2em;
+            background: linear-gradient(90deg, var(--gold), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            position: relative;
+        }
+        .header .subtitle { color: var(--text-muted); font-size: 1.05em; position: relative; }
+        .header .date-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 12px;
+            position: relative;
+        }
+        
+        /* Navigation */
+        .nav-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+            justify-content: center;
+        }
+        .nav-btn {
+            padding: 8px 18px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--card-bg);
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+        
+        /* Match Card */
+        .match-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            margin-bottom: 28px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .match-card:hover { transform: translateY(-2px); }
+        
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            background: linear-gradient(90deg, rgba(233,69,96,0.15) 0%, transparent 100%);
+            border-bottom: 1px solid var(--border);
+        }
+        .match-header .group-tag {
+            background: var(--accent);
+            color: #fff;
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .match-header .match-time { color: var(--gold); font-weight: 600; }
+        .match-header .venue { color: var(--text-muted); font-size: 0.85em; }
+        
+        .match-body { padding: 24px; }
+        
+        .teams-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .team-box {
+            flex: 1;
+            min-width: 140px;
+            text-align: center;
+            padding: 16px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+        }
+        .team-box .flag { font-size: 2.5em; margin-bottom: 6px; }
+        .team-box .name { font-size: 1.15em; font-weight: 700; }
+        .team-box .rank { color: var(--text-muted); font-size: 0.85em; }
+        .vs-text { font-size: 1.8em; font-weight: 900; color: var(--accent); }
+        
+        /* Prediction Box */
+        .prediction-box {
+            background: linear-gradient(135deg, rgba(245,197,24,0.1) 0%, rgba(233,69,96,0.1) 100%);
+            border: 1px solid rgba(245,197,24,0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .prediction-box h3 {
+            color: var(--gold);
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+        .prediction-main {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .result-tag {
+            font-size: 1.3em;
+            font-weight: 800;
+            padding: 6px 20px;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #fff;
+        }
+        .result-tag.draw { background: var(--orange); }
+        .result-tag.away { background: var(--blue); }
+        .stars { color: var(--gold); font-size: 1.2em; }
+        .scores {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        .score-chip {
+            background: rgba(255,255,255,0.08);
+            padding: 4px 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        .score-chip:first-child { border: 1px solid var(--gold); color: var(--gold); }
+        
+        /* Analysis Sections */
+        .analysis-section { margin-bottom: 18px; }
+        .analysis-section h4 {
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 3px solid var(--accent);
+            padding-left: 10px;
+        }
+        .analysis-section p, .analysis-section li {
+            color: var(--text);
+            font-size: 0.92em;
+            line-height: 1.8;
+        }
+        .analysis-section ul { padding-left: 20px; }
+        .analysis-section li { margin-bottom: 4px; }
+        
+        /* Key Points */
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .key-point {
+            background: rgba(255,255,255,0.04);
+            border-radius: 8px;
+            padding: 14px;
+            border-left: 3px solid var(--accent);
+        }
+        .key-point .kp-title { font-weight: 700; color: var(--gold); margin-bottom: 4px; font-size: 0.9em; }
+        .key-point .kp-text { font-size: 0.88em; color: var(--text-muted); }
+        
+        /* Goal Script */
+        .goal-script {
+            background: rgba(0,200,83,0.08);
+            border: 1px solid rgba(0,200,83,0.2);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 18px;
+        }
+        .goal-script h4 { color: var(--green); margin-bottom: 8px; }
+        .goal-script .gs-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9em;
+        }
+        .goal-script .gs-item { flex: 1; min-width: 150px; }
+        .goal-script .gs-label { color: var(--text-muted); font-size: 0.82em; }
+        .goal-script .gs-value { font-weight: 600; }
+        
+        /* X-Factor */
+        .x-factor {
+            background: rgba(255,152,0,0.08);
+            border: 1px solid rgba(255,152,0,0.2);
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .x-factor h4 { color: var(--orange); margin-bottom: 8px; }
+        .x-factor ul { padding-left: 18px; }
+        .x-factor li { font-size: 0.88em; margin-bottom: 4px; color: var(--text-muted); }
+        
+        /* Actual Result */
+        .actual-result {
+            background: linear-gradient(135deg, rgba(0,200,83,0.12) 0%, rgba(33,150,243,0.12) 100%);
+            border: 1px solid rgba(0,200,83,0.3);
+            border-radius: 10px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+        .actual-result h4 { color: var(--green); margin-bottom: 8px; }
+        .actual-result .ar-score { font-size: 1.5em; font-weight: 800; color: var(--gold); }
+        .actual-result .ar-detail { font-size: 0.88em; color: var(--text-muted); margin-top: 6px; }
+        
+        /* Environment Box */
+        .env-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .env-item {
+            background: rgba(255,255,255,0.04);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+        .env-item .env-icon { font-size: 1.4em; margin-bottom: 4px; }
+        .env-item .env-label { font-size: 0.75em; color: var(--text-muted); }
+        .env-item .env-value { font-weight: 700; font-size: 0.95em; }
+        
+        /* Group Table */
+        .group-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 18px;
+            font-size: 0.88em;
+        }
+        .group-table th {
+            background: rgba(233,69,96,0.2);
+            padding: 8px 10px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--gold);
+            border-bottom: 1px solid var(--border);
+        }
+        .group-table td {
+            padding: 7px 10px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .group-table tr:hover { background: rgba(255,255,255,0.03); }
+        .group-table .team-name { text-align: left; font-weight: 600; }
+        .group-table .qualified { color: var(--green); font-weight: 700; }
+        .group-table .eliminated { color: var(--accent); }
+        
+        /* Odds Bar */
+        .odds-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .odds-item {
+            flex: 1;
+            min-width: 80px;
+            text-align: center;
+            background: rgba(255,255,255,0.04);
+            border-radius: 8px;
+            padding: 10px 8px;
+        }
+        .odds-item .odds-label { font-size: 0.78em; color: var(--text-muted); }
+        .odds-item .odds-value { font-size: 1.2em; font-weight: 700; color: var(--gold); }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-muted);
+            font-size: 0.82em;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.5em; }
+            .teams-display { gap: 10px; }
+            .team-box { min-width: 100px; padding: 10px; }
+            .match-body { padding: 16px; }
+            .key-points { grid-template-columns: 1fr; }
+        }
+        
+        /* Print */
+        @media print {
+            body { background: #fff; color: #222; }
+            .match-card { border: 1px solid #ddd; break-inside: avoid; }
+            .header { background: #f5f5f5; }
+            .header h1 { -webkit-text-fill-color: #e94560; }
+            .nav-bar { display: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+    <h1>2026美加墨世界杯 · 小组赛第三轮深度前瞻</h1>
+    <p class="subtitle">6月25日六场收官战 · 五维数据推演 · 专业胜负预测</p>
+    <span class="date-badge">MatchDay 14 · 2026.06.25</span>
+</div>
+
+<!-- Navigation -->
+<div class="nav-bar">
+    <a href="#m1" class="nav-btn">B组 瑞士vs加拿大</a>
+    <a href="#m2" class="nav-btn">B组 波黑vs卡塔尔</a>
+    <a href="#m3" class="nav-btn">C组 苏格兰vs巴西</a>
+    <a href="#m4" class="nav-btn">C组 摩洛哥vs海地</a>
+    <a href="#m5" class="nav-btn">A组 捷克vs墨西哥</a>
+    <a href="#m6" class="nav-btn">A组 南非vs韩国</a>
+</div>
+
+<!-- ==================== MATCH 1: Switzerland vs Canada ==================== -->
+<div class="match-card" id="m1">
+    <div class="match-header">
+        <span class="group-tag">B组 第3轮</span>
+        <span class="match-time">6月25日 03:00 (北京时间)</span>
+        <span class="venue">温哥华体育场 · 海拔~70m</span>
+    </div>
+    <div class="match-body">
+        <div class="teams-display">
+            <div class="team-box">
+                <div class="flag">🇨🇭</div>
+                <div class="name">瑞士</div>
+                <div class="rank">FIFA排名 欧洲劲旅</div>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="team-box">
+                <div class="flag">🇨🇦</div>
+                <div class="name">加拿大</div>
+                <div class="rank">东道主 · 净胜球+6</div>
+            </div>
+        </div>
+        
+        <!-- Environment -->
+        <div class="env-box">
+            <div class="env-item">
+                <div class="env-icon">🏔️</div>
+                <div class="env-label">海拔</div>
+                <div class="env-value">~70m</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">🌡️</div>
+                <div class="env-label">气温</div>
+                <div class="env-value">18-22°C</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">💧</div>
+                <div class="env-label">湿度</div>
+                <div class="env-value">65-70%</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">🏠</div>
+                <div class="env-label">主场优势</div>
+                <div class="env-value">加拿大强</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">✈️</div>
+                <div class="env-label">行程</div>
+                <div class="env-value">瑞士长途飞行</div>
+            </div>
+        </div>
+        
+        <!-- Group Table -->
+        <table class="group-table">
+            <tr><th>排名</th><th class="team-name">球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进球</th><th>失球</th><th>净胜球</th><th>积分</th></tr>
+            <tr><td>1</td><td class="team-name">🇨🇦 加拿大</td><td>2</td><td>1</td><td>1</td><td>0</td><td>7</td><td>1</td><td class="qualified">+6</td><td>4</td></tr>
+            <tr><td>2</td><td class="team-name">🇨🇭 瑞士</td><td>2</td><td>1</td><td>1</td><td>0</td><td>5</td><td>2</td><td>+3</td><td>4</td></tr>
+            <tr><td>3</td><td class="team-name">🇧🇦 波黑</td><td>2</td><td>0</td><td>1</td><td>1</td><td>2</td><td>5</td><td class="eliminated">-3</td><td>1</td></tr>
+            <tr><td>4</td><td class="team-name">🇶🇦 卡塔尔</td><td>2</td><td>0</td><td>1</td><td>1</td><td>1</td><td>7</td><td class="eliminated">-6</td><td>1</td></tr>
+        </table>
+        
+        <!-- Odds -->
+        <div class="odds-bar">
+            <div class="odds-item"><div class="odds-label">瑞士胜</div><div class="odds-value">2.30</div></div>
+            <div class="odds-item"><div class="odds-label">平局</div><div class="odds-value">2.62</div></div>
+            <div class="odds-item"><div class="odds-label">加拿大胜</div><div class="odds-value">3.20</div></div>
+        </div>
+        
+        <!-- Prediction -->
+        <div class="prediction-box">
+            <h3>核心结论</h3>
+            <div class="prediction-main">
+                <span class="result-tag draw">平局（加拿大不败）</span>
+                <span class="stars">★★★☆☆</span>
+            </div>
+            <div class="scores">
+                <span class="score-chip">1-1</span>
+                <span class="score-chip">2-2</span>
+                <span class="score-chip">1-0 加拿大</span>
+            </div>
+        </div>
+        
+        <!-- Key Points -->
+        <div class="key-points">
+            <div class="key-point">
+                <div class="kp-title">默契球博弈</div>
+                <div class="kp-text">两队同积4分，打平即携手出线。加拿大净胜球+6占优，平局即可锁定头名；瑞士需取胜才能反超。双方心态均偏向保守，默契球风险极高。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">瑞士新星爆发</div>
+                <div class="kp-text">20岁曼赞比前两场替补登场打入2球，本场被提上首发。扎卡中场调度稳健，恩博洛支点作用突出。但瑞士连续丢球（场均失1.0球），防线并非铁板一块。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">加拿大主场+戴维状态</div>
+                <div class="kp-text">戴维上轮帽子戏法独占队史射手榜首位，主场温哥华球迷加持。但中场核心科内重伤缺阵（轮椅观战），阿方索·戴维斯仅恢复训练，替补登场条件有限。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">战术克制</div>
+                <div class="kp-text">瑞士防守体系成熟，恰好限制加拿大最擅长的反击速度；加拿大阵地战攻坚能力薄弱，面对瑞士层次分明的防线难以渗透。比赛大概率低进球。</div>
+            </div>
+        </div>
+        
+        <!-- Goal Script -->
+        <div class="goal-script">
+            <h4>进球剧本推演</h4>
+            <div class="gs-row">
+                <div class="gs-item"><div class="gs-label">总进球区间</div><div class="gs-value">1-3球</div></div>
+                <div class="gs-item"><div class="gs-label">进球时段</div><div class="gs-value">下半场50-75分钟概率最高</div></div>
+                <div class="gs-item"><div class="gs-label">关键球员</div><div class="gs-value">曼赞比、戴维、巴尔加斯</div></div>
+            </div>
+        </div>
+        
+        <!-- X-Factor -->
+        <div class="x-factor">
+            <h4>隐藏X因素</h4>
+            <ul>
+                <li>默契球风险：打平对双方均为最优解，比赛可能缺乏强度，需警惕"心照不宣"的平局</li>
+                <li>科内伤缺影响：加拿大中场创造力下降30%以上，反击质量可能打折</li>
+                <li>温哥华降雨可能：6月为雨季，湿滑场地有利于瑞士的地面传控</li>
+            </ul>
+        </div>
+        
+        <!-- Actual Result -->
+        <div class="actual-result">
+            <h4>实际赛果</h4>
+            <div class="ar-score">瑞士 2-1 加拿大</div>
+            <div class="ar-detail">上半场0-0。下半场曼赞比助攻巴尔加斯破门，随后曼赞比推射建功扩大优势。第76分钟戴维扳回一球。瑞士积7分小组第一出线，加拿大4分第二晋级。曼赞比首发延续亮眼表现，成为瑞士关键先生。预测方向偏差：默契球未出现，瑞士展现出更强争胜欲望。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== MATCH 2: Bosnia vs Qatar ==================== -->
+<div class="match-card" id="m2">
+    <div class="match-header">
+        <span class="group-tag">B组 第3轮</span>
+        <span class="match-time">6月25日 03:00 (北京时间)</span>
+        <span class="venue">西雅图体育场 · 海拔~10m</span>
+    </div>
+    <div class="match-body">
+        <div class="teams-display">
+            <div class="team-box">
+                <div class="flag">🇧🇦</div>
+                <div class="name">波黑</div>
+                <div class="rank">欧洲技术流</div>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="team-box">
+                <div class="flag">🇶🇦</div>
+                <div class="name">卡塔尔</div>
+                <div class="rank">亚洲冠军 · 中后场双核停赛</div>
+            </div>
+        </div>
+        
+        <!-- Odds -->
+        <div class="odds-bar">
+            <div class="odds-item"><div class="odds-label">波黑胜</div><div class="odds-value">1.38</div></div>
+            <div class="odds-item"><div class="odds-label">平局</div><div class="odds-value">4.45</div></div>
+            <div class="odds-item"><div class="odds-label">卡塔尔胜</div><div class="odds-value">5.55</div></div>
+        </div>
+        
+        <!-- Prediction -->
+        <div class="prediction-box">
+            <h3>核心结论</h3>
+            <div class="prediction-main">
+                <span class="result-tag">波黑胜</span>
+                <span class="stars">★★★★☆</span>
+            </div>
+            <div class="scores">
+                <span class="score-chip">2-1</span>
+                <span class="score-chip">2-0</span>
+                <span class="score-chip">3-1</span>
+            </div>
+        </div>
+        
+        <!-- Key Points -->
+        <div class="key-points">
+            <div class="key-point">
+                <div class="kp-title">生死局对决</div>
+                <div class="kp-text">两队同积1分，胜者积4分仍有一线生机争夺最佳小组第三。谁输谁直接回家，双方战意均充足。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">卡塔尔防线崩溃</div>
+                <div class="kp-text">中后场双核马迪博和胡马姆上轮双双染红停赛，本就脆弱的防线（前两场丢7球）雪上加霜。卡塔尔整体攻防两端全面崩盘。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">波黑攻强守弱</div>
+                <div class="kp-text">波黑每场均有进球，进攻端哲科领衔保持火力。但主力中卫穆哈雷莫维奇上轮染红停赛，防线核心缺阵，后防同样存在隐患。</div>
+            </div>
+        </div>
+        
+        <!-- Goal Script -->
+        <div class="goal-script">
+            <h4>进球剧本推演</h4>
+            <div class="gs-row">
+                <div class="gs-item"><div class="gs-label">总进球区间</div><div class="gs-value">2-4球</div></div>
+                <div class="gs-item"><div class="gs-label">进球时段</div><div class="gs-value">上半场即有进球，双方对攻</div></div>
+                <div class="gs-item"><div class="gs-label">关键球员</div><div class="gs-value">哲科、德米罗维奇</div></div>
+            </div>
+        </div>
+        
+        <!-- X-Factor -->
+        <div class="x-factor">
+            <h4>隐藏X因素</h4>
+            <ul>
+                <li>双方防线均遭重创：波黑和卡塔尔各有关键球员停赛，比赛可能成为进球大战</li>
+                <li>卡塔尔为荣誉而战：虽出线渺茫，但避免三战皆败是底线</li>
+                <li>西雅图6月气温宜人（15-20°C），有利于技术型球队发挥</li>
+            </ul>
+        </div>
+        
+        <!-- Actual Result -->
+        <div class="actual-result">
+            <h4>实际赛果</h4>
+            <div class="ar-score">波黑 3-1 卡塔尔</div>
+            <div class="ar-detail">上半场波黑2-1领先，下半场再入一球锁定胜局。波黑积4分排名小组第三，仍需等待其他小组结果确定是否晋级。卡塔尔1分垫底出局。预测命中：波黑胜及比分方向正确。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== MATCH 3: Scotland vs Brazil ==================== -->
+<div class="match-card" id="m3">
+    <div class="match-header">
+        <span class="group-tag">C组 第3轮</span>
+        <span class="match-time">6月25日 06:00 (北京时间)</span>
+        <span class="venue">迈阿密硬石体育场 · 海拔~2m</span>
+    </div>
+    <div class="match-body">
+        <div class="teams-display">
+            <div class="team-box">
+                <div class="flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>
+                <div class="name">苏格兰</div>
+                <div class="rank">FIFA排名43 · 必须赢球</div>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="team-box">
+                <div class="flag">🇧🇷</div>
+                <div class="name">巴西</div>
+                <div class="rank">五星豪门 · 不败即出线</div>
+            </div>
+        </div>
+        
+        <!-- Environment -->
+        <div class="env-box">
+            <div class="env-item">
+                <div class="env-icon">🏔️</div>
+                <div class="env-label">海拔</div>
+                <div class="env-value">~2m</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">🌡️</div>
+                <div class="env-label">气温</div>
+                <div class="env-value">26-34°C</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">💧</div>
+                <div class="env-label">湿度</div>
+                <div class="env-value">79%（闷热）</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">🌧️</div>
+                <div class="env-label">天气</div>
+                <div class="env-value">中雨</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">⚡</div>
+                <div class="env-label">影响</div>
+                <div class="env-value">高温高湿消耗大</div>
+            </div>
+        </div>
+        
+        <!-- Odds -->
+        <div class="odds-bar">
+            <div class="odds-item"><div class="odds-label">苏格兰胜</div><div class="odds-value">7.85</div></div>
+            <div class="odds-item"><div class="odds-label">平局</div><div class="odds-value">4.80</div></div>
+            <div class="odds-item"><div class="odds-label">巴西胜</div><div class="odds-value">1.26</div></div>
+        </div>
+        
+        <!-- Prediction -->
+        <div class="prediction-box">
+            <h3>核心结论</h3>
+            <div class="prediction-main">
+                <span class="result-tag">巴西胜</span>
+                <span class="stars">★★★★★</span>
+            </div>
+            <div class="scores">
+                <span class="score-chip">0-2</span>
+                <span class="score-chip">1-3</span>
+                <span class="score-chip">0-3</span>
+            </div>
+        </div>
+        
+        <!-- Key Points -->
+        <div class="key-points">
+            <div class="key-point">
+                <div class="kp-title">历史绝对压制</div>
+                <div class="kp-text">苏格兰10次面对巴西2平8负从未取胜。世界杯4次交锋3负1平，心理劣势巨大。自1974年以来，仅阿根廷vs荷兰（6次）在世界杯交手次数更多。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">内马尔复出+维尼修斯状态</div>
+                <div class="kp-text">34岁内马尔时隔981天重返国家队，安切洛蒂确认可出战。库尼亚上轮梅开二度状态火热。维尼修斯边路突破是苏格兰防线噩梦。唯一隐忧：拉菲尼亚右大腿肌肉撕裂缺阵。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">苏格兰进攻创造力不足</div>
+                <div class="kp-text">苏格兰战术保守，前两场仅进1球。虽麦肯纳和蒂尔尼伤愈复出利好防线，但面对巴西必须主动进攻才能赢球，攻防两端难以兼顾。超级计算机测算巴西胜率71.2%。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">迈阿密高温高湿</div>
+                <div class="kp-text">6月迈阿密气温26-34°C，湿度79%，且有中雨。高温高湿环境下体能消耗加剧，对习惯温带气候的苏格兰球员影响更大，下半场可能出现体能断崖。</div>
+            </div>
+        </div>
+        
+        <!-- Goal Script -->
+        <div class="goal-script">
+            <h4>进球剧本推演</h4>
+            <div class="gs-row">
+                <div class="gs-item"><div class="gs-label">总进球区间</div><div class="gs-value">2-4球</div></div>
+                <div class="gs-item"><div class="gs-label">进球时段</div><div class="gs-value">上半场早段破门（巴西高位逼抢）+ 下半场反击扩大</div></div>
+                <div class="gs-item"><div class="gs-label">关键球员</div><div class="gs-value">维尼修斯、库尼亚、内马尔（替补）</div></div>
+            </div>
+        </div>
+        
+        <!-- X-Factor -->
+        <div class="x-factor">
+            <h4>隐藏X因素</h4>
+            <ul>
+                <li>内马尔复出双刃剑：可能激活进攻，也可能因久疏战阵影响节奏和化学反应</li>
+                <li>迈阿密暴雨风险：湿滑场地可能增加失误，对技术流巴西而言是双刃剑</li>
+                <li>苏格兰背水一战：绝境下可能爆发出超水平能量，定位球是最大威胁</li>
+                <li>巴西锁定头名后可能轮换保存体能，下半场节奏可能放缓</li>
+            </ul>
+        </div>
+        
+        <!-- Actual Result -->
+        <div class="actual-result">
+            <h4>实际赛果</h4>
+            <div class="ar-score">巴西 3-0 苏格兰</div>
+            <div class="ar-detail">第7分钟拉扬逼抢麦肯纳后维尼修斯单刀破门；上半场补时维尼修斯头球梅开二度；第60分钟吉马良斯助攻库尼亚推射建功。第76分钟内马尔替补登场完成本届世界杯首秀。巴西7分小组第一出线，苏格兰3分排名第三。预测命中：巴西胜、0-3比分、维尼修斯/库尼亚为关键球员。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== MATCH 4: Morocco vs Haiti ==================== -->
+<div class="match-card" id="m4">
+    <div class="match-header">
+        <span class="group-tag">C组 第3轮</span>
+        <span class="match-time">6月25日 06:00 (北京时间)</span>
+        <span class="venue">亚特兰大奔驰体育场 · 海拔~320m</span>
+    </div>
+    <div class="match-body">
+        <div class="teams-display">
+            <div class="team-box">
+                <div class="flag">🇲🇦</div>
+                <div class="name">摩洛哥</div>
+                <div class="rank">FIFA排名8 · 非洲冠军</div>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="team-box">
+                <div class="flag">🇭🇹</div>
+                <div class="name">海地</div>
+                <div class="rank">FIFA排名83 · 已提前出局</div>
+            </div>
+        </div>
+        
+        <!-- Odds -->
+        <div class="odds-bar">
+            <div class="odds-item"><div class="odds-label">摩洛哥胜</div><div class="odds-value">1.15</div></div>
+            <div class="odds-item"><div class="odds-label">平局</div><div class="odds-value">6.50</div></div>
+            <div class="odds-item"><div class="odds-label">海地胜</div><div class="odds-value">15.00</div></div>
+        </div>
+        
+        <!-- Prediction -->
+        <div class="prediction-box">
+            <h3>核心结论</h3>
+            <div class="prediction-main">
+                <span class="result-tag">摩洛哥胜</span>
+                <span class="stars">★★★★★</span>
+            </div>
+            <div class="scores">
+                <span class="score-chip">2-0</span>
+                <span class="score-chip">3-0</span>
+                <span class="score-chip">3-1</span>
+            </div>
+        </div>
+        
+        <!-- Key Points -->
+        <div class="key-points">
+            <div class="key-point">
+                <div class="kp-title">实力悬殊</div>
+                <div class="kp-text">摩洛哥FIFA排名第8，2022世界杯四强+2025非洲杯冠军。海地FIFA排名83，时隔52年重返世界杯，前两场0进球丢4球，已提前出局。双方首次交锋，摩洛哥全方位碾压。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">摩洛哥争小组头名</div>
+                <div class="kp-text">摩洛哥打平即出线，但需尽可能多进球争取净胜球以竞争小组第一（避免淘汰赛遭遇更强对手）。阿什拉夫、赛巴里、卜拉欣·迪亚斯组成的核心攻击线状态正佳。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">海地为荣誉而战</div>
+                <div class="kp-text">海地虽已出局，但仍有目标：争取队史世界杯首粒进球、首个积分。时隔52年重返世界杯舞台，球员不会轻易放弃。但整体实力差距过大，防守端难以抵挡摩洛哥持续进攻。</div>
+            </div>
+        </div>
+        
+        <!-- Goal Script -->
+        <div class="goal-script">
+            <h4>进球剧本推演</h4>
+            <div class="gs-row">
+                <div class="gs-item"><div class="gs-label">总进球区间</div><div class="gs-value">2-4球</div></div>
+                <div class="gs-item"><div class="gs-label">进球时段</div><div class="gs-value">上半场摩洛哥破门，下半场扩大优势</div></div>
+                <div class="gs-item"><div class="gs-label">关键球员</div><div class="gs-value">阿什拉夫、赛巴里、卜拉欣·迪亚斯</div></div>
+            </div>
+        </div>
+        
+        <!-- X-Factor -->
+        <div class="x-factor">
+            <h4>隐藏X因素</h4>
+            <ul>
+                <li>亚特兰大奔驰体育场可闭合屋顶：如遇暴雨可关闭屋顶，消除天气影响</li>
+                <li>海地无压力放手一搏：已无出线包袱，可能打出超预期表现</li>
+                <li>摩洛哥可能轮换：为淘汰赛保存体能，主力可能提前下场</li>
+            </ul>
+        </div>
+        
+        <!-- Actual Result -->
+        <div class="actual-result">
+            <h4>实际赛果</h4>
+            <div class="ar-score">摩洛哥 4-2 海地</div>
+            <div class="ar-detail">海地第10分钟闪击（约瑟夫造布努乌龙），时隔52年世界杯再进球！阿什拉夫第39分钟扳平，伊西多尔第43分钟世界波再度领先，赛巴里补时扳平。下半场拉希米替补传射建功，亚辛破门。摩洛哥4-2逆转，7分小组第二出线。海地虽败犹荣，打入2球创造队史世界杯进球纪录。预测命中：摩洛哥胜，但海地进球数超出预期，比赛过程远比预想惊险。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== MATCH 5: Czech Republic vs Mexico ==================== -->
+<div class="match-card" id="m5">
+    <div class="match-header">
+        <span class="group-tag">A组 第3轮</span>
+        <span class="match-time">6月25日 09:00 (北京时间)</span>
+        <span class="venue">墨西哥城阿兹特克体育场 · 海拔2240m</span>
+    </div>
+    <div class="match-body">
+        <div class="teams-display">
+            <div class="team-box">
+                <div class="flag">🇨🇿</div>
+                <div class="name">捷克</div>
+                <div class="rank">1平1负 · 必须赢球</div>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="team-box">
+                <div class="flag">🇲🇽</div>
+                <div class="name">墨西哥</div>
+                <div class="rank">2连胜0失球 · 已锁定头名</div>
+            </div>
+        </div>
+        
+        <!-- Environment -->
+        <div class="env-box">
+            <div class="env-item">
+                <div class="env-icon">🏔️</div>
+                <div class="env-label">海拔</div>
+                <div class="env-value" style="color:var(--accent);">2240m ⚠️</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">🌡️</div>
+                <div class="env-label">气温</div>
+                <div class="env-value">20-27°C</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">💧</div>
+                <div class="env-label">湿度</div>
+                <div class="env-value">60-70%</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">🌧️</div>
+                <div class="env-label">天气</div>
+                <div class="env-value">午后阵雨</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">⚠️</div>
+                <div class="env-label">高原影响</div>
+                <div class="env-value">含氧量降25%</div>
+            </div>
+        </div>
+        
+        <!-- Odds -->
+        <div class="odds-bar">
+            <div class="odds-item"><div class="odds-label">捷克胜</div><div class="odds-value">3.80</div></div>
+            <div class="odds-item"><div class="odds-label">平局</div><div class="odds-value">3.20</div></div>
+            <div class="odds-item"><div class="odds-label">墨西哥胜</div><div class="odds-value">1.95</div></div>
+        </div>
+        
+        <!-- Prediction -->
+        <div class="prediction-box">
+            <h3>核心结论</h3>
+            <div class="prediction-main">
+                <span class="result-tag draw">平局（墨西哥不败）</span>
+                <span class="stars">★★★☆☆</span>
+            </div>
+            <div class="scores">
+                <span class="score-chip">0-0</span>
+                <span class="score-chip">1-1</span>
+                <span class="score-chip">0-1 墨西哥</span>
+            </div>
+        </div>
+        
+        <!-- Key Points -->
+        <div class="key-points">
+            <div class="key-point">
+                <div class="kp-title">2240米高原决定性变量</div>
+                <div class="kp-text">阿兹特克体育场海拔2240米，空气含氧量比海平面低约25%。未适应高原的欧洲球员VO2最大值下降10-15%，下半场60分钟后体能断崖式下滑。墨西哥球员常年在此训练比赛，拥有巨大生理优势。1962年世界杯墨西哥曾在末轮3-1击败捷克斯洛伐克。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">墨西哥大概率轮换</div>
+                <div class="kp-text">墨西哥已锁定小组第一，大概率大面积轮换保存体能。门将奥乔亚、前锋维加、中场阿尔瓦雷斯伤缺，但中卫蒙特斯解禁复出。即便轮换阵容，高原主场+87000名球迷的阿兹特克依然是地狱客场。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">捷克背水一战</div>
+                <div class="kp-text">捷克1平1负仅积1分，必须赢球才有出线希望。但高原环境下全力进攻风险极大——下半场体能崩溃可能导致大比分失利。前锋库赫塔出战成疑，后卫尤拉塞克确认缺席，阵容不整。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">高原对球的影响</div>
+                <div class="kp-text">空气密度降低约25%，足球飞行速度更快、轨迹更难预判。远射和长传的威胁增大，门将判断难度上升。这对捷克这种不习惯高原条件的球队是额外挑战。</div>
+            </div>
+        </div>
+        
+        <!-- Goal Script -->
+        <div class="goal-script">
+            <h4>进球剧本推演</h4>
+            <div class="gs-row">
+                <div class="gs-item"><div class="gs-label">总进球区间</div><div class="gs-value">0-2球（低进球概率高）</div></div>
+                <div class="gs-item"><div class="gs-label">进球时段</div><div class="gs-value">下半场60分钟后（高原体能消耗期）</div></div>
+                <div class="gs-item"><div class="gs-label">关键球员</div><div class="gs-value">罗莫、希门尼斯（墨）/ 绍切克（捷）</div></div>
+            </div>
+        </div>
+        
+        <!-- X-Factor -->
+        <div class="x-factor">
+            <h4>隐藏X因素</h4>
+            <ul>
+                <li>高原反应：捷克球员可能出现头痛、气短、恶心等症状，影响判断和执行力</li>
+                <li>阿兹特克87000人声浪：墨西哥主场氛围堪称世界之最，裁判判罚可能受潜意识影响</li>
+                <li>墨西哥轮换幅度：若大幅轮换，战意和默契度下降，捷克可能抓住机会</li>
+                <li>午后阵雨：墨西哥城6月为雨季，下午2-4点常有阵雨，湿滑场地增加不确定性</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== MATCH 6: South Africa vs South Korea ==================== -->
+<div class="match-card" id="m6">
+    <div class="match-header">
+        <span class="group-tag">A组 第3轮</span>
+        <span class="match-time">6月25日 09:00 (北京时间)</span>
+        <span class="venue">蒙特雷BBVA体育场 · 海拔~540m</span>
+    </div>
+    <div class="match-body">
+        <div class="teams-display">
+            <div class="team-box">
+                <div class="flag">🇿🇦</div>
+                <div class="name">南非</div>
+                <div class="rank">1平1负 · 必须赢球</div>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="team-box">
+                <div class="flag">🇰🇷</div>
+                <div class="name">韩国</div>
+                <div class="rank">1胜1负 · 打平即出线</div>
+            </div>
+        </div>
+        
+        <!-- Environment -->
+        <div class="env-box">
+            <div class="env-item">
+                <div class="env-icon">🏔️</div>
+                <div class="env-label">海拔</div>
+                <div class="env-value">~540m</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">🌡️</div>
+                <div class="env-label">气温</div>
+                <div class="env-value">30-35°C ⚠️</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">💧</div>
+                <div class="env-label">湿度</div>
+                <div class="env-value">50-60%</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">🏠</div>
+                <div class="env-label">行程</div>
+                <div class="env-value">韩国从瓜达拉哈拉转场</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">⚠️</div>
+                <div class="env-label">高温</div>
+                <div class="env-value">蒙特雷最热城市</div>
+            </div>
+        </div>
+        
+        <!-- Odds -->
+        <div class="odds-bar">
+            <div class="odds-item"><div class="odds-label">南非胜</div><div class="odds-value">3.40</div></div>
+            <div class="odds-item"><div class="odds-label">平局</div><div class="odds-value">3.10</div></div>
+            <div class="odds-item"><div class="odds-label">韩国胜</div><div class="odds-value">2.10</div></div>
+        </div>
+        
+        <!-- Prediction -->
+        <div class="prediction-box">
+            <h3>核心结论</h3>
+            <div class="prediction-main">
+                <span class="result-tag">韩国胜</span>
+                <span class="stars">★★★☆☆</span>
+            </div>
+            <div class="scores">
+                <span class="score-chip">0-1</span>
+                <span class="score-chip">1-2</span>
+                <span class="score-chip">1-1</span>
+            </div>
+        </div>
+        
+        <!-- Key Points -->
+        <div class="key-points">
+            <div class="key-point">
+                <div class="kp-title">韩国打平即出线</div>
+                <div class="kp-text">韩国首轮2-1击败捷克，手握3分和0净胜球。末轮打平即可积4分锁定小组第二。即便输球，3分仍有希望成为8个成绩最好的小组第三。韩国掌握绝对主动权。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">南非必须全力争胜</div>
+                <div class="kp-text">南非1平1负仅积1分，必须击败韩国才有出线希望。但南非世界杯历史上进攻乏力（前两场仅进1球），且中场莫科埃纳确认伤缺，攻防两端均受限。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">韩国对非洲球队战绩不佳</div>
+                <div class="kp-text">韩国在世界杯对阵非洲球队4场仅1胜（2006年2-1多哥），此后1平2负。2022年2-3负加纳的阴影仍在。但本届韩国阵容实力明显高于南非，孙兴慜领衔的攻击线更具威胁。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">蒙特雷高温考验</div>
+                <div class="kp-text">蒙特雷是墨西哥三座举办城市中最热的，6月气温常超30°C。韩国从海拔1560m的瓜达拉哈拉转场至540m的蒙特雷，需适应高温环境。南非球员更适应炎热气候。</div>
+            </div>
+        </div>
+        
+        <!-- Goal Script -->
+        <div class="goal-script">
+            <h4>进球剧本推演</h4>
+            <div class="gs-row">
+                <div class="gs-item"><div class="gs-label">总进球区间</div><div class="gs-value">1-3球</div></div>
+                <div class="gs-item"><div class="gs-label">进球时段</div><div class="gs-value">下半场（高温消耗后防线松动）</div></div>
+                <div class="gs-item"><div class="gs-label">关键球员</div><div class="gs-value">孙兴慜、李刚仁（韩）/ 珀西·陶（南）</div></div>
+            </div>
+        </div>
+        
+        <!-- X-Factor -->
+        <div class="x-factor">
+            <h4>隐藏X因素</h4>
+            <ul>
+                <li>韩国中卫曹侑珉足底筋膜撕裂确认缺席，金玟哉搭档需重新磨合，防线稳定性存疑</li>
+                <li>蒙特雷高温：30°C+气温下，下半场双方体能均可能急剧下滑，替补深度成关键</li>
+                <li>韩国保守倾向：打平即出线可能导致战术过于保守，被南非抓住机会</li>
+                <li>两队首次交锋，无历史参考，比赛走向更难预判</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== Summary Section ==================== -->
+<div class="match-card">
+    <div class="match-header">
+        <span class="group-tag">总结</span>
+        <span class="match-time">6月25日六场前瞻汇总</span>
+    </div>
+    <div class="match-body">
+        <h3 style="color:var(--gold); margin-bottom:16px;">2026世界杯新赛制关键解读</h3>
+        <div class="key-points">
+            <div class="key-point">
+                <div class="kp-title">48队12组新赛制</div>
+                <div class="kp-text">本届世界杯首次扩军至48支球队，分12个小组，每组4队。小组前2名直接晋级32强，8个成绩最好的小组第三同样晋级。这意味着3分（1胜2负）即有出线可能，极大改变了末轮战术博弈。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">末轮同时开球</div>
+                <div class="kp-text">同组两场比赛同时开球，杜绝"默契球"。但打平即出线的球队仍有保守倾向，需警惕低强度比赛。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">7队已提前出线</div>
+                <div class="kp-text">墨西哥、美国、德国、法国、挪威、阿根廷、哥伦比亚已锁定淘汰赛席位。5队已提前出局：海地、土耳其、突尼斯、约旦、巴拿马。</div>
+            </div>
+            <div class="key-point">
+                <div class="kp-title">跨国三主办国</div>
+                <div class="kp-text">比赛横跨美国、加拿大、墨西哥三国，海拔从2m（迈阿密）到2240m（墨西哥城），气温从18°C（温哥华）到35°C（蒙特雷），环境变量成为本届世界杯最独特的竞争要素。</div>
+            </div>
+        </div>
+        
+        <h3 style="color:var(--gold); margin-bottom:16px; margin-top:24px;">6月25日预测汇总表</h3>
+        <table class="group-table">
+            <tr><th>场次</th><th>对阵</th><th>预测</th><th>信心</th><th>推荐比分</th><th>实际结果</th></tr>
+            <tr>
+                <td>B组</td>
+                <td class="team-name">瑞士vs加拿大</td>
+                <td>平局</td>
+                <td>★★★</td>
+                <td>1-1 / 2-2</td>
+                <td style="color:var(--accent);">瑞士2-1 ✓方向偏差</td>
+            </tr>
+            <tr>
+                <td>B组</td>
+                <td class="team-name">波黑vs卡塔尔</td>
+                <td>波黑胜</td>
+                <td>★★★★</td>
+                <td>2-1 / 2-0</td>
+                <td style="color:var(--green);">波黑3-1 ✓命中</td>
+            </tr>
+            <tr>
+                <td>C组</td>
+                <td class="team-name">苏格兰vs巴西</td>
+                <td>巴西胜</td>
+                <td>★★★★★</td>
+                <td>0-2 / 0-3</td>
+                <td style="color:var(--green);">巴西3-0 ✓命中</td>
+            </tr>
+            <tr>
+                <td>C组</td>
+                <td class="team-name">摩洛哥vs海地</td>
+                <td>摩洛哥胜</td>
+                <td>★★★★★</td>
+                <td>2-0 / 3-0</td>
+                <td style="color:var(--green);">摩洛哥4-2 ✓命中</td>
+            </tr>
+            <tr>
+                <td>A组</td>
+                <td class="team-name">捷克vs墨西哥</td>
+                <td>平局/墨不败</td>
+                <td>★★★</td>
+                <td>0-0 / 1-1</td>
+                <td style="color:var(--text-muted);">进行中</td>
+            </tr>
+            <tr>
+                <td>A组</td>
+                <td class="team-name">南非vs韩国</td>
+                <td>韩国胜</td>
+                <td>★★★</td>
+                <td>0-1 / 1-2</td>
+                <td style="color:var(--text-muted);">进行中</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>2026美加墨世界杯 · 深度前瞻分析报告</p>
+    <p>数据来源：FIFA官网、新华社、央视体育、虎扑、直播吧、TotalCorner等</p>
+    <p>本报告基于公开数据推演，仅供参考，不构成任何投注建议</p>
+    <p>生成时间：2026年6月25日 | 模型：GLM-5.1</p>
+</div>
+
+</div>
+</body>
+</html>
