@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026美加墨世界杯 · 6月26日深度前瞻与胜负预测</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #f5c518;
+            --text: #eaeaea;
+            --text-dim: #a0a0a0;
+            --card-bg: #1e2a3a;
+            --card-border: #2a3a4a;
+            --win: #4caf50;
+            --draw: #ff9800;
+            --loss: #f44336;
+            --star: #f5c518;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 40px 20px 30px;
+            text-align: center;
+            border-bottom: 3px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(233,69,96,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        .header h1 span { color: var(--accent); }
+        .header .subtitle {
+            font-size: 14px;
+            color: var(--text-dim);
+            position: relative;
+            z-index: 1;
+        }
+        .header .date-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-top: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 20px 16px; }
+
+        /* 比赛导航 */
+        .match-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+            justify-content: center;
+        }
+        .match-nav a {
+            background: var(--card-bg);
+            color: var(--text);
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            border: 1px solid var(--card-border);
+            transition: all 0.2s;
+        }
+        .match-nav a:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* 比赛卡片 */
+        .match-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            margin-bottom: 28px;
+            overflow: hidden;
+        }
+        .match-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--card-border);
+            background: linear-gradient(90deg, rgba(233,69,96,0.08), transparent);
+        }
+        .match-header .group-tag {
+            background: var(--accent);
+            color: #fff;
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .match-header .time-tag {
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .match-header .venue-tag {
+            color: var(--text-dim);
+            font-size: 12px;
+        }
+        .match-teams {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+        .team-box {
+            flex: 1;
+            text-align: center;
+        }
+        .team-box .flag { font-size: 36px; }
+        .team-box .name { font-size: 18px; font-weight: 700; margin-top: 4px; }
+        .team-box .rank { font-size: 11px; color: var(--text-dim); }
+        .vs-badge {
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--accent);
+            text-shadow: 0 0 10px rgba(233,69,96,0.5);
+        }
+
+        /* 核心结论区 */
+        .verdict-box {
+            margin: 0 16px 16px;
+            background: linear-gradient(135deg, rgba(233,69,96,0.12), rgba(245,197,24,0.08));
+            border: 1px solid rgba(233,69,96,0.3);
+            border-radius: 10px;
+            padding: 18px;
+        }
+        .verdict-box .verdict-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .verdict-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        .prediction-badge {
+            padding: 5px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .pred-win { background: rgba(76,175,80,0.2); color: var(--win); border: 1px solid var(--win); }
+        .pred-draw { background: rgba(255,152,0,0.2); color: var(--draw); border: 1px solid var(--draw); }
+        .pred-loss { background: rgba(244,67,54,0.2); color: var(--loss); border: 1px solid var(--loss); }
+        .score-options { display: flex; gap: 8px; flex-wrap: wrap; }
+        .score-chip {
+            background: var(--secondary);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid var(--card-border);
+        }
+        .score-chip.first { border-color: var(--gold); color: var(--gold); }
+        .star-rating { color: var(--star); font-size: 16px; letter-spacing: 2px; }
+
+        /* 逻辑拆解 */
+        .logic-section {
+            padding: 0 16px 16px;
+        }
+        .logic-section h3 {
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 10px;
+            padding-left: 8px;
+            border-left: 3px solid var(--accent);
+        }
+        .logic-point {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 8px;
+            border-left: 3px solid var(--gold);
+        }
+        .logic-point .lp-title { font-weight: 700; font-size: 13px; color: var(--gold); margin-bottom: 4px; }
+        .logic-point .lp-text { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+        /* 进球剧本 */
+        .goal-script {
+            margin: 0 16px 16px;
+            background: var(--secondary);
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .goal-script h3 {
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 10px;
+            padding-left: 8px;
+            border-left: 3px solid var(--accent);
+        }
+        .goal-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+        }
+        .goal-label { color: var(--text-dim); font-size: 12px; min-width: 70px; }
+        .goal-value { color: #fff; font-size: 13px; font-weight: 600; }
+
+        /* X因素 */
+        .xfactor-box {
+            margin: 0 16px 16px;
+            background: linear-gradient(135deg, rgba(244,67,54,0.08), rgba(233,69,96,0.05));
+            border: 1px dashed rgba(244,67,54,0.3);
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .xfactor-box h3 {
+            font-size: 14px;
+            color: var(--loss);
+            margin-bottom: 10px;
+            padding-left: 8px;
+            border-left: 3px solid var(--loss);
+        }
+        .xfactor-item {
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-bottom: 6px;
+            padding-left: 16px;
+            position: relative;
+        }
+        .xfactor-item::before {
+            content: '!';
+            position: absolute;
+            left: 0;
+            color: var(--loss);
+            font-weight: 900;
+        }
+
+        /* 积分表 */
+        .standings-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 16px 16px;
+            font-size: 12px;
+        }
+        .standings-table th {
+            background: var(--secondary);
+            color: var(--gold);
+            padding: 6px 8px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent);
+        }
+        .standings-table td {
+            padding: 6px 8px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .standings-table tr.qual { color: var(--win); }
+        .standings-table tr.elim { color: var(--text-dim); opacity: 0.6; }
+
+        /* 伤病信息 */
+        .injury-section {
+            padding: 0 16px 16px;
+        }
+        .injury-section h3 {
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 10px;
+            padding-left: 8px;
+            border-left: 3px solid var(--accent);
+        }
+        .injury-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .injury-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 10px 12px;
+        }
+        .injury-card .team-name {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .injury-card .player {
+            font-size: 12px;
+            color: var(--text-dim);
+            margin-bottom: 2px;
+        }
+        .injury-card .player .tag {
+            display: inline-block;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+        .tag-injury { background: rgba(244,67,54,0.2); color: var(--loss); }
+        .tag-suspended { background: rgba(255,152,0,0.2); color: var(--draw); }
+        .tag-doubtful { background: rgba(255,193,7,0.2); color: #ffc107; }
+        .tag-return { background: rgba(76,175,80,0.2); color: var(--win); }
+
+        /* 战意标签 */
+        .motivation-bar {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            padding: 10px 16px;
+            border-top: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
+            background: rgba(0,0,0,0.2);
+        }
+        .mot-tag {
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .mot-must { background: rgba(244,67,54,0.25); color: #ff6b6b; }
+        .mot-need { background: rgba(255,152,0,0.25); color: #ffb74d; }
+        .mot-safe { background: rgba(76,175,80,0.25); color: #81c784; }
+        .mot-honor { background: rgba(144,144,144,0.25); color: #aaa; }
+
+        /* 免责声明 */
+        .disclaimer {
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 11px;
+            padding: 20px;
+            border-top: 1px solid var(--card-border);
+            margin-top: 20px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .match-teams { gap: 10px; padding: 14px; }
+            .team-box .flag { font-size: 28px; }
+            .team-box .name { font-size: 15px; }
+            .injury-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>2026 <span>美加墨世界杯</span></h1>
+    <div class="subtitle">6月26日 · D/E/F组第三轮 · 深度前瞻与胜负预测</div>
+    <div class="date-badge">小组赛末轮收官日 · 6场对决 · 32强席位争夺白热化</div>
+</div>
+
+<div class="container">
+
+    <!-- 导航 -->
+    <div class="match-nav">
+        <a href="#m1">04:00 厄瓜多尔vs德国</a>
+        <a href="#m2">04:00 库拉索vs科特迪瓦</a>
+        <a href="#m3">07:00 日本vs瑞典</a>
+        <a href="#m4">07:00 突尼斯vs荷兰</a>
+        <a href="#m5">10:00 土耳其vs美国</a>
+        <a href="#m6">10:00 巴拉圭vs澳大利亚</a>
+    </div>
+
+    <!-- ========== E组积分榜 ========== -->
+    <div class="match-card">
+        <div class="match-header">
+            <span class="group-tag">E组积分榜</span>
+            <span class="venue-tag">前两轮战罢</span>
+        </div>
+        <table class="standings-table">
+            <tr><th>排名</th><th>球队</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>净胜球</th><th>积分</th><th>状态</th></tr>
+            <tr class="qual"><td>1</td><td>🇩🇪 德国</td><td>2</td><td>0</td><td>0</td><td>9</td><td>2</td><td>+7</td><td>6</td><td>✅ 锁定头名</td></tr>
+            <tr><td>2</td><td>🇨🇮 科特迪瓦</td><td>1</td><td>0</td><td>1</td><td>2</td><td>2</td><td>0</td><td>3</td><td>打平即出线</td></tr>
+            <tr><td>3</td><td>🇪🇨 厄瓜多尔</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>-1</td><td>1</td><td>必须赢球</td></tr>
+            <tr><td>4</td><td>🇨🇼 库拉索</td><td>0</td><td>1</td><td>1</td><td>1</td><td>7</td><td>-6</td><td>1</td><td>理论出线</td></tr>
+        </table>
+        <table class="standings-table" style="margin-top: -8px;">
+            <tr><th colspan="10" style="background: var(--primary); color: var(--accent); border-bottom: 2px solid var(--accent);">F组积分榜</th></tr>
+            <tr><th>排名</th><th>球队</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>净胜球</th><th>积分</th><th>状态</th></tr>
+            <tr class="qual"><td>1</td><td>🇳🇱 荷兰</td><td>1</td><td>1</td><td>0</td><td>7</td><td>3</td><td>+4</td><td>4</td><td>争头名</td></tr>
+            <tr class="qual"><td>2</td><td>🇯🇵 日本</td><td>1</td><td>1</td><td>0</td><td>6</td><td>2</td><td>+4</td><td>4</td><td>打平即出线</td></tr>
+            <tr><td>3</td><td>🇸🇪 瑞典</td><td>1</td><td>0</td><td>1</td><td>6</td><td>6</td><td>0</td><td>3</td><td>必须赢球</td></tr>
+            <tr class="elim"><td>4</td><td>🇹🇳 突尼斯</td><td>0</td><td>0</td><td>2</td><td>1</td><td>9</td><td>-8</td><td>0</td><td>❌ 已出局</td></tr>
+        </table>
+        <table class="standings-table" style="margin-top: -8px;">
+            <tr><th colspan="10" style="background: var(--primary); color: var(--accent); border-bottom: 2px solid var(--accent);">D组积分榜</th></tr>
+            <tr><th>排名</th><th>球队</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>净胜球</th><th>积分</th><th>状态</th></tr>
+            <tr class="qual"><td>1</td><td>🇺🇸 美国</td><td>2</td><td>0</td><td>0</td><td>6</td><td>1</td><td>+5</td><td>6</td><td>✅ 锁定头名</td></tr>
+            <tr><td>2</td><td>🇦🇺 澳大利亚</td><td>1</td><td>0</td><td>1</td><td>2</td><td>2</td><td>0</td><td>3</td><td>打平即出线</td></tr>
+            <tr><td>3</td><td>🇵🇾 巴拉圭</td><td>1</td><td>0</td><td>1</td><td>2</td><td>4</td><td>-2</td><td>3</td><td>必须赢球</td></tr>
+            <tr class="elim"><td>4</td><td>🇹🇷 土耳其</td><td>0</td><td>0</td><td>2</td><td>0</td><td>3</td><td>-3</td><td>0</td><td>❌ 已出局</td></tr>
+        </table>
+    </div>
+
+    <!-- ========== 第1场：厄瓜多尔 vs 德国 ========== -->
+    <div class="match-card" id="m1">
+        <div class="match-header">
+            <span class="group-tag">E组 · 第3轮</span>
+            <span class="time-tag">北京时间 04:00</span>
+            <span class="venue-tag">新泽西 · 大都会人寿体育场</span>
+        </div>
+        <div class="match-teams">
+            <div class="team-box">
+                <div class="flag">🇪🇨</div>
+                <div class="name">厄瓜多尔</div>
+                <div class="rank">FIFA排名 第23位 | 小组第3 · 1分</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team-box">
+                <div class="flag">🇩🇪</div>
+                <div class="name">德国</div>
+                <div class="rank">FIFA排名 第9位 | 小组第1 · 6分(已出线)</div>
+            </div>
+        </div>
+        <div class="motivation-bar">
+            <span class="mot-tag mot-must">厄瓜多尔：必须赢球</span>
+            <span class="mot-tag mot-safe">德国：锁定头名 · 可能轮换</span>
+        </div>
+
+        <!-- 核心结论 -->
+        <div class="verdict-box">
+            <div class="verdict-title">&#9733; 核心结论先行</div>
+            <div class="verdict-row">
+                <span class="prediction-badge pred-win">客胜（德国胜）</span>
+                <div class="score-options">
+                    <span class="score-chip first">0:2</span>
+                    <span class="score-chip">0:1</span>
+                    <span class="score-chip">1:2</span>
+                </div>
+                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;</span>
+                <span style="font-size:12px;color:var(--text-dim)">信心指数 4/5</span>
+            </div>
+        </div>
+
+        <!-- 伤病 -->
+        <div class="injury-section">
+            <h3>伤病/停赛情报</h3>
+            <div class="injury-grid">
+                <div class="injury-card">
+                    <div class="team-name">🇪🇨 厄瓜多尔</div>
+                    <div class="player">无新增伤停 · 全员可战</div>
+                </div>
+                <div class="injury-card">
+                    <div class="team-name">🇩🇪 德国</div>
+                    <div class="player"><span class="tag tag-injury">伤缺</span> 施洛特贝克(主力中卫·脚踝韧带伤·告别世界杯)</div>
+                    <div class="player"><span class="tag tag-injury">伤缺</span> 布朗(主力后卫·肌肉伤情)</div>
+                    <div class="player"><span class="tag tag-return">复出</span> 吕迪格(顶替施洛特贝克首发)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 深度逻辑 -->
+        <div class="logic-section">
+            <h3>深度逻辑拆解</h3>
+            <div class="logic-point">
+                <div class="lp-title">1. 纳格尔斯曼"拒绝轮换"决策的深层逻辑</div>
+                <div class="lp-text">赛前发布会纳帅明确表示仅两处调整（劳姆替布朗、吕迪格替施洛特贝克），穆西亚拉、维尔茨、基米希、哈弗茨等核心全部首发。表面看是浪费练兵机会，实则是德国队一贯的"不放松"哲学——2014年世界杯小组赛末轮对阵美国时勒夫同样全主力出战。保持连胜势头的心理惯性和避免替补阵容出现伤病漏洞的求稳心态，使得德国预计投入度在七成以上。萨内前两场表现低迷却继续首发，纳帅给予其最后正名机会，这本身也是一种战术宣言。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">2. 厄瓜多尔"零进球"困局的结构性原因</div>
+                <div class="lp-text">厄瓜多尔两轮0进球绝非偶然：全队无效力于五大联赛的顶级射手，36岁老将恩纳·瓦伦西亚8次射门错失4次绝对机会，锋线搭档普拉塔近一年半38场仅6球。更深层的问题在于，厄瓜多尔离开基多高原主场后，体能优势荡然无存——新泽西海拔仅数米，与基多2850米天差地别。本场面对高位压迫时后场场均3.1次传球失误的问题将更趋严重，凯塞多单兵作战虽强，但缺乏第二接应点，进攻效率极低。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">3. 历史数据的压倒性倾向</div>
+                <div class="lp-text">德国世界杯小组赛对阵南美球队7胜3平保持不败；厄瓜多尔最近9次对阵欧洲球队5平4负未尝胜绩。德国前10场对阵南美球队仅失5球，防守端对南美风格天然克制。这些历史数据揭示的是一个系统性问题，而非单场偶然。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">4. 战意差带来的战术不对称</div>
+                <div class="lp-text">厄瓜多尔必须赢球但进攻效率极差，面临"攻出来怕被反击、不攻赢不了"的两难。一旦压上，穆西亚拉+维尔茨的反击空间将彻底释放。即使德国仅投入七成，其替补席上的翁达夫（上轮替补梅开二度）、沃尔特马德等球员实力仍远超厄瓜多尔防线。厄瓜多尔唯一的破局可能来自凯塞多中场抢断后的快速转换或定位球，但概率极低。</div>
+            </div>
+        </div>
+
+        <!-- 进球剧本 -->
+        <div class="goal-script">
+            <h3>进球剧本推演</h3>
+            <div class="goal-row"><span class="goal-label">总进球区间</span><span class="goal-value">2-3球</span></div>
+            <div class="goal-row"><span class="goal-label">进球时段</span><span class="goal-value">德国进球概率：下半场55-75分钟最高（厄瓜多尔体能断崖期）；厄瓜多尔若进球，最可能在上半场30-45分钟（开场搏命阶段）</span></div>
+            <div class="goal-row"><span class="goal-label">关键破门球员</span><span class="goal-value">穆西亚拉（反击穿插）、哈弗茨（支点终结）、翁达夫（替补登场后冲击）；厄瓜多尔侧：凯塞多（远射）、埃斯图皮尼安（替补左翼卫突破）</span></div>
+        </div>
+
+        <!-- X因素 -->
+        <div class="xfactor-box">
+            <h3>隐藏X因素</h3>
+            <div class="xfactor-item">裁判因素：主裁判为美国的托里·彭索，其执法风格偏向宽松，鼓励身体对抗，这可能更有利于身体对抗占优的德国队，但也可能让厄瓜多尔的高强度拼抢获得更大容错空间。</div>
+            <div class="xfactor-item">天气变量：新泽西6月下旬气温25-34°C，湿度65%，午后雷暴风险。比赛在室内进行但场地潮湿可能影响地面传控精度，对技术流球队略有不友。</div>
+            <div class="xfactor-item">萨内"最后通牒"效应：如果萨内本场再度低迷，下半场可能被翁达夫替换——这个换人节点本身可能成为比赛转折。若翁达夫登场，其冲击力可能快速终结悬念。</div>
+        </div>
+    </div>
+
+    <!-- ========== 第2场：库拉索 vs 科特迪瓦 ========== -->
+    <div class="match-card" id="m2">
+        <div class="match-header">
+            <span class="group-tag">E组 · 第3轮</span>
+            <span class="time-tag">北京时间 04:00</span>
+            <span class="venue-tag">费城 · 林肯金融球场</span>
+        </div>
+        <div class="match-teams">
+            <div class="team-box">
+                <div class="flag">🇨🇼</div>
+                <div class="name">库拉索</div>
+                <div class="rank">FIFA排名 第83位 | 小组第4 · 1分</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team-box">
+                <div class="flag">🇨🇮</div>
+                <div class="name">科特迪瓦</div>
+                <div class="rank">FIFA排名 第38位 | 小组第2 · 3分</div>
+            </div>
+        </div>
+        <div class="motivation-bar">
+            <span class="mot-tag mot-need">库拉索：理论出线(需赢+看脸色)</span>
+            <span class="mot-tag mot-safe">科特迪瓦：打平即出线</span>
+        </div>
+
+        <div class="verdict-box">
+            <div class="verdict-title">&#9733; 核心结论先行</div>
+            <div class="verdict-row">
+                <span class="prediction-badge pred-win">客胜（科特迪瓦胜）</span>
+                <div class="score-options">
+                    <span class="score-chip first">0:2</span>
+                    <span class="score-chip">0:1</span>
+                    <span class="score-chip">1:3</span>
+                </div>
+                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;</span>
+                <span style="font-size:12px;color:var(--text-dim)">信心指数 4/5</span>
+            </div>
+        </div>
+
+        <div class="injury-section">
+            <h3>伤病/停赛情报</h3>
+            <div class="injury-grid">
+                <div class="injury-card">
+                    <div class="team-name">🇨🇼 库拉索</div>
+                    <div class="player">无新增伤停 · 主力框架完整</div>
+                </div>
+                <div class="injury-card">
+                    <div class="team-name">🇨🇮 科特迪瓦</div>
+                    <div class="player"><span class="tag tag-injury">伤缺</span> 辛戈(主力右后卫)</div>
+                    <div class="player"><span class="tag tag-return">复出</span> 恩迪卡(主力中卫)</div>
+                    <div class="player"><span class="tag tag-injury">缺席</span> 瓦希(前锋·签证问题)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logic-section">
+            <h3>深度逻辑拆解</h3>
+            <div class="logic-point">
+                <div class="lp-title">1. "蹲坑出线"型的天然优势</div>
+                <div class="lp-text">科特迪瓦只需平局即可锁定小组第二，这意味着他们可以从容采取4-3-3防守反击体系。凯西+桑加雷的双后腰屏障将成为库拉索进攻的铜墙铁壁。近三届世界杯小组第二名队伍迎战垫底队伍、只需平局出线的非洲球队，12场对决仅输2场(7胜3平)，大比分失利概率不足17%。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">2. 实力鸿沟难以逾越</div>
+                <div class="lp-text">科特迪瓦全队身价约2.1亿欧元，库拉索仅4200万欧元，差距达5倍。科特迪瓦锋线阿莱、奥利斯均效力五大联赛主流豪门，而库拉索多数球员效力于荷甲次级及加勒比本土联赛。虽然库拉索门将鲁姆上轮创造15次扑救的世界杯纪录，但面对科特迪瓦更强的个人突破和冲击力，这种"门将超神"的可持续性存疑。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">3. 库拉索体能断崖与防空短板</div>
+                <div class="lp-text">库拉索前两轮70分钟后后防线场均出现2.3次关键失误，体能断崖明显。首战1-7惨败德国暴露了严重防空短板——科特迪瓦阿莱1米91的高空优势将反复冲击。主帅艾德沃卡特（78岁）虽是战术大师，但球员执行力已近极限。</div>
+            </div>
+        </div>
+
+        <div class="goal-script">
+            <h3>进球剧本推演</h3>
+            <div class="goal-row"><span class="goal-label">总进球区间</span><span class="goal-value">2-3球</span></div>
+            <div class="goal-row"><span class="goal-label">进球时段</span><span class="goal-value">科特迪瓦进球集中在下半场60-80分钟（库拉索体能崩塌期）；库拉索若进球，可能来自定位球</span></div>
+            <div class="goal-row"><span class="goal-label">关键破门球员</span><span class="goal-value">阿莱（高点轰炸）、奥利斯（边路突破内切）、迪奥曼德（速度冲击）；库拉索侧：定位球战术</span></div>
+        </div>
+
+        <div class="xfactor-box">
+            <h3>隐藏X因素</h3>
+            <div class="xfactor-item">节奏陷阱：科特迪瓦不需要赢球=不会疯狂压上；库拉索理论需赢但实际也接受平局=双方都不急。这可能是6场中节奏最慢的一场，闷平风险不可忽视。</div>
+            <div class="xfactor-item">费城天气：6月下旬24-31°C，城市热岛效应可能加剧温度，对加勒比岛国球员更为适应，但不足以弥补实力差距。</div>
+            <div class="xfactor-item">恩迪卡复出：这位法兰克福铁卫的回归大幅提升科特迪瓦防线硬度，可能让原本就攻弱守强的比赛更趋封闭。</div>
+        </div>
+    </div>
+
+    <!-- ========== 第3场：日本 vs 瑞典 ========== -->
+    <div class="match-card" id="m3">
+        <div class="match-header">
+            <span class="group-tag">F组 · 第3轮 · 死亡之组终极战</span>
+            <span class="time-tag">北京时间 07:00</span>
+            <span class="venue-tag">达拉斯 · AT&T体育场（室内空调）</span>
+        </div>
+        <div class="match-teams">
+            <div class="team-box">
+                <div class="flag">🇯🇵</div>
+                <div class="name">日本</div>
+                <div class="rank">FIFA排名 第18位 | 小组第2 · 4分</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team-box">
+                <div class="flag">🇸🇪</div>
+                <div class="name">瑞典</div>
+                <div class="rank">FIFA排名 第38位 | 小组第3 · 3分</div>
+            </div>
+        </div>
+        <div class="motivation-bar">
+            <span class="mot-tag mot-safe">日本：打平即出线 · 赢球争头名</span>
+            <span class="mot-tag mot-must">瑞典：必须赢球才出线</span>
+        </div>
+
+        <div class="verdict-box">
+            <div class="verdict-title">&#9733; 核心结论先行</div>
+            <div class="verdict-row">
+                <span class="prediction-badge pred-win">主胜（日本胜）</span>
+                <div class="score-options">
+                    <span class="score-chip first">2:1</span>
+                    <span class="score-chip">2:0</span>
+                    <span class="score-chip">1:1</span>
+                </div>
+                <span class="star-rating">&#9733;&#9733;&#9733;</span>
+                <span style="font-size:12px;color:var(--text-dim)">信心指数 3/5（瑞典搏命增加变数）</span>
+            </div>
+        </div>
+
+        <div class="injury-section">
+            <h3>伤病/停赛情报</h3>
+            <div class="injury-grid">
+                <div class="injury-card">
+                    <div class="team-name">🇯🇵 日本</div>
+                    <div class="player"><span class="tag tag-injury">伤缺</span> 久保建英(主力前锋·持续伤缺)</div>
+                    <div class="player"><span class="tag tag-return">复出</span> 町野修斗(伤愈复出)</div>
+                    <div class="player">森保一表示将进行阵容轮换</div>
+                </div>
+                <div class="injury-card">
+                    <div class="team-name">🇸🇪 瑞典</div>
+                    <div class="player">无新增伤停 · 全员可战</div>
+                    <div class="player"><span class="tag tag-return">复出</span> 后卫史密斯(伤愈)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logic-section">
+            <h3>深度逻辑拆解</h3>
+            <div class="logic-point">
+                <div class="lp-title">1. 战意不对称的微妙博弈</div>
+                <div class="lp-text">日本打平即出线，赢球则锁定头名（淘汰赛对阵摩洛哥而非巴西），争头名战意依然存在。但森保一已明确表示将轮换，久保建英缺阵削弱了边路创造力。瑞典必须赢球，意味着他们必须主动进攻，而这正是日本最擅长的局面——2022年世界杯日本逆转德国、西班牙均是在先守后攻中完成的。瑞典被迫压上将给日本反击留下巨大空间。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">2. 瑞典"头重脚轻"的结构性缺陷</div>
+                <div class="lp-text">瑞典拥有伊萨克+哲凯赖什的英超顶级双箭头，但防线是本届世界杯最大软肋之一：首轮5-1大胜突尼斯，次轮却被荷兰5-1血洗，防线大开大合，6个丢球暴露出后腰覆盖不足、中卫转身慢的致命问题。日本镰田大地前两轮连续进球、中场攻防两端俱佳，面对瑞典的防守漏洞，日本有足够的火力完成致命一击。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">3. 亚洲天花板 vs 北欧力量的风格克制</div>
+                <div class="lp-text">日本世界排名比瑞典高出20位，攻防两端实力均占优。关键在于风格克制：日本的高位逼抢和快速传切恰好针对瑞典后场出球慢、中卫移动差的弱点。2022年世界杯日本对阵北欧球队（如逆转德国时面对的高位体系）的经验，使得他们应对瑞典的简单直接打法更有心得。但需警惕：瑞典定位球和长传冲吊对日本防空是持续威胁。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">4. 达拉斯空调场地的隐形影响</div>
+                <div class="lp-text">AT&T体育场是全空调室内球场，外部达拉斯高温可达38-42°C，但场内温度恒定在22°C左右。这意味着技术流球队（日本）不必担心高温消耗体能，传控体系可以完整发挥，反而削弱了瑞典希望借助高温消耗日本体能的潜在优势。</div>
+            </div>
+        </div>
+
+        <div class="goal-script">
+            <h3>进球剧本推演</h3>
+            <div class="goal-row"><span class="goal-label">总进球区间</span><span class="goal-value">2-4球（开放场面概率高）</span></div>
+            <div class="goal-row"><span class="goal-label">进球时段</span><span class="goal-value">上半场30-45分钟（瑞典开局强攻期）+ 下半场60-75分钟（日本反击收获期）</span></div>
+            <div class="goal-row"><span class="goal-label">关键破门球员</span><span class="goal-value">日本：镰田大地（中场后插上）、三笘薰（边路突破）、上田绮世（反击终结）；瑞典：伊萨克（灵活跑位）、哲凯赖什（抢点+头球）</span></div>
+        </div>
+
+        <div class="xfactor-box">
+            <h3>隐藏X因素</h3>
+            <div class="xfactor-item">久保建英缺阵的影响可能被低估：日本前两轮的右路进攻大量依赖久保的突破分球，他的缺阵使得右路创造力下降，森保一可能调整阵型为更保守的5-3-2以稳守反击，这可能降低比赛观赏性但提高胜率。</div>
+            <div class="xfactor-item">瑞典"背水一战"的极端策略：如果瑞典上半场15分钟内未能破门，可能采取极端的高压逼抢+长传冲吊，这会增加比赛开放度但也可能让日本反击更致命。如果瑞典先取得进球，日本将被迫攻出来，形势将完全逆转。</div>
+            <div class="xfactor-item">F组头名之争的淘汰赛链路：日本若获头名将淘汰赛对阵摩洛哥，若获第二将对阵巴西——这意味着日本对头名的渴望远超表面，森保一的轮换力度可能比预期更小。</div>
+        </div>
+    </div>
+
+    <!-- ========== 第4场：突尼斯 vs 荷兰 ========== -->
+    <div class="match-card" id="m4">
+        <div class="match-header">
+            <span class="group-tag">F组 · 第3轮</span>
+            <span class="time-tag">北京时间 07:00</span>
+            <span class="venue-tag">堪萨斯城 · 箭头体育场</span>
+        </div>
+        <div class="match-teams">
+            <div class="team-box">
+                <div class="flag">🇹🇳</div>
+                <div class="name">突尼斯</div>
+                <div class="rank">FIFA排名 第29位 | 小组第4 · 0分(已出局)</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team-box">
+                <div class="flag">🇳🇱</div>
+                <div class="name">荷兰</div>
+                <div class="rank">FIFA排名 第7位 | 小组第1 · 4分</div>
+            </div>
+        </div>
+        <div class="motivation-bar">
+            <span class="mot-tag mot-honor">突尼斯：荣誉之战(7战世界杯从未出线)</span>
+            <span class="mot-tag mot-need">荷兰：争头名(打平可能跌至第二)</span>
+        </div>
+
+        <div class="verdict-box">
+            <div class="verdict-title">&#9733; 核心结论先行</div>
+            <div class="verdict-row">
+                <span class="prediction-badge pred-win">客胜（荷兰胜）</span>
+                <div class="score-options">
+                    <span class="score-chip first">0:3</span>
+                    <span class="score-chip">0:2</span>
+                    <span class="score-chip">1:3</span>
+                </div>
+                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;</span>
+                <span style="font-size:12px;color:var(--text-dim)">信心指数 4/5</span>
+            </div>
+        </div>
+
+        <div class="injury-section">
+            <h3>伤病/停赛情报</h3>
+            <div class="injury-grid">
+                <div class="injury-card">
+                    <div class="team-name">🇹🇳 突尼斯</div>
+                    <div class="player">无新增伤停</div>
+                </div>
+                <div class="injury-card">
+                    <div class="team-name">🇳🇱 荷兰</div>
+                    <div class="player"><span class="tag tag-return">复出</span> 廷贝尔(主力中场)</div>
+                    <div class="player"><span class="tag tag-injury">伤缺</span> 德里赫特、德弗里(后防)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logic-section">
+            <h3>深度逻辑拆解</h3>
+            <div class="logic-point">
+                <div class="lp-title">1. 荷兰争头名的强烈战意</div>
+                <div class="lp-text">荷兰暂列F组第一但头名并不牢固——目前与日本同积4分、同净胜球(+4)，荷兰仅以总进球数1球领先。若打平且日本战胜瑞典，荷兰将跌至小组第二，淘汰赛对阵巴西而非摩洛哥。科曼不会冒这个险，预计主力尽出全力争胜+刷净胜球。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">2. 突尼斯防线崩溃的系统性问题</div>
+                <div class="lp-text">突尼斯两战丢9球（1-5瑞典、0-4日本），防线如同虚设。勒纳尔接手后颓势未止，7次征战世界杯从未小组出线的历史魔咒压在球员心头。面对荷兰加克波+布罗贝伊+萨默维尔的轮番冲击，突尼斯的防守体系大概率再次被击穿。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">3. 历史数据的绝对碾压</div>
+                <div class="lp-text">荷兰世界杯对阵非洲球队5场保持不败(4胜1平)，自1990年1-1战平埃及后已连续4场获胜。突尼斯世界杯对阵欧洲球队13场仅赢1场(4平8负)，唯一的胜利是2022年哈兹里进球1-0击败法国——但那场比赛法国已锁定出线大幅轮换。</div>
+            </div>
+        </div>
+
+        <div class="goal-script">
+            <h3>进球剧本推演</h3>
+            <div class="goal-row"><span class="goal-label">总进球区间</span><span class="goal-value">3-4球</span></div>
+            <div class="goal-row"><span class="goal-label">进球时段</span><span class="goal-value">荷兰进球贯穿全场，上半场可能先入1球建立优势，下半场60-80分钟连入2球扩大战果</span></div>
+            <div class="goal-row"><span class="goal-label">关键破门球员</span><span class="goal-value">加克波（核心攻击手）、布罗贝伊（连续首发·梅开二度状态）、萨默维尔（替补奇兵）；突尼斯侧：哈兹里（定位球）</span></div>
+        </div>
+
+        <div class="xfactor-box">
+            <h3>隐藏X因素</h3>
+            <div class="xfactor-item">堪萨斯城雷暴风险：6月处于"龙卷风走廊"雷暴季节，比赛期间可能出现强降雨和雷电，若比赛中断可能打乱荷兰的进攻节奏和球员热身状态。</div>
+            <div class="xfactor-item">突尼斯"尊严之战"的能量释放：已出局球队在末轮有时反而踢出最佳表现（无包袱+为尊严而战），突尼斯若上半场死守成功，比赛走向可能改变。</div>
+            <div class="xfactor-item">荷兰提前换人风险：若上半场2球领先，科曼可能提前撤下加克波等核心为淘汰赛蓄力，导致下半场攻势减弱，给突尼斯偷球空间。</div>
+        </div>
+    </div>
+
+    <!-- ========== 第5场：土耳其 vs 美国 ========== -->
+    <div class="match-card" id="m5">
+        <div class="match-header">
+            <span class="group-tag">D组 · 第3轮</span>
+            <span class="time-tag">北京时间 10:00</span>
+            <span class="venue-tag">洛杉矶 · SoFi体育场（室内空调）</span>
+        </div>
+        <div class="match-teams">
+            <div class="team-box">
+                <div class="flag">🇹🇷</div>
+                <div class="name">土耳其</div>
+                <div class="rank">FIFA排名 第28位 | 小组第4 · 0分(已出局)</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team-box">
+                <div class="flag">🇺🇸</div>
+                <div class="name">美国</div>
+                <div class="rank">FIFA排名 第13位 | 小组第1 · 6分(已出线)</div>
+            </div>
+        </div>
+        <div class="motivation-bar">
+            <span class="mot-tag mot-honor">土耳其：荣誉之战(62射0球)</span>
+            <span class="mot-tag mot-safe">美国：锁定头名 · 大幅轮换</span>
+        </div>
+
+        <div class="verdict-box">
+            <div class="verdict-title">&#9733; 核心结论先行</div>
+            <div class="verdict-row">
+                <span class="prediction-badge pred-draw">平局</span>
+                <div class="score-options">
+                    <span class="score-chip first">1:1</span>
+                    <span class="score-chip">0:1</span>
+                    <span class="score-chip">2:1</span>
+                </div>
+                <span class="star-rating">&#9733;&#9733;</span>
+                <span style="font-size:12px;color:var(--text-dim)">信心指数 2/5（养生局·变数极大）</span>
+            </div>
+        </div>
+
+        <div class="injury-section">
+            <h3>伤病/停赛情报</h3>
+            <div class="injury-grid">
+                <div class="injury-card">
+                    <div class="team-name">🇹🇷 土耳其</div>
+                    <div class="player">无新增伤停 · 预计大幅轮换</div>
+                    <div class="player">核心恰尔汗奥卢可能休息</div>
+                </div>
+                <div class="injury-card">
+                    <div class="team-name">🇺🇸 美国</div>
+                    <div class="player"><span class="tag tag-doubtful">出战成疑</span> 普利西奇(小腿拉伤)</div>
+                    <div class="player"><span class="tag tag-doubtful">预计轮换</span> 伯哈尔特、斯卡利、特拉斯蒂、赖特、雷纳有望首发</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logic-section">
+            <h3>深度逻辑拆解</h3>
+            <div class="logic-point">
+                <div class="lp-title">1. "养生局"概率最高的比赛</div>
+                <div class="lp-text">这是6场中双方战意最低的对决。美国已锁定D组头名，波切蒂诺将大幅轮换核心（普利西奇、麦肯尼、亚当斯等可能休整），替补阵容出战为淘汰赛蓄力。土耳其两连败0分出局，62次射门0进球的尴尬纪录意味着进攻端已彻底迷失，但"没有包袱"后反而可能踢出更放松的足球。双方均无刚需，比赛强度预计较低。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">2. 历史交锋暗示均势</div>
+                <div class="lp-text">双方此前5次交手各胜2场平1场，各进7球，完全均势。2025年友谊赛美国开场1分钟破门，但土耳其最终2-1逆转。这表明即便美国替补阵容实力占优，土耳其的韧性不可小觑——尤其在没有心理包袱的情况下。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">3. 土耳其"62射0球"的终结可能</div>
+                <div class="lp-text">土耳其前两轮62次射门0进球，这本身就有极强的"均值回归"倾向。面对美国轮换后的替补防线（缺乏主力默契），伊尔迪兹、居莱尔等天才球员可能终于迎来世界杯首球。但"终于进球"不等于"赢球"——土耳其的防守同样漏洞百出。</div>
+            </div>
+        </div>
+
+        <div class="goal-script">
+            <h3>进球剧本推演</h3>
+            <div class="goal-row"><span class="goal-label">总进球区间</span><span class="goal-value">1-3球（低强度比赛）</span></div>
+            <div class="goal-row"><span class="goal-label">进球时段</span><span class="goal-value">分散，上半场可能节奏较慢，下半场换人后比赛开放度增加</span></div>
+            <div class="goal-row"><span class="goal-label">关键破门球员</span><span class="goal-value">美国：韦阿（速度反击）、曾德哈斯（替补奇兵）；土耳其：伊尔迪兹（个人能力）、居莱尔（远射）</span></div>
+        </div>
+
+        <div class="xfactor-box">
+            <h3>隐藏X因素</h3>
+            <div class="xfactor-item">洛杉矶主场优势：SoFi体育场是NFL公羊队主场，美国球迷将占据绝大多数，即便轮换阵容也能获得巨大心理加持。</div>
+            <div class="xfactor-item">蒙特拉"放手一搏"：土耳其主帅蒙特拉可能给年轻球员自由发挥空间，这种"无压力足球"有时反而创造出最精彩的表现。</div>
+            <div class="xfactor-item">美国替补"求职"动力：对美国替补球员而言，这是在世界杯舞台向波切蒂诺证明自己配得上淘汰赛出场时间的最后机会，个人战意可能高于团队战意。</div>
+        </div>
+    </div>
+
+    <!-- ========== 第6场：巴拉圭 vs 澳大利亚 ========== -->
+    <div class="match-card" id="m6">
+        <div class="match-header">
+            <span class="group-tag">D组 · 第3轮 · 生死战</span>
+            <span class="time-tag">北京时间 10:00</span>
+            <span class="venue-tag">旧金山 · 李维斯体育场</span>
+        </div>
+        <div class="match-teams">
+            <div class="team-box">
+                <div class="flag">🇵🇾</div>
+                <div class="name">巴拉圭</div>
+                <div class="rank">FIFA排名 第52位 | 小组第3 · 3分</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team-box">
+                <div class="flag">🇦🇺</div>
+                <div class="name">澳大利亚</div>
+                <div class="rank">FIFA排名 第34位 | 小组第2 · 3分</div>
+            </div>
+        </div>
+        <div class="motivation-bar">
+            <span class="mot-tag mot-must">巴拉圭：必须赢球才出线</span>
+            <span class="mot-tag mot-need">澳大利亚：打平即出线(净胜球优势)</span>
+        </div>
+
+        <div class="verdict-box">
+            <div class="verdict-title">&#9733; 核心结论先行</div>
+            <div class="verdict-row">
+                <span class="prediction-badge pred-draw">平局</span>
+                <div class="score-options">
+                    <span class="score-chip first">1:1</span>
+                    <span class="score-chip">0:1</span>
+                    <span class="score-chip">1:0</span>
+                </div>
+                <span class="star-rating">&#9733;&#9733;&#9733;</span>
+                <span style="font-size:12px;color:var(--text-dim)">信心指数 3/5（五五开生死局）</span>
+            </div>
+        </div>
+
+        <div class="injury-section">
+            <h3>伤病/停赛情报</h3>
+            <div class="injury-grid">
+                <div class="injury-card">
+                    <div class="team-name">🇵🇾 巴拉圭</div>
+                    <div class="player"><span class="tag tag-suspended">停赛</span> 阿尔米隆(队长·核心前锋·红牌停赛)⚠️重大损失</div>
+                    <div class="player"><span class="tag tag-doubtful">出战成疑</span> 索萨(主力前锋)</div>
+                    <div class="player"><span class="tag tag-return">复出</span> 卡瓦列罗(替补前锋)</div>
+                    <div class="player"><span class="tag tag-return">复出</span> 恩西索(小伤痊愈)</div>
+                </div>
+                <div class="injury-card">
+                    <div class="team-name">🇦🇺 澳大利亚</div>
+                    <div class="player"><span class="tag tag-injury">伤缺</span> 莱基(35岁老将前锋·腿筋)</div>
+                    <div class="player"><span class="tag tag-injury">伤缺</span> 意大利亚诺(右后卫·内收肌)</div>
+                    <div class="player">上场对美4张黄牌(此前4场总和)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logic-section">
+            <h3>深度逻辑拆解</h3>
+            <div class="logic-point">
+                <div class="lp-title">1. 唯一"真刀真枪"的生死局</div>
+                <div class="lp-text">这是6场中唯一双方都有强烈出线需求的比赛。胜者直接晋级32强；若打平，双方同积4分，澳大利亚凭净胜球优势(0 vs -2)排名第二直接出线，巴拉圭需以小组第三身份等待其余各组结果。这意味着澳大利亚有"保平"的退路，而巴拉圭必须取胜，战意不对称再次出现——但这次"打平出线"方是澳大利亚。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">2. 阿尔米隆停赛的决定性影响</div>
+                <div class="lp-text">巴拉圭队长阿尔米隆是球队唯一的速度型突破点和进攻发动机，他的红牌停赛使得巴拉圭进攻端失去最重要的一环。预计改打5-4-1防守反击阵型，恩西索将成为锋线唯一亮点。但恩西索更擅长组织而非终结，巴拉圭的进攻威胁将大幅下降。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">3. 澳大利亚的"袋鼠式"稳守反击</div>
+                <div class="lp-text">澳大利亚只需平局即可出线，他们的战术体系天然适配：4-2-3-1稳固防守+定位球进攻+高空轰炸。澳队历史上对阵巴拉圭5战2胜3平保持不败，且拥有苏塔等高大中卫在定位球中的巨大威胁。莱基缺阵影响有限（对美时已被限制），澳大利亚的进攻核心本就是定位球和边路传中。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">4. 旧金山凉爽天气的微妙影响</div>
+                <div class="lp-text">旧金山6月气温仅18-26°C，是本届世界杯最凉爽的赛地之一。这可能更有利于体能储备相对充足的澳大利亚（他们适应了西雅图的凉爽气候），而巴拉圭球员习惯南美温暖气候，在低温下肌肉僵硬可能影响灵活性。</div>
+            </div>
+        </div>
+
+        <div class="goal-script">
+            <h3>进球剧本推演</h3>
+            <div class="goal-row"><span class="goal-label">总进球区间</span><span class="goal-value">1-2球（低比分焦灼战）</span></div>
+            <div class="goal-row"><span class="goal-label">进球时段</span><span class="goal-value">进球可能集中在下半场（双方上半场互相试探）；若0-0进入70分钟，巴拉圭将被迫压上，澳大利亚反击偷球概率大增</span></div>
+            <div class="goal-row"><span class="goal-label">关键破门球员</span><span class="goal-value">澳大利亚：苏塔（定位球头球）、博伊尔（反击速度）；巴拉圭：恩西索（个人突破）、戈麦斯（远射）</span></div>
+        </div>
+
+        <div class="xfactor-box">
+            <h3>隐藏X因素</h3>
+            <div class="xfactor-item">竞彩平赔低至2.11：当日最低平赔，机构对平局防范极强。但这同时也是"平局陷阱"的信号——当所有人都预期平局时，往往出现分胜负的结果。</div>
+            <div class="xfactor-item">巴拉圭"背水一战"的极端选择：如果70分钟仍然0-0，巴拉圭可能撤下中卫改为3前锋强攻，此时澳大利亚的反击空间将彻底释放，1-0或0-1的极端结果概率上升。</div>
+            <div class="xfactor-item">澳大利亚4黄牌隐患：上轮对美的4张黄牌表明球队防守动作偏大，若本场早早吃牌，后防可能畏手畏脚，给巴拉圭可乘之机。</div>
+        </div>
+    </div>
+
+    <!-- ========== 总结矩阵 ========== -->
+    <div class="match-card">
+        <div class="match-header">
+            <span class="group-tag">6月26日总览</span>
+            <span class="venue-tag">六场预测汇总矩阵</span>
+        </div>
+        <table class="standings-table" style="margin:0;">
+            <tr><th>场次</th><th>对阵</th><th>预测</th><th>首选比分</th><th>信心</th><th>剧本类型</th></tr>
+            <tr><td>04:00</td><td>厄瓜多尔 vs 德国</td><td style="color:var(--win)">德国胜</td><td>0:2</td><td>★★★★</td><td>B-一方轮换</td></tr>
+            <tr><td>04:00</td><td>库拉索 vs 科特迪瓦</td><td style="color:var(--win)">科特迪瓦胜</td><td>0:2</td><td>★★★★</td><td>D-蹲坑出线</td></tr>
+            <tr><td>07:00</td><td>日本 vs 瑞典</td><td style="color:var(--win)">日本胜</td><td>2:1</td><td>★★★</td><td>D/E-蹲坑vs搏命</td></tr>
+            <tr><td>07:00</td><td>突尼斯 vs 荷兰</td><td style="color:var(--win)">荷兰胜</td><td>0:3</td><td>★★★★</td><td>B-一方轮换</td></tr>
+            <tr><td>10:00</td><td>土耳其 vs 美国</td><td style="color:var(--draw)">平局</td><td>1:1</td><td>★★</td><td>C-养生局</td></tr>
+            <tr><td>10:00</td><td>巴拉圭 vs 澳大利亚</td><td style="color:var(--draw)">平局</td><td>1:1</td><td>★★★</td><td>A-真刀真枪</td></tr>
+        </table>
+    </div>
+
+    <!-- 末轮铁律 -->
+    <div class="match-card">
+        <div class="match-header">
+            <span class="group-tag">末轮铁律</span>
+            <span class="venue-tag">48队新赛制下的小组赛收官战核心规律</span>
+        </div>
+        <div class="logic-section" style="padding-top:16px;">
+            <div class="logic-point">
+                <div class="lp-title">铁律一：战意差 > 纸面实力差</div>
+                <div class="lp-text">末轮的核心变量不是球队实力，而是出线需求驱动下的战术选择。"打平即出线"的球队天然占据心理优势（可稳守反击），"必须赢球"的球队面临攻出来被反击的两难。今日6场中4场存在明显战意不对称。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">铁律二：已出线强队的轮换程度决定冷门概率</div>
+                <div class="lp-text">德国(纳帅拒轮换)、美国(波帅大幅轮换)、荷兰(争头名不全轮)三支已出线球队态度不同，直接决定对手爆冷空间。德国的"不轮换"策略让厄瓜多尔爆冷概率降至3%以下。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">铁律三：3分≠出局，4分≠安全</div>
+                <div class="lp-text">48队新赛制下，8个最佳小组第三出线意味着3分仍有希望(韩国3分排名第三出线档中上游)，4分也未必绝对安全。这种微妙的出线算术影响球队心态：日本打平即出线但仍有争头名动力（避巴西），瑞典必须赢球但输了也未必彻底出局（3分可能以最佳第三晋级）。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2026世界杯专属环境变量 -->
+    <div class="match-card">
+        <div class="match-header">
+            <span class="group-tag">环境变量</span>
+            <span class="venue-tag">2026美加墨世界杯专属因子一览</span>
+        </div>
+        <div class="logic-section" style="padding-top:16px;">
+            <div class="logic-point">
+                <div class="lp-title">海拔高度影响</div>
+                <div class="lp-text">今日6场均在美国境内举行，海拔最高为堪萨斯城(约274米)、最低为新泽西(数米)。无墨西哥城(2240米)或瓜达拉哈拉(1566米)的高原影响。厄瓜多尔离开了基多2850米的主场优势，这是其进攻哑火的重要环境因素之一。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">室内空调球场</div>
+                <div class="lp-text">达拉斯AT&T体育场和洛杉矶SoFi体育场均为全封闭空调球场，场内温度恒定22°C左右，避免了外部38°C+的极端高温对技术流球队的影响。日本在达拉斯的空调场地中将获得完整的传控发挥空间。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">赛程间隔与体能</div>
+                <div class="lp-text">第二轮(6月19-20日)至第三轮(6月25-26日)间隔5-6天，所有球队获得了相对充裕的恢复时间。但澳大利亚对美比赛中领到4张黄牌（此前4场总和），体能和纪律双重压力下，末轮状态存疑。</div>
+            </div>
+            <div class="logic-point">
+                <div class="lp-title">跨国飞行与东道主优势</div>
+                <div class="lp-text">美国作为东道主享有主场优势：现场球迷绝大多数为主队支持者，且球队无需适应时差和长途飞行。澳大利亚从西雅图飞往旧金山(约1.5小时)属短途，影响较小；厄瓜多尔从堪萨斯城飞往新泽西(约2.5小时)属中等距离，影响有限。</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <p>本报告数据来源：FIFA官网、ESPN、央视体育、直播吧、虎扑等官方渠道</p>
+        <p>所有分析基于公开数据和历史统计规律，不构成任何投注建议</p>
+        <p>足球比赛存在高度不确定性，预测仅供参考 · 赛事结果以实际比赛为准</p>
+        <p style="margin-top:8px;color:var(--accent)">2026美加墨世界杯 · 深度前瞻报告 · 数据截止北京时间2026年6月26日03:00</p>
+    </div>
+
+</div>
+
+</body>
+</html>
