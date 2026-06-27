@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026美加墨世界杯 6月27日深度前瞻报告</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #f5c518;
+            --green: #2ecc71;
+            --blue: #3498db;
+            --light: #f8f9fa;
+            --dark: #0f0f23;
+            --card-bg: #1e2a3a;
+            --border: #2d3f55;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            background: var(--dark);
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(233,69,96,0.1) 0%, transparent 60%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
+        .header h1 {
+            font-size: 2.4em;
+            background: linear-gradient(90deg, #f5c518, #e94560, #f5c518);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 1;
+        }
+        .header .subtitle {
+            font-size: 1.1em;
+            color: #8899aa;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .header .date-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Match Card */
+        .match-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .match-card:hover { transform: translateY(-3px); }
+        .match-header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .match-header .match-title {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: white;
+        }
+        .match-header .match-info {
+            text-align: right;
+            color: #8899aa;
+            font-size: 0.95em;
+        }
+        .match-header .match-info span {
+            display: block;
+        }
+        .match-body { padding: 25px 30px; }
+
+        /* Prediction Box */
+        .prediction-box {
+            background: linear-gradient(135deg, #1a1a3e, #0f3460);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid var(--accent);
+            position: relative;
+        }
+        .prediction-box::before {
+            content: '核心结论';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 2px 16px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        .prediction-result {
+            font-size: 1.8em;
+            font-weight: 800;
+            text-align: center;
+            padding: 15px 0;
+        }
+        .prediction-result.win-home { color: var(--green); }
+        .prediction-result.draw { color: var(--gold); }
+        .prediction-result.win-away { color: var(--blue); }
+        .score-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        .score-item {
+            background: rgba(255,255,255,0.08);
+            padding: 10px 24px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .score-item .score {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: var(--gold);
+        }
+        .score-item .prob {
+            font-size: 0.85em;
+            color: #8899aa;
+        }
+        .confidence {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 1.1em;
+        }
+        .stars { color: var(--gold); letter-spacing: 3px; }
+
+        /* Section */
+        .section-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--gold);
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+            margin: 25px 0 15px;
+        }
+
+        /* Data Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.92em;
+        }
+        .data-table th {
+            background: rgba(233,69,96,0.15);
+            color: var(--gold);
+            padding: 10px 12px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent);
+            font-weight: 600;
+        }
+        .data-table td {
+            padding: 9px 12px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .data-table tr:hover { background: rgba(255,255,255,0.03); }
+        .data-table td:first-child { text-align: left; font-weight: 600; }
+        .highlight { color: var(--green); font-weight: bold; }
+        .warning { color: var(--accent); font-weight: bold; }
+        .neutral { color: var(--gold); font-weight: bold; }
+
+        /* Argument Cards */
+        .argument-card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin-bottom: 12px;
+            border-left: 3px solid var(--accent);
+        }
+        .argument-card .arg-num {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .argument-card .arg-title {
+            font-weight: 700;
+            color: white;
+        }
+        .argument-card .arg-detail {
+            margin-top: 8px;
+            color: #b0b8c4;
+            font-size: 0.95em;
+        }
+
+        /* Goal Scenario */
+        .goal-scenario {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .goal-item {
+            background: rgba(52,152,219,0.1);
+            border: 1px solid rgba(52,152,219,0.3);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        .goal-item .label { font-size: 0.85em; color: #8899aa; }
+        .goal-item .value { font-size: 1.2em; font-weight: bold; color: var(--blue); margin-top: 5px; }
+
+        /* X-Factor */
+        .xfactor-card {
+            background: rgba(233,69,96,0.08);
+            border: 1px solid rgba(233,69,96,0.3);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+        }
+        .xfactor-card .xf-title {
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .xfactor-card .xf-detail { color: #b0b8c4; font-size: 0.93em; }
+
+        /* Group Table */
+        .group-standings {
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .group-standings h4 { color: var(--gold); margin-bottom: 10px; }
+
+        /* Lineup Box */
+        .lineup-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 15px 0;
+        }
+        @media (max-width: 600px) { .lineup-box { grid-template-columns: 1fr; } }
+        .lineup-team {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .lineup-team h4 {
+            color: var(--gold);
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
+        }
+        .lineup-team .formation {
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .lineup-team .player {
+            padding: 3px 0;
+            font-size: 0.93em;
+            color: #c0c8d4;
+        }
+        .lineup-team .player.injured {
+            color: var(--accent);
+            text-decoration: line-through;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #556677;
+            font-size: 0.85em;
+            border-top: 1px solid var(--border);
+            margin-top: 30px;
+        }
+        .disclaimer {
+            background: rgba(233,69,96,0.08);
+            border: 1px solid rgba(233,69,96,0.2);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-top: 20px;
+            text-align: center;
+            color: #b0b8c4;
+            font-size: 0.9em;
+        }
+
+        /* Print */
+        @media print {
+            body { background: white; color: black; }
+            .match-card { break-inside: avoid; }
+            .prediction-box::before { color: white; }
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            padding: 10px 24px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: #8899aa;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .tab-btn:hover { background: rgba(233,69,96,0.15); color: white; }
+        .tab-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* Tag */
+        .tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .tag-hot { background: rgba(233,69,96,0.2); color: var(--accent); }
+        .tag-focus { background: rgba(245,197,24,0.2); color: var(--gold); }
+        .tag-upset { background: rgba(46,204,113,0.2); color: var(--green); }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>2026美加墨世界杯 深度前瞻报告</h1>
+        <div class="subtitle">6月27日 小组赛第三轮收官日 · 六场生死对决全推演</div>
+        <div class="date-badge">2026年6月27日 · 北京时间 03:00 / 08:00 / 11:00</div>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab('match1')">乌拉圭 vs 西班牙</button>
+        <button class="tab-btn" onclick="switchTab('match2')">佛得角 vs 沙特</button>
+        <button class="tab-btn" onclick="switchTab('match3')">埃及 vs 伊朗</button>
+        <button class="tab-btn" onclick="switchTab('match4')">新西兰 vs 比利时</button>
+    </div>
+
+    <!-- ==================== MATCH 1: 乌拉圭 vs 西班牙 ==================== -->
+    <div class="tab-content active" id="match1">
+    <div class="match-card">
+        <div class="match-header">
+            <div>
+                <div class="match-title">🇺🇾 乌拉圭 vs 西班牙 🇪🇸</div>
+                <span class="tag tag-hot">焦点之战</span>
+                <span class="tag tag-focus">H组头名之争</span>
+            </div>
+            <div class="match-info">
+                <span>H组第3轮 · 北京时间 08:00</span>
+                <span>📍 墨西哥瓜达拉哈拉 阿克伦体育场</span>
+                <span>主裁判：伊斯梅尔·埃尔法思（美国）</span>
+            </div>
+        </div>
+        <div class="match-body">
+
+            <!-- H组积分榜 -->
+            <div class="group-standings">
+                <h4>H组积分榜（2轮后）</h4>
+                <table class="data-table">
+                    <tr><th>排名</th><th>球队</th><th>场</th><th>胜</th><th>平</th><th>负</th><th>进球</th><th>失球</th><th>净胜球</th><th>积分</th></tr>
+                    <tr><td>1</td><td>西班牙</td><td>2</td><td>1</td><td>1</td><td>0</td><td>4</td><td>0</td><td class="highlight">+4</td><td class="highlight">4</td></tr>
+                    <tr><td>2</td><td>乌拉圭</td><td>2</td><td>0</td><td>2</td><td>0</td><td>3</td><td>3</td><td>0</td><td>2</td></tr>
+                    <tr><td>3</td><td>佛得角</td><td>2</td><td>0</td><td>2</td><td>0</td><td>2</td><td>2</td><td>0</td><td>2</td></tr>
+                    <tr><td>4</td><td>沙特</td><td>2</td><td>0</td><td>1</td><td>1</td><td>1</td><td>5</td><td class="warning">-4</td><td>1</td></tr>
+                </table>
+            </div>
+
+            <!-- 核心结论 -->
+            <div class="prediction-box">
+                <div class="prediction-result win-away">客胜（西班牙胜）</div>
+                <div class="score-list">
+                    <div class="score-item">
+                        <div class="score">0-1</div>
+                        <div class="prob">首选 · 34%</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score">1-2</div>
+                        <div class="prob">次选 · 28%</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score">1-1</div>
+                        <div class="prob">防平 · 24%</div>
+                    </div>
+                </div>
+                <div class="confidence">信心指数：<span class="stars">★★★★☆</span>（4星）</div>
+            </div>
+
+            <!-- 深度逻辑拆解 -->
+            <div class="section-title">深度逻辑拆解</div>
+
+            <div class="argument-card">
+                <span class="arg-num">1</span>
+                <span class="arg-title">双核缺阵致命打击——乌拉圭攻防两端同时降级</span>
+                <div class="arg-detail">后防核心阿劳霍（巴萨）小腿撕裂缺阵，乌拉圭防线失去最可靠的单防点和防空支柱；中场组织者德阿拉斯卡埃塔同时伤停，中场串联与肋部渗透能力断崖式下降。阿劳霍缺阵后，替补中卫（卡塞雷斯/科茨）转身偏慢，面对亚马尔和尼科·威廉姆斯的边路爆破将暴露致命短板。德阿拉斯卡埃塔的缺席意味着努涅斯将失去中场最关键的前传输送来源。</div>
+            </div>
+
+            <div class="argument-card">
+                <span class="arg-num">2</span>
+                <span class="arg-title">战意不对称——西班牙从容控局，乌拉圭被迫搏命</span>
+                <div class="arg-detail">西班牙打平即可锁定小组第一（避开淘汰赛对阵卫冕冠军阿根廷），战术目标优先守住不败、减少核心吃牌风险，用传控消耗对手、领先即降速。乌拉圭唯有取胜才能确保出线，贝尔萨必须全场高位逼抢、全线前压，这恰恰给了西班牙最擅长的反击空间——乌拉圭压得越靠前，身后空当越大，西班牙的边路快速转换越致命。</div>
+            </div>
+
+            <div class="argument-card">
+                <span class="arg-num">3</span>
+                <span class="arg-title">历史交锋绝对碾压——乌拉圭10战0胜</span>
+                <div class="arg-detail">两队历史上共交手10次，西班牙5胜5平保持不败，进16球失8球。世界杯赛场2次交手均战平（1950年2-2、1990年0-0），但最近一次交锋（2013年联合会杯）西班牙2-1取胜。乌拉圭球员背负"从未击败过西班牙"的心理包袱，而必须赢球的处境进一步加剧心理压力。</div>
+            </div>
+
+            <div class="argument-card">
+                <span class="arg-num">4</span>
+                <span class="arg-title">攻防效率鸿沟——西班牙射门转化率是乌拉圭两倍</span>
+                <div class="arg-detail">小组赛数据显示：西班牙xG/90为1.96，几乎是乌拉圭（1.04）的两倍；西班牙射门转化率18-20%（精英级），乌拉圭仅9-10%；西班牙每进1球需约5.3次射门，乌拉圭需约11.7次。西班牙两场零封对手（xGA仅0.65），乌拉圭两场丢3球（xGA约2.34）。面对传控体系的压制，乌拉圭终结效率偏低的问题将被进一步放大。</div>
+            </div>
+
+            <!-- 数据对比 -->
+            <div class="section-title">核心数据对比</div>
+            <table class="data-table">
+                <tr><th>维度</th><th>乌拉圭</th><th>西班牙</th></tr>
+                <tr><td>FIFA排名</td><td>第12-16位</td><td class="highlight">第2-3位</td></tr>
+                <tr><td>小组赛场均控球率</td><td>42.3%</td><td class="highlight">65.8%</td></tr>
+                <tr><td>小组赛场均射门/射正</td><td>11.0/4.0</td><td class="highlight">16.0/7.5</td></tr>
+                <tr><td>小组赛场均被射门</td><td class="warning">14.5</td><td>7.0</td></tr>
+                <tr><td>传球成功率</td><td>80.5%</td><td class="highlight">91.2%</td></tr>
+                <tr><td>PPDA（压迫指数）</td><td class="highlight">9.8（高压）</td><td>11.5</td></tr>
+                <tr><td>小组赛xG/xGA</td><td>2.60/2.34</td><td class="highlight">3.85/0.65</td></tr>
+                <tr><td>近5场战绩</td><td>0胜3平2负</td><td class="highlight">3胜2平0负</td></tr>
+                <tr><td>全队身价</td><td>3.6亿欧</td><td class="highlight">12亿欧</td></tr>
+            </table>
+
+            <!-- 预计首发 -->
+            <div class="section-title">预计首发与伤停</div>
+            <div class="lineup-box">
+                <div class="lineup-team">
+                    <h4>🇺🇾 乌拉圭 <span class="warning">（双核伤缺）</span></h4>
+                    <div class="formation">4-4-2 / 4-3-3 高位逼抢体系</div>
+                    <div class="player injured">❌ 阿劳霍（后防核心·小腿撕裂）</div>
+                    <div class="player injured">❌ 德阿拉斯卡埃塔（中场核心·伤停）</div>
+                    <div class="player">GK：穆斯莱拉/罗切特</div>
+                    <div class="player">DF：瓦雷拉、希门尼斯、卡塞雷斯、奥利韦拉</div>
+                    <div class="player">MF：乌加特、本坦库尔、巴尔韦德</div>
+                    <div class="player">FW：卡诺比奥、努涅斯、马克西·阿劳霍</div>
+                </div>
+                <div class="lineup-team">
+                    <h4>🇪🇸 西班牙 <span class="highlight">（阵容齐整）</span></h4>
+                    <div class="formation">4-3-3 传控反击体系</div>
+                    <div class="player">✅ 无核心伤病（穆尼奥斯轻伤影响有限）</div>
+                    <div class="player">GK：乌奈·西蒙</div>
+                    <div class="player">DF：卡瓦哈尔/波罗、勒诺尔芒/库巴西、拉波尔特、库库雷利亚</div>
+                    <div class="player">MF：罗德里、佩德里、奥尔莫</div>
+                    <div class="player">FW：亚马尔、奥亚萨瓦尔、尼科·威廉姆斯</div>
+                </div>
+            </div>
+
+            <!-- 进球剧本推演 -->
+            <div class="section-title">进球剧本推演</div>
+            <div class="goal-scenario">
+                <div class="goal-item">
+                    <div class="label">总进球数区间</div>
+                    <div class="value">1-3球</div>
+                </div>
+                <div class="goal-item">
+                    <div class="label">最可能进球时段</div>
+                    <div class="value">35'-55' / 70'-85'</div>
+                </div>
+                <div class="goal-item">
+                    <div class="label">关键破门球员</div>
+                    <div class="value">亚马尔 / 奥亚萨瓦尔 / 巴尔韦德</div>
+                </div>
+                <div class="goal-item">
+                    <div class="label">半全场走势</div>
+                    <div class="value">平/负 → 客胜</div>
+                </div>
+            </div>
+            <p style="color:#b0b8c4; font-size:0.93em; margin-top:10px;">
+                西班牙上半场惯常以控球试探为主，乌拉圭开场高位逼抢制造混乱但终结效率不足。预计上半场0-0或1-0西班牙领先（亚马尔边路内切破门）。下半场乌拉圭被迫前压，西班牙反击扩大比分。若乌拉圭依靠巴尔韦德远射或定位球偷一球，可能制造1-1的短暂悬念，但防线空虚终将被西班牙抓住。
+            </p>
+
+            <!-- 隐藏X因素 -->
+            <div class="section-title">隐藏X因素</div>
+            <div class="xfactor-card">
+                <div class="xf-title">⛈️ 瓜达拉哈拉海拔与气候</div>
+                <div class="xf-detail">瓜达拉哈拉海拔约1566米，虽不及墨西哥城（2240米）极端，但对习惯低海拔的欧洲球员仍有体能消耗影响。西班牙以控球为基础，高位控球本身就能减少跑动距离，但乌拉圭的高位逼抢在高原环境下60分钟后可能出现体能断崖式下滑。</div>
+            </div>
+            <div class="xfactor-card">
+                <div class="xf-title">🃏 贝尔萨与球员关系紧张</div>
+                <div class="xf-detail">据ESPN报道，多位乌拉圭国脚抱怨贝尔萨训练量过大导致伤病频发，主帅与球员关系紧张。在必须赢球的生死战中，更衣室凝聚力存疑，一旦迟迟无法破门，内部可能出现崩盘而非反弹。</div>
+            </div>
+            <div class="xfactor-card">
+                <div class="xf-title">⚽ 主裁判尺度</div>
+                <div class="xf-detail">主裁判伊斯梅尔·埃尔法思（美国）以鼓励身体对抗著称，这对乌拉圭的中场绞杀（场均犯规14.5次）相对有利。若裁判尺度偏松，乌拉圭可能通过凶悍的贴身逼抢阶段性切断西班牙传控线路；若尺度偏严，则乌拉圭吃牌风险大增。</div>
+            </div>
+            <div class="xfactor-card">
+                <div class="xf-title">📊 同步场次干扰</div>
+                <div class="xf-detail">H组两场末轮同时开球。如果佛得角vs沙特率先进球，可能影响乌拉圭/西班牙的战术选择——若沙特领先，佛得角可能掉到小组第三，乌拉圭打平也未必出局，贝尔萨可能调整搏命程度。</div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ==================== MATCH 2: 佛得角 vs 沙特 ==================== -->
+    <div class="tab-content" id="match2">
+    <div class="match-card">
+        <div class="match-header">
+            <div>
+                <div class="match-title">🇨🇻 佛得角 vs 沙特阿拉伯 🇸🇦</div>
+                <span class="tag tag-upset">黑马之战</span>
+                <span class="tag tag-focus">出线生死战</span>
+            </div>
+            <div class="match-info">
+                <span>H组第3轮 · 北京时间 08:00</span>
+                <span>📍 美国休斯顿 NRG体育场</span>
+                <span>主裁判：勒泰西耶（法国）</span>
+            </div>
+        </div>
+        <div class="match-body">
+
+            <!-- 核心结论 -->
+            <div class="prediction-box">
+                <div class="prediction-result win-home">主胜（佛得角胜）</div>
+                <div class="score-list">
+                    <div class="score-item">
+                        <div class="score">1-0</div>
+                        <div class="prob">首选 · 35%</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score">2-0</div>
+                        <div class="prob">次选 · 22%</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score">1-1</div>
+                        <div class="prob">防平 · 20%</div>
+                    </div>
+                </div>
+                <div class="confidence">信心指数：<span class="stars">★★★☆☆</span>（3星）</div>
+            </div>
+
+            <!-- 深度逻辑拆解 -->
+            <div class="section-title">深度逻辑拆解</div>
+
+            <div class="argument-card">
+                <span class="arg-num">1</span>
+                <span class="arg-title">防守韧性已获实战验证——连平两支世界冠军</span>
+                <div class="arg-detail">佛得角0-0逼平西班牙（对手27次射门仅2次射正，40岁门神沃齐尼亚7次扑救）、2-2逼平乌拉圭（凯文·皮纳世界波+反击扳平）。5-4-1低位密集防守体系经过6年打磨，布比斯塔已将欧洲青训纪律与非洲身体对抗完美融合。沙特的技术流渗透未必比西班牙的传控更有杀伤力。</div>
+            </div>
+
+            <div class="argument-card">
+                <span class="arg-num">2</span>
+                <span class="arg-title">沙特0-4惨败后士气崩盘 + 新帅磨合不足</span>
+                <div class="arg-detail">沙特次轮0-4惨败西班牙，防线士气严重受挫。主帅多尼斯4月才接替勒纳尔上任，距开赛不到两月，将帅磨合是明患。主力右闸阿卜杜勒哈米德带伤，替补防线默契差，高空对抗和身体对抗是沙特硬伤——恰好被佛得角的垂直反击和定位球所针对。</div>
+            </div>
+
+            <div class="argument-card">
+                <span class="arg-num">3</span>
+                <span class="arg-title">战意不对称——佛得角打平也有机会，沙特必须赢球</span>
+                <div class="arg-detail">佛得角赢球直接出线，打平看另一场结果也有晋级希望（若西班牙击败乌拉圭，佛得角3分即可小组第二）。沙特净胜球-4、1分垫底，赢球才有争小组第三的理论可能。沙特必须攻出来，恰好落入佛得角防守反击的舒适区——前两场西班牙和乌拉圭控球占优都没啃动"蓝鲨"的铁桶。</div>
+            </div>
+
+            <div class="argument-card">
+                <span class="arg-num">4</span>
+                <span class="arg-title">凯文·皮纳——本届世界杯最被低估的中场</span>
+                <div class="arg-detail">皮纳两场贡献1球1助攻，对乌拉圭的32码任意球是本届迄今最远距离进球。他不仅是防线屏障，定位球脚法是佛得角破局的战略武器。沙特场均纵向传球成功率仅48%，面对佛得角中场极低的犯规数（两场仅5次，本届最少），沙特很难通过制造定位球机会来威胁沃齐尼亚的球门。</div>
+            </div>
+
+            <!-- 进球剧本推演 -->
+            <div class="section-title">进球剧本推演</div>
+            <div class="goal-scenario">
+                <div class="goal-item">
+                    <div class="label">总进球数区间</div>
+                    <div class="value">1-2球</div>
+                </div>
+                <div class="goal-item">
+                    <div class="label">最可能进球时段</div>
+                    <div class="value">45'-60' / 75'-90'</div>
+                </div>
+                <div class="goal-item">
+                    <div class="label">关键破门球员</div>
+                    <div class="value">凯文·皮纳 / 瑞安·门德斯 / 瓦雷拉</div>
+                </div>
+                <div class="goal-item">
+                    <div class="label">半全场走势</div>
+                    <div class="value">平 → 主胜</div>
+                </div>
+            </div>
+
+            <!-- 隐藏X因素 -->
+            <div class="section-title">隐藏X因素</div>
+            <div class="xfactor-card">
+                <div class="xf-title">🧤 沃齐尼亚的体能隐患</div>
+                <div class="xf-detail">40岁门神前两场高强度消耗极大，65分钟后佛得角整体体能出现下滑趋势。若沙特在下半场末段集中火力轰击，沃齐尼亚的反应速度可能成为隐患。</div>
+            </div>
+            <div class="xfactor-card">
+                <div class="xf-title">🌡️ 休斯顿高温高湿</div>
+                <div class="xf-detail">休斯顿6月底气温可达35°C+，湿度极高。这对两支体能储备均不充裕的球队都是考验，可能加剧佛得角下半场的体能滑坡，也让沙特的技术流渗透因脱水而失准。</div>
+            </div>
+            <div class="xfactor-card">
+                <div class="xf-title">📋 佛得角左后卫停赛</div>
+                <div class="xf-detail">左后卫卡布拉尔累积两张黄牌停赛，若昂·保罗将顶替首发。这一侧恰好是沙特达瓦萨里习惯的进攻通道，替补边卫的防守质量可能成为突破口。</div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ==================== MATCH 3: 埃及 vs 伊朗 ==================== -->
+    <div class="tab-content" id="match3">
+    <div class="match-card">
+        <div class="match-header">
+            <div>
+                <div class="match-title">🇪🇬 埃及 vs 伊朗 🇮🇷</div>
+                <span class="tag tag-focus">G组头名之争</span>
+                <span class="tag tag-hot">历史突破之战</span>
+            </div>
+            <div class="match-info">
+                <span>G组第3轮 · 北京时间 11:00</span>
+                <span>📍 美国西雅图 流明体育场</span>
+                <span>人工草皮 · 主裁判待定</span>
+            </div>
+        </div>
+        <div class="match-body">
+
+            <!-- G组积分榜 -->
+            <div class="group-standings">
+                <h4>G组积分榜（2轮后）</h4>
+                <table class="data-table">
+                    <tr><th>排名</th><th>球队</th><th>场</th><th>胜</th><th>平</th><th>负</th><th>进球</th><th>失球</th><th>净胜球</th><th>积分</th></tr>
+                    <tr><td>1</td><td>埃及</td><td>2</td><td>1</td><td>1</td><td>0</td><td>4</td><td>2</td><td class="highlight">+2</td><td class="highlight">4</td></tr>
+                    <tr><td>2</td><td>伊朗</td><td>2</td><td>0</td><td>2</td><td>0</td><td>2</td><td>2</td><td>0</td><td>2</td></tr>
+                    <tr><td>3</td><td>比利时</td><td>2</td><td>0</td><td>2</td><td>0</td><td>1</td><td>1</td><td>0</td><td>2</td></tr>
+                    <tr><td>4</td><td>新西兰</td><td>2</td><td>0</td><td>1</td><td>1</td><td>3</td><td>5</td><td class="warning">-2</td><td>1</td></tr>
+                </table>
+            </div>
+
+            <!-- 核心结论 -->
+            <div class="prediction-box">
+                <div class="prediction-result win-home">主胜（埃及胜）</div>
+                <div class="score-list">
+                    <div class="score-item">
+                        <div class="score">1-0</div>
+                        <div class="prob">首选 · 33%</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score">2-1</div>
+                        <div class="prob">次选 · 25%</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score">1-1</div>
+                        <div class="prob">防平 · 26%</div>
+                    </div>
+                </div>
+                <div class="confidence">信心指数：<span class="stars">★★★☆☆</span>（3星）</div>
+            </div>
+
+            <!-- 深度逻辑拆解 -->
+            <div class="section-title">深度逻辑拆解</div>
+
+            <div class="argument-card">
+                <span class="arg-num">1</span>
+                <span class="arg-title">萨拉赫冲击队史射手王——额外战意加成</span>
+                <div class="arg-detail">萨拉赫目前以68粒国家队进球位列埃及队史射手榜第二，距榜首（现任主帅胡萨姆·哈桑的69球）仅差1球。面对伊朗的防线，萨拉赫的突破、内切和终结能力是埃及最可靠的进攻武器。Opta预测埃及取胜概率48.5%，高于伊朗的25.2%。</div>
+            </div>
+
+            <div class="argument-card">
+                <span class="arg-num">2</span>
+                <span class="arg-title">伊朗场外困扰——签证延误+赛前一天才抵达</span>
+                <div class="arg-detail">受美国入境限制影响，伊朗队签证类型需做双重检查，航班被延误，球队仅赛前一天才抵达西雅图。体能恢复和战术部署均受严重干扰。相比之下，埃及队备战时间充裕，以逸待劳。</div>
+            </div>
+
+            <div class="argument-card">
+                <span class="arg-num">3</span>
+                <span class="arg-title">战意不对称——埃及打平即出线，伊朗必须赢球</span>
+                <div class="arg-detail">埃及打平即可锁定小组前两名、历史性首次晋级世界杯淘汰赛；伊朗唯有取胜才能掌握自己的命运，不打平也需看另一场结果。伊朗被迫进攻，恰好落入埃及的反击陷阱——萨拉赫和马尔穆什的速度是埃及最致命的反击武器。</div>
+            </div>
+
+            <div class="argument-card">
+                <span class="arg-num">4</span>
+                <span class="arg-title">埃及防线伤病但进攻点分散</span>
+                <div class="arg-detail">埃及主力后卫法特希肌肉受伤、阿卜杜勒-梅吉德脑震荡均确认缺席，左后卫哈姆迪前交叉韧带撕裂缺席本届赛事。但埃及前两场打入4球，进攻点分散（阿舒尔、齐科、萨拉赫均有进球），弥补了防线的减员影响。伊朗前两场仅打入2球，终结效率不足。</div>
+            </div>
+
+            <!-- 进球剧本推演 -->
+            <div class="section-title">进球剧本推演</div>
+            <div class="goal-scenario">
+                <div class="goal-item">
+                    <div class="label">总进球数区间</div>
+                    <div class="value">1-2球</div>
+                </div>
+                <div class="goal-item">
+                    <div class="label">最可能进球时段</div>
+                    <div class="value">30'-45' / 60'-75'</div>
+                </div>
+                <div class="goal-item">
+                    <div class="label">关键破门球员</div>
+                    <div class="value">萨拉赫 / 齐科 / 塔雷米</div>
+                </div>
+                <div class="goal-item">
+                    <div class="label">半全场走势</div>
+                    <div class="value">平 → 主胜</div>
+                </div>
+            </div>
+
+            <!-- 隐藏X因素 -->
+            <div class="section-title">隐藏X因素</div>
+            <div class="xfactor-card">
+                <div class="xf-title">🌿 西雅图人工草皮</div>
+                <div class="xf-detail">流明体育场是人工草皮球场，对双方均需适应。伊朗赛前一天才抵达，适应时间严重不足；人工草皮球速偏快，可能放大埃及反击的速度优势，也可能让伊朗的长传转移失准。</div>
+            </div>
+            <div class="xfactor-card">
+                <div class="xf-title">🛡️ 伊朗六次止步小组赛的心理包袱</div>
+                <div class="xf-detail">伊朗已连续六次参加世界杯，此前六次全部止步小组赛，队史从未晋级淘汰赛。本届是改写历史的最佳机会，但也可能成为心理负担——必须赢球的处境+历史的压力，一旦先丢球，崩盘风险不小。</div>
+            </div>
+            <div class="xfactor-card">
+                <div class="xf-title">📊 同步场次——比利时vs新西兰</div>
+                <div class="xf-detail">若比利时击败新西兰拿到5分，伊朗即使打平也大概率以小组第三身份晋级。这意味着伊朗在下半场如果无法取胜，可能退而求其次保平——但"保平"与"出线"之间的微妙平衡可能导致战术犹豫。</div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ==================== MATCH 4: 新西兰 vs 比利时 ==================== -->
+    <div class="tab-content" id="match4">
+    <div class="match-card">
+        <div class="match-header">
+            <div>
+                <div class="match-title">🇳🇿 新西兰 vs 比利时 🇧🇪</div>
+                <span class="tag tag-focus">背水一战</span>
+                <span class="tag tag-hot">黄金一代谢幕战？</span>
+            </div>
+            <div class="match-info">
+                <span>G组第3轮 · 北京时间 11:00</span>
+                <span>📍 加拿大温哥华 BC Place体育场</span>
+                <span>主裁判待定</span>
+            </div>
+        </div>
+        <div class="match-body">
+
+            <!-- 核心结论 -->
+            <div class="prediction-box">
+                <div class="prediction-result win-away">客胜（比利时胜）</div>
+                <div class="score-list">
+                    <div class="score-item">
+                        <div class="score">0-2</div>
+                        <div class="prob">首选 · 35%</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score">0-1</div>
+                        <div class="prob">次选 · 28%</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score">1-1</div>
+                        <div class="prob">防平 · 18%</div>
+                    </div>
+                </div>
+                <div class="confidence">信心指数：<span class="stars">★★★☆☆</span>（3星）</div>
+            </div>
+
+            <!-- 深度逻辑拆解 -->
+            <div class="section-title">深度逻辑拆解</div>
+
+            <div class="argument-card">
+                <span class="arg-num">1</span>
+                <span class="arg-title">比利时实力断层领先——必须赢球才能出线</span>
+                <div class="arg-detail">比利时FIFA排名第9，全队身价远超新西兰（FIFA第85）。两连平虽令人失望，但两场仅丢1球的防守端尚可。面对小组最弱对手新西兰，比利时的进攻火力（德布劳内、库尔图瓦镇守、多库边路突破）应能找到突破口。比利时取胜即可积5分锁定出线，战意明确。</div>
+            </div>
+
+            <div class="argument-card">
+                <span class="arg-num">2</span>
+                <span class="arg-title">新西兰防线漏洞——前两场已丢5球</span>
+                <div class="arg-detail">新西兰前两场1平1负，进3球失5球，净胜球-2。面对比利时首战1-1逼平、次战2-2战平新西兰的伊朗尚且丢2球，面对德布劳内的传球视野和定位球能力，新西兰后防线将承受更大压力。</div>
+            </div>
+
+            <div class="argument-card">
+                <span class="arg-num">3</span>
+                <span class="arg-title">多库伤情成疑——锋线爆点可能缺席</span>
+                <div class="arg-detail">比利时主力边锋多库上一场因呼吸道感染无法出场，本场能否复出尚未确定。他是比利时锋线上最具突破威胁的球员，若缺席将大幅削弱边路进攻的纵深穿透力。不过德布劳内的远射和传球仍可提供进攻输出。</div>
+            </div>
+
+            <div class="argument-card">
+                <span class="arg-num">4</span>
+                <span class="arg-title">黄金一代的绝地反弹——历史底蕴不容忽视</span>
+                <div class="arg-detail">比利时时隔8年黄金一代已到谢幕时刻，但队史15次世界杯参赛经验（最好成绩2018年季军）是新西兰无法比拟的。两连平的尴尬处境可能激发老将们的最后一搏，德布劳内和库尔图瓦的大赛经验在生死战中至关重要。</div>
+            </div>
+
+            <!-- 进球剧本推演 -->
+            <div class="section-title">进球剧本推演</div>
+            <div class="goal-scenario">
+                <div class="goal-item">
+                    <div class="label">总进球数区间</div>
+                    <div class="value">2-3球</div>
+                </div>
+                <div class="goal-item">
+                    <div class="label">最可能进球时段</div>
+                    <div class="value">20'-40' / 55'-75'</div>
+                </div>
+                <div class="goal-item">
+                    <div class="label">关键破门球员</div>
+                    <div class="value">德布劳内 / 卢卡库 / 多库（若出战）</div>
+                </div>
+                <div class="goal-item">
+                    <div class="label">半全场走势</div>
+                    <div class="value">客胜 → 客胜</div>
+                </div>
+            </div>
+
+            <!-- 隐藏X因素 -->
+            <div class="section-title">隐藏X因素</div>
+            <div class="xfactor-card">
+                <div class="xf-title">💔 比利时黄金一代的心理包袱</div>
+                <div class="xf-detail">两连平的低迷表现已令全队承压，若上半场无法攻破新西兰球门，焦虑情绪可能蔓延。比利时近两场仅入1球，进攻端的哑火是最大隐患——黄金一代在谢幕战上可能因急于求成而失误增多。</div>
+            </div>
+            <div class="xfactor-card">
+                <div class="xf-title">🇳🇿 新西兰的背水一战——无退路反而无畏</div>
+                <div class="xf-detail">新西兰1平1负积1分，只有赢球才可能出线，已经没有保守的资本。全队作风顽强、团队凝聚力强，面对压力可能打出超水平发挥。2022年世界杯上，亚洲和非洲球队多次创造冷门，新西兰同样具备爆冷的底层逻辑。</div>
+            </div>
+            <div class="xfactor-card">
+                <div class="xf-title">🌧️ 温哥华天气</div>
+                <div class="xf-detail">温哥华6月底可能阴雨，湿滑场地可能影响比利时的传控精度，对新西兰的身体对抗型打法反而更有利。BC Place为封闭式球场（可开合屋顶），若关闭屋顶则天气影响可控。</div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- ==================== 已完赛：挪威 vs 法国 ==================== -->
+    <div class="match-card" style="opacity: 0.7;">
+        <div class="match-header">
+            <div>
+                <div class="match-title">🇳🇴 挪威 vs 法国 🇫🇷 <span style="color:#2ecc71; font-size:0.7em;">（已完赛）</span></div>
+                <span class="tag tag-hot">姆巴佩vs哈兰德</span>
+            </div>
+            <div class="match-info">
+                <span>I组第3轮 · 北京时间 03:00</span>
+                <span>📍 美国波士顿</span>
+            </div>
+        </div>
+        <div class="match-body">
+            <div class="prediction-box" style="border-color: var(--green);">
+                <div style="text-align:center; padding:15px;">
+                    <div style="font-size:2em; font-weight:800; color:var(--green);">法国 4-1 挪威</div>
+                    <div style="color:#8899aa; margin-top:8px;">登贝莱半场帽子戏法 · 法国三战全胜小组第一出线</div>
+                    <div style="color:#8899aa; margin-top:4px;">挪威2胜1负积6分小组第二出线</div>
+                    <div style="color:var(--gold); margin-top:8px;">赛前预测：客胜（法国胜）✅ 命中</div>
+                </div>
+            </div>
+            <p style="color:#b0b8c4; font-size:0.93em; margin-top:10px;">
+                <strong>赛后复盘：</strong>登贝莱半场帽子戏法成为比赛转折点，法国在缺少主帅德尚（因母亲去世回国奔丧）的情况下，由助教斯特凡指挥全队为主帅而战，球员战意被彻底激发。哈兰德虽拼尽全力但被法国后防线限制，挪威整体攻防节奏被法国中场全面压制。I组另一场，塞内加尔5-0大胜伊拉克，但因净胜球劣势仍需等待其他小组赛果确认是否以小组第三身份晋级。
+            </p>
+        </div>
+    </div>
+
+    <!-- 免责声明 -->
+    <div class="disclaimer">
+        ⚠️ <strong>免责声明</strong>：本报告所有数据来源于FIFA官方、Opta、WhoScored及主流体育媒体公开信息，截至2026年6月27日赛前。足球比赛存在临场轮换、突发失误、裁判尺度、天气变化等不可控因素，以上分析仅为基本面推演，不构成任何投注建议。请理性观赛，娱乐为主。
+    </div>
+
+    <div class="footer">
+        <p>2026美加墨世界杯 深度前瞻报告 · 数据截至2026年6月27日</p>
+        <p>数据来源：FIFA官网 · Opta · WhoScored · 央视体育 · 人民网 · 直播吧</p>
+    </div>
+
+</div>
+
+<script>
+function switchTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
