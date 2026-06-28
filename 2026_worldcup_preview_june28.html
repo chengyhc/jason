@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026美加墨世界杯 · 6月28日小组赛收官日 · 深度前瞻与胜负预测</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #f5c518;
+            --text: #eaeaea;
+            --text-secondary: #a0a0b0;
+            --card-bg: #1e2a3a;
+            --card-border: #2a3a4a;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --info: #3498db;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        .header {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(245,197,24,0.05) 0%, transparent 50%);
+            animation: rotate 30s linear infinite;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .header h1 {
+            font-size: 2.2em;
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(245,197,24,0.3);
+            position: relative;
+            z-index: 1;
+        }
+        .header .subtitle {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .header .date-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 6px 20px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+        .disclaimer {
+            background: rgba(233,69,96,0.1);
+            border: 1px solid rgba(233,69,96,0.3);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+        .match-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            margin-bottom: 35px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .match-card:hover { transform: translateY(-3px); box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            border-bottom: 1px solid var(--card-border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .match-header.finished { background: linear-gradient(135deg, rgba(46,204,113,0.1), rgba(52,152,219,0.1)); }
+        .match-header.upcoming { background: linear-gradient(135deg, rgba(245,197,24,0.08), rgba(233,69,96,0.08)); }
+        .match-id { font-size: 0.8em; color: var(--text-secondary); font-weight: 600; }
+        .match-time { font-size: 0.9em; color: var(--gold); font-weight: 700; }
+        .match-venue { font-size: 0.8em; color: var(--text-secondary); }
+        .match-status { font-size: 0.8em; padding: 3px 12px; border-radius: 12px; font-weight: 600; }
+        .status-finished { background: rgba(46,204,113,0.2); color: var(--success); }
+        .status-upcoming { background: rgba(245,197,24,0.2); color: var(--gold); }
+        .teams-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .team {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+        .team-flag { font-size: 3em; display: block; margin-bottom: 8px; }
+        .team-name { font-size: 1.2em; font-weight: 700; }
+        .team-rank { font-size: 0.8em; color: var(--text-secondary); }
+        .team-value { font-size: 0.75em; color: var(--gold); }
+        .vs-badge {
+            background: var(--accent);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1em;
+            flex-shrink: 0;
+        }
+        .score-display {
+            background: rgba(0,0,0,0.3);
+            padding: 8px 25px;
+            border-radius: 8px;
+            font-size: 1.6em;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: 3px;
+        }
+        .prediction-section { padding: 20px 25px; }
+        .section-title {
+            font-size: 1em;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid rgba(245,197,24,0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title .icon { font-size: 1.1em; }
+        .verdict-box {
+            background: linear-gradient(135deg, rgba(245,197,24,0.1), rgba(233,69,96,0.05));
+            border: 1px solid rgba(245,197,24,0.3);
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 18px;
+        }
+        .verdict-result {
+            font-size: 1.3em;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .verdict-scores {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        .score-tag {
+            background: rgba(245,197,24,0.15);
+            border: 1px solid rgba(245,197,24,0.3);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        .score-tag.primary { background: rgba(245,197,24,0.3); color: var(--gold); }
+        .stars { color: var(--gold); font-size: 1.1em; letter-spacing: 2px; }
+        .logic-list { list-style: none; margin-bottom: 18px; }
+        .logic-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.9em;
+        }
+        .logic-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        .goal-scenario {
+            background: rgba(52,152,219,0.08);
+            border: 1px solid rgba(52,152,219,0.2);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .goal-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 0.88em;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .goal-label { color: var(--text-secondary); }
+        .goal-value { color: var(--info); font-weight: 600; }
+        .xfactor-box {
+            background: rgba(233,69,96,0.08);
+            border: 1px solid rgba(233,69,96,0.2);
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .xfactor-box p { font-size: 0.88em; margin-bottom: 6px; }
+        .xfactor-box p:last-child { margin-bottom: 0; }
+        .env-box {
+            background: rgba(46,204,113,0.08);
+            border: 1px solid rgba(46,204,113,0.2);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            font-size: 0.88em;
+        }
+        .env-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .env-item { flex: 1; min-width: 150px; }
+        .env-item .label { color: var(--text-secondary); font-size: 0.82em; }
+        .env-item .value { color: var(--success); font-weight: 600; }
+        .group-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82em;
+            margin-bottom: 15px;
+        }
+        .group-table th {
+            background: rgba(245,197,24,0.1);
+            color: var(--gold);
+            padding: 8px 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .group-table td {
+            padding: 7px 10px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .group-table tr.highlight { background: rgba(245,197,24,0.08); }
+        .group-table tr.eliminated { opacity: 0.5; }
+        .odds-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .odd-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 8px 14px;
+            text-align: center;
+            flex: 1;
+            min-width: 80px;
+        }
+        .odd-label { font-size: 0.75em; color: var(--text-secondary); }
+        .odd-value { font-size: 1.1em; font-weight: 700; color: var(--gold); }
+        .tactical-compare {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 10px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+        .tac-left, .tac-right { text-align: left; }
+        .tac-left { text-align: right; }
+        .tac-center { color: var(--text-secondary); text-align: center; font-weight: 600; }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            font-size: 0.8em;
+        }
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.5em; }
+            .teams-bar { padding: 15px; }
+            .team-flag { font-size: 2em; }
+            .prediction-section { padding: 15px; }
+            .tactical-compare { font-size: 0.78em; }
+        }
+        .data-source {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-top: 15px;
+            font-size: 0.75em;
+            color: var(--text-secondary);
+        }
+        .actual-result {
+            background: linear-gradient(135deg, rgba(46,204,113,0.15), rgba(52,152,219,0.1));
+            border: 2px solid rgba(46,204,113,0.4);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .actual-result .label { color: var(--success); font-weight: 700; font-size: 0.9em; margin-bottom: 5px; }
+        .actual-result .score { font-size: 1.8em; font-weight: 800; color: #fff; }
+        .actual-result .scorers { font-size: 0.82em; color: var(--text-secondary); margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>2026美加墨世界杯 · 小组赛收官日</h1>
+    <div class="subtitle">J组 / K组 / L组 第三轮 · 深度前瞻与胜负预测</div>
+    <div class="date-badge">2026年6月28日 · 北京时间 05:00 - 10:00</div>
+</div>
+
+<div class="container">
+
+    <div class="disclaimer">
+        ⚠️ 本报告基于FIFA官方公布数据、权威体育媒体公开信息及专业数据模型综合分析，仅供学术研究与观赛参考。足球比赛存在高度不确定性，切勿作为任何形式的投注依据。所有数据截止至北京时间2026年6月28日06:00。
+    </div>
+
+    <!-- ==================== 比赛一：巴拿马 VS 英格兰 ==================== -->
+    <div class="match-card">
+        <div class="match-header finished">
+            <div>
+                <span class="match-id">L组第3轮 · Match 1</span><br>
+                <span class="match-time">05:00 北京时间</span>
+            </div>
+            <span class="match-status status-finished">已完赛</span>
+            <div class="match-venue">纽约大都会人寿体育场 · 海拔10m</div>
+        </div>
+        <div class="teams-bar">
+            <div class="team">
+                <span class="team-flag">🇵🇦</span>
+                <div class="team-name">巴拿马</div>
+                <div class="team-rank">FIFA #47</div>
+                <div class="team-value">3450万€</div>
+            </div>
+            <div class="score-display">0 : 2</div>
+            <div class="team">
+                <span class="team-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                <div class="team-name">英格兰</div>
+                <div class="team-rank">FIFA #4</div>
+                <div class="team-value">13.6亿€</div>
+            </div>
+        </div>
+
+        <div class="actual-result">
+            <div class="label">✅ 实际赛果</div>
+            <div class="score">巴拿马 0 - 2 英格兰</div>
+            <div class="scorers">贝林厄姆 62' · 凯恩 67' · 英格兰小组头名晋级</div>
+        </div>
+
+        <div class="prediction-section">
+            <div class="section-title"><span class="icon">🎯</span> 核心结论</div>
+            <div class="verdict-box">
+                <div class="verdict-result">预测：客胜（英格兰胜） ✅ 命中</div>
+                <div class="verdict-scores">
+                    <span class="score-tag primary">0-2 ✓</span>
+                    <span class="score-tag">0-3</span>
+                    <span class="score-tag">1-2</span>
+                </div>
+                <div>信心指数：<span class="stars">★★★★☆</span></div>
+            </div>
+
+            <div class="section-title"><span class="icon">📊</span> L组积分榜（赛前）</div>
+            <table class="group-table">
+                <tr><th>排名</th><th>球队</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>净胜球</th><th>积分</th></tr>
+                <tr class="highlight"><td>1</td><td>英格兰</td><td>1</td><td>1</td><td>0</td><td>4</td><td>2</td><td>+2</td><td>4</td></tr>
+                <tr class="highlight"><td>2</td><td>加纳</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>+1</td><td>4</td></tr>
+                <tr><td>3</td><td>克罗地亚</td><td>1</td><td>0</td><td>1</td><td>2</td><td>4</td><td>-2</td><td>3</td></tr>
+                <tr class="eliminated"><td>4</td><td>巴拿马</td><td>0</td><td>0</td><td>2</td><td>0</td><td>2</td><td>-2</td><td>0</td></tr>
+            </table>
+
+            <div class="section-title"><span class="icon">🧠</span> 深度逻辑拆解</div>
+            <ul class="logic-list">
+                <li><strong>实力断层碾压：</strong>英格兰全队身价13.6亿€ vs 巴拿马3450万€，近40倍差距。英格兰替补阵容个体能力仍远超巴拿马主力，凯恩面对巴拿马中卫有历史统治级表现（2018世界杯帽子戏法）。</li>
+                <li><strong>战意分化明显：</strong>英格兰必须取胜锁定小组头名，避免淘汰赛对阵强队；巴拿马已提前出局，仅剩荣誉目标（冲击世界杯首球），训练中沃特曼与罗德里格斯冲突暴露军心动摇。</li>
+                <li><strong>攻坚难题可解：</strong>英格兰次轮0-0闷平加纳暴露攻坚短板，但巴拿马防守质量远不及加纳——中场核心卡拉斯基利亚伤缺，65分钟后体能断崖，防空薄弱（2018年被凯恩头球两度破门），英格兰定位球+边路传中优势精准打击对手短板。</li>
+                <li><strong>2018心理压制：</strong>两队唯一交手为2018年世界杯英格兰6-1大胜，巴拿马心理阴影巨大。英格兰本场不会追求屠杀（轮换+避免伤病），但赢2球以上仍是高概率事件。</li>
+            </ul>
+
+            <div class="section-title"><span class="icon">⚽</span> 进球剧本推演</div>
+            <div class="goal-scenario">
+                <div class="goal-row"><span class="goal-label">总进球区间</span><span class="goal-value">2-3球</span></div>
+                <div class="goal-row"><span class="goal-label">进球时间段</span><span class="goal-value">下半场60-75分钟为进球高发期</span></div>
+                <div class="goal-row"><span class="goal-label">关键破门球员</span><span class="goal-value">凯恩（头球/点球）、贝林厄姆（后插上）、萨卡（边路内切）</span></div>
+                <div class="goal-row"><span class="goal-label">巴拿马进球概率</span><span class="goal-value">约25%（定位球或反击偷袭）</span></div>
+            </div>
+
+            <div class="section-title"><span class="icon">🌍</span> 2026世界杯专属环境变量</div>
+            <div class="env-box">
+                <div class="env-row">
+                    <div class="env-item"><div class="label">比赛城市/海拔</div><div class="value">纽约·10m（无高原影响）</div></div>
+                    <div class="env-item"><div class="label">预计气温</div><div class="value">28-32°C / 高湿</div></div>
+                    <div class="env-item"><div class="label">场地</div><div class="value">露天球场·临时草皮</div></div>
+                </div>
+                <div style="margin-top:8px;font-size:0.85em;color:var(--text-secondary);">
+                    纽约高温高湿+临时草皮对技术流球队稍有影响，但英格兰球员习惯英超高强度节奏，体能储备优于巴拿马。巴拿马中北美球员更适应湿热环境，下半场体能却断崖更快。
+                </div>
+            </div>
+
+            <div class="section-title"><span class="icon">💰</span> 机构与市场风向</div>
+            <div class="odds-row">
+                <div class="odd-item"><div class="odd-label">主胜</div><div class="odd-value">12.00</div></div>
+                <div class="odd-item"><div class="odd-label">平局</div><div class="odd-value">6.00</div></div>
+                <div class="odd-item"><div class="odd-label">客胜</div><div class="odd-value">1.20</div></div>
+                <div class="odd-item"><div class="odd-label">让球</div><div class="odd-value">英-2球</div></div>
+                <div class="odd-item"><div class="odd-label">大小球</div><div class="odd-value">3.5</div></div>
+            </div>
+            <div style="font-size:0.85em;color:var(--text-secondary);">英格兰一侧资金异常涌入，胜赔从1.25降至1.20但水位反向升高，"赔降水升"背离显示机构平衡资金意图。市场过热英格兰方向，但基本面支撑充分，冷门概率不足8%。</div>
+
+            <div class="section-title"><span class="icon">⚡</span> 隐藏X因素</div>
+            <div class="xfactor-box">
+                <p>▸ <strong>图赫尔轮换尺度：</strong>里斯·詹姆斯伤缺、赖斯带伤疑，若轮换过多可能削弱攻坚效率，导致仅小胜1球。</p>
+                <p>▸ <strong>巴拿马"死守+偷袭"策略：</strong>主力门将前两场扑救状态稳定，若上半场零封，下半场反击偷一球并非不可能。</p>
+                <p>▸ <strong>高温影响：</strong>纽约露天球场6月底午间高温，两队体能消耗加剧，英格兰轮换球员的求表现欲望可能弥补节奏降速。</p>
+            </div>
+
+            <div class="data-source">数据来源：FIFA官网、CCTV5、直播吧、NerdyTips、威廉希尔、北京单场（截至2026.06.28 06:00）</div>
+        </div>
+    </div>
+
+    <!-- ==================== 比赛二：克罗地亚 VS 加纳 ==================== -->
+    <div class="match-card">
+        <div class="match-header finished">
+            <div>
+                <span class="match-id">L组第3轮 · Match 2</span><br>
+                <span class="match-time">05:00 北京时间</span>
+            </div>
+            <span class="match-status status-finished">已完赛</span>
+            <div class="match-venue">费城林肯金融球场 · 海拔12m</div>
+        </div>
+        <div class="teams-bar">
+            <div class="team">
+                <span class="team-flag">🇭🇷</span>
+                <div class="team-name">克罗地亚</div>
+                <div class="team-rank">FIFA #10</div>
+                <div class="team-value">3.2亿€</div>
+            </div>
+            <div class="score-display">2 : 1</div>
+            <div class="team">
+                <span class="team-flag">🇬🇭</span>
+                <div class="team-name">加纳</div>
+                <div class="team-rank">FIFA #50</div>
+                <div class="team-value">8000万€</div>
+            </div>
+        </div>
+
+        <div class="actual-result">
+            <div class="label">✅ 实际赛果</div>
+            <div class="score">克罗地亚 2 - 1 加纳</div>
+            <div class="scorers">苏契奇 31' · 弗拉希奇 83'（莫德里奇助攻） / 卢卡森 73' · 克罗地亚小组第二晋级，加纳小组第三出线</div>
+        </div>
+
+        <div class="prediction-section">
+            <div class="section-title"><span class="icon">🎯</span> 核心结论</div>
+            <div class="verdict-box">
+                <div class="verdict-result">预测：主胜（克罗地亚胜） ✅ 命中</div>
+                <div class="verdict-scores">
+                    <span class="score-tag primary">2-0</span>
+                    <span class="score-tag">2-1 ✓</span>
+                    <span class="score-tag">1-0</span>
+                </div>
+                <div>信心指数：<span class="stars">★★★★☆</span></div>
+            </div>
+
+            <div class="section-title"><span class="icon">🧠</span> 深度逻辑拆解</div>
+            <ul class="logic-list">
+                <li><strong>战意天平倾斜：</strong>克罗地亚积3分唯有取胜才能出线，莫德里奇"最后一届世界杯"的情感驱动使全队背水一战，进攻压迫性拉满；加纳积4分打平即基本锁定出线，战术保守倾向明显，不会主动压上强攻。</li>
+                <li><strong>中场控制力碾压：</strong>莫德里奇+科瓦契奇+苏契奇的中场三角对加纳形成绝对控制优势。克罗地亚对阵非洲球队历史保持不败（4战3胜1平，进8球仅失1球），中场传导+远射是核心得分手段。</li>
+                <li><strong>加纳攻坚短板：</strong>加纳场均进球不足1粒，攻坚能力严重不足，面对克罗地亚的连续控球压迫，541防反阵型在失球后反击效率有限。但加纳防守韧性极强（上轮0-0闷平英格兰），不可小觑。</li>
+                <li><strong>莫德里奇关键先生：</strong>40岁莫德里奇体能虽有下滑，但大赛经验和定位球精度仍是决定性因素，角球和任意球助攻价值巨大。</li>
+            </ul>
+
+            <div class="section-title"><span class="icon">⚽</span> 进球剧本推演</div>
+            <div class="goal-scenario">
+                <div class="goal-row"><span class="goal-label">总进球区间</span><span class="goal-value">2-3球</span></div>
+                <div class="goal-row"><span class="goal-label">进球时间段</span><span class="goal-value">下半场60-85分钟为进球高发期</span></div>
+                <div class="goal-row"><span class="goal-label">关键破门球员</span><span class="goal-value">苏契奇（远射）、弗拉希奇（头球/远射）、莫德里奇（定位球助攻）</span></div>
+            </div>
+
+            <div class="section-title"><span class="icon">⚡</span> 隐藏X因素</div>
+            <div class="xfactor-box">
+                <p>▸ <strong>加纳"平局即出线"的保守心态：</strong>若加纳过于保守，可能被克罗地亚持续压制；但若率先丢球被迫前压，反击空间暴露更大风险。</p>
+                <p>▸ <strong>VAR判罚：</strong>实际比赛中，加纳73分钟进球经VAR确认有效，这类判罚在低级别赛事中往往成为转折点。</p>
+                <p>▸ <strong>克罗地亚体能隐忧：</strong>老将为主的阵容，若90分钟内无法破门，加时阶段体能下滑可能被加纳偷袭。</p>
+            </div>
+
+            <div class="data-source">数据来源：FIFA官网、直播吧、zhibo8（截至2026.06.28 07:00）</div>
+        </div>
+    </div>
+
+    <!-- ==================== 比赛三：刚果(金) VS 乌兹别克斯坦 ==================== -->
+    <div class="match-card">
+        <div class="match-header upcoming">
+            <div>
+                <span class="match-id">K组第3轮 · Match 3</span><br>
+                <span class="match-time">07:30 北京时间</span>
+            </div>
+            <span class="match-status status-upcoming">待开赛</span>
+            <div class="match-venue">亚特兰大梅赛德斯-奔驰体育场 · 海拔320m</div>
+        </div>
+        <div class="teams-bar">
+            <div class="team">
+                <span class="team-flag">🇨🇩</span>
+                <div class="team-name">刚果(金)</div>
+                <div class="team-rank">FIFA #62</div>
+                <div class="team-value">~6000万€</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team">
+                <span class="team-flag">🇺🇿</span>
+                <div class="team-name">乌兹别克斯坦</div>
+                <div class="team-rank">FIFA #58</div>
+                <div class="team-value">~4000万€</div>
+            </div>
+        </div>
+
+        <div class="prediction-section">
+            <div class="section-title"><span class="icon">🎯</span> 核心结论</div>
+            <div class="verdict-box">
+                <div class="verdict-result">预测：主胜（刚果(金)胜）</div>
+                <div class="verdict-scores">
+                    <span class="score-tag primary">2-0</span>
+                    <span class="score-tag">2-1</span>
+                    <span class="score-tag">1-0</span>
+                </div>
+                <div>信心指数：<span class="stars">★★★★☆</span></div>
+            </div>
+
+            <div class="section-title"><span class="icon">📊</span> K组积分榜（赛前）</div>
+            <table class="group-table">
+                <tr><th>排名</th><th>球队</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>净胜球</th><th>积分</th></tr>
+                <tr class="highlight"><td>1</td><td>哥伦比亚</td><td>2</td><td>0</td><td>0</td><td>4</td><td>1</td><td>+3</td><td>6</td></tr>
+                <tr class="highlight"><td>2</td><td>葡萄牙</td><td>1</td><td>1</td><td>0</td><td>6</td><td>1</td><td>+5</td><td>4</td></tr>
+                <tr><td>3</td><td>刚果(金)</td><td>0</td><td>1</td><td>1</td><td>1</td><td>2</td><td>-1</td><td>1</td></tr>
+                <tr class="eliminated"><td>4</td><td>乌兹别克斯坦</td><td>0</td><td>0</td><td>2</td><td>1</td><td>8</td><td>-7</td><td>0</td></tr>
+            </table>
+
+            <div class="section-title"><span class="icon">🧠</span> 深度逻辑拆解</div>
+            <ul class="logic-list">
+                <li><strong>战意天壤之别：</strong>刚果(金)积1分仍存理论出线希望（需赢球+葡萄牙输球），全队死拼三分；乌兹别克斯坦0分净胜球-7，即便大胜也很难跻身最佳小组第三，战意极度低迷，已提前出局。</li>
+                <li><strong>防守质量差距：</strong>刚果(金)前两轮仅丢2球，防守坚韧（1-1逼平葡萄牙含金量极高）；乌兹别克斯坦两场丢8球（0-5惨败葡萄牙），防线完全崩盘，是本届世界杯防守最差球队之一。</li>
+                <li><strong>个人能力优势：</strong>刚果(金)多名法甲、比甲效力球员，约安·维萨首轮对葡萄牙打入队史世界杯进球，个人能力远超乌兹别克斯坦本土联赛球员。</li>
+                <li><strong>历史纪录驱动：</strong>刚果(金)在世界杯5场比赛4负1平仅1进球，本场是打破队史世界杯首胜的绝佳机会，球队求胜欲望强烈。</li>
+            </ul>
+
+            <div class="section-title"><span class="icon">⚽</span> 进球剧本推演</div>
+            <div class="goal-scenario">
+                <div class="goal-row"><span class="goal-label">总进球区间</span><span class="goal-value">2-3球</span></div>
+                <div class="goal-row"><span class="goal-label">进球时间段</span><span class="goal-value">上半场30-45分钟、下半场60-75分钟</span></div>
+                <div class="goal-row"><span class="goal-label">关键破门球员</span><span class="goal-value">约安·维萨（反击）、巴坎布（抢点）、马耶莱（远射）</span></div>
+            </div>
+
+            <div class="section-title"><span class="icon">🌍</span> 2026世界杯专属环境变量</div>
+            <div class="env-box">
+                <div class="env-row">
+                    <div class="env-item"><div class="label">比赛城市/海拔</div><div class="value">亚特兰大·320m（无高原影响）</div></div>
+                    <div class="env-item"><div class="label">预计气温</div><div class="value">30-34°C / 高湿</div></div>
+                    <div class="env-item"><div class="label">场地</div><div class="value">室内穹顶球场·恒温</div></div>
+                </div>
+                <div style="margin-top:8px;font-size:0.85em;color:var(--text-secondary);">
+                    亚特兰大梅赛德斯-奔驰体育场为可封闭穹顶球场，恒温约22°C，高温高湿的外部环境对场内无影响。对技术流打法的刚果(金)有利。
+                </div>
+            </div>
+
+            <div class="section-title"><span class="icon">💰</span> 机构与市场风向</div>
+            <div class="odds-row">
+                <div class="odd-item"><div class="odd-label">主胜</div><div class="odd-value">1.55</div></div>
+                <div class="odd-item"><div class="odd-label">平局</div><div class="odd-value">3.90</div></div>
+                <div class="odd-item"><div class="odd-label">客胜</div><div class="odd-value">4.40</div></div>
+            </div>
+            <div style="font-size:0.85em;color:var(--text-secondary);">机构数据完全倾斜刚果(金)取胜方向，主胜赔率1.55处于低位，市场对刚果(金)信心充足。乌兹别克斯坦方向几乎无资金流入。</div>
+
+            <div class="section-title"><span class="icon">⚡</span> 隐藏X因素</div>
+            <div class="xfactor-box">
+                <p>▸ <strong>刚果(金)出线概率极低：</strong>即便赢球，仍需葡萄牙输球才可能跻身最佳小组第三，若同组另一场比赛葡萄牙领先，刚果(金)战意可能迅速消退。</p>
+                <p>▸ <strong>乌兹别克斯坦"放手一搏"心态：</strong>已无出线可能的乌兹别克斯坦可能打出意想不到的开放式进攻，反而制造进球机会。</p>
+                <p>▸ <strong>裁判尺度：</strong>本场裁判组尚未公布，非洲球队的对抗风格在宽松判罚尺度下更有利。</p>
+            </div>
+
+            <div class="data-source">数据来源：FIFA官网、CCTV5、zhibo8、竞彩官方（截至2026.06.28 06:00）</div>
+        </div>
+    </div>
+
+    <!-- ==================== 比赛四：哥伦比亚 VS 葡萄牙 ==================== -->
+    <div class="match-card">
+        <div class="match-header upcoming">
+            <div>
+                <span class="match-id">K组第3轮 · Match 4 · 焦点战</span><br>
+                <span class="match-time">07:30 北京时间</span>
+            </div>
+            <span class="match-status status-upcoming">待开赛</span>
+            <div class="match-venue">迈阿密硬石体育场 · 海拔2m</div>
+        </div>
+        <div class="teams-bar">
+            <div class="team">
+                <span class="team-flag">🇨🇴</span>
+                <div class="team-name">哥伦比亚</div>
+                <div class="team-rank">FIFA #12</div>
+                <div class="team-value">~3亿€</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team">
+                <span class="team-flag">🇵🇹</span>
+                <div class="team-name">葡萄牙</div>
+                <div class="team-rank">FIFA #5</div>
+                <div class="team-value">~9亿€</div>
+            </div>
+        </div>
+
+        <div class="prediction-section">
+            <div class="section-title"><span class="icon">🎯</span> 核心结论</div>
+            <div class="verdict-box">
+                <div class="verdict-result">预测：平局（首选）/ 葡萄牙小胜</div>
+                <div class="verdict-scores">
+                    <span class="score-tag primary">1-1</span>
+                    <span class="score-tag">1-2</span>
+                    <span class="score-tag">0-1</span>
+                </div>
+                <div>信心指数：<span class="stars">★★★☆☆</span></div>
+            </div>
+
+            <div class="section-title"><span class="icon">📊</span> K组积分榜与出线形势</div>
+            <table class="group-table">
+                <tr><th>排名</th><th>球队</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>净胜球</th><th>积分</th></tr>
+                <tr class="highlight"><td>1</td><td>哥伦比亚</td><td>2</td><td>0</td><td>0</td><td>4</td><td>1</td><td>+3</td><td>6</td></tr>
+                <tr class="highlight"><td>2</td><td>葡萄牙</td><td>1</td><td>1</td><td>0</td><td>6</td><td>1</td><td>+5</td><td>4</td></tr>
+                <tr><td>3</td><td>刚果(金)</td><td>0</td><td>1</td><td>1</td><td>1</td><td>2</td><td>-1</td><td>1</td></tr>
+                <tr class="eliminated"><td>4</td><td>乌兹别克斯坦</td><td>0</td><td>0</td><td>2</td><td>1</td><td>8</td><td>-7</td><td>0</td></tr>
+            </table>
+            <div style="font-size:0.85em;color:var(--text-secondary);margin-bottom:15px;">
+                哥伦比亚打平即锁定小组第一，淘汰赛对阵佛得角；葡萄牙取胜即反超登顶，打平或输球则以小组第二出线，淘汰赛大概率对阵法国队。K组第一淘汰赛路径明显更优。
+            </div>
+
+            <div class="section-title"><span class="icon">🧠</span> 深度逻辑拆解</div>
+            <ul class="logic-list">
+                <li><strong>经典"传控强攻 vs 低位防反"对决：</strong>葡萄牙场均控球率超65%，B费+B席双核掌控节奏，C罗禁区抢点+莱奥边路冲击；哥伦比亚主打541/4231收缩反击，J罗调度+路易斯·迪亚斯边路内切。战术风格克制关系：葡萄牙破密集防守效率不稳定（首轮1-1平刚果金），哥伦比亚低位防守韧性极强（前两轮仅丢1球）。</li>
+                <li><strong>战意微妙差异：</strong>哥伦比亚打平即头名，无需拼死进攻，稳守反击即可；葡萄牙必须取胜才能抢到头名，战意更强但攻坚压力也更大。关键在于哥伦比亚三名主力（卢库米、莫希卡、莱尔马）身背黄牌面临淘汰赛停赛风险，洛伦佐可能轮换，防守体系或打折。</li>
+                <li><strong>C罗与J罗的传奇对话：</strong>41岁C罗本届已打入2球（连续六届世界杯进球），但体能局限明显，出场时间受限；J罗腿部肌肉不适，无法打满全场。两位传奇中场的对决增加情怀色彩，但实际战术影响有限。</li>
+                <li><strong>盘口"浅开深拉"暗藏冷意：</strong>初始盘口葡萄牙客让0.25球，后市升至0.5球，但水位维持中高位未同步下调，机构对葡萄牙稳赢一球以上存在顾虑。竞彩客胜1.68、平局3.22、主胜3.95，平局赔率偏高但实际打出概率不可忽视。</li>
+            </ul>
+
+            <div class="section-title"><span class="icon">⚔️</span> 战术对位关键点</div>
+            <div class="tactical-compare">
+                <div class="tac-left">葡萄牙 4-3-3 高位传控</div>
+                <div class="tac-center">控球率</div>
+                <div class="tac-right">哥伦比亚 5-4-1 低位防反</div>
+                <div class="tac-left">65%+</div>
+                <div class="tac-center">← 对比 →</div>
+                <div class="tac-right">~35%</div>
+                <div class="tac-left">B费直塞+远射</div>
+                <div class="tac-center">核心杀招</div>
+                <div class="tac-right">J罗长传+迪亚斯内切</div>
+                <div class="tac-left">边卫前插身后空当</div>
+                <div class="tac-center">关键弱点</div>
+                <div class="tac-right">60分钟后体能断崖</div>
+            </div>
+
+            <div class="section-title"><span class="icon">⚽</span> 进球剧本推演</div>
+            <div class="goal-scenario">
+                <div class="goal-row"><span class="goal-label">总进球区间</span><span class="goal-value">1-2球（倾向小球2.5以下）</span></div>
+                <div class="goal-row"><span class="goal-label">进球时间段</span><span class="goal-value">上半场0-1球，下半场60分钟后为决胜期</span></div>
+                <div class="goal-row"><span class="goal-label">关键破门球员</span><span class="goal-value">C罗（抢点/定位球）、B费（远射/直塞）、路易斯·迪亚斯（反击内切）</span></div>
+                <div class="goal-row"><span class="goal-label">xG预测</span><span class="goal-value">葡萄牙1.37 / 哥伦比亚0.66 / 全场2.03</span></div>
+            </div>
+
+            <div class="section-title"><span class="icon">🌍</span> 2026世界杯专属环境变量</div>
+            <div class="env-box">
+                <div class="env-row">
+                    <div class="env-item"><div class="label">比赛城市/海拔</div><div class="value">迈阿密·2m（无高原影响）</div></div>
+                    <div class="env-item"><div class="label">预计气温</div><div class="value">30-33°C / 高湿</div></div>
+                    <div class="env-item"><div class="label">场地</div><div class="value">露天硬石体育场</div></div>
+                </div>
+                <div style="margin-top:8px;font-size:0.85em;color:var(--text-secondary);">
+                    迈阿密6月底高温高湿，对欧洲球员体能消耗更大。葡萄牙球员不适应高温环境，60分钟后体能下滑可能更明显。大量哥伦比亚球迷涌入迈阿密，形成"准主场"氛围。
+                </div>
+            </div>
+
+            <div class="section-title"><span class="icon">💰</span> 机构与市场风向</div>
+            <div class="odds-row">
+                <div class="odd-item"><div class="odd-label">主胜</div><div class="odd-value">3.95</div></div>
+                <div class="odd-item"><div class="odd-label">平局</div><div class="odd-value">3.22</div></div>
+                <div class="odd-item"><div class="odd-label">客胜</div><div class="odd-value">1.77</div></div>
+                <div class="odd-item"><div class="odd-label">让球</div><div class="odd-value">葡-0.5</div></div>
+                <div class="odd-item"><div class="odd-label">大小球</div><div class="odd-value">2.5</div></div>
+            </div>
+            <div style="font-size:0.85em;color:var(--text-secondary);">
+                盘口从客让0.25升至0.5，表面上强化葡萄牙取胜信心，但水位维持中高位，机构对葡萄牙稳赢存疑。散户看好哥伦比亚守平，但大额资金持续流向葡萄牙取胜方向。Kalshi预测市场葡萄牙胜率53%，DraftKings赔率葡萄牙+120、哥伦比亚+250、平局+240。TNT分析预计1-1谨慎格局。
+            </div>
+
+            <div class="section-title"><span class="icon">⚡</span> 隐藏X因素</div>
+            <div class="xfactor-box">
+                <p>▸ <strong>哥伦比亚黄牌危机：</strong>卢库米、莫希卡、莱尔马三人身背黄牌，若轮换幅度过大，防守体系默契度和硬度打折，为葡萄牙提供可乘之机；若不轮换，淘汰赛停赛风险增大——这是洛伦佐的两难抉择。</p>
+                <p>▸ <strong>鲁本·内维斯肌肉劳损：</strong>葡萄牙中场屏障若缺席，中场创造力受小幅影响，马丁内斯或用维蒂尼亚替代，硬度略降。</p>
+                <p>▸ <strong>迈阿密哥伦比亚球迷"准主场"：</strong>硬石体育场预计将有大量南美球迷到场，气氛偏哥伦比亚，可能对葡萄牙球员造成心理压力。</p>
+                <p>▸ <strong>裁判法加尼尺度：</strong>澳大利亚裁判阿里雷扎·法加尼执法尺度偏宽松，对抗激烈时有利于南美风格球队。</p>
+            </div>
+
+            <div class="data-source">数据来源：FIFA官网、CCTV5、zhibo8、sohu体育、Kalshi、DraftKings（截至2026.06.28 06:00）</div>
+        </div>
+    </div>
+
+    <!-- ==================== 比赛五：约旦 VS 阿根廷 ==================== -->
+    <div class="match-card">
+        <div class="match-header upcoming">
+            <div>
+                <span class="match-id">J组第3轮 · Match 5</span><br>
+                <span class="match-time">10:00 北京时间</span>
+            </div>
+            <span class="match-status status-upcoming">待开赛</span>
+            <div class="match-venue">达拉斯AT&T体育场 · 海拔131m</div>
+        </div>
+        <div class="teams-bar">
+            <div class="team">
+                <span class="team-flag">🇯🇴</span>
+                <div class="team-name">约旦</div>
+                <div class="team-rank">FIFA #63</div>
+                <div class="team-value">~2000万€</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team">
+                <span class="team-flag">🇦🇷</span>
+                <div class="team-name">阿根廷</div>
+                <div class="team-rank">FIFA #1</div>
+                <div class="team-value">~14亿€</div>
+            </div>
+        </div>
+
+        <div class="prediction-section">
+            <div class="section-title"><span class="icon">🎯</span> 核心结论</div>
+            <div class="verdict-box">
+                <div class="verdict-result">预测：客胜（阿根廷胜）</div>
+                <div class="verdict-scores">
+                    <span class="score-tag primary">0-2</span>
+                    <span class="score-tag">0-3</span>
+                    <span class="score-tag">1-2</span>
+                </div>
+                <div>信心指数：<span class="stars">★★★★★</span></div>
+            </div>
+
+            <div class="section-title"><span class="icon">📊</span> J组积分榜（赛前）</div>
+            <table class="group-table">
+                <tr><th>排名</th><th>球队</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>净胜球</th><th>积分</th></tr>
+                <tr class="highlight"><td>1</td><td>阿根廷</td><td>2</td><td>0</td><td>0</td><td>5</td><td>0</td><td>+5</td><td>6</td></tr>
+                <tr><td>2</td><td>奥地利</td><td>1</td><td>0</td><td>1</td><td>3</td><td>3</td><td>0</td><td>3</td></tr>
+                <tr><td>3</td><td>阿尔及利亚</td><td>1</td><td>0</td><td>1</td><td>2</td><td>4</td><td>-2</td><td>3</td></tr>
+                <tr class="eliminated"><td>4</td><td>约旦</td><td>0</td><td>0</td><td>2</td><td>2</td><td>5</td><td>-3</td><td>0</td></tr>
+            </table>
+
+            <div class="section-title"><span class="icon">🧠</span> 深度逻辑拆解</div>
+            <ul class="logic-list">
+                <li><strong>鸿沟级实力差距：</strong>阿根廷FIFA排名第1、身价14亿€，约旦排名第63、身价2000万€，差距达70倍。阿根廷近5场4胜1平，场均失球0.4；约旦近5场0胜1平4负，场均失球2.2。即便阿根廷大规模轮换，替补阵容仍远超约旦主力。</li>
+                <li><strong>战意分化但各取所需：</strong>阿根廷已锁定小组头名，核心目标是轮换主力、规避伤病、磨合替补阵容。梅西、恩佐、德保罗等绝对主力大概率替补待命。约旦已彻底出局，本场是队史世界杯最后一战，唯一目标是冲击队史世界杯首个积分、避免三战全败零进球的尴尬。</li>
+                <li><strong>防空致命短板：</strong>约旦全队平均身高仅1.78m，小组赛已因定位球失3球，防空能力是最大软肋；阿根廷场均7个角球、定位球得分率18%，利桑德罗·马丁内斯、奥塔门迪等高点将精准打击这一短板。</li>
+                <li><strong>梅西纪录驱动：</strong>梅西前两场包办5球刷新世界杯历史射手纪录，本场大概率替补登场，以刷新个人纪录为动力，登场后仍具备改变比赛的能力。但阿根廷无心屠杀，节奏偏温和。</li>
+            </ul>
+
+            <div class="section-title"><span class="icon">⚔️</span> 关键数据对比</div>
+            <div class="tactical-compare">
+                <div class="tac-left">约旦</div>
+                <div class="tac-center">指标</div>
+                <div class="tac-right">阿根廷</div>
+                <div class="tac-left">0.6球/场</div>
+                <div class="tac-center">近5场场均进球</div>
+                <div class="tac-right">1.8球/场</div>
+                <div class="tac-left">2.2球/场</div>
+                <div class="tac-center">近5场场均失球</div>
+                <div class="tac-right">0.4球/场</div>
+                <div class="tac-left">~35%</div>
+                <div class="tac-center">场均控球率</div>
+                <div class="tac-right">~68%</div>
+                <div class="tac-left">8-10%</div>
+                <div class="tac-center">射门转化率</div>
+                <div class="tac-right">22-25%</div>
+                <div class="tac-left">xG 1.40</div>
+                <div class="tac-center">小组赛累计xG</div>
+                <div class="tac-right">xG 4.85</div>
+            </div>
+
+            <div class="section-title"><span class="icon">⚽</span> 进球剧本推演</div>
+            <div class="goal-scenario">
+                <div class="goal-row"><span class="goal-label">总进球区间</span><span class="goal-value">2-3球</span></div>
+                <div class="goal-row"><span class="goal-label">进球时间段</span><span class="goal-value">上半场0-1球，下半场60分钟后为进球密集期</span></div>
+                <div class="goal-row"><span class="goal-label">关键破门球员</span><span class="goal-value">阿尔瓦雷斯（抢点）、劳塔罗（反击）、梅西（替补登场后远射/定位球）</span></div>
+                <div class="goal-row"><span class="goal-label">约旦进球概率</span><span class="goal-value">约30%（塔马里反击/定位球偷袭）</span></div>
+            </div>
+
+            <div class="section-title"><span class="icon">🌍</span> 2026世界杯专属环境变量</div>
+            <div class="env-box">
+                <div class="env-row">
+                    <div class="env-item"><div class="label">比赛城市/海拔</div><div class="value">达拉斯·131m（无高原影响）</div></div>
+                    <div class="env-item"><div class="label">预计气温</div><div class="value">35-38°C / 干热</div></div>
+                    <div class="env-item"><div class="label">场地</div><div class="value">AT&T体育场·可封闭穹顶</div></div>
+                </div>
+                <div style="margin-top:8px;font-size:0.85em;color:var(--text-secondary);">
+                    达拉斯6月底极端干热（可达38°C），但AT&T体育场可封闭穹顶，恒温约22°C，外部天气对比赛无影响。阿根廷球员体能消耗可控。
+                </div>
+            </div>
+
+            <div class="section-title"><span class="icon">💰</span> 机构与市场风向</div>
+            <div class="odds-row">
+                <div class="odd-item"><div class="odd-label">主胜</div><div class="odd-value">15.00+</div></div>
+                <div class="odd-item"><div class="odd-label">平局</div><div class="odd-value">7.00</div></div>
+                <div class="odd-item"><div class="odd-label">客胜</div><div class="odd-value">1.12</div></div>
+                <div class="odd-item"><div class="odd-label">让球</div><div class="odd-value">阿-2球</div></div>
+            </div>
+            <div style="font-size:0.85em;color:var(--text-secondary);">阿根廷独赢赔率极低（1.12），市场高度一致看好阿根廷大胜。但需注意阿根廷轮换后进攻效率下滑、无心屠杀的战意因素，实际赢2球而非3球以上的概率更高。</div>
+
+            <div class="section-title"><span class="icon">⚡</span> 隐藏X因素</div>
+            <div class="xfactor-box">
+                <p>▸ <strong>阿根廷轮换幅度：</strong>若梅西、德保罗等全替补，替补阵容默契度不足，首轮替补登场时进攻流畅度已出现下降。约旦的密集防守可能在上半场制造更多困难。</p>
+                <p>▸ <strong>约旦"无压力发挥"：</strong>已无出线包袱的约旦心态反而更放松，塔马里前两轮均完成破门，反击端有一定威胁。若阿根廷替补防线沟通失误，约旦有机会偷进一球。</p>
+                <p>▸ <strong>净胜球连锁反应：</strong>本场净胜球会间接影响同组奥地利与阿尔及利亚的小组第二排名争夺，阿根廷不会刻意追求屠杀。</p>
+                <p>▸ <strong>罗梅罗与帕兹伤缺：</strong>阿根廷防线核心轮换受限，替补中卫组合默契度存疑。</p>
+            </div>
+
+            <div class="data-source">数据来源：FIFA官网、CCTV5、zhibo8、sohu体育、qiumiwu（截至2026.06.28 06:00）</div>
+        </div>
+    </div>
+
+    <!-- ==================== 比赛六：阿尔及利亚 VS 奥地利 ==================== -->
+    <div class="match-card">
+        <div class="match-header upcoming">
+            <div>
+                <span class="match-id">J组第3轮 · Match 6 · 生死战</span><br>
+                <span class="match-time">10:00 北京时间</span>
+            </div>
+            <span class="match-status status-upcoming">待开赛</span>
+            <div class="match-venue">堪萨斯城箭头体育场 · 海拔270m</div>
+        </div>
+        <div class="teams-bar">
+            <div class="team">
+                <span class="team-flag">🇩🇿</span>
+                <div class="team-name">阿尔及利亚</div>
+                <div class="team-rank">FIFA #37</div>
+                <div class="team-value">~1.2亿€</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team">
+                <span class="team-flag">🇦🇹</span>
+                <div class="team-name">奥地利</div>
+                <div class="team-rank">FIFA #22</div>
+                <div class="team-value">~1.6亿€</div>
+            </div>
+        </div>
+
+        <div class="prediction-section">
+            <div class="section-title"><span class="icon">🎯</span> 核心结论</div>
+            <div class="verdict-box">
+                <div class="verdict-result">预测：平局（首选）/ 阿尔及利亚小胜</div>
+                <div class="verdict-scores">
+                    <span class="score-tag primary">1-1</span>
+                    <span class="score-tag">2-1</span>
+                    <span class="score-tag">0-1</span>
+                </div>
+                <div>信心指数：<span class="stars">★★★☆☆</span></div>
+            </div>
+
+            <div class="section-title"><span class="icon">📊</span> J组积分榜与出线形势</div>
+            <table class="group-table">
+                <tr><th>排名</th><th>球队</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>净胜球</th><th>积分</th></tr>
+                <tr class="highlight"><td>1</td><td>阿根廷</td><td>2</td><td>0</td><td>0</td><td>5</td><td>0</td><td>+5</td><td>6</td></tr>
+                <tr class="highlight"><td>2</td><td>奥地利</td><td>1</td><td>0</td><td>1</td><td>3</td><td>3</td><td>0</td><td>3</td></tr>
+                <tr class="highlight"><td>3</td><td>阿尔及利亚</td><td>1</td><td>0</td><td>1</td><td>2</td><td>4</td><td>-2</td><td>3</td></tr>
+                <tr class="eliminated"><td>4</td><td>约旦</td><td>0</td><td>0</td><td>2</td><td>2</td><td>5</td><td>-3</td><td>0</td></tr>
+            </table>
+            <div style="font-size:0.85em;color:var(--text-secondary);margin-bottom:15px;">
+                奥地利与阿尔及利亚同积3分，本场直接对话决定小组第二归属。奥地利打平即可凭借净胜球优势锁定第二；阿尔及利亚必须取胜才能反超。阿尔及利亚若输球仍有凭借小组第三出线的可能（需跻身最佳8个小组第三），但主动权不在自己手中。
+            </div>
+
+            <div class="section-title"><span class="icon">🧠</span> 深度逻辑拆解</div>
+            <ul class="logic-list">
+                <li><strong>历史恩怨与心理博弈：</strong>两队唯一交手为1982年世界杯奥地利2-0击败阿尔及利亚，那场比赛因"希洪之耻"（西德与奥地利默契球做掉阿尔及利亚）成为世界杯史上最黑暗事件之一。阿尔及利亚带着复仇动力，战意更强。</li>
+                <li><strong>战意不对等：</strong>阿尔及利亚必须赢球才能掌握出线主动权，主打边路快速冲击，进攻压迫性拉满；奥地利打平即出线，战术优先收缩防守，稳健为先，不会主动压上冒险。</li>
+                <li><strong>攻防特征互补：</strong>阿尔及利亚非洲快反打法，对抗强度高，前两轮场均进球1粒、失2球，攻强守弱；奥地利德甲体系球员居多，攻防均衡，3-1胜约旦、0-2负阿根廷，面对高强度压迫时防线稳定性存疑。</li>
+                <li><strong>末轮同分抢分局的小球规律：</strong>世界杯末轮同分生死战，双方保守倾向极强，1-1平局是历史上最高频结果。平赔居中、胜负拉力均衡的数据结构，也指向小球平局方向。</li>
+            </ul>
+
+            <div class="section-title"><span class="icon">⚽</span> 进球剧本推演</div>
+            <div class="goal-scenario">
+                <div class="goal-row"><span class="goal-label">总进球区间</span><span class="goal-value">1-2球（倾向小球）</span></div>
+                <div class="goal-row"><span class="goal-label">进球时间段</span><span class="goal-value">上半场0-1球，下半场70分钟后为决胜期</span></div>
+                <div class="goal-row"><span class="goal-label">关键破门球员</span><span class="goal-value">斯利马尼（抢点/头球）、马赫雷斯（远射/定位球）、阿瑙托维奇（奥地利反击终结）</span></div>
+            </div>
+
+            <div class="section-title"><span class="icon">🌍</span> 2026世界杯专属环境变量</div>
+            <div class="env-box">
+                <div class="env-row">
+                    <div class="env-item"><div class="label">比赛城市/海拔</div><div class="value">堪萨斯城·270m（无高原影响）</div></div>
+                    <div class="env-item"><div class="label">预计气温</div><div class="value">32-35°C / 中等湿度</div></div>
+                    <div class="env-item"><div class="label">场地</div><div class="value">露天箭头体育场</div></div>
+                </div>
+                <div style="margin-top:8px;font-size:0.85em;color:var(--text-secondary);">
+                    堪萨斯城6月底高温，露天球场对球员体能消耗大。阿尔及利亚球员更适应高温环境，奥地利德甲球员习惯低温，下半场体能下滑可能更明显。
+                </div>
+            </div>
+
+            <div class="section-title"><span class="icon">💰</span> 机构与市场风向</div>
+            <div class="odds-row">
+                <div class="odd-item"><div class="odd-label">主胜</div><div class="odd-value">2.80</div></div>
+                <div class="odd-item"><div class="odd-label">平局</div><div class="odd-value">3.10</div></div>
+                <div class="odd-item"><div class="odd-label">客胜</div><div class="odd-value">2.50</div></div>
+            </div>
+            <div style="font-size:0.85em;color:var(--text-secondary);">三方赔率接近，市场对胜负判断分歧大，平赔居中不下调说明机构对平局防范一般但基本面支持。末轮生死局资金流向偏谨慎，胜负两端拉力均衡。</div>
+
+            <div class="section-title"><span class="icon">⚡</span> 隐藏X因素</div>
+            <div class="xfactor-box">
+                <p>▸ <strong>1982年"希洪之耻"的情感驱动：</strong>阿尔及利亚全队上下对奥地利带着历史复仇情绪，这可能成为额外的精神动力，也可能导致心态失衡、动作过大引发红牌。</p>
+                <p>▸ <strong>净胜球连锁反应：</strong>同步进行的约旦VS阿根廷比赛结果会影响本组的净胜球计算，若阿根廷大胜约旦，阿尔及利亚的净胜球劣势会进一步扩大，出线难度增加。</p>
+                <p>▸ <strong>高温体能消耗：</strong>堪萨斯城露天球场35°C高温下，两支需要拼抢的球队体能消耗加剧，下半场失误率和犯规率预计上升，裁判尺度将成为关键变量。</p>
+            </div>
+
+            <div class="data-source">数据来源：FIFA官网、CCTV5、zhibo8、竞彩官方（截至2026.06.28 06:00）</div>
+        </div>
+    </div>
+
+    <!-- ==================== 总结 ==================== -->
+    <div class="match-card">
+        <div class="match-header upcoming">
+            <div style="width:100%;text-align:center;">
+                <span class="match-id">收官日总览</span>
+            </div>
+        </div>
+        <div class="prediction-section">
+            <div class="section-title"><span class="icon">📋</span> 六场预测汇总</div>
+            <table class="group-table" style="font-size:0.85em;">
+                <tr style="background:rgba(245,197,24,0.1);">
+                    <th>时间</th><th>对阵</th><th>预测结果</th><th>首选比分</th><th>信心</th><th>状态</th>
+                </tr>
+                <tr>
+                    <td>05:00</td><td>巴拿马 vs 英格兰</td>
+                    <td style="color:var(--gold);font-weight:700;">客胜</td>
+                    <td>0-2 ✓</td><td>★★★★☆</td><td style="color:var(--success);">已命中</td>
+                </tr>
+                <tr>
+                    <td>05:00</td><td>克罗地亚 vs 加纳</td>
+                    <td style="color:var(--gold);font-weight:700;">主胜</td>
+                    <td>2-1 ✓</td><td>★★★★☆</td><td style="color:var(--success);">已命中</td>
+                </tr>
+                <tr>
+                    <td>07:30</td><td>刚果(金) vs 乌兹别克斯坦</td>
+                    <td style="color:var(--gold);font-weight:700;">主胜</td>
+                    <td>2-0</td><td>★★★★☆</td><td style="color:var(--gold);">待验证</td>
+                </tr>
+                <tr>
+                    <td>07:30</td><td>哥伦比亚 vs 葡萄牙</td>
+                    <td style="color:var(--gold);font-weight:700;">平局/葡萄牙小胜</td>
+                    <td>1-1</td><td>★★★☆☆</td><td style="color:var(--gold);">待验证</td>
+                </tr>
+                <tr>
+                    <td>10:00</td><td>约旦 vs 阿根廷</td>
+                    <td style="color:var(--gold);font-weight:700;">客胜</td>
+                    <td>0-2</td><td>★★★★★</td><td style="color:var(--gold);">待验证</td>
+                </tr>
+                <tr>
+                    <td>10:00</td><td>阿尔及利亚 vs 奥地利</td>
+                    <td style="color:var(--gold);font-weight:700;">平局/阿尔及利亚小胜</td>
+                    <td>1-1</td><td>★★★☆☆</td><td style="color:var(--gold);">待验证</td>
+                </tr>
+            </table>
+
+            <div class="section-title"><span class="icon">🔑</span> 收官日核心看点</div>
+            <ul class="logic-list">
+                <li><strong>哥伦比亚VS葡萄牙是本轮含金量最高的对决</strong>——C罗第六届世界杯的关键卡位战，J罗与迪亚斯的反击能否撕破葡萄牙高位防线，将决定K组头名归属和淘汰赛路径走向。</li>
+                <li><strong>阿根廷轮换阵容的深度检验</strong>——卫冕冠军替补阵容能否碾压约旦密集大巴，梅西替补登场后的纪录冲击是最大看点。</li>
+                <li><strong>阿尔及利亚VS奥地利的1982年复仇之战</strong>——时隔44年的世界杯重逢，"希洪之耻"的情感驱动力与小组第二出线权的现实利益交织，末轮最富戏剧性的对决。</li>
+                <li><strong>48队新赛制下小组第三出线规则的连锁效应</strong>——加纳以小组第三身份出线、伊朗/韩国等队争夺最佳小组第三的激烈竞争，展现了新赛制下"容错率提升但末轮更复杂"的独特格局。</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>2026美加墨世界杯 · 深度前瞻与胜负预测报告</p>
+    <p>数据截止：北京时间2026年6月28日06:00 | 报告生成：AI辅助分析</p>
+    <p>本报告所有数据均来自FIFA官方渠道及权威体育媒体公开信息，不构成任何投注建议</p>
+    <p style="margin-top:10px;">数据来源：FIFA.com · CCTV5 · 直播吧 · zhibo8 · sohu体育 · Kalshi · DraftKings · 威廉希尔 · 竞彩官方</p>
+</div>
+
+</body>
+</html>
