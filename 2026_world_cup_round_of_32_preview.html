@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026美加墨世界杯 1/16决赛 深度前瞻报告</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #f5c518;
+            --text: #eaeaea;
+            --text-muted: #a0a0a0;
+            --card-bg: #0f3460;
+            --card-bg-light: #1a4a7a;
+            --border: #2a4a7a;
+            --green: #00c853;
+            --red: #ff1744;
+            --orange: #ff9100;
+            --blue: #2979ff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, #0a0a1a 100%);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(233,69,96,0.15) 0%, rgba(245,197,24,0.1) 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(233,69,96,0.3);
+        }
+        .header h1 {
+            font-size: 2.2em;
+            background: linear-gradient(90deg, var(--gold), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        .header .subtitle { color: var(--text-muted); font-size: 1.05em; }
+        .header .date-badge {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 6px 20px;
+            background: rgba(233,69,96,0.2);
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: var(--accent);
+        }
+        
+        /* Match Card */
+        .match-card {
+            background: linear-gradient(145deg, var(--card-bg), var(--secondary));
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 28px;
+            background: linear-gradient(90deg, rgba(233,69,96,0.1), rgba(245,197,24,0.08));
+            border-bottom: 1px solid var(--border);
+        }
+        .match-header .match-num {
+            font-size: 0.85em;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .match-header .match-info {
+            text-align: right;
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+        .match-title {
+            text-align: center;
+            padding: 30px 20px 20px;
+        }
+        .match-title .vs-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .team-block {
+            text-align: center;
+            min-width: 200px;
+        }
+        .team-block .flag { font-size: 3em; margin-bottom: 6px; }
+        .team-block .team-name { font-size: 1.5em; font-weight: 700; }
+        .team-block .team-rank { color: var(--text-muted); font-size: 0.85em; margin-top: 4px; }
+        .vs-badge {
+            font-size: 2em;
+            font-weight: 900;
+            color: var(--accent);
+            text-shadow: 0 0 20px rgba(233,69,96,0.5);
+        }
+        .match-venue {
+            text-align: center;
+            padding: 10px;
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+        
+        /* Prediction Box */
+        .prediction-box {
+            margin: 20px 28px;
+            padding: 24px;
+            background: linear-gradient(135deg, rgba(0,200,83,0.08), rgba(41,121,255,0.08));
+            border-radius: 12px;
+            border: 1px solid rgba(0,200,83,0.25);
+        }
+        .prediction-box .pred-title {
+            font-size: 1.15em;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+        .pred-result {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .pred-item {
+            text-align: center;
+        }
+        .pred-item .outcome {
+            font-size: 1.8em;
+            font-weight: 900;
+        }
+        .pred-item .outcome.win { color: var(--green); }
+        .pred-item .outcome.draw { color: var(--orange); }
+        .pred-item .outcome.lose { color: var(--red); }
+        .pred-item .label { color: var(--text-muted); font-size: 0.85em; }
+        .pred-scores {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin: 12px 0;
+        }
+        .score-chip {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1em;
+        }
+        .score-chip.primary { background: rgba(0,200,83,0.2); color: var(--green); border: 1px solid rgba(0,200,83,0.4); }
+        .score-chip.secondary { background: rgba(41,121,255,0.15); color: var(--blue); border: 1px solid rgba(41,121,255,0.3); }
+        .score-chip.tertiary { background: rgba(255,145,0,0.15); color: var(--orange); border: 1px solid rgba(255,145,0,0.3); }
+        .stars { text-align: center; margin-top: 10px; font-size: 1.3em; color: var(--gold); }
+        
+        /* Analysis Sections */
+        .analysis-section {
+            padding: 20px 28px;
+        }
+        .analysis-section h3 {
+            font-size: 1.1em;
+            color: var(--gold);
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(245,197,24,0.2);
+        }
+        .analysis-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .analysis-section li {
+            padding: 8px 0 8px 20px;
+            position: relative;
+            color: var(--text);
+            font-size: 0.95em;
+        }
+        .analysis-section li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        /* Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 0.9em;
+        }
+        .data-table th {
+            background: rgba(245,197,24,0.1);
+            color: var(--gold);
+            padding: 10px 12px;
+            text-align: center;
+            border-bottom: 2px solid var(--border);
+            font-weight: 600;
+        }
+        .data-table td {
+            padding: 9px 12px;
+            text-align: center;
+            border-bottom: 1px solid rgba(42,74,122,0.4);
+        }
+        .data-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+        .data-table .highlight { color: var(--green); font-weight: 700; }
+        .data-table .warn { color: var(--red); font-weight: 700; }
+        
+        /* Goal Script */
+        .goal-script {
+            margin: 16px 28px;
+            padding: 20px;
+            background: rgba(41,121,255,0.06);
+            border-radius: 12px;
+            border: 1px solid rgba(41,121,255,0.2);
+        }
+        .goal-script h4 {
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+        .goal-script .script-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .goal-script .script-item {
+            flex: 1;
+            min-width: 160px;
+        }
+        .goal-script .script-item .s-label {
+            color: var(--text-muted);
+            font-size: 0.85em;
+        }
+        .goal-script .script-item .s-value {
+            font-weight: 700;
+            font-size: 1.05em;
+        }
+        
+        /* X-Factor */
+        .x-factor {
+            margin: 16px 28px;
+            padding: 20px;
+            background: rgba(255,145,0,0.06);
+            border-radius: 12px;
+            border: 1px solid rgba(255,145,0,0.2);
+        }
+        .x-factor h4 { color: var(--orange); margin-bottom: 10px; }
+        .x-factor .xf-item {
+            padding: 6px 0;
+            font-size: 0.93em;
+        }
+        .x-factor .xf-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+        .xf-tag.high { background: rgba(255,23,68,0.2); color: var(--red); }
+        .xf-tag.medium { background: rgba(255,145,0,0.2); color: var(--orange); }
+        .xf-tag.low { background: rgba(41,121,255,0.15); color: var(--blue); }
+        
+        /* Injury Box */
+        .injury-box {
+            margin: 16px 28px;
+            padding: 16px;
+            background: rgba(255,23,68,0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255,23,68,0.2);
+        }
+        .injury-box h4 { color: var(--red); margin-bottom: 8px; font-size: 1em; }
+        .injury-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .injury-col h5 {
+            color: var(--text-muted);
+            font-size: 0.9em;
+            margin-bottom: 6px;
+        }
+        .injury-col p { font-size: 0.9em; line-height: 1.6; }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-muted);
+            font-size: 0.82em;
+            border-top: 1px solid var(--border);
+            margin-top: 30px;
+        }
+        .footer a { color: var(--blue); text-decoration: none; }
+        
+        /* Weather Badge */
+        .weather-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            background: rgba(41,121,255,0.1);
+            border-radius: 16px;
+            font-size: 0.85em;
+            color: var(--blue);
+            margin: 4px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 700px) {
+            .container { padding: 10px; }
+            .header h1 { font-size: 1.5em; }
+            .match-header { flex-direction: column; gap: 8px; }
+            .injury-grid { grid-template-columns: 1fr; }
+            .pred-result { gap: 20px; }
+            .analysis-section, .prediction-box, .goal-script, .x-factor, .injury-box { margin-left: 14px; margin-right: 14px; padding: 14px; }
+            .match-header { padding: 14px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<!-- ===================== HEADER ===================== -->
+<div class="header">
+    <h1>2026美加墨世界杯 1/16决赛 深度前瞻</h1>
+    <p class="subtitle">三场焦点对决 · 五维数据推演 · 专业胜负预测</p>
+    <div class="date-badge">数据截止：北京时间 2026年6月29日 14:00 | 小组赛已全部结束</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MATCH 1: 巴西 VS 日本 -->
+<!-- ============================================================ -->
+<div class="match-card">
+    <div class="match-header">
+        <span class="match-num">MATCH 76 · 1/16决赛</span>
+        <span class="match-info">北京时间 6月30日 01:00</span>
+    </div>
+    <div class="match-title">
+        <div class="vs-container">
+            <div class="team-block">
+                <div class="flag">🇧🇷</div>
+                <div class="team-name">巴西</div>
+                <div class="team-rank">FIFA世界排名 第6位 · 全队身价约9.12亿欧</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team-block">
+                <div class="flag">🇯🇵</div>
+                <div class="team-name">日本</div>
+                <div class="team-rank">FIFA世界排名 第18位 · 全队身价约2.79亿欧</div>
+            </div>
+        </div>
+        <div class="match-venue">
+            📍 美国休斯顿 NRG体育场（中立场地，可容纳72,000人）
+            <br><span class="weather-badge">🌡️ 约35°C / 湿度65% / 局部多云</span>
+            <span class="weather-badge">💨 南风14-17mph</span>
+        </div>
+    </div>
+
+    <!-- 核心预测 -->
+    <div class="prediction-box">
+        <div class="pred-title">核心结论</div>
+        <div class="pred-result">
+            <div class="pred-item">
+                <div class="outcome win">巴西胜</div>
+                <div class="label">胜负预测</div>
+            </div>
+        </div>
+        <div class="pred-scores">
+            <span class="score-chip primary">2-0 巴西胜（首选）</span>
+            <span class="score-chip secondary">2-1 巴西胜（次选）</span>
+            <span class="score-chip tertiary">1-1 平局（备选）</span>
+        </div>
+        <div class="stars">信心指数：★★★★☆（4星）</div>
+    </div>
+
+    <!-- 小组赛数据对比 -->
+    <div class="analysis-section">
+        <h3>📊 球队基本面与近期状态</h3>
+        <table class="data-table">
+            <tr><th>维度</th><th>🇧🇷 巴西</th><th>🇯🇵 日本</th></tr>
+            <tr><td>小组赛战绩</td><td class="highlight">2胜1平 / 7分 / C组第1</td><td>1胜2平 / 5分 / F组第2</td></tr>
+            <tr><td>进失球</td><td class="highlight">7进1失 / 净胜+6</td><td>7进3失 / 净胜+4</td></tr>
+            <tr><td>场均射门</td><td class="highlight">16.3次</td><td>12.7次</td></tr>
+            <tr><td>场均控球率</td><td class="highlight">58.7%</td><td>49.3%</td></tr>
+            <tr><td>传球成功率</td><td class="highlight">84.2%</td><td>79.6%</td></tr>
+            <tr><td>场均被射门</td><td>8.0次</td><td>9.7次</td></tr>
+            <tr><td>核心状态</td><td class="highlight">维尼修斯3场3球2助（评分8.47）</td><td>上田绮世2球 / 镰田大地1球1助</td></tr>
+        </table>
+    </div>
+
+    <!-- 伤病 -->
+    <div class="injury-box">
+        <h4>🏥 伤病/停赛动态（关键变量）</h4>
+        <div class="injury-grid">
+            <div class="injury-col">
+                <h5>🇧🇷 巴西</h5>
+                <p>
+                    ⚠️ <b>拉菲尼亚</b>（右边锋）：大腿肌肉拉伤，确定缺席，右路进攻走廊严重削弱<br>
+                    ⚠️ <b>罗德里戈</b>（边锋）：赛前重伤报销，未随队出征<br>
+                    ⚠️ <b>米利唐</b>（中卫）：赛前重伤报销<br>
+                    ✅ <b>内马尔</b>：末轮替补复出，预计下半场替补登场<br>
+                    ✅ 阿利松、马尔基尼奥斯、卡塞米罗、维尼修斯等核心均健康
+                </p>
+            </div>
+            <div class="injury-col">
+                <h5>🇯🇵 日本（伤病潮严重）</h5>
+                <p>
+                    ❌ <b>远藤航</b>（中场队长/后腰屏障）：伤退缺席，中场拦截硬度崩塌<br>
+                    ❌ <b>三笘薰</b>（左边锋/头号爆点）：因伤无缘赛事，左路突破彻底哑火<br>
+                    ❌ <b>南野拓实</b>（进攻串联核心）：退出大名单<br>
+                    ⚠️ <b>久保建英</b>（前场核心）：小组赛遭遇膝伤，本场出战成疑<br>
+                    ⚠️ <b>板仓滉</b>（中卫/代理队长）：末轮腿部肌肉劳损被换下，出战存疑
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 战术与交锋 -->
+    <div class="analysis-section">
+        <h3>⚔️ 战术体系与历史交锋</h3>
+        <ul>
+            <li><b>巴西（4-3-3）</b>：安切洛蒂主打经典4-3-3，双后腰卡塞米罗+吉马良斯保护防线，维尼修斯左路爆破，帕奎塔前插串联。小组赛连续两场零封，防守端稳定性极强。</li>
+            <li><b>日本（3-4-2-1）</b>：森保一的3-4-2-1体系专为克制技术型球队设计，但远藤航和三笟薰的缺席使中场拦截和反击推进能力大打折扣，反击威胁大幅缩水。</li>
+            <li><b>历史交锋</b>：双方14次交手，巴西11胜2平1负，进28球失4球。日本唯一胜利是2025年10月友谊赛3-2逆转（巴西大面积轮换），世界杯正赛仅2006年交手1次，巴西4-1大胜。</li>
+            <li><b>克制关系</b>：巴西的控球渗透对阵日本高位压迫体系时，进攻三区传球成功率（72.3%）远高于日本防守三区抢断成功率（61.8%），日本的高位逼抢面对巴西短传渗透可能失效。</li>
+        </ul>
+    </div>
+
+    <!-- 2026专属环境 -->
+    <div class="analysis-section">
+        <h3>🌍 2026世界杯专属环境变量</h3>
+        <ul>
+            <li><b>休斯顿高温高湿</b>：比赛日预计35°C、湿度65%，对日本球员体能消耗巨大。日本小组赛末轮才惊险出线，球员体能透支明显，下半场60分钟后将是体能悬崖期。</li>
+            <li><b>巴西体能储备优势</b>：巴西末轮提前锁定头名进行大面积轮换，主力球员休息4-5天；日本三场硬仗拼到最后一场才确定晋级，休息仅3天。</li>
+            <li><b>休斯顿无海拔问题</b>（海拔约15米），不影响双方体能表现。</li>
+            <li><b>时差因素</b>：两队此前均在北美赛区比赛，时差适应程度相当。</li>
+        </ul>
+    </div>
+
+    <!-- 赛制与战意 -->
+    <div class="analysis-section">
+        <h3>🏆 赛制与战意因素</h3>
+        <ul>
+            <li><b>战意对比</b>：巴西作为夺冠头号热门，目标直指大力神杯，淘汰赛不容有失；日本队史4次世界杯淘汰赛全部止步16强（2002/2010/2018/2022），有强烈的打破魔咒渴望。</li>
+            <li><b>新赛制影响</b>：48队12组新赛制下，1/16决赛是第一轮淘汰赛，胜者晋级16强。日本若出局将是连续第5次淘汰赛一轮游，战意充足但硬实力差距明显。</li>
+            <li><b>胜者前景</b>：本场比赛胜者将在1/8决赛对阵加拿大（已晋级16强），两队均有明确的晋级路径。</li>
+        </ul>
+    </div>
+
+    <!-- 机构风向 -->
+    <div class="analysis-section">
+        <h3>📈 机构与市场风向</h3>
+        <ul>
+            <li><b>初始赔率</b>：威廉希尔/贝特365等欧洲机构巴西独赢1.60-1.80区间，日本胜赔6.50-7.00，平局3.60-4.00。</li>
+            <li><b>盘口走势</b>：初始盘巴西让一球/球半，后市上盘水位缓慢抬升，机构仅调整进球盘而非动摇主胜根基，无刻意诱盘迹象。</li>
+            <li><b>市场热度</b>：集中在"巴西小胜"方向，日本爆冷资金极低。机构态度统一锁定巴西获胜，唯一顾虑是进球数量。</li>
+            <li><b>先验概率</b>：综合Sports Mole/WhoScored/SI等数据机构分析，巴西90分钟胜率约65-70%，平局约20%，日本胜率约10-15%。</li>
+        </ul>
+    </div>
+
+    <!-- 深度逻辑 -->
+    <div class="analysis-section">
+        <h3>🧠 深度逻辑拆解</h3>
+        <ul>
+            <li><b>核心论据1 — 伤病此消彼长</b>：日本三条战线核心（远藤航/三笘薰/南野拓实/久保建英成疑）集体缺席，反击缺少边路爆破点、中场拦截硬度不足，传控反击战术折损大半威力；巴西仅缺拉菲尼亚一人，核心中轴线完好。</li>
+            <li><b>核心论据2 — 维尼修斯无解状态</b>：维尼修斯3场小组赛贡献3球2助，场均评分8.47为赛事最高之一；对阵苏格兰单场xG高达3.06创世界杯单场历史纪录。日本右路防守面对其冲击将极度被动。</li>
+            <li><b>核心论据3 — 体能差距与淘汰赛经验</b>：巴西轮换休息4-5天 vs 日本拼到末轮仅休3天，且日本4次淘汰赛首轮全部出局，心理包袱沉重。巴西近8场世界杯淘汰赛常规时间仅输1场。</li>
+            <li><b>核心论据4 — 高温消耗对日本不利</b>：休斯顿35°C+65%湿度对体能消耗巨大，日本下半场60分钟后体能将大幅下滑，巴西可利用阵容深度持续施压，末段破门概率极高。</li>
+        </ul>
+    </div>
+
+    <!-- 进球剧本 -->
+    <div class="goal-script">
+        <h4>⚽ 进球剧本推演</h4>
+        <div class="script-row">
+            <div class="script-item"><span class="s-label">总进球区间</span><br><span class="s-value">2-3球</span></div>
+            <div class="script-item"><span class="s-label">进球时段</span><br><span class="s-value">下半场60-80分钟（巴西主攻期）</span></div>
+            <div class="script-item"><span class="s-label">关键破门球员</span><br><span class="s-value">维尼修斯 > 库尼亚 > 帕奎塔</span></div>
+            <div class="script-item"><span class="s-label">日本进球可能性</span><br><span class="s-value">约30%（定位球/反击偷一球）</span></div>
+        </div>
+    </div>
+
+    <!-- X因素 -->
+    <div class="x-factor">
+        <h4>⚠️ 隐藏X因素</h4>
+        <div class="xf-item"><span class="xf-tag high">高</span>内马尔替补登场后的战局变量 — 若日本成功将0-0保持到60分钟，内马尔登场可能成为破局关键或因久疏战阵产生失误。</div>
+        <div class="xf-item"><span class="xf-tag medium">中</span>休斯顿午后高温 — 场内体感温度可能接近40°C，VAR中断增加补水时间，打乱比赛节奏。</div>
+        <div class="xf-item"><span class="xf-tag medium">中</span>裁判尺度 — 若裁判允许更多身体对抗，日本球员身体对抗劣势将进一步放大。</div>
+        <div class="xf-item"><span class="xf-tag low">低</span>日本点球大战可能性 — 日本若死守90分钟进入点球，铃木彩艳小组赛扑救成功率78.6%，点球大战存在爆冷可能。</div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MATCH 2: 德国 VS 巴拉圭 -->
+<!-- ============================================================ -->
+<div class="match-card">
+    <div class="match-header">
+        <span class="match-num">MATCH 74 · 1/16决赛</span>
+        <span class="match-info">北京时间 6月30日 04:30</span>
+    </div>
+    <div class="match-title">
+        <div class="vs-container">
+            <div class="team-block">
+                <div class="flag">🇩🇪</div>
+                <div class="team-name">德国</div>
+                <div class="team-rank">FIFA世界排名 第10位 · 全队身价超10亿欧</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team-block">
+                <div class="flag">🇵🇾</div>
+                <div class="team-name">巴拉圭</div>
+                <div class="team-rank">FIFA世界排名 第40位 · 全队身价约1.5亿欧</div>
+            </div>
+        </div>
+        <div class="match-venue">
+            📍 美国波士顿 吉列体育场（中立场地）
+            <br><span class="weather-badge">🌡️ 约24°C / 湿度适中 / 偶有阵雨</span>
+            <span class="weather-badge">🏟️ 第四官员：马宁（中国）</span>
+        </div>
+    </div>
+
+    <!-- 核心预测 -->
+    <div class="prediction-box">
+        <div class="pred-title">核心结论</div>
+        <div class="pred-result">
+            <div class="pred-item">
+                <div class="outcome win">德国胜</div>
+                <div class="label">胜负预测</div>
+            </div>
+        </div>
+        <div class="pred-scores">
+            <span class="score-chip primary">2-0 德国胜（首选）</span>
+            <span class="score-chip secondary">3-0 德国胜（次选）</span>
+            <span class="score-chip tertiary">2-1 德国胜（备选）</span>
+        </div>
+        <div class="stars">信心指数：★★★★★（5星）</div>
+    </div>
+
+    <!-- 小组赛数据对比 -->
+    <div class="analysis-section">
+        <h3>📊 球队基本面与近期状态</h3>
+        <table class="data-table">
+            <tr><th>维度</th><th>🇩🇪 德国</th><th>🇵🇾 巴拉圭</th></tr>
+            <tr><td>小组赛战绩</td><td class="highlight">2胜1负 / 6分 / E组第1</td><td>1胜1平1负 / 4分 / D组第3</td></tr>
+            <tr><td>进失球</td><td class="highlight">10进4失 / 净胜+6</td><td class="warn">2进4失 / 净胜-2</td></tr>
+            <tr><td>场均控球率</td><td class="highlight">60.7%</td><td>37.3%</td></tr>
+            <tr><td>场均射门</td><td class="highlight">16.7次（射正率42%）</td><td>7.3次</td></tr>
+            <tr><td>传球成功率</td><td class="highlight">88.5%</td><td>76.8%</td></tr>
+            <tr><td>xG/xGA差值</td><td class="highlight">+1.57（场均）</td><td class="warn">-0.53（场均）</td></tr>
+            <tr><td>核心状态</td><td class="highlight">穆西亚拉2球 / 哈弗茨2球1助 / 萨内2球1助</td><td>阿尔米隆1球1助 / 恩西索带伤</td></tr>
+        </table>
+    </div>
+
+    <!-- 伤病 -->
+    <div class="injury-box">
+        <h4>🏥 伤病/停赛动态</h4>
+        <div class="injury-grid">
+            <div class="injury-col">
+                <h5>🇩🇪 德国（阵容基本完整）</h5>
+                <p>
+                    ❌ <b>施洛特贝克</b>（主力中卫）：左脚踝内侧韧带受伤，已告别本届世界杯<br>
+                    ⚠️ <b>布朗</b>（边后卫）：肌肉不适，出战存疑<br>
+                    ⚠️ <b>萨内</b>：因伤可能缺阵，但翁达夫可替代<br>
+                    ✅ <b>吕迪格、塔</b>（中卫搭档）状态稳定<br>
+                    ✅ <b>穆西亚拉、维尔茨、哈弗茨</b>攻击群健康<br>
+                    ✅ <b>诺伊尔</b>确认首发（第五届世界杯）
+                </p>
+            </div>
+            <div class="injury-col">
+                <h5>🇵🇾 巴拉圭（关键人员折损）</h5>
+                <p>
+                    ❌ <b>迭戈·戈麦斯</b>（中场主力/双后腰拦截点）：累积黄牌停赛<br>
+                    ⚠️ <b>阿尔米隆</b>（核心攻击手）：末轮受伤，出战成疑<br>
+                    ⚠️ <b>恩西索</b>（锋线）：首战轻微拉伤，带伤出战状态受影响<br>
+                    ✅ <b>费尔南德斯</b>（门将）：后两场完成零封，状态稳健
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 战术与交锋 -->
+    <div class="analysis-section">
+        <h3>⚔️ 战术体系与历史交锋</h3>
+        <ul>
+            <li><b>德国（4-2-3-1）</b>：纳格尔斯曼主打高位压迫+快速转换，穆西亚拉盘带突破、维尔茨创造力、哈弗茨支点作用构成立体进攻。小组赛下半场进球远多于上半场，有慢热特征。</li>
+            <li><b>巴拉圭（5-4-1）</b>：阿尔法罗主打低位铁桶阵，三中卫+双后腰压缩中路空间，进攻极度依赖阿尔米隆个人突破和恩西索反击。小组赛3场仅入2球，是32强中进攻火力最弱球队之一。</li>
+            <li><b>历史交锋</b>：6次正式比赛交手，德国4胜1平1负。世界杯交锋1次：2002年韩日世界杯1/8决赛，德国1-0淘汰巴拉圭（巴拉克进球）。</li>
+            <li><b>克制关系</b>：德国的高空轰炸+边路渗透 vs 巴拉圭的铁桶阵，德国阵地战攻坚能力（小组赛10球）足以碾压巴拉圭（xGA场均1.60），一旦早早破门巴拉圭被迫压出将彻底崩盘。</li>
+        </ul>
+    </div>
+
+    <!-- 2026专属环境 -->
+    <div class="analysis-section">
+        <h3>🌍 2026世界杯专属环境变量</h3>
+        <ul>
+            <li><b>波士顿气候温和</b>：6月底气温约24°C，湿度适中，偶有阵雨但影响有限，有利于技术流球队发挥，对德国传控打法利好。</li>
+            <li><b>赛程与休息</b>：德国末轮进行9人轮换（虽然1-2负厄瓜多尔），主力球员获得充分休息；巴拉圭末轮0-0战平澳大利亚消耗不大，但此前三场硬仗体能消耗不低。</li>
+            <li><b>无海拔影响</b>：波士顿海拔极低，不影响比赛。</li>
+        </ul>
+    </div>
+
+    <!-- 赛制与战意 -->
+    <div class="analysis-section">
+        <h3>🏆 赛制与战意因素</h3>
+        <ul>
+            <li><b>德国争冠战意</b>：德国目标直指冠军，面对小组第三出线的巴拉圭不容有失。末轮输给厄瓜多尔后需重振士气，战意充足。</li>
+            <li><b>巴拉圭无包袱</b>：时隔16年重返淘汰赛，全队无压力出战，但进攻端的疲软使他们很难对德国构成持续威胁。</li>
+            <li><b>胜者前景</b>：本场胜者将在1/8决赛对阵巴西/日本的胜者（大概率巴西），这意味着一场潜在的德巴大战。</li>
+        </ul>
+    </div>
+
+    <!-- 机构风向 -->
+    <div class="analysis-section">
+        <h3>📈 机构与市场风向</h3>
+        <ul>
+            <li><b>先验概率</b>：综合多方数据，德国胜率约72%，平局约18%，巴拉圭胜率约10%。</li>
+            <li><b>盘口</b>：德国让球半/两球，上盘水位稳定，机构对德国大胜信心充足。</li>
+            <li><b>风险提示</b>：德国慢热特征+巴拉圭铁桶阵，若半场0-0则比赛悬念增加。但考虑到巴拉圭中场核心停赛+锋线核心伤疑，死守难度极大。</li>
+        </ul>
+    </div>
+
+    <!-- 深度逻辑 -->
+    <div class="analysis-section">
+        <h3>🧠 深度逻辑拆解</h3>
+        <ul>
+            <li><b>核心论据1 — 进攻火力碾压</b>：德国小组赛10球（场均3.3球），巴拉圭仅2球（场均0.67球，32强垫底级别）。xG差值+1.57 vs -0.53，攻防质量差距巨大。</li>
+            <li><b>核心论据2 — 巴拉圭关键人员折损</b>：中场拦截核心戈麦斯停赛+进攻核心阿尔米隆伤疑，双线受损。面对德国技术流中场，防守容错率极低。</li>
+            <li><b>核心论据3 — 德国阵容深度</b>：全员主力回归，穆西亚拉+维尔茨+哈弗茨攻击群状态在线，诺伊尔第五届世界杯坐镇，大赛底蕴碾压。</li>
+            <li><b>核心论据4 — 2002年世界杯交锋心理</b>：德国1-0淘汰巴拉圭的历史记忆对巴拉圭形成心理阴影。巴拉圭面对欧洲强队从未在世界杯淘汰赛获胜。</li>
+        </ul>
+    </div>
+
+    <!-- 进球剧本 -->
+    <div class="goal-script">
+        <h4>⚽ 进球剧本推演</h4>
+        <div class="script-row">
+            <div class="script-item"><span class="s-label">总进球区间</span><br><span class="s-value">2-3球</span></div>
+            <div class="script-item"><span class="s-label">进球时段</span><br><span class="s-value">下半场50-75分钟（德国发力期）</span></div>
+            <div class="script-item"><span class="s-label">关键破门球员</span><br><span class="s-value">穆西亚拉 > 哈弗茨 > 维尔茨</span></div>
+            <div class="script-item"><span class="s-label">巴拉圭进球可能性</span><br><span class="s-value">约20%（仅靠反击偷一球）</span></div>
+        </div>
+    </div>
+
+    <!-- X因素 -->
+    <div class="x-factor">
+        <h4>⚠️ 隐藏X因素</h4>
+        <div class="xf-item"><span class="xf-tag medium">中</span>德国慢热 — 小组赛3场下半场进球4个、上半场仅1球，若巴拉圭半场守住0-0，悬念将增加。</div>
+        <div class="xf-item"><span class="xf-tag medium">中</span>波士顿阵雨 — 偶有阵雨可能导致场地湿滑，对德国地面传控产生轻微不利影响。</div>
+        <div class="xf-item"><span class="xf-tag low">低</span>巴拉圭定位球偷袭 — 巴拉圭定位球是其少数稳定得分手段，一次角球/任意球可能改写比分。</div>
+        <div class="xf-item"><span class="xf-tag low">低</span>裁判马宁（第四官员）的影响 — 中国裁判团队执法，尺度相对稳定。</div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MATCH 3: 荷兰 VS 摩洛哥 -->
+<!-- ============================================================ -->
+<div class="match-card">
+    <div class="match-header">
+        <span class="match-num">MATCH 75 · 1/16决赛</span>
+        <span class="match-info">北京时间 6月30日 09:00</span>
+    </div>
+    <div class="match-title">
+        <div class="vs-container">
+            <div class="team-block">
+                <div class="flag">🇳🇱</div>
+                <div class="team-name">荷兰</div>
+                <div class="team-rank">FIFA世界排名 第8位 · 全队身价约7.2亿欧</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team-block">
+                <div class="flag">🇲🇦</div>
+                <div class="team-name">摩洛哥</div>
+                <div class="team-rank">FIFA世界排名 第7位 · 全队身价约4.8亿欧</div>
+            </div>
+        </div>
+        <div class="match-venue">
+            📍 墨西哥蒙特雷体育场（海拔约530米）
+            <br><span class="weather-badge">🌡️ 约30°C / 湿度适中 / 干燥少雨</span>
+            <span class="weather-badge">🏔️ 中等海拔影响有限</span>
+        </div>
+    </div>
+
+    <!-- 核心预测 -->
+    <div class="prediction-box">
+        <div class="pred-title">核心结论</div>
+        <div class="pred-result">
+            <div class="pred-item">
+                <div class="outcome win">荷兰胜</div>
+                <div class="label">胜负预测（常规时间小胜/加时取胜）</div>
+            </div>
+        </div>
+        <div class="pred-scores">
+            <span class="score-chip primary">2-1 荷兰胜（首选）</span>
+            <span class="score-chip secondary">1-1 平局→加时荷兰胜（次选）</span>
+            <span class="score-chip tertiary">1-0 荷兰胜（备选）</span>
+        </div>
+        <div class="stars">信心指数：★★★☆☆（3星）— 本轮最胶着对决</div>
+    </div>
+
+    <!-- 小组赛数据对比 -->
+    <div class="analysis-section">
+        <h3>📊 球队基本面与近期状态</h3>
+        <table class="data-table">
+            <tr><th>维度</th><th>🇳🇱 荷兰</th><th>🇲🇦 摩洛哥</th></tr>
+            <tr><td>小组赛战绩</td><td>2胜1平 / 7分 / F组第1</td><td class="highlight">2胜1平 / 7分 / C组第2（净胜球劣势）</td></tr>
+            <tr><td>进失球</td><td class="highlight">10进4失 / 净胜+6</td><td>6进3失 / 净胜+3</td></tr>
+            <tr><td>场均控球率</td><td class="highlight">62%</td><td>52.9%</td></tr>
+            <tr><td>场均射门</td><td class="highlight">16次（射正率42%）</td><td>14次</td></tr>
+            <tr><td>防守数据</td><td>场均失1.3球</td><td class="highlight">场均失1球（首轮逼平巴西仅丢1球）</td></tr>
+            <tr><td>近期走势</td><td>2-2日本→5-1瑞典→3-1突尼斯</td><td class="highlight">1-1巴西→1-0苏格兰→4-2海地（各项赛事32场不败）</td></tr>
+            <tr><td>核心状态</td><td class="highlight">加克波2球1助 / 布罗比3球 / 德佩2球</td><td>赛巴里2球 / 迪亚斯串联 / 阿什拉夫两翼</td></tr>
+        </table>
+    </div>
+
+    <!-- 伤病 -->
+    <div class="injury-box">
+        <h4>🏥 伤病/停赛动态</h4>
+        <div class="injury-grid">
+            <div class="injury-col">
+                <h5>🇳🇱 荷兰（伤情较重）</h5>
+                <p>
+                    ❌ <b>哈维·西蒙斯</b>（中场核心）：右膝前交叉韧带断裂，告别世界杯<br>
+                    ❌ <b>斯豪滕</b>（中场）：重伤缺席<br>
+                    ❌ <b>尤里恩·廷贝尔</b>（后卫）：腹股沟伤势退出大名单<br>
+                    ❌ <b>布罗比</b>（前锋/3球）：大腿拉伤确认缺阵<br>
+                    ⚠️ <b>德容</b>（中场核心）：末轮因伤被换下，出战成疑<br>
+                    ⚠️ <b>德佩</b>（前锋）：腿筋伤势，小组赛多替补登场<br>
+                    ✅ 范戴克、加克波、邓弗里斯等核心健康
+                </p>
+            </div>
+            <div class="injury-col">
+                <h5>🇲🇦 摩洛哥（阵容基本齐整）</h5>
+                <p>
+                    ⚠️ <b>阿布德</b>（边锋）：右膝内侧副韧带扭伤，恢复期3-4周，本场出战可能性低<br>
+                    ⚠️ <b>阿格尔德</b>（中卫）：因伤未进入稳定轮换阵容<br>
+                    ⚠️ <b>阿姆拉巴特</b>（中场）：末轮受伤但无结构性损伤，可正常出战<br>
+                    ✅ <b>布努</b>（门将）稳定<br>
+                    ✅ <b>阿什拉夫、马兹拉维</b>（边路双翼）健康<br>
+                    ✅ <b>布拉欣·迪亚斯、赛巴里</b>（前场核心）健康
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 战术与交锋 -->
+    <div class="analysis-section">
+        <h3>⚔️ 战术体系与历史交锋</h3>
+        <ul>
+            <li><b>荷兰（4-3-3）</b>：科曼主打控球+边路进攻，加克波居左、邓弗里斯右路冲击，范戴克+阿克双中卫防空出众。致命隐患：边卫前压后肋部身后空档巨大，范戴克转身偏慢，惧怕高速边路反击。</li>
+            <li><b>摩洛哥（4-2-3-1/5-4-1）</b>：雷格拉吉的体系是2022世界杯四强班底，阿什拉夫+马兹拉维两翼齐飞专打对手边卫身后，阿姆拉巴特中场绞杀，布努大赛零封专家。对阵强队时切换5-4-1铁桶阵。</li>
+            <li><b>历史交锋</b>：仅1994年世界杯小组赛荷兰2-1摩洛哥，友谊赛3次交手均为2-1比分（荷兰2胜1负）。分差极小，不存在绝对碾压。</li>
+            <li><b>克制关系（关键）</b>：摩洛哥球员大量效力荷甲，极度熟悉荷兰球员技术特点。阿什拉夫高速插上冲击荷兰肋部，恰好打中范戴克转身慢的软肋 — 这是战术克制的核心矛盾。</li>
+        </ul>
+    </div>
+
+    <!-- 2026专属环境 -->
+    <div class="analysis-section">
+        <h3>🌍 2026世界杯专属环境变量</h3>
+        <ul>
+            <li><b>蒙特雷海拔约530米</b>：虽然远不及墨西哥城（2200米），但对低海拔习惯的荷兰球员仍有轻微体能影响，尤其下半场高强度冲刺时。</li>
+            <li><b>蒙特雷气候</b>：6月底气温约30°C，干燥少雨，对技术流球队相对友好。但比赛在上午进行（当地时间晚8点），温度适中。</li>
+            <li><b>赛程与体能</b>：两队均于6月25-26日完成末轮，休息3-4天，体能恢复程度相当。</li>
+            <li><b>摩洛哥"半个主场"</b>：蒙特雷有大量摩洛哥裔移民，现场氛围可能偏向摩洛哥。</li>
+        </ul>
+    </div>
+
+    <!-- 赛制与战意 -->
+    <div class="analysis-section">
+        <h3>🏆 赛制与战意因素</h3>
+        <ul>
+            <li><b>荷兰压力更大</b>：作为传统强队，目标直指八强乃至四强，面对摩洛哥不容有失。但摩洛哥上届世界杯已证明不惧怕任何欧洲对手。</li>
+            <li><b>摩洛哥以挑战者姿态出战</b>：心态更加从容，2022年淘汰比利时/西班牙/葡萄牙三支欧洲劲旅的历史给予强大心理底气。</li>
+            <li><b>胜者前景</b>：本场胜者将在1/8决赛对阵加拿大（已晋级16强），晋级路径相对有利。</li>
+        </ul>
+    </div>
+
+    <!-- 机构风向 -->
+    <div class="analysis-section">
+        <h3>📈 机构与市场风向</h3>
+        <ul>
+            <li><b>赔率</b>：荷兰独赢约2.10-2.30，摩洛哥胜约3.20-3.50，平局约3.00-3.20，胜负差距不大。</li>
+            <li><b>市场分歧</b>：这是1/16决赛中赔率最接近的对决之一，机构对胜负判断存在分歧，存在冷门风险。</li>
+            <li><b>德容伤情是最大变量</b>：若德容缺阵，荷兰中场组织能力大幅下降，赔率可能进一步向摩洛哥倾斜。</li>
+        </ul>
+    </div>
+
+    <!-- 深度逻辑 -->
+    <div class="analysis-section">
+        <h3>🧠 深度逻辑拆解</h3>
+        <ul>
+            <li><b>核心论据1 — 战术克制关系</b>：摩洛哥的5-4-1铁桶阵+边翼反击体系专门克制荷兰的4-3-3控球打法。阿什拉夫+马兹拉维的速度恰好针对范戴克转身慢+边卫压上后的身后空档，这是本场最核心的战术矛盾。</li>
+            <li><b>核心论据2 — 荷兰中场伤病危机</b>：西蒙斯/斯豪滕缺阵+德容出战成疑，荷兰中路推进与串联能力严重受损，面对阿姆拉巴特的中场绞杀可能陷入组织混乱。</li>
+            <li><b>核心论据3 — 摩洛哥32场不败</b>：摩洛哥各项赛事已连续32场不败，防守韧性拉满。上届世界杯仅失2球（含点球），布努的零封能力极强，荷兰久攻不下的概率不低。</li>
+            <li><b>核心论据4 — 荷兰球星上限</b>：尽管伤病严重，但加克波（2球1助）和范戴克的个人能力仍是胜负天平的砝码。荷兰进攻三区的创造力（场均16次射门）仍优于摩洛哥的阵地攻坚能力。</li>
+        </ul>
+    </div>
+
+    <!-- 进球剧本 -->
+    <div class="goal-script">
+        <h4>⚽ 进球剧本推演</h4>
+        <div class="script-row">
+            <div class="script-item"><span class="s-label">总进球区间</span><br><span class="s-value">2-3球</span></div>
+            <div class="script-item"><span class="s-label">进球时段</span><br><span class="s-value">上半场胶着 / 下半场60分钟后打开局面</span></div>
+            <div class="script-item"><span class="s-label">关键破门球员</span><br><span class="s-value">加克波 > 邓弗里斯 > 阿什拉夫（摩洛哥）</span></div>
+            <div class="script-item"><span class="s-label">加时/点球概率</span><br><span class="s-value">约30%（本场最可能拖入加时的对决）</span></div>
+        </div>
+    </div>
+
+    <!-- X因素 -->
+    <div class="x-factor">
+        <h4>⚠️ 隐藏X因素</h4>
+        <div class="xf-item"><span class="xf-tag high">高</span>德容出场与否 — 这是决定比赛走势的最大变量。若德容缺阵，荷兰中场控制力骤降，摩洛哥反击效率将成倍提升，1-0爆冷概率显著上升。</div>
+        <div class="xf-item"><span class="xf-tag high">高</span>阿什拉夫 vs 荷兰左路 — 阿什拉夫的边路冲刺是摩洛哥反击的起爆器，荷兰左路防守（阿克/廷伯身后）是最大软肋。</div>
+        <div class="xf-item"><span class="xf-tag medium">中</span>蒙特雷现场氛围 — 大量摩洛哥裔球迷可能营造"半个主场"效果，影响荷兰球员心态。</div>
+        <div class="xf-item"><span class="xf-tag medium">中</span>点球大战 — 若拖入点球，布努（大赛零封专家）vs 费布鲁亨（经验不足），摩洛哥在点球大战中可能占优。</div>
+        <div class="xf-item"><span class="xf-tag low">低</span>摩洛哥体能下滑 — 65分钟后摩洛哥边路补防漏洞扩大，荷兰可利用替补深度在末段施压。</div>
+    </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<div class="footer">
+    <p><b>数据来源声明</b></p>
+    <p>本报告所有数据均来源于官方公开渠道，包括：FIFA官网赛程与积分、新华社/央视网/新华网赛事报道、Sports Mole/WhoScored/Sports Illustrated等数据机构分析、Goldman Sachs世界杯预测模型、Weather-Atlas天气数据等。</p>
+    <p style="margin-top:8px;">报告仅供足球赛事分析参考，不构成任何投注建议。请理性观赛，量力而行。</p>
+    <p style="margin-top:12px; color: var(--text-muted);">生成时间：2026年6月29日 | 版本：v1.0</p>
+</div>
+
+</div>
+</body>
+</html>
