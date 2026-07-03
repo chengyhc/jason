@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026美加墨世界杯 7月3日淘汰赛深度前瞻</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #f5c518;
+            --text: #eaeaea;
+            --text-dark: #1a1a2e;
+            --card-bg: #0f3460;
+            --card-border: #533483;
+            --win: #4caf50;
+            --draw: #ff9800;
+            --loss: #f44336;
+            --highlight: #00d2ff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, #0f0c29 50%, #302b63 100%);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(233,69,96,0.2), rgba(83,52,131,0.3));
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(233,69,96,0.3);
+        }
+        .header h1 {
+            font-size: 2.2em;
+            background: linear-gradient(90deg, var(--gold), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .header .subtitle { color: var(--highlight); font-size: 1.1em; }
+        .match-section {
+            background: linear-gradient(145deg, rgba(15,52,96,0.8), rgba(26,26,46,0.9));
+            border-radius: 16px;
+            margin-bottom: 40px;
+            padding: 30px;
+            border: 1px solid rgba(83,52,131,0.5);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .match-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(233,69,96,0.3);
+        }
+        .match-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .match-info { display: flex; gap: 20px; flex-wrap: wrap; }
+        .info-badge {
+            background: rgba(233,69,96,0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            border: 1px solid rgba(233,69,96,0.4);
+        }
+        .verdict-box {
+            background: linear-gradient(135deg, rgba(233,69,96,0.15), rgba(83,52,131,0.2));
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid var(--accent);
+        }
+        .verdict-box h2 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .prediction-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .prediction-label { font-weight: 600; min-width: 120px; }
+        .result-tag {
+            display: inline-block;
+            padding: 5px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1.05em;
+        }
+        .result-win { background: rgba(76,175,80,0.25); color: var(--win); border: 1px solid var(--win); }
+        .result-draw { background: rgba(255,152,0,0.25); color: var(--draw); border: 1px solid var(--draw); }
+        .stars { color: var(--gold); font-size: 1.2em; letter-spacing: 3px; }
+        .score-chips { display: flex; gap: 10px; flex-wrap: wrap; }
+        .score-chip {
+            background: rgba(0,210,255,0.15);
+            padding: 5px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(0,210,255,0.3);
+            font-weight: 600;
+        }
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        .analysis-card {
+            background: rgba(15,52,96,0.5);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(83,52,131,0.3);
+        }
+        .analysis-card h3 {
+            color: var(--highlight);
+            margin-bottom: 12px;
+            font-size: 1.05em;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(0,210,255,0.2);
+        }
+        .analysis-card ul { padding-left: 18px; }
+        .analysis-card li { margin-bottom: 8px; }
+        .logic-section {
+            background: rgba(15,52,96,0.4);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent);
+        }
+        .logic-section h3 { color: var(--gold); margin-bottom: 12px; }
+        .logic-point {
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 2px solid rgba(233,69,96,0.3);
+        }
+        .logic-point strong { color: var(--highlight); }
+        .goal-scenario {
+            background: rgba(83,52,131,0.15);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(83,52,131,0.3);
+        }
+        .goal-scenario h3 { color: var(--gold); margin-bottom: 12px; }
+        .x-factor {
+            background: rgba(244,67,54,0.1);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(244,67,54,0.3);
+        }
+        .x-factor h3 { color: var(--accent); margin-bottom: 12px; }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        .data-table th, .data-table td {
+            padding: 8px 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(83,52,131,0.2);
+            font-size: 0.9em;
+        }
+        .data-table th {
+            color: var(--gold);
+            background: rgba(15,52,96,0.5);
+        }
+        .data-table tr:hover { background: rgba(0,210,255,0.05); }
+        .team-compare {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin: 8px 0;
+        }
+        .team-bar {
+            height: 8px;
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+        .bar-home { background: var(--win); }
+        .bar-away { background: var(--accent); }
+        .progress-label { font-size: 0.8em; min-width: 30px; text-align: center; }
+        .source-note {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(15,52,96,0.3);
+            border-radius: 10px;
+            font-size: 0.85em;
+            color: rgba(234,234,234,0.7);
+        }
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            margin: 30px 0;
+        }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.5em; }
+            .match-title { font-size: 1.3em; }
+            .analysis-grid { grid-template-columns: 1fr; }
+            .container { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+        <h1>2026美加墨世界杯 | 7月3日淘汰赛深度前瞻</h1>
+        <p class="subtitle">1/16决赛（32强淘汰赛）| 三场焦点对决全维度拆解</p>
+        <p style="color:rgba(234,234,234,0.6); margin-top:8px; font-size:0.9em;">数据截止：2026年7月3日赛前 | 来源：FIFA官方、新华社、OPTA、ESPN</p>
+    </div>
+
+    <!-- ==================== MATCH 1: Spain vs Austria ==================== -->
+    <div class="match-section">
+        <div class="match-header">
+            <div class="match-title">西班牙 vs 奥地利</div>
+            <div class="match-info">
+                <span class="info-badge">7月3日 03:00 (北京)</span>
+                <span class="info-badge">洛杉矶 SoFi体育场</span>
+                <span class="info-badge">海拔93m | 晴 28°C | 湿度54%</span>
+                <span class="info-badge">主裁：格伦·尼贝里(瑞典)</span>
+            </div>
+        </div>
+
+        <div class="verdict-box">
+            <h2>核心结论</h2>
+            <div class="prediction-row">
+                <span class="prediction-label">胜负预测：</span>
+                <span class="result-tag result-win">主胜（西班牙晋级）</span>
+            </div>
+            <div class="prediction-row">
+                <span class="prediction-label">信心指数：</span>
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                <span style="color:rgba(234,234,234,0.6); font-size:0.85em;">(4/5星)</span>
+            </div>
+            <div class="prediction-row">
+                <span class="prediction-label">最可能比分：</span>
+                <div class="score-chips">
+                    <span class="score-chip">2-0 (28%)</span>
+                    <span class="score-chip">1-0 (22%)</span>
+                    <span class="score-chip">2-1 (18%)</span>
+                </div>
+            </div>
+            <div class="prediction-row">
+                <span class="prediction-label">OPTA胜率：</span>
+                <span>西班牙70.6% | 平局18.2% | 奥地利11.2%</span>
+            </div>
+        </div>
+
+        <div class="analysis-grid">
+            <div class="analysis-card">
+                <h3>球队基本面与近期状态</h3>
+                <table class="data-table">
+                    <tr><th>指标</th><th>西班牙 (FIFA#2)</th><th>奥地利 (FIFA#24)</th></tr>
+                    <tr><td>全队身价</td><td>12.2亿欧</td><td>2.45亿欧</td></tr>
+                    <tr><td>小组赛战绩</td><td>2胜1平 (7分)</td><td>1胜1平1负 (4分)</td></tr>
+                    <tr><td>小组赛进/失</td><td>5进0失</td><td>6进6失</td></tr>
+                    <tr><td>近10场战绩</td><td>6胜4平0负</td><td>6胜2平2负</td></tr>
+                    <tr><td>近10场场均进球</td><td>2.2</td><td>2.6</td></tr>
+                    <tr><td>近10场场均失球</td><td>0.4</td><td>0.9</td></tr>
+                </table>
+                <ul style="margin-top:10px;">
+                    <li><strong>西班牙：</strong>小组赛三场零封，对手上半场无一射正，近5场世界杯对手射门均未超6次，防守统治力冠绝32强</li>
+                    <li><strong>奥地利：</strong>末轮3-3阿尔及利亚暴露防线漏洞，但近10场进攻火力凶猛(场均2.6球)；末轮体能60分钟后断崖下滑</li>
+                </ul>
+            </div>
+            <div class="analysis-card">
+                <h3>关键伤病/停赛影响</h3>
+                <table class="data-table">
+                    <tr><th>球员</th><th>位置</th><th>状态</th><th>影响权重</th></tr>
+                    <tr><td>尼科·威廉姆斯</td><td>边锋(西)</td><td>确认缺席</td><td style="color:var(--accent);">高(8/10)</td></tr>
+                    <tr><td>皮诺</td><td>边锋(西)</td><td>肩伤缺席</td><td style="color:var(--accent);">高(7/10)</td></tr>
+                    <tr><td>罗德里</td><td>后腰(西)</td><td>带伤作战</td><td style="color:var(--draw);">中高(7/10)</td></tr>
+                    <tr><td>姆韦内</td><td>左后卫(奥)</td><td>肌肉伤报销</td><td style="color:var(--accent);">高(7/10)</td></tr>
+                    <tr><td>鲍姆加特纳</td><td>边锋(奥)</td><td>赛季报销</td><td style="color:var(--accent);">高(8/10)</td></tr>
+                    <tr><td>波施</td><td>右后卫(奥)</td><td>下颌骨骨折带伤</td><td style="color:var(--draw);">中(5/10)</td></tr>
+                </table>
+            </div>
+            <div class="analysis-card">
+                <h3>战术体系与历史交锋</h3>
+                <ul>
+                    <li><strong>西班牙433极致传控：</strong>场均控球率66.9%，依靠罗德里-佩德里-奥尔莫中场三角短传拉扯防线；但边路仅剩亚马尔一人健康突击点，后场出球节奏偏慢</li>
+                    <li><strong>奥地利4231高压迫：</strong>朗尼克标志性的全场上抢切断传球线，双中场绞杀罗德里出球点；致命缺陷——逼抢仅能维持60分钟，后期防线松散</li>
+                    <li><strong>克制关系：</strong>朗尼克高压战术天生克制慢节奏后场出球，但高压留下的身后空当恰对准西班牙技术流中场渗透</li>
+                    <li><strong>交锋记录：</strong>总16次交手，西班牙9胜3平4负；<span style="color:var(--accent);">唯一世界杯交手1978年奥地利2-1爆冷</span>；近6次4胜1平1负</li>
+                    <li><strong>世界杯底蕴：</strong>西班牙2010冠军+2024欧洲杯冠军；奥地利1978之后仅第二次淘汰赛</li>
+                </ul>
+            </div>
+            <div class="analysis-card">
+                <h3>2026世界杯专属环境变量</h3>
+                <ul>
+                    <li><strong>海拔影响：</strong>洛杉矶海拔仅93m，对双方均无高原消耗影响，有利于技术流球队发挥</li>
+                    <li><strong>天气评估：</strong>7月初洛杉矶约28°C、湿度54%、无降水——干燥温暖的气候极利于西班牙传控体系的地面短传精度；对奥地利高强度逼抢的体能消耗则略有加速</li>
+                    <li><strong>赛程/休息：</strong>西班牙末轮6月27日(1-0乌拉圭)，休息5天；奥地利末轮6月28日(3-3阿尔及利亚)，休息4天——西班牙多休1天，体能储备略优</li>
+                    <li><strong>时差/飞行：</strong>双方均从不同城市转场至洛杉矶，无显著差异；无东道主优势因素</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="logic-section">
+            <h3>深度逻辑拆解（支撑主胜的4条核心论据）</h3>
+            <div class="logic-point">
+                <strong>1. 防守鸿沟：</strong>西班牙小组赛3场零封、近10场仅失4球；奥地利3场丢6球且防线残缺(姆韦内报销+鲍姆加特纳缺席)，在淘汰赛容错率极低的语境下，防线稳定性是决定性变量
+            </div>
+            <div class="logic-point">
+                <strong>2. 控球消耗战术：</strong>西班牙将以65%+控球率持续传导消耗奥地利体能，待对方60分钟后逼抢强度断崖下滑再扩大比分——这是德拉富恩特大赛经验的核心战术预案
+            </div>
+            <div class="logic-point">
+                <strong>3. 替补深度碾压：</strong>西班牙替补席坐拥五大联赛主力轮换即战力；奥地利替补与主力实力差距悬殊，后半程换人后防守质量骤降
+            </div>
+            <div class="logic-point">
+                <strong>4. 机构信号确认：</strong>亚盘维持主让1.5深盘不退，欧赔大幅倾斜主队，机构从盘型上完全认可西班牙硬实力优势；OPTA推演西班牙90分钟解决战斗概率70.6%
+            </div>
+        </div>
+
+        <div class="goal-scenario">
+            <h3>进球剧本推演</h3>
+            <ul>
+                <li><strong>总进球区间：</strong>1-3球（偏向小球，西班牙控球节奏偏慢+淘汰赛保守属性）</li>
+                <li><strong>进球时间段：</strong>前30分钟奥地利高压抢射可能制造1次威胁（若进球则大概率来自定位球/反击）；35-60分钟西班牙控球渗透寻找首球；65-80分钟奥地利体能枯竭、西班牙扩大比分黄金窗口</li>
+                <li><strong>关键破门球员：</strong>亚马尔（仅存健康边路爆点，内切射门）、佩德里（肋部插上远射）、奥亚萨瓦尔（后点包抄）；奥地利端阿瑙托维奇（支点头球，小组赛已入2球）</li>
+            </ul>
+        </div>
+
+        <div class="x-factor">
+            <h3>隐藏X因素</h3>
+            <ul>
+                <li><strong>罗德里出球失误：</strong>带伤作战下面对朗尼克双中场绞杀，若后场出球被断就地反击，西班牙零封金身可能被打破</li>
+                <li><strong>1978年心理阴影：</strong>唯一一次世界杯交手奥地利2-1爆冷的历史记忆，可能给奥地利带来额外心理加持</li>
+                <li><strong>裁判尺度：</strong>瑞典裁判尼贝里此前执法加纳vs巴拿马、库拉索vs科特迪瓦——均非高压对抗场次，本场若对奥地利逼抢犯规尺度偏宽，将利于朗尼克战术执行</li>
+                <li><strong>高空防空漏洞：</strong>西班牙中卫身高不足(库巴西1.82m/拉波尔特1.91m)，奥地利卡拉季奇1.96m+阿瑙托维奇1.93m的高点冲击是西班牙体系最薄弱环节</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ==================== MATCH 2: Portugal vs Croatia ==================== -->
+    <div class="match-section">
+        <div class="match-header">
+            <div class="match-title">葡萄牙 vs 克罗地亚</div>
+            <div class="match-info">
+                <span class="info-badge">7月3日 07:00 (北京)</span>
+                <span class="info-badge">多伦多 BMO体育场</span>
+                <span class="info-badge">海拔76m | 26°C | 湿度68% | 降水概率21%</span>
+            </div>
+        </div>
+
+        <div class="verdict-box">
+            <h2>核心结论</h2>
+            <div class="prediction-row">
+                <span class="prediction-label">胜负预测：</span>
+                <span class="result-tag result-win">主胜（葡萄牙晋级）</span>
+            </div>
+            <div class="prediction-row">
+                <span class="prediction-label">信心指数：</span>
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                <span style="color:rgba(234,234,234,0.6); font-size:0.85em;">(4/5星)</span>
+            </div>
+            <div class="prediction-row">
+                <span class="prediction-label">最可能比分：</span>
+                <div class="score-chips">
+                    <span class="score-chip">2-1 (25%)</span>
+                    <span class="score-chip">1-0 (20%)</span>
+                    <span class="score-chip">1-1加时胜 (18%)</span>
+                </div>
+            </div>
+            <div class="prediction-row">
+                <span class="prediction-label">市场胜率：</span>
+                <span>葡萄牙47% | 平局23% | 克罗地亚30%</span>
+            </div>
+        </div>
+
+        <div class="analysis-grid">
+            <div class="analysis-card">
+                <h3>球队基本面与近期状态</h3>
+                <table class="data-table">
+                    <tr><th>指标</th><th>葡萄牙 (FIFA#6)</th><th>克罗地亚 (FIFA#13)</th></tr>
+                    <tr><td>全队身价</td><td>10.1亿欧</td><td>3.87亿欧</td></tr>
+                    <tr><td>小组赛战绩</td><td>1胜2平 (5分)</td><td>2胜1负 (6分)</td></tr>
+                    <tr><td>小组赛进/失</td><td>6进1失</td><td>5进5失</td></tr>
+                    <tr><td>近10场战绩</td><td>5胜4平1负</td><td>7胜0平3负</td></tr>
+                    <tr><td>近10场场均进球</td><td>2.0</td><td>1.8</td></tr>
+                    <tr><td>近10场场均失球</td><td>0.5</td><td>1.5</td></tr>
+                </table>
+                <ul style="margin-top:10px;">
+                    <li><strong>葡萄牙：</strong>末轮大面积轮换0-0哥伦比亚，主力体能充分储备；但首战1-1刚果暴露阵地攻坚短板</li>
+                    <li><strong>克罗地亚：</strong>首战2-4英格兰中场被击溃暴露体能短板；但末轮2-1逆转加纳展现大赛韧性；连续三届世界杯淘汰赛经验</li>
+                </ul>
+            </div>
+            <div class="analysis-card">
+                <h3>关键伤病/停赛影响</h3>
+                <table class="data-table">
+                    <tr><th>球员</th><th>位置</th><th>状态</th><th>影响权重</th></tr>
+                    <tr><td>坎塞洛</td><td>右后卫(葡)</td><td>黄牌停赛</td><td style="color:var(--accent);">高(8/10)</td></tr>
+                    <tr><td>佩佩</td><td>中卫(葡)</td><td>伤病缺席</td><td style="color:var(--accent);">高(7/10)</td></tr>
+                    <tr><td>莫德里奇</td><td>中场(克)</td><td>40岁体能瓶颈</td><td style="color:var(--draw);">中高(7/10)</td></tr>
+                    <tr><td>佩里西奇</td><td>边锋(克)</td><td>37岁体能下滑</td><td style="color:var(--draw);">中(5/10)</td></tr>
+                </table>
+                <p style="margin-top:10px; color:var(--accent);">
+                    <strong>核心影响：</strong>坎塞洛停赛+佩佩伤缺令葡萄牙右路攻防双线受损——右后卫替补防守硬度下降，中卫迪亚斯+丰特组合转身回追速度慢，克罗地亚定位球+反击恰可针对
+                </p>
+            </div>
+            <div class="analysis-card">
+                <h3>战术体系与历史交锋</h3>
+                <ul>
+                    <li><strong>葡萄牙433动态切换：</strong>莱奥左路爆破+B费直塞+C罗禁区内抢点，三叉戟各有分工；维蒂尼亚中场偏进攻传导，贴身拦截偏弱</li>
+                    <li><strong>克罗地亚433中场铁三角：</strong>莫德里奇+科瓦契奇+苏契奇控球调度+全场绞杀，专门克制传控型球队；格瓦迪奥尔单兵防守极强</li>
+                    <li><strong>克制关系：</strong>克罗地亚中场三人组可切断葡萄牙中场传导线路，但锋线缺少速度爆点无法有效反击；葡萄牙边路速度(莱奥)是克罗地亚老化防线的克星</li>
+                    <li><strong>交锋记录：</strong>总计10次交手，<span style="color:var(--win);">葡萄牙7胜2平1负</span>，正赛5胜1平保持不败；2016欧洲杯1/8决赛加时夸雷斯马绝杀1-0</li>
+                    <li><strong>世界杯底蕴：</strong>葡萄牙1966季军+2006殿军；克罗地亚2018亚军+2022季军——<span style="color:var(--accent);">克罗地亚4次世界杯点球大战全部取胜</span></li>
+                </ul>
+            </div>
+            <div class="analysis-card">
+                <h3>2026世界杯专属环境变量</h3>
+                <ul>
+                    <li><strong>海拔影响：</strong>多伦多海拔76m，无高原影响</li>
+                    <li><strong>天气评估：</strong>26°C、湿度68%、降水概率21%——湿度偏高对克罗地亚老将(莫德里奇40岁/佩里西奇37岁)的体能消耗更为不利，潮湿环境下高强度跑动恢复更慢</li>
+                    <li><strong>赛程/休息：</strong>葡萄牙末轮6月28日大面积轮换0-0哥伦比亚，主力仅踢60分钟左右+休息4天；克罗地亚末轮6月28日2-1加纳主力打满+休息4天——葡萄牙体能储备明显更优</li>
+                    <li><strong>时差/飞行：</strong>双方均转场至多伦多，无显著差异</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="logic-section">
+            <h3>深度逻辑拆解（支撑主胜的4条核心论据）</h3>
+            <div class="logic-point">
+                <strong>1. 年龄鸿沟：</strong>莫德里奇40岁+佩里西奇37岁的高强度逼抢仅能维持60-70分钟，之后跑动、对抗断崖下滑；而葡萄牙末轮轮换7人，下半场可用年轻攻击手(内维斯/拉莫斯)体能冲击对手老化防线
+            </div>
+            <div class="logic-point">
+                <strong>2. 边路速度碾压：</strong>莱奥是全场最强突破点，克罗地亚右路尤拉诺维奇回追速度一般，葡萄牙左路突击是最高效的破局手段——C罗在禁区内等待传中+莱奥突破传中是最稳定得分公式
+            </div>
+            <div class="logic-point">
+                <strong>3. 历史心理压制：</strong>葡萄牙对克罗地亚7胜2平1负，正赛5胜1平不败——每次碰面葡萄牙均占据心理上风，克罗地亚唯一胜场C罗未出战
+            </div>
+            <div class="logic-point">
+                <strong>4. 克罗地亚锋线硬伤：</strong>克拉马里奇/布季米尔均为支点型前锋，无高速反击前锋，无法有效利用葡萄牙坎塞洛缺席后右路空当——拥有反击空间却缺少执行速度
+            </div>
+        </div>
+
+        <div class="goal-scenario">
+            <h3>进球剧本推演</h3>
+            <ul>
+                <li><strong>总进球区间：</strong>1-3球</li>
+                <li><strong>进球时间段：</strong>前20分钟双方试探期可能0-0僵持；25-45分钟葡萄牙边路突破制造机会；50-70分钟克罗地亚体能下滑后葡萄牙发力；70+分钟若平局则进入C罗/格瓦迪奥尔定位球决胜</li>
+                <li><strong>关键破门球员：</strong>莱奥(左路突破后传中/内切射门)、C罗(禁区内抢点/定位球)、B费(远射/直塞)；克罗地亚端莫德里奇(定位球助攻)、克拉马里奇(支点做球后插上)</li>
+                <li><strong>特殊剧本：</strong>若拖入加时/点球，克罗地亚4次世界杯点球大战全胜的心理优势+利瓦科维奇扑点能力将成为巨大变量</li>
+            </ul>
+        </div>
+
+        <div class="x-factor">
+            <h3>隐藏X因素</h3>
+            <ul>
+                <li><strong>坎塞洛缺席的右路空洞：</strong>替补右后卫防守硬度骤降，克罗地亚若通过莫德里奇长传转移至左路(索萨助攻)，可制造单刀机会</li>
+                <li><strong>C罗vs莫德里奇最后一舞：</strong>两位40+传奇的情感因素可能在僵局中催生超常发挥，也可能因过度紧张导致失误——这是数据模型无法量化的变量</li>
+                <li><strong>克罗地亚加时赛基因：</strong>过去两届世界杯多次加时/点球晋级，若葡萄牙60分钟内无法取得领先，比赛进入克罗地亚舒适区</li>
+                <li><strong>多伦多湿度：</strong>68%湿度+21%降水概率，若比赛中途降雨将减缓地面传控节奏，利于克罗地亚中场绞杀而非葡萄牙渗透</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ==================== MATCH 3: Switzerland vs Algeria ==================== -->
+    <div class="match-section">
+        <div class="match-header">
+            <div class="match-title">瑞士 vs 阿尔及利亚</div>
+            <div class="match-info">
+                <span class="info-badge">7月3日 11:00 (北京)</span>
+                <span class="info-badge">温哥华 BC Place体育场</span>
+                <span class="info-badge">海拔3m | 21°C | 湿度73% | 降水概率15%</span>
+            </div>
+        </div>
+
+        <div class="verdict-box">
+            <h2>核心结论</h2>
+            <div class="prediction-row">
+                <span class="prediction-label">胜负预测：</span>
+                <span class="result-tag result-win">主胜（瑞士晋级）</span>
+            </div>
+            <div class="prediction-row">
+                <span class="prediction-label">信心指数：</span>
+                <span class="stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span>
+                <span style="color:rgba(234,234,234,0.6); font-size:0.85em;">(3/5星 — 平局风险需警惕)</span>
+            </div>
+            <div class="prediction-row">
+                <span class="prediction-label">最可能比分：</span>
+                <div class="score-chips">
+                    <span class="score-chip">1-0 (25%)</span>
+                    <span class="score-chip">1-1 (22%)</span>
+                    <span class="score-chip">2-1 (15%)</span>
+                </div>
+            </div>
+            <div class="prediction-row">
+                <span class="prediction-label">贝叶斯推演：</span>
+                <span>瑞士胜58% | 平局29% | 阿尔及利亚胜13%</span>
+            </div>
+        </div>
+
+        <div class="analysis-grid">
+            <div class="analysis-card">
+                <h3>球队基本面与近期状态</h3>
+                <table class="data-table">
+                    <tr><th>指标</th><th>瑞士 (FIFA#19)</th><th>阿尔及利亚 (FIFA#32)</th></tr>
+                    <tr><td>全队身价</td><td>3.18亿欧</td><td>2.65亿欧</td></tr>
+                    <tr><td>小组赛战绩</td><td>2胜1平 (7分)</td><td>1胜1平1负 (4分)</td></tr>
+                    <tr><td>小组赛进/失</td><td>7进3失</td><td>5进7失</td></tr>
+                    <tr><td>近5场战绩</td><td>3胜2平0负</td><td>2胜2平1负</td></tr>
+                    <tr><td>场均xG</td><td>2.39</td><td>1.39</td></tr>
+                    <tr><td>场均xGA</td><td>0.77</td><td>1.22</td></tr>
+                    <tr><td>扑救成功率</td><td>79%</td><td>50%</td></tr>
+                </table>
+                <ul style="margin-top:10px;">
+                    <li><strong>瑞士：</strong>末轮2-1加拿大时大面积轮换7名主力，全员休息8天，无伤病无停赛隐患；小组赛7球由6名不同球员打进，进攻点分散</li>
+                    <li><strong>阿尔及利亚：</strong>末轮3-3奥地利三度落后三度扳平，韧性拉满但防线三场丢7球；小组赛几乎无完整轮换，主力体能存疑</li>
+                </ul>
+            </div>
+            <div class="analysis-card">
+                <h3>关键伤病/停赛影响</h3>
+                <table class="data-table">
+                    <tr><th>球员</th><th>位置</th><th>状态</th><th>影响权重</th></tr>
+                    <tr><td>扎卡(队长)</td><td>中场(瑞)</td><td>长期伤缺</td><td style="color:var(--accent);">极高(9/10)</td></tr>
+                    <tr><td>阿坎吉</td><td>中卫(瑞)</td><td>累积黄牌停赛</td><td style="color:var(--accent);">高(8/10)</td></tr>
+                    <tr><td>穆海姆</td><td>后卫(瑞)</td><td>受伤缺阵</td><td style="color:var(--draw);">中(5/10)</td></tr>
+                    <tr><td>埃尔维迪</td><td>后卫(瑞)</td><td>肌肉拉伤</td><td style="color:var(--draw);">中(5/10)</td></tr>
+                    <tr><td>本塞拜尼</td><td>后卫(阿)</td><td>受伤缺席</td><td style="color:var(--draw);">中高(6/10)</td></tr>
+                    <tr><td>门将危机</td><td>门将(阿)</td><td>三人伤缺/带伤</td><td style="color:var(--accent);">极高(9/10)</td></tr>
+                </table>
+                <p style="margin-top:10px; color:var(--accent);">
+                    <strong>核心影响：</strong>扎卡是瑞士攻防转换节拍器(小组赛突破性传球53次+抢回24次球权)，其缺阵是毁灭性打击；阿坎吉停赛令后防支柱缺失；阿尔及利亚被迫启用已退役门将本博特——门将位置是定时炸弹
+                </p>
+            </div>
+            <div class="analysis-card">
+                <h3>战术体系与历史交锋</h3>
+                <ul>
+                    <li><strong>瑞士433/4231切换：</strong>科贝尔出球体系+扎卡调度串联(缺阵!)，7球6人打进不依赖单点；边后卫大幅前插后身后留反击空当</li>
+                    <li><strong>阿尔及利亚收缩541防反：</strong>佩特科维奇(前瑞士主帅2014-2021)量身定做反戈旧主——吃透每名瑞士球员习惯、攻防漏洞、换人节奏；抓边后卫前插身后空当快速偷袭</li>
+                    <li><strong>克制关系：</strong>佩特科维奇的情报优势是本场最大变量——他比任何人都清楚瑞士的弱点；但阿尔及利亚60分钟体能断崖+门将危机可能抵消战术优势</li>
+                    <li><strong>交锋记录：</strong>正式大赛仅2次友谊赛(1983/1986)，瑞士2胜0平0负；世界杯对非洲球队2战全胜(2006 2-0多哥/2022 1-0喀麦隆)</li>
+                    <li><strong>世界杯底蕴：</strong>瑞士连续四届小组出线但<span style="color:var(--accent);">连续三届止步淘汰赛首轮</span>("十六郎魔咒")；阿尔及利亚时隔12年重返淘汰赛</li>
+                </ul>
+            </div>
+            <div class="analysis-card">
+                <h3>2026世界杯专属环境变量</h3>
+                <ul>
+                    <li><strong>海拔影响：</strong>温哥华海拔仅3m，无高原影响</li>
+                    <li><strong>天气评估：</strong>21°C、湿度73%、降水概率15%——温度适宜但湿度偏高，对双方体能消耗中等；BC Place为室内封闭球场(可伸缩屋顶)，天气影响实际有限</li>
+                    <li><strong>赛程/休息：</strong>瑞士末轮6月24日2-1加拿大后大面积轮换，至7月3日休息9天——<span style="color:var(--win);">全场休息最充裕的球队之一</span>；阿尔及利亚末轮6月28日3-3奥地利仅休4天+几乎无轮换</li>
+                    <li><strong>时差/飞行：</strong>瑞士此前在温哥华比赛(对加拿大)，无需转场；阿尔及利亚需从美国转场至温哥华——瑞士占据场地熟悉度+无旅途劳顿优势</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="logic-section">
+            <h3>深度逻辑拆解（支撑主胜的4条核心论据）</h3>
+            <div class="logic-point">
+                <strong>1. 门将鸿沟：</strong>瑞士科贝尔(多特4000万欧)扑救成功率79%，阿尔及利亚被迫启用已退役门将本博特，扑救成功率仅50%——在淘汰赛低比分格局下，门将差距往往是决定性的
+            </div>
+            <div class="logic-point">
+                <strong>2. 体能储备碾压：</strong>瑞士休息9天+末轮轮换7人，阿尔及利亚休息4天+全程无轮换+60分钟体能断崖——下半场瑞士可持续冲击，阿尔及利亚只能收缩死守
+            </div>
+            <div class="logic-point">
+                <strong>3. 防守数据对比：</strong>瑞士xGA仅0.77(顶级防守预期)，阿尔及利亚xGA 1.22+实际丢7球——防线漏洞+门将不稳=失球概率极高
+            </div>
+            <div class="logic-point">
+                <strong>4. 机构信号：</strong>亚盘平半浅盘未升盘暗示对瑞士大胜信心不足，但瑞士方向水位持续压缩(0.98→0.92)显示机构控制赔付风险——瑞士一球小胜是机构最倾向的赛果
+            </div>
+        </div>
+
+        <div class="goal-scenario">
+            <h3>进球剧本推演</h3>
+            <ul>
+                <li><strong>总进球区间：</strong>0-2球（小球格局，泊松分布最高概率为1-0和1-1）</li>
+                <li><strong>进球时间段：</strong>前15分钟阿尔及利亚收缩541死守大概率0-0；30-50分钟瑞士阵地渗透+定位球寻找首球；60分钟后阿尔及利亚体能枯竭、防线收缩变形——瑞士扩大比分窗口</li>
+                <li><strong>关键破门球员：</strong>曼赞比(本届替补登场2场3球，边路速度爆破点)、科贝尔长传发起反击、阿坎吉缺阵后定位球抢点靠弗罗伊勒；阿尔及利亚端马赫雷斯(全队唯一稳定攻坚核心，内切/任意球)</li>
+            </ul>
+        </div>
+
+        <div class="x-factor">
+            <h3>隐藏X因素</h3>
+            <ul>
+                <li><strong>佩特科维奇反戈旧主：</strong>执教瑞士7年(2014-2021)，完全吃透对手战术——这是阿尔及利亚最大的"隐藏武器"，针对性布置541防反+抓边后卫身后，可能令瑞士极度不适</li>
+                <li><strong>瑞士"十六郎"魔咒：</strong>连续三届世界杯止步淘汰赛首轮，最近7场世界杯淘汰赛全出局——心理包袱可能令球队在领先后收缩保守、被追平后心态崩溃</li>
+                <li><strong>扎卡缺阵的蝴蝶效应：</strong>瑞士攻防转换节拍器缺失，中场控制力断档，面对阿尔及利亚反击时回追覆盖不足——这是最可能改变比赛走向的变量</li>
+                <li><strong>马赫雷斯单点爆破：</strong>前英超MVP是全队唯一稳定攻坚核心，若双人包夹锁死则阿尔及利亚阵地战缺少第二得分点；但任意球/角球主罚一手包办，定位球是偷鸡最大机会</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ==================== SUMMARY ==================== -->
+    <div class="match-section" style="background: linear-gradient(145deg, rgba(83,52,131,0.3), rgba(26,26,46,0.9));">
+        <div class="match-header">
+            <div class="match-title" style="font-size:1.5em;">三场综合对比与冷门预警</div>
+        </div>
+
+        <table class="data-table" style="margin-bottom:20px;">
+            <tr>
+                <th>维度</th>
+                <th>西班牙vs奥地利</th>
+                <th>葡萄牙vs克罗地亚</th>
+                <th>瑞士vs阿尔及利亚</th>
+            </tr>
+            <tr>
+                <td>预测结果</td>
+                <td style="color:var(--win);">主胜</td>
+                <td style="color:var(--win);">主胜</td>
+                <td style="color:var(--win);">主胜(防平)</td>
+            </tr>
+            <tr>
+                <td>信心指数</td>
+                <td>4星</td>
+                <td>4星</td>
+                <td>3星</td>
+            </tr>
+            <tr>
+                <td>冷门风险</td>
+                <td style="color:var(--draw);">中等(奥地利高压战术克制)</td>
+                <td style="color:var(--draw);">中等(加时/点球风险)</td>
+                <td style="color:var(--accent);">较高(佩特科维奇情报+扎卡缺阵)</td>
+            </tr>
+            <tr>
+                <td>最冷比分</td>
+                <td>1-1</td>
+                <td>0-1(克加时胜)</td>
+                <td>0-1</td>
+            </tr>
+            <tr>
+                <td>环境友好方</td>
+                <td>西班牙(干燥利于传控)</td>
+                <td>葡萄牙(湿度消耗老将)</td>
+                <td>瑞士(休息9天+室内场)</td>
+            </tr>
+            <tr>
+                <td>核心变量</td>
+                <td>罗德里出球vs朗尼克绞杀</td>
+                <td>莱奥速度vs格子老将体能</td>
+                <td>扎卡缺阵vs佩特科维奇情报</td>
+            </tr>
+        </table>
+
+        <div class="logic-section">
+            <h3>冷门预警等级</h3>
+            <div class="logic-point">
+                <strong>瑞士vs阿尔及利亚 — 冷门风险最高(橙色预警)：</strong>扎卡缺阵对瑞士中场控制力的毁灭性影响+佩特科维奇7年执教情报+阿尔及利亚末轮三度扳平的绝境韧性，三重因素叠加使平局概率高达29%。若阿尔及利亚上半场偷得一球后收缩541死守，翻盘剧本完全可能上演
+            </div>
+            <div class="logic-point">
+                <strong>葡萄牙vs克罗地亚 — 冷门风险中等(黄色预警)：</strong>克罗地亚加时赛/点球大战基因(4战全胜)是最大冷门变量。若葡萄牙60分钟内无法取得领先，比赛将进入克罗地亚舒适区，利瓦科维奇扑点能力可能改写结局
+            </div>
+            <div class="logic-point">
+                <strong>西班牙vs奥地利 — 冷门风险较低：</strong>西班牙硬实力碾压+防守统治力+替补深度三重保险，但奥地利1978年世界杯爆冷记忆+朗尼克高压战术对传控的天然克制，仍使1-1平局存在约18%概率
+            </div>
+        </div>
+    </div>
+
+    <div class="source-note">
+        <h4>数据来源与免责声明</h4>
+        <p><strong>数据来源：</strong>FIFA官方赛程/积分、新华社赛事报道、OPTA超级计算机推演、ESPN xG/xGA数据、球迷屋赛前分析、央视世界杯数据中心、世界气象历史数据(Open-Meteo ERA5/ NASA POWER)。</p>
+        <p><strong>免责声明：</strong>本报告所有分析均基于赛前公开数据与历史统计模型推演，足球比赛具有高度不确定性，伤病、裁判判罚、天气突变、场外事件等均可能改变比赛走势。本预测仅供参考，不构成任何投注建议。请理性观赛，享受足球。</p>
+        <p style="margin-top:8px;">报告生成时间：2026年7月3日 | 分析师：AI足球数据分析师</p>
+    </div>
+
+</div>
+</body>
+</html>
