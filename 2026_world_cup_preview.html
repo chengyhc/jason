@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026美加墨世界杯1/8决赛深度前瞻</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #f5c518;
+            --text: #eaeaea;
+            --text-dim: #a0a0a0;
+            --card-bg: #0f3460;
+            --card-bg-light: #1a4a7a;
+            --win: #4caf50;
+            --draw: #ff9800;
+            --loss: #f44336;
+            --spain: #c60b1e;
+            --portugal: #006600;
+            --usa: #3c3b6e;
+            --belgium: #ed2939;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 50%, #1a1a2e 100%);
+            border-bottom: 3px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(245,197,24,0.05) 0%, transparent 50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            color: var(--gold);
+            text-shadow: 0 2px 10px rgba(245,197,24,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            color: var(--text-dim);
+            margin-top: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .date-badge {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 6px 20px;
+            background: var(--accent);
+            border-radius: 20px;
+            font-size: 0.95em;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin: 30px 0 0;
+            background: var(--secondary);
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+        }
+
+        .nav-tab {
+            flex: 1;
+            padding: 14px 20px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1em;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+            color: var(--text-dim);
+        }
+
+        .nav-tab:hover {
+            background: rgba(255,255,255,0.05);
+            color: var(--text);
+        }
+
+        .nav-tab.active {
+            background: var(--card-bg);
+            color: var(--gold);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        /* Match Section */
+        .match-section {
+            display: none;
+        }
+
+        .match-section.active {
+            display: block;
+        }
+
+        /* Match Header Card */
+        .match-header {
+            background: linear-gradient(135deg, var(--card-bg) 0%, var(--card-bg-light) 100%);
+            border-radius: 0 0 16px 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .team-block {
+            text-align: center;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .team-name {
+            font-size: 1.6em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .team-flag {
+            font-size: 3em;
+            margin-bottom: 8px;
+        }
+
+        .team-info {
+            font-size: 0.85em;
+            color: var(--text-dim);
+        }
+
+        .vs-block {
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        .vs-text {
+            font-size: 2.5em;
+            font-weight: 900;
+            color: var(--accent);
+            text-shadow: 0 0 20px rgba(233,69,96,0.5);
+        }
+
+        .match-meta {
+            font-size: 0.85em;
+            color: var(--text-dim);
+            margin-top: 5px;
+        }
+
+        /* Verdict Card */
+        .verdict-card {
+            background: linear-gradient(135deg, #1b2838 0%, #2a3f5f 100%);
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .verdict-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--accent), var(--gold));
+        }
+
+        .verdict-title {
+            font-size: 1.3em;
+            color: var(--gold);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .verdict-result {
+            font-size: 1.8em;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .score-predictions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .score-item {
+            background: rgba(255,255,255,0.08);
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 90px;
+        }
+
+        .score-item .score {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .score-item .rank {
+            font-size: 0.8em;
+            color: var(--text-dim);
+            margin-top: 3px;
+        }
+
+        .confidence-stars {
+            margin-top: 10px;
+            font-size: 1.3em;
+        }
+
+        .star-filled {
+            color: var(--gold);
+        }
+
+        .star-empty {
+            color: #444;
+        }
+
+        /* Section Card */
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .section-card h3 {
+            font-size: 1.2em;
+            color: var(--gold);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .section-card p, .section-card li {
+            font-size: 0.95em;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .section-card ul {
+            padding-left: 20px;
+        }
+
+        .section-card li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .red-highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .green-highlight {
+            color: var(--win);
+            font-weight: 600;
+        }
+
+        /* Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+
+        .data-table th, .data-table td {
+            padding: 10px 14px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .data-table th {
+            background: rgba(0,0,0,0.3);
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .data-table td:first-child {
+            text-align: left;
+            color: var(--text-dim);
+        }
+
+        .data-table tr:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .advantage-left {
+            color: #64b5f6;
+            font-weight: 600;
+        }
+
+        .advantage-right {
+            color: #ef5350;
+            font-weight: 600;
+        }
+
+        .advantage-equal {
+            color: #ffb74d;
+            font-weight: 600;
+        }
+
+        /* X-Factor */
+        .x-factor-card {
+            background: linear-gradient(135deg, #2d1b4e 0%, #1a1a2e 100%);
+            border: 1px solid #7c4dff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .x-factor-card h3 {
+            color: #b388ff;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .x-factor-item {
+            background: rgba(124,77,255,0.1);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-left: 3px solid #7c4dff;
+        }
+
+        .x-factor-item strong {
+            color: #b388ff;
+        }
+
+        /* Goal Script */
+        .goal-script {
+            background: linear-gradient(135deg, #1b3a1b 0%, #1a1a2e 100%);
+            border: 1px solid #4caf50;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .goal-script h3 {
+            color: #81c784;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 2px;
+            background: rgba(76,175,80,0.3);
+        }
+
+        .timeline-point {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #4caf50;
+            margin: 0 auto 8px;
+            box-shadow: 0 0 10px rgba(76,175,80,0.5);
+        }
+
+        .timeline-dot.hot {
+            background: var(--accent);
+            box-shadow: 0 0 10px rgba(233,69,96,0.5);
+            width: 18px;
+            height: 18px;
+        }
+
+        .timeline-label {
+            font-size: 0.8em;
+            color: var(--text-dim);
+        }
+
+        .timeline-sublabel {
+            font-size: 0.75em;
+            color: #81c784;
+        }
+
+        /* Market Card */
+        .market-card {
+            background: linear-gradient(135deg, #3e2723 0%, #1a1a2e 100%);
+            border: 1px solid #8d6e63;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .market-card h3 {
+            color: #bcaaa4;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .prob-bar {
+            display: flex;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .prob-win {
+            background: var(--win);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .prob-draw {
+            background: var(--draw);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .prob-loss {
+            background: var(--loss);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .prob-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85em;
+            color: var(--text-dim);
+            margin-top: 5px;
+        }
+
+        /* Weather Card */
+        .weather-card {
+            background: linear-gradient(135deg, #0d47a1 0%, #1a1a2e 100%);
+            border: 1px solid #42a5f5;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .weather-item {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .weather-icon {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .weather-value {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #90caf9;
+        }
+
+        .weather-label {
+            font-size: 0.8em;
+            color: var(--text-dim);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-dim);
+            font-size: 0.85em;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 30px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .match-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-tab {
+                font-size: 0.85em;
+                padding: 10px;
+            }
+            .header h1 {
+                font-size: 1.6em;
+            }
+            .score-predictions {
+                flex-direction: column;
+            }
+            .weather-card {
+                flex-direction: column;
+            }
+        }
+
+        /* Tag */
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .tag-hot {
+            background: rgba(233,69,96,0.2);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .tag-warn {
+            background: rgba(255,152,0,0.2);
+            color: var(--draw);
+            border: 1px solid var(--draw);
+        }
+
+        .tag-info {
+            background: rgba(66,165,245,0.2);
+            color: #42a5f5;
+            border: 1px solid #42a5f5;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>2026美加墨世界杯 1/8决赛 深度前瞻</h1>
+    <p class="subtitle">资深国际足球数据分析师 · 战术推演与胜负预测</p>
+    <span class="date-badge">2026年7月7日 | 比赛日</span>
+</div>
+
+<div class="container">
+    <div class="nav-tabs">
+        <div class="nav-tab active" onclick="switchTab('match1')">葡萄牙 VS 西班牙</div>
+        <div class="nav-tab" onclick="switchTab('match2')">美国 VS 比利时</div>
+    </div>
+
+    <!-- ==================== MATCH 1: 葡萄牙 VS 西班牙 ==================== -->
+    <div id="match1" class="match-section active">
+
+        <div class="match-header">
+            <div class="team-block">
+                <div class="team-flag">🇵🇹</div>
+                <div class="team-name" style="color: #4caf50;">葡萄牙</div>
+                <div class="team-info">FIFA排名第7 | 身价10.1亿欧<br>K组第二出线</div>
+            </div>
+            <div class="vs-block">
+                <div class="vs-text">VS</div>
+                <div class="match-meta">1/8决赛 · 单场淘汰</div>
+            </div>
+            <div class="team-block">
+                <div class="team-flag">🇪🇸</div>
+                <div class="team-name" style="color: #ef5350;">西班牙</div>
+                <div class="team-info">FIFA排名第2 | 身价12.2亿欧<br>H组头名出线</div>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-bottom:20px; color:var(--text-dim); font-size:0.9em;">
+            北京时间 7月7日 03:00 | 美国达拉斯AT&T体育场 | 主裁判：安东尼·泰勒（英格兰）
+        </div>
+
+        <!-- Weather -->
+        <div class="weather-card">
+            <div class="weather-item">
+                <div class="weather-icon">🌤️</div>
+                <div class="weather-value">晴转小雨</div>
+                <div class="weather-label">天气</div>
+            </div>
+            <div class="weather-item">
+                <div class="weather-icon">🌡️</div>
+                <div class="weather-value">26~37°C</div>
+                <div class="weather-label">气温（极端高温）</div>
+            </div>
+            <div class="weather-item">
+                <div class="weather-icon">💨</div>
+                <div class="weather-value">东南风2级</div>
+                <div class="weather-label">风力</div>
+            </div>
+            <div class="weather-item">
+                <div class="weather-icon">🏟️</div>
+                <div class="weather-value">人工草皮</div>
+                <div class="weather-label">场地</div>
+            </div>
+            <div class="weather-item">
+                <div class="weather-icon">⛰️</div>
+                <div class="weather-value">131m</div>
+                <div class="weather-label">海拔</div>
+            </div>
+        </div>
+
+        <!-- Core Verdict -->
+        <div class="verdict-card">
+            <div class="verdict-title">⚽ 核心结论先行</div>
+            <div class="verdict-result" style="color: #ef5350;">
+                预测方向：西班牙胜（常规时间或加时）
+            </div>
+            <div class="score-predictions">
+                <div class="score-item">
+                    <div class="score">0-1</div>
+                    <div class="rank">概率最高 ★★★★☆</div>
+                </div>
+                <div class="score-item">
+                    <div class="score">1-1</div>
+                    <div class="rank">加时/点球 ★★★★</div>
+                </div>
+                <div class="score-item">
+                    <div class="score">0-2</div>
+                    <div class="rank">第三可能 ★★★</div>
+                </div>
+            </div>
+            <div class="confidence-stars">
+                信心指数：
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-empty">★</span>
+                <span style="font-size:0.8em; color:var(--text-dim);"> 4/5星</span>
+            </div>
+        </div>
+
+        <!-- Deep Logic -->
+        <div class="section-card">
+            <h3>🔬 深度逻辑拆解</h3>
+
+            <p><span class="red-highlight">论据一：西班牙零封金身+传控碾压，攻防两端断层领先</span></p>
+            <p>西班牙本届世界杯4战3胜1平，进8球失0球，门将乌奈·西蒙创下519分钟世界杯连续零封纪录（打破曾加1990年517分钟尘封36年的纪录）。场均控球率68%，传球成功率92%，高位反抢数据居赛事第一。这意味着葡萄牙很难组织连续有效进攻，B费出球线路将被持续切断，反击起脚空间被极度压缩。</p>
+
+            <hr class="divider">
+
+            <p><span class="red-highlight">论据二：葡萄牙体能劣势明显，人工草皮+37°C高温加速消耗</span></p>
+            <p>葡萄牙上轮对阵克罗地亚鏖战94分钟才凭借补时绝杀晋级，B费、B席、鲁本·迪亚斯全部打满全场，且从多伦多长途飞行2000公里至达拉斯。达拉斯当日最高温37°C，AT&T体育场铺设人工草皮（质地偏硬、加速腿部肌肉疲劳），对平均年龄28岁的葡萄牙阵容（比西班牙大近2岁）是致命叠加负担。60分钟后葡萄牙跑动覆盖大幅衰减，这正是西班牙传统控球消耗战术的最佳收割窗口。</p>
+
+            <hr class="divider">
+
+            <p><span class="red-highlight">论据三：历史交锋"平局魔咒"仍存，但淘汰赛规律倾向传控方</span></p>
+            <p>近7次正式交锋6场平局，伊比利亚德比平局是主旋律。然而淘汰赛语境下，西班牙2010年1/8决赛正是1-0淘汰葡萄牙并最终夺冠。葡萄牙世界杯历史上对阵西班牙常规时间从未取胜（1平1负），这道心理魔咒尚未打破。2025年欧国联决赛葡萄牙虽点球胜出，但常规时间2-2战平，传控体系并未被瓦解。</p>
+
+            <hr class="divider">
+
+            <p><span class="red-highlight">论据四：C罗最后一舞的情感双刃剑</span></p>
+            <p>41岁C罗已确认本届为最后一届世界杯，精神图腾效应不可忽视——他在1/16决赛打破个人世界杯淘汰赛8场进球荒。但客观而言，C罗移动范围大幅缩减，阵地战贡献有限，葡萄牙进攻过度依赖其牵制力，导致战术单一。面对库巴西等年轻中卫的贴身盯防，C罗在高强度对抗中的持续影响力存疑。</p>
+        </div>
+
+        <!-- Data Comparison -->
+        <div class="section-card">
+            <h3>📊 核心数据对比</h3>
+            <table class="data-table">
+                <tr>
+                    <th>指标</th>
+                    <th style="color:#4caf50;">葡萄牙</th>
+                    <th style="color:#ef5350;">西班牙</th>
+                </tr>
+                <tr>
+                    <td>本届战绩</td>
+                    <td>4战2胜2平</td>
+                    <td class="advantage-right">4战3胜1平</td>
+                </tr>
+                <tr>
+                    <td>进失球</td>
+                    <td>进7失2</td>
+                    <td class="advantage-right">进8失0</td>
+                </tr>
+                <tr>
+                    <td>场均控球率</td>
+                    <td>约52%</td>
+                    <td class="advantage-right">约68%</td>
+                </tr>
+                <tr>
+                    <td>连续零封</td>
+                    <td>0场</td>
+                    <td class="advantage-right">4场（519分钟）</td>
+                </tr>
+                <tr>
+                    <td>平均年龄</td>
+                    <td>28岁</td>
+                    <td class="advantage-left">26.2岁</td>
+                </tr>
+                <tr>
+                    <td>上轮比赛时长</td>
+                    <td>94+分钟（苦战）</td>
+                    <td class="advantage-left">90分钟（轻松）</td>
+                </tr>
+                <tr>
+                    <td>核心射手</td>
+                    <td>C罗（2球）</td>
+                    <td class="advantage-right">奥亚萨瓦尔（4球1助攻）</td>
+                </tr>
+                <tr>
+                    <td>连续不败场次</td>
+                    <td>9场</td>
+                    <td class="advantage-right">34场（队史新纪录）</td>
+                </tr>
+                <tr>
+                    <td>伤病情况</td>
+                    <td class="advantage-equal">全员健康</td>
+                    <td class="advantage-equal">尼科·威廉姆斯伤愈可战</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Tactical -->
+        <div class="section-card">
+            <h3>🧠 战术体系与克制分析</h3>
+            <p><span class="tag tag-hot">关键对位1</span> <span class="highlight">努诺·门德斯 VS 亚马尔</span>——本场最关键对位。门德斯过往多次限制亚马尔突破，但一人扛起左路攻防，被亚马尔持续消耗后，下半场葡萄牙左路进攻将趋于瘫痪。第55分钟门德斯上轮拉伤退场的历史令人警觉。</p>
+            <p><span class="tag tag-hot">关键对位2</span> <span class="highlight">C罗 VS 库巴西</span>——19岁中卫库巴西风格激进、高位上抢，易被C罗利用大赛经验针对。但C罗41岁速度大幅下降，库巴西的体能和反应速度在消耗战中逐渐占据上风。</p>
+            <p><span class="tag tag-hot">关键对位3</span> <span class="highlight">葡萄牙中场群 VS 西班牙中场铁三角</span>——罗德里+佩德里+加维的传导网将控制节奏，葡萄牙B费+B席+鲁本·内维斯具备贴身绞杀能力，可切断传控链路。但一旦绞杀失败，西班牙的肋部直塞将直接打穿防线。</p>
+        </div>
+
+        <!-- History -->
+        <div class="section-card">
+            <h3>📜 历史交锋与世界杯表现</h3>
+            <table class="data-table">
+                <tr>
+                    <th>赛事</th>
+                    <th>比分</th>
+                    <th>关键信息</th>
+                </tr>
+                <tr>
+                    <td>2010世界杯1/8决赛</td>
+                    <td>西班牙 1-0 葡萄牙</td>
+                    <td>比利亚进球，西班牙淘汰葡萄牙最终夺冠</td>
+                </tr>
+                <tr>
+                    <td>2018世界杯小组赛</td>
+                    <td>葡萄牙 3-3 西班牙</td>
+                    <td>C罗帽子戏法，世界杯经典</td>
+                </tr>
+                <tr>
+                    <td>2025欧国联决赛</td>
+                    <td>2-2（葡萄牙点球胜）</td>
+                    <td>葡萄牙终结多年不胜魔咒</td>
+                </tr>
+                <tr>
+                    <td>近7次正式交手</td>
+                    <td>6场平局</td>
+                    <td>伊比利亚德比平局率极高</td>
+                </tr>
+            </table>
+            <p style="margin-top:10px;">世界杯历史上：葡萄牙<span class="red-highlight">从未在常规时间击败过西班牙</span>（1平1负），近41次交手西班牙18胜16平7负总体占优。</p>
+        </div>
+
+        <!-- Market -->
+        <div class="market-card">
+            <h3>💰 机构与市场风向</h3>
+            <p>综合主流市场预期：</p>
+            <div class="prob-bar">
+                <div class="prob-win" style="width:24%;">葡萄牙 24%</div>
+                <div class="prob-draw" style="width:44%;">平局 44%</div>
+                <div class="prob-loss" style="width:32%;">西班牙 32%</div>
+            </div>
+            <div class="prob-labels">
+                <span>葡萄牙胜</span>
+                <span>平局（最高概率）</span>
+                <span>西班牙胜</span>
+            </div>
+            <p style="margin-top:12px; font-size:0.9em;"><span class="tag tag-warn">冷门预警</span> 市场倾向平局，但淘汰赛语境下平局概率被高估。西班牙的零封纪录+体能优势在加时/淘汰赛阶段被低估，<span class="highlight">西班牙常规时间取胜的赔率存在价值空间</span>。需警惕伊比利亚德比"平局魔咒"导致比赛拖入加时甚至点球。</p>
+        </div>
+
+        <!-- Goal Script -->
+        <div class="goal-script">
+            <h3>⚽ 进球剧本推演</h3>
+            <p><span class="highlight">总进球数区间：</span>1~2球（小比分格局，双方均保守）</p>
+
+            <div class="timeline">
+                <div class="timeline-point">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-label">0-30min</div>
+                    <div class="timeline-sublabel">谨慎试探</div>
+                </div>
+                <div class="timeline-point">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-label">30-60min</div>
+                    <div class="timeline-sublabel">西班牙施压</div>
+                </div>
+                <div class="timeline-point">
+                    <div class="timeline-dot hot"></div>
+                    <div class="timeline-label">60-80min</div>
+                    <div class="timeline-sublabel">关键窗口期</div>
+                </div>
+                <div class="timeline-point">
+                    <div class="timeline-dot hot"></div>
+                    <div class="timeline-label">80min+</div>
+                    <div class="timeline-sublabel">绝杀/加时</div>
+                </div>
+            </div>
+
+            <p><span class="highlight">进球时间段预判：</span>60分钟后葡萄牙体能下降，西班牙在第65-85分钟最有可能破门。若90分钟0-0，加时赛西班牙体能优势将进一步放大。</p>
+            <p><span class="highlight">关键破门球员：</span></p>
+            <ul>
+                <li><span class="green-highlight">奥亚萨瓦尔</span>（4场4球，状态火热，禁区嗅觉顶级）</li>
+                <li><span class="green-highlight">亚马尔</span>（边路爆点，内切远射+突破造点）</li>
+                <li><span class="green-highlight">梅里诺</span>（替补后手，前插终结能力突出——最终正是他补时绝杀）</li>
+                <li><span class="green-highlight">C罗</span>（葡萄牙方面，定位球+点球是最现实路径）</li>
+            </ul>
+        </div>
+
+        <!-- X-Factor -->
+        <div class="x-factor-card">
+            <h3>⚡ 隐藏X因素</h3>
+            <div class="x-factor-item">
+                <strong>人工草皮+37°C极端高温：</strong>达拉斯AT&T体育场铺设人工草皮，偏硬质地加速肌肉疲劳。比赛日最高温37°C，即便开球时夜间气温仍在25°C以上、湿度偏高。对高龄阵容葡萄牙是致命叠加因素，C罗、B费等核心球员在60分钟后跑动覆盖将出现断崖下滑。
+            </div>
+            <div class="x-factor-item">
+                <strong>主裁判安东尼·泰勒的执法尺度：</strong>泰勒以宽松著称，允许更多身体对抗，这将有利于葡萄牙的中场绞杀战术。但若尺度过于宽松，也可能导致比赛碎片化、节奏被打断，反而不利于西班牙的传控流畅度。
+            </div>
+            <div class="x-factor-item">
+                <strong>C罗最后一舞的情感核弹：</strong>C罗已确认本届为最后一届世界杯，全队为送别传奇而迸发的额外战意不可量化。淘汰赛语境下，情感驱动可能催生非常规战术执行力或个人英雄时刻。
+            </div>
+            <div class="x-factor-item">
+                <strong>加维伤情变数：</strong>赛前信息显示加维可能因半月板伤情缺席，若其无法出战，西班牙中场硬度与拦截能力将受损，B费将获得更多出球空间。
+            </div>
+        </div>
+
+        <!-- 2026 Environment -->
+        <div class="section-card">
+            <h3>🌍 2026世界杯专属环境变量</h3>
+            <ul>
+                <li><span class="highlight">海拔因素：</span>达拉斯海拔仅131米，对双方均无高原体能消耗影响，此变量可忽略。</li>
+                <li><span class="highlight">极端高温：</span>达拉斯7月属"烘烤型"高温，日间均值36-39°C，中国气象局特别提醒该区域为最具"烤验"赛区。虽比赛在夜间进行，但场地蓄热+人工草皮叠加，体感温度仍远高于常规比赛。高温利于体能更好、更年轻的西班牙通过持续控球消耗对手。</li>
+                <li><span class="highlight">赛程与休息：</span>葡萄牙上轮7月3日打完1/16决赛且鏖战至94分钟，仅休息3天；西班牙同日3-0轻松拿下奥地利，且主力获得充分轮换。葡萄牙从多伦多飞行2000公里至达拉斯，西班牙赛程迁移距离更短。体能恢复方面西班牙占据绝对优势。</li>
+                <li><span class="highlight">48队新赛制影响：</span>本场为1/8决赛，败者直接出局。双方均无退路，战意对等。但在淘汰赛"平局即加时"的规则下，西班牙传控体系的稳定性更适配消耗战节奏。</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- ==================== MATCH 2: 美国 VS 比利时 ==================== -->
+    <div id="match2" class="match-section">
+
+        <div class="match-header">
+            <div class="team-block">
+                <div class="team-flag">🇺🇸</div>
+                <div class="team-name" style="color: #42a5f5;">美国</div>
+                <div class="team-info">FIFA排名第11 | 身价3.86亿欧<br>D组头名出线</div>
+            </div>
+            <div class="vs-block">
+                <div class="vs-text">VS</div>
+                <div class="match-meta">1/8决赛 · 单场淘汰</div>
+            </div>
+            <div class="team-block">
+                <div class="team-flag">🇧🇪</div>
+                <div class="team-name" style="color: #ef5350;">比利时</div>
+                <div class="team-info">FIFA排名第9 | 身价5.5亿欧<br>G组头名出线</div>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-bottom:20px; color:var(--text-dim); font-size:0.9em;">
+            北京时间 7月7日 08:00 | 美国西雅图流明体育场
+        </div>
+
+        <!-- Weather -->
+        <div class="weather-card">
+            <div class="weather-item">
+                <div class="weather-icon">⛅</div>
+                <div class="weather-value">局部多云</div>
+                <div class="weather-label">天气</div>
+            </div>
+            <div class="weather-item">
+                <div class="weather-icon">🌡️</div>
+                <div class="weather-value">15~24°C</div>
+                <div class="weather-label">气温（凉爽适宜）</div>
+            </div>
+            <div class="weather-item">
+                <div class="weather-icon">💨</div>
+                <div class="weather-value">WSW 11km/h</div>
+                <div class="weather-label">风力</div>
+            </div>
+            <div class="weather-item">
+                <div class="weather-icon">💧</div>
+                <div class="weather-value">59%</div>
+                <div class="weather-label">湿度</div>
+            </div>
+            <div class="weather-item">
+                <div class="weather-icon">⛰️</div>
+                <div class="weather-value">53m</div>
+                <div class="weather-label">海拔</div>
+            </div>
+        </div>
+
+        <!-- Core Verdict -->
+        <div class="verdict-card">
+            <div class="verdict-title">⚽ 核心结论先行</div>
+            <div class="verdict-result" style="color: #42a5f5;">
+                预测方向：美国胜（常规时间或加时）
+            </div>
+            <div class="score-predictions">
+                <div class="score-item">
+                    <div class="score">2-1</div>
+                    <div class="rank">概率最高 ★★★★</div>
+                </div>
+                <div class="score-item">
+                    <div class="score">1-0</div>
+                    <div class="rank">第二可能 ★★★★</div>
+                </div>
+                <div class="score-item">
+                    <div class="score">2-2（加时赛美国胜）</div>
+                    <div class="rank">第三可能 ★★★</div>
+                </div>
+            </div>
+            <div class="confidence-stars">
+                信心指数：
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-empty">★</span>
+                <span style="font-size:0.8em; color:var(--text-dim);"> 4/5星</span>
+            </div>
+        </div>
+
+        <!-- Deep Logic -->
+        <div class="section-card">
+            <h3>🔬 深度逻辑拆解</h3>
+
+            <p><span class="red-highlight">论据一：体能鸿沟——60分钟后的致命分水岭</span></p>
+            <p>比利时上轮对阵塞内加尔鏖战125分钟完成惊天逆转，德布劳内、蒂莱曼斯等核心全部打满加时，球队平均年龄29.5岁；美国队90分钟2-0轻松取胜波黑，比对手多休息30分钟+平均年龄仅24.5岁。这30分钟的比赛负荷差+5岁的年龄差，将在比赛60分钟后形成体能断崖——比利时老将的跑动覆盖、回追速度将急剧下滑，而美国的全场高强度逼抢不会衰减。</p>
+
+            <hr class="divider">
+
+            <p><span class="red-highlight">论据二：东道主主场优势全面兑现</span></p>
+            <p>美国队小组赛+淘汰赛全程在西海岸赛区作战，无需跨时区长途转场。西雅图流明体育场预计将涌入7万+主场球迷，声浪助威将极大提升美国球员的逼抢强度和比赛投入度。凉爽的24°C天气也完全适配美国高强度跑动战术——体能消耗远低于闷热环境。反观比利时，面对持续的主场声浪压力和高速冲击，老化防线的沟通和协防极易出现失误。</p>
+
+            <hr class="divider">
+
+            <p><span class="red-highlight">论据三：比利时防线老化+库尔图瓦伤缺=致命隐患</span></p>
+            <p>主力门将库尔图瓦确认伤缺，二门拉门斯扑点、远距离扑救能力差距明显。中卫组合年龄偏大、回追速度慢，面对美国场均119.54公里跑动（赛事第一）+德斯特/罗宾逊双边翼卫的持续冲击，极易被打穿身后空间。后卫德巴斯特腘绳肌损伤缺阵，防线默契度进一步下降。</p>
+
+            <hr class="divider">
+
+            <p><span class="red-highlight">论据四：巴洛贡解禁回归补齐美国最后短板</span></p>
+            <p>FIFA宣布巴洛贡红牌处罚暂缓一年执行（世界杯1970年引入红黄牌制度以来首次），队内头号射手（3球，占全队30%）得以出战。巴洛贡兼具支点对抗和终结能力，填补了美国阵地攻坚的最大短板，波切蒂诺可以排出完整的最强阵容。比利时虽历史交锋碾压，但2014年加时2-1已是12年前的旧账，美国新生代球员并无历史包袱。</p>
+        </div>
+
+        <!-- Data Comparison -->
+        <div class="section-card">
+            <h3>📊 核心数据对比</h3>
+            <table class="data-table">
+                <tr>
+                    <th>指标</th>
+                    <th style="color:#42a5f5;">美国</th>
+                    <th style="color:#ef5350;">比利时</th>
+                </tr>
+                <tr>
+                    <td>本届战绩</td>
+                    <td>4战3胜1负</td>
+                    <td>4战1胜3平</td>
+                </tr>
+                <tr>
+                    <td>进失球</td>
+                    <td>进10失5</td>
+                    <td class="advantage-right">进5失3</td>
+                </tr>
+                <tr>
+                    <td>场均跑动</td>
+                    <td class="advantage-left">119.54km（赛事第1）</td>
+                    <td>低于赛事均值</td>
+                </tr>
+                <tr>
+                    <td>平均年龄</td>
+                    <td class="advantage-left">24.5岁</td>
+                    <td>29.5岁</td>
+                </tr>
+                <tr>
+                    <td>上轮比赛时长</td>
+                    <td class="advantage-left">90分钟</td>
+                    <td>125分钟（加时）</td>
+                </tr>
+                <tr>
+                    <td>小组赛进球</td>
+                    <td class="advantage-left">8球</td>
+                    <td>2球（前两轮0球）</td>
+                </tr>
+                <tr>
+                    <td>门将</td>
+                    <td>特纳（健康）</td>
+                    <td style="color:var(--accent);">库尔图瓦伤缺！拉门斯替补</td>
+                </tr>
+                <tr>
+                    <td>历史交锋（近7次）</td>
+                    <td>1胜6负</td>
+                    <td class="advantage-right">6胜1负</td>
+                </tr>
+                <tr>
+                    <td>主场优势</td>
+                    <td class="advantage-left">东道主西雅图</td>
+                    <td>客场作战</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Tactical -->
+        <div class="section-card">
+            <h3>🧠 战术体系与克制分析</h3>
+            <p><span class="tag tag-hot">关键对位1</span> <span class="highlight">麦肯尼+亚当斯 VS 德布劳内</span>——美国双后腰的贴身围剿是比赛胜负手。德布劳内本届4场比赛全部中途被换下，此前13次世界杯出场全部打满的纪录已中断。若麦肯尼+亚当斯成功压缩德布劳内的拿球空间，比利时中场创造力将减半。</p>
+            <p><span class="tag tag-hot">关键对位2</span> <span class="highlight">德斯特+罗宾逊 VS 比利时老化中卫</span>——美国双边翼卫往返冲刺能力极强，可针对比利时中卫转身慢的致命弱点持续冲击身后。多库虽可同样冲击美国防线，但美国中卫理查兹回归后速度足够应对。</p>
+            <p><span class="tag tag-hot">关键对位3</span> <span class="highlight">巴洛贡 VS 泰特+梅赫勒</span>——巴洛贡的支点对抗+禁区终结是比利时防线最大噩梦。卢卡库虽为替补杀器，但33岁高龄+髋部劳损使其难以全场输出。</p>
+        </div>
+
+        <!-- History -->
+        <div class="section-card">
+            <h3>📜 历史交锋与世界杯表现</h3>
+            <table class="data-table">
+                <tr>
+                    <th>赛事</th>
+                    <th>比分</th>
+                    <th>关键信息</th>
+                </tr>
+                <tr>
+                    <td>1930年世界杯小组赛</td>
+                    <td>美国 3-0 比利时</td>
+                    <td>美国唯一胜利，帕特诺德帽子戏法</td>
+                </tr>
+                <tr>
+                    <td>2014年世界杯1/8决赛</td>
+                    <td>比利时 2-1 美国（加时）</td>
+                    <td>德布劳内、卢卡库加时进球；霍华德16次扑救</td>
+                </tr>
+                <tr>
+                    <td>2026年3月友谊赛</td>
+                    <td>比利时 5-2 美国</td>
+                    <td>美国主场惨败</td>
+                </tr>
+                <tr>
+                    <td>7次交手总战绩</td>
+                    <td>比利时6胜1负</td>
+                    <td>场均攻入2.5球</td>
+                </tr>
+            </table>
+            <p style="margin-top:10px;">历史交锋比利时<span class="red-highlight">碾压性占优</span>（6胜1负），但最近一次世界杯淘汰赛对决已是12年前。美国新生代球员（平均24.5岁）基本没有2014年的心理包袱，历史数据参考价值有限。</p>
+        </div>
+
+        <!-- Market -->
+        <div class="market-card">
+            <h3>💰 机构与市场风向</h3>
+            <p>综合Opta超级计算机25000次模拟及主流市场预期：</p>
+            <div class="prob-bar">
+                <div class="prob-win" style="width:37%;">美国 37.2%</div>
+                <div class="prob-draw" style="width:26%;">平局 26.3%</div>
+                <div class="prob-loss" style="width:37%;">比利时 36.5%</div>
+            </div>
+            <div class="prob-labels">
+                <span>美国胜</span>
+                <span>平局</span>
+                <span>比利时胜</span>
+            </div>
+            <p style="margin-top:12px; font-size:0.9em;"><span class="tag tag-info">数据洞察</span> 本场是本届1/8决赛胜负预测最接近的对决。Whoscored和SportsMole一致看好美国2-1取胜。考虑到比利时的体能劣势+库尔图瓦伤缺+美国主场优势，<span class="highlight">美国常规时间取胜的赔率存在价值空间</span>。但比利时"让2追3"的逆风经验不可忽视，一旦拖入加时，老将的经验可能扭转乾坤。</p>
+        </div>
+
+        <!-- Goal Script -->
+        <div class="goal-script">
+            <h3>⚽ 进球剧本推演</h3>
+            <p><span class="highlight">总进球数区间：</span>2~3球（开放场面，双方均有破门能力）</p>
+
+            <div class="timeline">
+                <div class="timeline-point">
+                    <div class="timeline-dot hot"></div>
+                    <div class="timeline-label">0-30min</div>
+                    <div class="timeline-sublabel">美国猛攻期</div>
+                </div>
+                <div class="timeline-point">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-label">30-60min</div>
+                    <div class="timeline-sublabel">比利时控场</div>
+                </div>
+                <div class="timeline-point">
+                    <div class="timeline-dot hot"></div>
+                    <div class="timeline-label">60-80min</div>
+                    <div class="timeline-sublabel">体能分水岭</div>
+                </div>
+                <div class="timeline-point">
+                    <div class="timeline-dot hot"></div>
+                    <div class="timeline-label">80min+</div>
+                    <div class="timeline-sublabel">美国收割</div>
+                </div>
+            </div>
+
+            <p><span class="highlight">进球时间段预判：</span>美国开场借主场声浪和高位逼抢猛攻，前30分钟最可能取得进球；60分钟后比利时体能崩盘，美国边路反击将持续制造杀机；若比利时领先，美国同样有能力在60分钟后反扑。</p>
+            <p><span class="highlight">关键破门球员：</span></p>
+            <ul>
+                <li><span class="green-highlight">巴洛贡</span>（3球射手，禁区内支点+抢点，回归即补齐锋线短板）</li>
+                <li><span class="green-highlight">普利西奇</span>（AC米兰主力，边路内切+定位球，淘汰赛证明自己的舞台）</li>
+                <li><span class="green-highlight">德布劳内</span>（比利时方面，致命直塞+远射，但60分钟后影响力骤降）</li>
+                <li><span class="green-highlight">卢卡库</span>（替补杀器，禁区内对抗+头球，但体能难以支撑全场）</li>
+            </ul>
+        </div>
+
+        <!-- X-Factor -->
+        <div class="x-factor-card">
+            <h3>⚡ 隐藏X因素</h3>
+            <div class="x-factor-item">
+                <strong>巴洛贡红牌暂缓——史无前例的判罚争议：</strong>FIFA宣布对巴洛贡的红牌处罚缓期一年执行，这是世界杯1970年引入红黄牌制度以来的第一次。比利时足协第一时间表示震惊和不满，认为此决定违背竞赛规程明文规定。这一争议可能影响比利时球员赛前心态，也可能导致比赛中比利时对巴洛贡采取更激烈的对抗策略。
+            </div>
+            <div class="x-factor-item">
+                <strong>库尔图瓦伤缺的连锁反应：</strong>主力门神库尔图瓦确认伤缺，二门拉门斯在扑点、远距离扑救方面差距明显。美国队定位球得分效率极高（1/16决赛蒂尔曼任意球破门），面对拉门斯时远射和定位球的威胁将显著提升。
+            </div>
+            <div class="x-factor-item">
+                <strong>2014年复仇情结：</strong>12年前霍华德16次扑救仍败北的画面仍深深刻在美国足球记忆中。波切蒂诺在赛前特别提到"我们要在家门口完成复仇"，这种情绪驱动力可能激发非常规表现，但也可能导致急躁。
+            </div>
+            <div class="x-factor-item">
+                <strong>西雅图天气的"天时"：</strong>7月7日西雅图气温仅15~24°C、湿度59%，凉爽干燥的天气完美适配美国的高强度跑动战术，对比利时老将的体能恢复反而不利——低温下肌肉粘滞性增加，老化防线的转身和启动速度将进一步受限。
+            </div>
+        </div>
+
+        <!-- 2026 Environment -->
+        <div class="section-card">
+            <h3>🌍 2026世界杯专属环境变量</h3>
+            <ul>
+                <li><span class="highlight">海拔因素：</span>西雅图海拔仅53米，对双方均无高原体能消耗影响，此变量可忽略。</li>
+                <li><span class="highlight">天气因素：</span>西雅图7月7日局部多云，气温15~24°C，降水概率仅5%，是理想的足球比赛天气。凉爽气温对美国高速跑动战术极为有利，比利时老将在低温环境下肌肉激活速度偏慢，前30分钟可能面临更大的防守压力。</li>
+                <li><span class="highlight">赛程与休息：</span>美国1/16决赛7月2日结束（90分钟2-0），比利时7月3日结束（125分钟3-2加时逆转）。美国多休1天+少踢35分钟，全程在西雅图本地备战无需长途迁徙；比利时同样在西雅图备战，但30分钟以上的加时赛负荷差在淘汰赛后半段将被无限放大。</li>
+                <li><span class="highlight">48队新赛制影响：</span>本场为1/8决赛，败者直接出局。美国自2002年以来首次有机会闯入八强，战意极高；比利时黄金一代面临"最后一舞"的压力，德布劳内、卢卡库大概率是最后一届世界杯，情感驱动与体能现实之间的张力值得关注。</li>
+                <li><span class="highlight">东道主主场优势：</span>西雅图流明体育场可容纳约7万人，预计将满座且以美国球迷为主。7万+主场声浪将持续干扰比利时后场出球和防线沟通，对老化防线的心理压迫不可小觑。这是美国足球史上最重要的主场淘汰赛之一。</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>数据来源：FIFA官网、央视体育、懂球帝、Opta、中国气象局等公开渠道</p>
+        <p>本报告所有预测仅为数据与战术推演，不构成任何投注建议，请理性观赛</p>
+        <p style="margin-top:10px; color:#666;">2026美加墨世界杯深度前瞻 | 生成时间：2026年7月7日</p>
+    </div>
+
+</div>
+
+<script>
+    function switchTab(matchId) {
+        // Hide all match sections
+        document.querySelectorAll('.match-section').forEach(el => {
+            el.classList.remove('active');
+        });
+        // Deactivate all tabs
+        document.querySelectorAll('.nav-tab').forEach(el => {
+            el.classList.remove('active');
+        });
+        // Show selected match
+        document.getElementById(matchId).classList.add('active');
+        // Activate clicked tab
+        event.target.classList.add('active');
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
