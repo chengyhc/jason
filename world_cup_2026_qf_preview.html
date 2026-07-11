@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026美加墨世界杯 1/4决赛深度前瞻</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #f5c518;
+            --light: #f0f0f0;
+            --text: #2c2c2c;
+            --text-light: #666;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, rgba(233,69,96,0.9), rgba(245,197,24,0.7));
+            border-radius: 20px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 20px);
+        }
+        .header h1 { font-size: 2.8em; color: #fff; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); margin-bottom: 10px; position: relative; }
+        .header h2 { font-size: 1.4em; color: rgba(255,255,255,0.9); font-weight: 400; position: relative; }
+        .header .badge {
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+            color: var(--gold);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 0.9em;
+            margin-top: 15px;
+            position: relative;
+        }
+
+        /* Match Card */
+        .match-card {
+            background: #fff;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .match-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 30px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .match-header .teams {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .match-header .team {
+            text-align: center;
+            min-width: 120px;
+        }
+        .match-header .team-name { font-size: 1.5em; font-weight: 700; }
+        .match-header .team-flag { font-size: 2.5em; margin-bottom: 5px; }
+        .match-header .vs { font-size: 2em; font-weight: 900; color: var(--accent); text-shadow: 0 0 20px rgba(233,69,96,0.5); }
+        .match-info { text-align: right; }
+        .match-info .date { font-size: 1.1em; }
+        .match-info .venue { font-size: 0.9em; opacity: 0.8; }
+        .match-info .stage { background: var(--accent); padding: 4px 15px; border-radius: 20px; font-size: 0.85em; margin-bottom: 8px; display: inline-block; }
+
+        /* Prediction Box */
+        .prediction-box {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        @media (max-width: 768px) { .prediction-box { grid-template-columns: 1fr; } }
+        .prediction-main {
+            background: linear-gradient(135deg, rgba(233,69,96,0.2), rgba(245,197,24,0.1));
+            border: 1px solid rgba(233,69,96,0.3);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+        .prediction-main .label { font-size: 0.85em; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; margin-bottom: 8px; }
+        .prediction-main .result { font-size: 2.5em; font-weight: 900; color: var(--gold); margin: 10px 0; }
+        .prediction-main .confidence { font-size: 1.1em; }
+        .star { color: var(--gold); }
+        .star.empty { opacity: 0.3; }
+
+        .scores-box {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        .scores-box h4 { margin-bottom: 15px; font-size: 1em; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; }
+        .score-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .score-item:last-child { border-bottom: none; }
+        .score-rank { background: var(--accent); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85em; font-weight: 700; }
+        .score-rank.rank2 { background: rgba(255,255,255,0.2); }
+        .score-rank.rank3 { background: rgba(255,255,255,0.1); }
+        .score-value { font-size: 1.3em; font-weight: 700; }
+        .score-prob { font-size: 0.85em; color: var(--gold); }
+
+        /* Section */
+        .section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        .section:last-child { border-bottom: none; }
+        .section-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 4px solid var(--accent);
+        }
+
+        /* Data Grid */
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 768px) { .data-grid { grid-template-columns: 1fr; } }
+        .data-col h4 {
+            font-size: 1.05em;
+            font-weight: 700;
+            margin-bottom: 12px;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+        .data-col.home h4 { background: rgba(233,69,96,0.1); color: var(--accent); }
+        .data-col.away h4 { background: rgba(245,197,24,0.15); color: #b8860b; }
+        .data-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 0.92em;
+            border-bottom: 1px dashed #eee;
+        }
+        .data-item:last-child { border-bottom: none; }
+        .data-label { color: var(--text-light); }
+        .data-value { font-weight: 600; }
+
+        /* Key Arguments */
+        .argument-list { list-style: none; }
+        .argument-list li {
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #f8f9fa, #fff);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+        .argument-list li strong { color: var(--primary); }
+        .argument-list li .highlight { background: rgba(233,69,96,0.1); padding: 1px 6px; border-radius: 4px; font-weight: 600; }
+
+        /* Goal Scenario */
+        .goal-scenario {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        @media (max-width: 768px) { .goal-scenario { grid-template-columns: 1fr; } }
+        .goal-card {
+            background: linear-gradient(135deg, #f8f9fa, #fff);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        .goal-card .icon { font-size: 2em; margin-bottom: 8px; }
+        .goal-card .title { font-weight: 700; color: var(--primary); margin-bottom: 5px; }
+        .goal-card .value { font-size: 1.2em; font-weight: 600; color: var(--accent); }
+        .goal-card .detail { font-size: 0.85em; color: var(--text-light); margin-top: 5px; }
+
+        /* X Factor */
+        .xfactor-list { list-style: none; }
+        .xfactor-list li {
+            padding: 12px 18px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff3cd, #fff);
+            border-radius: 10px;
+            border-left: 4px solid var(--warning);
+            font-size: 0.92em;
+        }
+        .xfactor-list li .xf-tag {
+            display: inline-block;
+            background: var(--warning);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        /* Tactical Comparison */
+        .tactical-compare {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 15px;
+            align-items: center;
+        }
+        @media (max-width: 768px) { .tactical-compare { grid-template-columns: 1fr; } }
+        .tactical-item {
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 0.9em;
+        }
+        .tactical-item.home { background: rgba(233,69,96,0.08); text-align: right; }
+        .tactical-item.away { background: rgba(245,197,24,0.1); }
+        .tactical-item.center {
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.85em;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+
+        /* Environment Box */
+        .env-box {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border-radius: 12px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        @media (max-width: 768px) { .env-box { grid-template-columns: 1fr 1fr; } }
+        .env-item { text-align: center; }
+        .env-item .env-icon { font-size: 1.8em; margin-bottom: 5px; }
+        .env-item .env-label { font-size: 0.8em; color: var(--text-light); }
+        .env-item .env-value { font-weight: 700; font-size: 1.05em; color: var(--primary); }
+
+        /* H2H Box */
+        .h2h-box {
+            background: linear-gradient(135deg, #fff8e1, #fff);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+            border: 1px solid #ffe082;
+        }
+        .h2h-box h5 { color: #b8860b; margin-bottom: 10px; }
+        .h2h-stats { display: flex; gap: 20px; flex-wrap: wrap; }
+        .h2h-stat { text-align: center; }
+        .h2h-stat .num { font-size: 1.5em; font-weight: 900; color: var(--primary); }
+        .h2h-stat .desc { font-size: 0.8em; color: var(--text-light); }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85em;
+        }
+        .footer a { color: var(--gold); text-decoration: none; }
+
+        /* Opta Bar */
+        .opta-bar {
+            display: flex;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 15px 0;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .opta-bar span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .opta-bar .home-bar { background: var(--accent); }
+        .opta-bar .draw-bar { background: #888; }
+        .opta-bar .away-bar { background: var(--gold); color: #333; }
+
+        .injury-tag {
+            display: inline-block;
+            background: #ffebee;
+            color: var(--danger);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.82em;
+            font-weight: 600;
+        }
+        .fit-tag {
+            display: inline-block;
+            background: #e8f5e9;
+            color: var(--success);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.82em;
+            font-weight: 600;
+        }
+
+        .lineup-box {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+            font-size: 0.88em;
+            line-height: 1.9;
+        }
+        .lineup-box .pos { color: var(--accent); font-weight: 600; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<!-- ========== HEADER ========== -->
+<div class="header">
+    <h1>2026 FIFA World Cup</h1>
+    <h2>1/4决赛 深度前瞻与胜负预测</h2>
+    <div class="badge">数据截止：2026年7月11日 | 数据来源：FIFA官方、Opta、WhoScored、各国足协</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MATCH 1: SPAIN vs BELGIUM -->
+<!-- ============================================================ -->
+<div class="match-card">
+    <div class="match-header">
+        <div class="teams">
+            <div class="team">
+                <div class="team-flag">&#127466;&#127480;</div>
+                <div class="team-name">西班牙</div>
+            </div>
+            <div class="vs">VS</div>
+            <div class="team">
+                <div class="team-flag">&#127463;&#127466;</div>
+                <div class="team-name">比利时</div>
+            </div>
+        </div>
+        <div class="match-info">
+            <div class="stage">1/4决赛</div>
+            <div class="date">7月11日 03:00 (北京时间)</div>
+            <div class="venue">洛杉矶 SoFi体育场</div>
+        </div>
+    </div>
+
+    <!-- Prediction -->
+    <div class="prediction-box">
+        <div class="prediction-main">
+            <div class="label">核心预测</div>
+            <div class="result">西班牙胜</div>
+            <div class="confidence">信心指数：
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star empty">&#9733;</span>
+            </div>
+        </div>
+        <div class="scores-box">
+            <h4>最可能精确比分（按概率排序）</h4>
+            <div class="score-item">
+                <div class="score-rank">1</div>
+                <div class="score-value">1-0</div>
+                <div class="score-prob">概率 28%</div>
+            </div>
+            <div class="score-item">
+                <div class="score-rank rank2">2</div>
+                <div class="score-value">2-0</div>
+                <div class="score-prob">概率 25%</div>
+            </div>
+            <div class="score-item">
+                <div class="score-rank rank3">3</div>
+                <div class="score-value">2-1</div>
+                <div class="score-prob">概率 20%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Opta Probability Bar -->
+    <div class="section">
+        <div class="section-title">Opta超算概率分布</div>
+        <div class="opta-bar">
+            <span class="home-bar" style="width:69.7%">西班牙胜 69.7%</span>
+            <span class="draw-bar" style="width:22.4%">平 22.4%</span>
+            <span class="away-bar" style="width:7.9%">比利时胜 8.9%</span>
+        </div>
+    </div>
+
+    <!-- Dimension 1: Team Fundamentals -->
+    <div class="section">
+        <div class="section-title">一、球队基本面与近期状态</div>
+        <div class="data-grid">
+            <div class="data-col home">
+                <h4>&#127466;&#127480; 西班牙 (FIFA第3 | 身价12.2亿欧)</h4>
+                <div class="data-item"><span class="data-label">近5场战绩</span><span class="data-value">4胜1平0负</span></div>
+                <div class="data-item"><span class="data-label">本届进球/失球</span><span class="data-value">9 / 0</span></div>
+                <div class="data-item"><span class="data-label">连续零封</span><span class="data-value">609分钟</span></div>
+                <div class="data-item"><span class="data-label">场均控球率</span><span class="data-value">65.2%</span></div>
+                <div class="data-item"><span class="data-label">场均射门/被射门</span><span class="data-value">17.0 / 5.3</span></div>
+                <div class="data-item"><span class="data-label">全队平均年龄</span><span class="data-value">24.7岁</span></div>
+                <div class="data-item"><span class="data-label">伤停状况</span><span class="fit-tag">全员健康</span></div>
+                <div class="data-item"><span class="data-label">加时消耗</span><span class="data-value">无（全部90分钟解决）</span></div>
+                <div class="data-item"><span class="data-label">头号射手</span><span class="data-value">奥亚萨瓦尔 4球</span></div>
+            </div>
+            <div class="data-col away">
+                <h4>&#127463;&#127466; 比利时 (FIFA第9 | 身价5.48亿欧)</h4>
+                <div class="data-item"><span class="data-label">近5场战绩</span><span class="data-value">3胜2平0负</span></div>
+                <div class="data-item"><span class="data-label">本届进球/失球</span><span class="data-value">13 / 5</span></div>
+                <div class="data-item"><span class="data-label">零封场次</span><span class="data-value">仅1场</span></div>
+                <div class="data-item"><span class="data-label">场均射门/被射门</span><span class="data-value">18.7 / 9.7</span></div>
+                <div class="data-item"><span class="data-label">全队平均年龄</span><span class="data-value">27.1岁</span></div>
+                <div class="data-item"><span class="data-label">伤停状况</span><span class="injury-tag">奥纳纳ACL撕裂报销</span></div>
+                <div class="data-item"><span class="data-label">其他伤病</span><span class="data-value">德巴斯特(存疑)、特罗萨德(肌肉劳损存疑)</span></div>
+                <div class="data-item"><span class="data-label">加时消耗</span><span class="data-value">1/16决赛鏖战120分钟</span></div>
+                <div class="data-item"><span class="data-label">头号射手</span><span class="data-value">卢卡库 3球</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dimension 2: Tactical & H2H -->
+    <div class="section">
+        <div class="section-title">二、战术体系与历史交锋</div>
+        <div class="tactical-compare">
+            <div class="tactical-item home">4-3-3 极致传控<br>罗德里-佩德里-奥尔莫 中轴驱动<br>亚马尔边路内切爆破<br>丢球6秒高位反抢</div>
+            <div class="tactical-item center">战术<br>体系<br>对比</div>
+            <div class="tactical-item away">弹性4-2-3-1 / 无球5-4-1<br>低位密集防守+高速反击<br>德布劳内长传调度<br>多库边路冲击+卢卡库支点抢点</div>
+        </div>
+        <div class="h2h-box">
+            <h5>历史交锋记录</h5>
+            <div class="h2h-stats">
+                <div class="h2h-stat"><div class="num">23</div><div class="desc">总交手次数</div></div>
+                <div class="h2h-stat"><div class="num" style="color:var(--accent)">12</div><div class="desc">西班牙胜</div></div>
+                <div class="h2h-stat"><div class="num">5</div><div class="desc">平局</div></div>
+                <div class="h2h-stat"><div class="num">6</div><div class="desc">比利时胜</div></div>
+                <div class="h2h-stat"><div class="num" style="color:var(--accent)">7胜1平</div><div class="desc">近8次交手</div></div>
+            </div>
+            <p style="margin-top:12px;font-size:0.9em;color:#666">
+                <strong>世界杯交锋：</strong>1986年1/4决赛：1-1（比利时点球晋级）；1990年小组赛：西班牙2-1胜。<br>
+                <strong>关键心理线：</strong>西班牙近46年常规时间从未输给比利时，但1986年点球淘汰的心结为本场增添复仇叙事。
+            </p>
+        </div>
+    </div>
+
+    <!-- Dimension 3: 2026 Environmental Variables -->
+    <div class="section">
+        <div class="section-title">三、2026世界杯专属环境变量</div>
+        <div class="env-box">
+            <div class="env-item">
+                <div class="env-icon">&#9968;</div>
+                <div class="env-label">比赛地海拔</div>
+                <div class="env-value">~100m 无影响</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">&#127777;</div>
+                <div class="env-label">当日气温/湿度</div>
+                <div class="env-value">30°C / 56-73%</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">&#127968;</div>
+                <div class="env-label">场地类型</div>
+                <div class="env-value">SoFi室内球场</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">&#9992;</div>
+                <div class="env-label">旅途/时差</div>
+                <div class="env-value">双方均无额外飞行</div>
+            </div>
+        </div>
+        <p style="margin-top:15px;font-size:0.9em;color:#666">
+            SoFi体育场为封闭式室内场馆，配有空调温控系统，有效屏蔽了洛杉矶当日发布的高温预警（外界体感达37°C+）。室内比赛环境对技术流球队传控节奏的维持极为有利，西班牙精细的地面配合不受风力和高温干扰。<br>
+            <strong>赛程对比：</strong>西班牙全部淘汰赛90分钟收工，主力轮换充足，休息5天；比利时1/16决赛鏖战120分钟，1/8虽大胜但消耗主力，仅休息4天。体能天平显著倾斜。
+        </p>
+    </div>
+
+    <!-- Dimension 4: Tournament Motivation -->
+    <div class="section">
+        <div class="section-title">四、赛制与战意因素</div>
+        <p style="font-size:0.95em;line-height:1.9">
+            本场胜者半决赛将迎战<strong>法国</strong>（已2-0淘汰摩洛哥）。西班牙被视为本届真正有能力击败法国的球队（传控体系可压制姆巴佩反击空间），因此四强对斗牛士而言不仅意味着晋级，更是通往决赛的最优路径，全队战意拉满。<br><br>
+            比利时黄金一代（德布劳内、卢卡库、库尔图瓦）大概率是最后一届世界杯，全队背负谢幕战的使命，但淘汰赛连续硬仗的体能消耗，叠加核心后腰报销，心理压力与生理压力并存。60分钟后若落后，老将心态能否维持稳定是重大疑问。
+        </p>
+    </div>
+
+    <!-- Dimension 5: Market -->
+    <div class="section">
+        <div class="section-title">五、机构与市场风向</div>
+        <p style="font-size:0.95em;line-height:1.9">
+            Opta超算模型给出西班牙常规时间胜率69.7%，市场高度一致看好西班牙晋级。《马卡报》《每日体育报》预测2-0/2-1，《Sports Mole》《TNT Sports》预测1-0。欧赔主胜1.64区间，亚盘西班牙让半一至一球。<br><br>
+            <strong>冷门风险：</strong>比利时唯一的冷门路径是将比赛拖入0-0加时/点球，利用库尔图瓦的扑点能力。但西班牙609分钟零封+全员健康+无加时消耗的叠加优势，使得这条路径概率极低。市场无明显过热或冷门信号，西班牙胜赔合理。
+        </p>
+    </div>
+
+    <!-- Deep Logic -->
+    <div class="section">
+        <div class="section-title">深度逻辑拆解</div>
+        <ul class="argument-list">
+            <li>
+                <strong>中场拦截硬度断崖级差距：</strong>比利时主力后腰奥纳纳ACL撕裂报销后，仅剩33岁瓦纳肯与37岁维特塞尔支撑后腰。两人面对罗德里-佩德里-奥尔莫世界级中场三角的持续穿插传导，横向覆盖与回追速度均存在硬伤。罗德里可从源头切断德布劳内正面出球线路，使比利时反击从发起点即被瓦解。
+            </li>
+            <li>
+                <strong>609分钟零封 vs 仅1场零封：</strong>西班牙本届6战0失球，被射门场均仅5.3次，防线协防体系几近完美；比利时6战丢5球，被射门9.7次/场，后防稳定性远不在同一层级。即便比利时反击偶有威胁，西班牙的防守兜底能力足以应对零星冲击。
+            </li>
+            <li>
+                <strong>65分钟体能分水岭：</strong>比利时后腰位置老将居多，数据表明65分钟后中场跑动覆盖下降约40%。西班牙全队平均年龄仅24.7岁、替补席亿元级攻击手充裕，下半场后半段持续高压将加速比利时防线崩盘。1-0或2-0的比分模型，均基于西班牙在60-80分钟窗口完成致命一击。
+            </li>
+            <li>
+                <strong>历史交锋心理压制：</strong>近8次交手西班牙7胜1平，近46年常规时间从未输给比利时。这种长期对位失真形成深层心理优势，比利时面对西班牙的高位传控压迫时，战术执行容易变形退缩。
+            </li>
+        </ul>
+    </div>
+
+    <!-- Goal Scenario -->
+    <div class="section">
+        <div class="section-title">进球剧本推演</div>
+        <div class="goal-scenario">
+            <div class="goal-card">
+                <div class="icon">&#9917;</div>
+                <div class="title">总进球数</div>
+                <div class="value">1-2球</div>
+                <div class="detail">西班牙零封属性极强，比利时缺后腰难以组织有效进攻，低比分概率最大</div>
+            </div>
+            <div class="goal-card">
+                <div class="icon">&#9201;</div>
+                <div class="title">关键进球时段</div>
+                <div class="value">60-80分钟</div>
+                <div class="detail">比利时体能分水岭后防线松动，西班牙替补加速冲击的黄金窗口</div>
+            </div>
+            <div class="goal-card">
+                <div class="icon">&#11088;</div>
+                <div class="title">关键破门球员</div>
+                <div class="value">奥亚萨瓦尔 / 亚马尔</div>
+                <div class="detail">奥亚萨瓦尔4球领跑队内，亚马尔内切射门+肋部穿插是拆大巴核心手段；定位球二次进攻中拉波尔特头球也是隐形杀招</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- X Factors -->
+    <div class="section">
+        <div class="section-title">隐藏X因素</div>
+        <ul class="xfactor-list">
+            <li><span class="xf-tag">裁判</span>淘汰赛裁判尺度若偏宽松，比利时高频犯规打断西班牙传控节奏的战术将更有效；若吹罚严格，比利时的绞杀战术会因黄牌压力被迫收敛</li>
+            <li><span class="xf-tag">库尔图瓦</span>皇马门神具备单场10+扑救的上限，若进入点球大战，其扑点能力是比利时最后的爆冷底牌</li>
+            <li><span class="xf-tag">德布劳内闪光</span>上轮全程轮休体能充沛，若能在中线附近拿到2-3次正面转身出球机会，多库的速度足以撕开西班牙边卫前压身后的空当</li>
+            <li><span class="xf-tag">1986心结</span>40年前点球失利的历史阴影可能在加时/点球中影响西班牙球员心理——尽管概率极低，但1/4决赛的淘汰赛压力不可忽视</li>
+        </ul>
+    </div>
+
+    <!-- Predicted Lineups -->
+    <div class="section">
+        <div class="section-title">预测首发阵容</div>
+        <div class="data-grid">
+            <div class="data-col home">
+                <h4>&#127466;&#127480; 西班牙 (4-3-3)</h4>
+                <div class="lineup-box">
+                    <span class="pos">GK</span> 乌奈-西蒙<br>
+                    <span class="pos">RB</span> 波罗 | <span class="pos">CB</span> 库巴西 | <span class="pos">CB</span> 拉波尔特 | <span class="pos">LB</span> 库库雷利亚<br>
+                    <span class="pos">DM</span> 罗德里 | <span class="pos">CM</span> 佩德里 | <span class="pos">AM</span> 奥尔莫<br>
+                    <span class="pos">RW</span> 亚马尔 | <span class="pos">CF</span> 奥亚萨瓦尔 | <span class="pos">LW</span> 巴埃纳
+                </div>
+            </div>
+            <div class="data-col away">
+                <h4>&#127463;&#127466; 比利时 (弹性4-2-3-1)</h4>
+                <div class="lineup-box">
+                    <span class="pos">GK</span> 库尔图瓦<br>
+                    <span class="pos">RB</span> 卡斯塔涅 | <span class="pos">CB</span> 梅切勒 | <span class="pos">CB</span> 恩戈伊 | <span class="pos">LB</span> 德克伊珀<br>
+                    <span class="pos">CM</span> 瓦纳肯 | <span class="pos">CM</span> 蒂勒曼斯<br>
+                    <span class="pos">RW</span> 多库 | <span class="pos">AM</span> 德布劳内 | <span class="pos">LW</span> 特罗萨德(存疑)<br>
+                    <span class="pos">CF</span> 卢卡库
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MATCH 2: NORWAY vs ENGLAND -->
+<!-- ============================================================ -->
+<div class="match-card">
+    <div class="match-header">
+        <div class="teams">
+            <div class="team">
+                <div class="team-flag">&#127475;&#127476;</div>
+                <div class="team-name">挪威</div>
+            </div>
+            <div class="vs">VS</div>
+            <div class="team">
+                <div class="team-flag">&#127468;&#127463;</div>
+                <div class="team-name">英格兰</div>
+            </div>
+        </div>
+        <div class="match-info">
+            <div class="stage">1/4决赛</div>
+            <div class="date">7月12日 05:00 (北京时间)</div>
+            <div class="venue">迈阿密 Hard Rock体育场</div>
+        </div>
+    </div>
+
+    <!-- Prediction -->
+    <div class="prediction-box">
+        <div class="prediction-main">
+            <div class="label">核心预测</div>
+            <div class="result">英格兰胜</div>
+            <div class="confidence">信心指数：
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star empty">&#9733;</span>
+                <span class="star empty">&#9733;</span>
+            </div>
+        </div>
+        <div class="scores-box">
+            <h4>最可能精确比分（按概率排序）</h4>
+            <div class="score-item">
+                <div class="score-rank">1</div>
+                <div class="score-value">2-3</div>
+                <div class="score-prob">概率 22%</div>
+            </div>
+            <div class="score-item">
+                <div class="score-rank rank2">2</div>
+                <div class="score-value">1-2</div>
+                <div class="score-prob">概率 20%</div>
+            </div>
+            <div class="score-item">
+                <div class="score-rank rank3">3</div>
+                <div class="score-value">1-3</div>
+                <div class="score-prob">概率 18%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Opta Bar -->
+    <div class="section">
+        <div class="section-title">Opta超算概率分布</div>
+        <div class="opta-bar">
+            <span class="home-bar" style="width:24%">挪威胜 24%</span>
+            <span class="draw-bar" style="width:14%">平 14%</span>
+            <span class="away-bar" style="width:62%">英格兰胜 62%</span>
+        </div>
+    </div>
+
+    <!-- Dimension 1 -->
+    <div class="section">
+        <div class="section-title">一、球队基本面与近期状态</div>
+        <div class="data-grid">
+            <div class="data-col home">
+                <h4>&#127475;&#127476; 挪威 (FIFA第19 | 身价5.9亿欧)</h4>
+                <div class="data-item"><span class="data-label">近5场战绩</span><span class="data-value">4胜1平0负</span></div>
+                <div class="data-item"><span class="data-label">本届进球/失球</span><span class="data-value">12 / 5</span></div>
+                <div class="data-item"><span class="data-label">核心球员</span><span class="data-value">哈兰德7球 / 厄德高3助攻</span></div>
+                <div class="data-item"><span class="data-label">战术体系</span><span class="data-value">5-4-1 低位防反</span></div>
+                <div class="data-item"><span class="data-label">伤停状况</span><span class="fit-tag">全员健康</span></div>
+                <div class="data-item"><span class="data-label">加时消耗</span><span class="data-value">无（全部90分钟解决）</span></div>
+                <div class="data-item"><span class="data-label">身价集中度</span><span class="data-value">双核占全队56%</span></div>
+            </div>
+            <div class="data-col away">
+                <h4>&#127468;&#127463; 英格兰 (FIFA第4 | 身价15亿欧)</h4>
+                <div class="data-item"><span class="data-label">近5场战绩</span><span class="data-value">4胜1平0负</span></div>
+                <div class="data-item"><span class="data-label">本届进球/失球</span><span class="data-value">12 / 6</span></div>
+                <div class="data-item"><span class="data-label">核心球员</span><span class="data-value">凯恩6球 / 贝林厄姆4球</span></div>
+                <div class="data-item"><span class="data-label">战术体系</span><span class="data-value">4-3-3 高位传控</span></div>
+                <div class="data-item"><span class="data-label">伤停状况</span><span class="injury-tag">里斯-詹姆斯报销 / 夸安萨红牌停赛</span></div>
+                <div class="data-item"><span class="data-label">加时消耗</span><span class="data-value">1/8决赛高原10人苦战</span></div>
+                <div class="data-item"><span class="data-label">额外变量</span><span class="data-value">赖斯带伤出战存疑</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dimension 2 -->
+    <div class="section">
+        <div class="section-title">二、战术体系与历史交锋</div>
+        <div class="tactical-compare">
+            <div class="tactical-item home">5-4-1 收缩反击<br>厄德高精准直塞+边路传中<br>哈兰德禁区支点+抢点<br>全员退守压缩禁区空间</div>
+            <div class="tactical-item center">战术<br>体系<br>对比</div>
+            <div class="tactical-item away">4-3-3 高位传控<br>贝林厄姆+赖斯中场驱动<br>凯恩回撤组织+萨卡边路突破<br>边后卫大幅前压提供宽度</div>
+        </div>
+        <div class="h2h-box">
+            <h5>历史交锋记录</h5>
+            <div class="h2h-stats">
+                <div class="h2h-stat"><div class="num">12</div><div class="desc">总交手次数</div></div>
+                <div class="h2h-stat"><div class="num">5</div><div class="desc">挪威胜</div></div>
+                <div class="h2h-stat"><div class="num">2</div><div class="desc">平局</div></div>
+                <div class="h2h-stat"><div class="num" style="color:var(--accent)">5</div><div class="desc">英格兰胜</div></div>
+            </div>
+            <p style="margin-top:12px;font-size:0.9em;color:#666">
+                <strong>世界杯交锋：</strong>两队从未在世界杯正赛相遇。<br>
+                <strong>最近交手：</strong>2014年友谊赛，英格兰1-0胜（鲁尼点球）。<br>
+                <strong>英超内战背景：</strong>挪威9名球员效力英超，哈兰德面对曼城队友格伊/奥赖利/斯通斯，厄德高面对阿森纳队友赖斯/萨卡——"熟人对决"增加了比赛不确定性。
+            </p>
+        </div>
+    </div>
+
+    <!-- Dimension 3: CRITICAL ENVIRONMENT -->
+    <div class="section">
+        <div class="section-title">三、2026世界杯专属环境变量（关键！）</div>
+        <div class="env-box" style="background:linear-gradient(135deg,#fff3e0,#ffe0b2)">
+            <div class="env-item">
+                <div class="env-icon">&#127777;</div>
+                <div class="env-label">开球气温</div>
+                <div class="env-value" style="color:var(--danger)">34°C</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">&#128167;</div>
+                <div class="env-label">体感温度</div>
+                <div class="env-value" style="color:var(--danger)">42-45°C</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">&#127785;</div>
+                <div class="env-label">雷暴风险</div>
+                <div class="env-value" style="color:var(--warning)">高概率</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">&#9888;</div>
+                <div class="env-label">比赛延迟风险</div>
+                <div class="env-value" style="color:var(--danger)">存在</div>
+            </div>
+        </div>
+        <p style="margin-top:15px;font-size:0.9em;color:#666;line-height:1.9">
+            <strong style="color:var(--danger)">⚠ 这是本届世界杯环境条件最严酷的比赛之一！</strong>美国国家气象局已对南佛罗里达发布高温警告，迈阿密体感温度预计达42-45°C，叠加撒哈拉沙尘云侵袭。FIFA已启动高温协议，上下半场将执行3分钟强制补水休息。若闪电距体育场13公里以内，比赛将暂停至少30分钟。<br><br>
+            <strong>极端高温对双方的影响：</strong><br>
+            &#8226; 英格兰上轮在海拔2240米的墨西哥城10人苦战90分钟，肌肉恢复需7-10天，本场仅间隔4天，体能储备严重不足。赖斯带伤出战更是雪上加霜。<br>
+            &#8226; 挪威球员多为北欧体质，多名队员出现"空调病"症状（温差过大引发不适），主帅索尔巴肯承认有工作人员生病，但不影响主力框架。<br>
+            &#8226; 高温环境下，双方下半场60分钟后球员脱水、抽筋风险剧增，<strong>补水暂停期间教练组临时调整将成为胜负手</strong>。<br>
+            &#8226; 雷暴延迟可能导致比赛中断1-2小时，打乱双方节奏，对体能恢复有利但心理节奏被破坏。
+        </p>
+    </div>
+
+    <!-- Dimension 4 -->
+    <div class="section">
+        <div class="section-title">四、赛制与战意因素</div>
+        <p style="font-size:0.95em;line-height:1.9">
+            挪威是本届世界杯最大黑马——时隔28年重返世界杯即闯入八强，全队无成绩包袱，心态轻松放手一搏。哈兰德赛前明确将压力推给英格兰："外界期待主要在英格兰一边。"<br><br>
+            英格兰作为夺冠热门，八强是底线目标。但图赫尔的球队本届始终"靠高光时刻"过关——淘汰赛两场都在极其艰难的局面中涉险突围。右路防线双重减员（里斯-詹姆斯报销+夸安萨红牌停赛），面对哈兰德的高空轰炸和厄德高的精准传中，英格兰防线将承受本届最严峻考验。
+        </p>
+    </div>
+
+    <!-- Dimension 5 -->
+    <div class="section">
+        <div class="section-title">五、机构与市场风向</div>
+        <p style="font-size:0.95em;line-height:1.9">
+            Opta给出英格兰62%胜率，欧赔英格兰1.70区间。但市场对比利时那场更谨慎——哈兰德7球的终结效率+挪威淘汰巴西的示范效应，使得挪威+1/+1.5的受让盘存在不小吸引力。<br><br>
+            <strong>冷门风险：</strong>明显高于另外两场1/4决赛。英格兰右路防线人员短缺恰好被哈兰德的头球和厄德高的传中精准打击，加上极端高温放大体能差距——若比赛拖入加时/点球，挪威爆冷概率显著上升。萨顿预测2-3英格兰，但认为这将是进球大战。
+        </p>
+    </div>
+
+    <!-- Deep Logic -->
+    <div class="section">
+        <div class="section-title">深度逻辑拆解</div>
+        <ul class="argument-list">
+            <li>
+                <strong>哈兰德精准打击英格兰防空软肋：</strong>夸安萨红牌停赛+里斯-詹姆斯报销，英格兰右路防线被迫启用经验不足的替补。哈兰德对阵巴西时头球破门的选位能力已充分证明——即便不是最擅长的技能，他避开后卫视线的预判足以击穿任何防线。加里-内维尔赛前警告"不能退得太深"，但替补中卫能否执行到位存疑。
+            </li>
+            <li>
+                <strong>高温+高原后遗症双重消耗：</strong>英格兰上轮在2240米高原10人苦战，运动生理学数据显示肌肉完全恢复需7-10天，本场仅间隔4天。迈阿密体感45°C的极端环境将加速英格兰主力体能透支，60分钟后中场控制力可能断崖下滑，给挪威反击更多空间。
+            </li>
+            <li>
+                <strong>挪威反击转化效率碾压：</strong>哈兰德本届7球仅用12次射正，non-penalty xG 4.32为赛事最高。挪威场均xG/shot（每次射门预期进球）为本届最高——虽创造机会少，但每次机会质量极高。英格兰若不能早早进球打破挪威大巴，越往后拖越危险。
+            </li>
+            <li>
+                <strong>阵容深度差距是最终决定因素：</strong>英格兰替补席坐拥拉什福德、福登等亿元级攻击手，可在60分钟后轮换提速；挪威除双核外无稳定得分点，长时间被动防守后半程防线必然松动。即使哈兰德先破门，英格兰也拥有逆转的进攻后手。
+            </li>
+        </ul>
+    </div>
+
+    <!-- Goal Scenario -->
+    <div class="section">
+        <div class="section-title">进球剧本推演</div>
+        <div class="goal-scenario">
+            <div class="goal-card">
+                <div class="icon">&#9917;</div>
+                <div class="title">总进球数</div>
+                <div class="value">3-4球</div>
+                <div class="detail">双方攻强守弱，高温致防线体能崩盘后进球窗口大开</div>
+            </div>
+            <div class="goal-card">
+                <div class="icon">&#9201;</div>
+                <div class="title">关键进球时段</div>
+                <div class="value">15-30分钟 / 65-85分钟</div>
+                <div class="detail">挪威开场借反击偷袭可能性高；下半场体能下滑后英格兰轮换加速冲击</div>
+            </div>
+            <div class="goal-card">
+                <div class="icon">&#11088;</div>
+                <div class="title">关键破门球员</div>
+                <div class="value">哈兰德 / 凯恩 / 贝林厄姆</div>
+                <div class="detail">哈兰德头球/抢点是挪威唯一稳定得分手段；凯恩6球含2点球，贝林厄姆4球均来自运动战</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- X Factors -->
+    <div class="section">
+        <div class="section-title">隐藏X因素</div>
+        <ul class="xfactor-list">
+            <li><span class="xf-tag">雷暴延迟</span>迈阿密7月午后雷暴频发，FIFA规定闪电13公里内暂停30分钟。1/8决赛英格兰vs墨西哥已因雷暴延迟1小时——比赛中断可能彻底改变节奏，对落后方是喘息机会，对领先方则是优势流失</li>
+            <li><span class="xf-tag">补水暂停</span>强制3分钟补水休息是FIFA高温协议的硬性规定，教练组可借此做微型战术板调整，相当于多出2次"微型暂停"，对图赫尔这种战术大师是额外武器</li>
+            <li><span class="xf-tag">赖斯身体状态</span>若赖斯因身体不适缺阵或状态受限，英格兰中场拦截硬度骤降，厄德高的传球自由度将大幅提升——这可能是决定性的变量</li>
+            <li><span class="xf-tag">挪威"空调病"</span>多名挪威队员因美国高温与强冷空调的巨大温差出现不适，虽主帅淡化影响，但在45°C体感温度下，北欧体质的耐热能力始终是隐患</li>
+        </ul>
+    </div>
+
+    <!-- Lineups -->
+    <div class="section">
+        <div class="section-title">预测首发阵容</div>
+        <div class="data-grid">
+            <div class="data-col home">
+                <h4>&#127475;&#127476; 挪威 (5-4-1)</h4>
+                <div class="lineup-box">
+                    <span class="pos">GK</span> 尼兰德<br>
+                    <span class="pos">RWB</span> 赖耶森 | <span class="pos">CB</span> 阿耶尔 | <span class="pos">CB</span> 海格姆 | <span class="pos">CB</span> 莫勒-沃尔夫<br>
+                    <span class="pos">CM</span> 贝格 | <span class="pos">CM</span> 贝尔赫 | <span class="pos">AM</span> 厄德高 | <span class="pos">LW</span> 努萨<br>
+                    <span class="pos">CF</span> 哈兰德 / 瑟尔洛特
+                </div>
+            </div>
+            <div class="data-col away">
+                <h4>&#127468;&#127463; 英格兰 (4-3-3)</h4>
+                <div class="lineup-box">
+                    <span class="pos">GK</span> 皮克福德<br>
+                    <span class="pos">RB</span> 康萨 | <span class="pos">CB</span> 斯通斯 | <span class="pos">CB</span> 格伊 | <span class="pos">LB</span> 奥赖利<br>
+                    <span class="pos">DM</span> 赖斯(存疑) | <span class="pos">CM</span> 安德森<br>
+                    <span class="pos">RW</span> 萨卡 | <span class="pos">AM</span> 贝林厄姆 | <span class="pos">LW</span> 戈登<br>
+                    <span class="pos">CF</span> 凯恩
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MATCH 3: ARGENTINA vs SWITZERLAND -->
+<!-- ============================================================ -->
+<div class="match-card">
+    <div class="match-header">
+        <div class="teams">
+            <div class="team">
+                <div class="team-flag">&#127462;&#127479;</div>
+                <div class="team-name">阿根廷</div>
+            </div>
+            <div class="vs">VS</div>
+            <div class="team">
+                <div class="team-flag">&#127464;&#127469;</div>
+                <div class="team-name">瑞士</div>
+            </div>
+        </div>
+        <div class="match-info">
+            <div class="stage">1/4决赛</div>
+            <div class="date">7月12日 09:00 (北京时间)</div>
+            <div class="venue">堪萨斯城 Arrowhead体育场</div>
+        </div>
+    </div>
+
+    <!-- Prediction -->
+    <div class="prediction-box">
+        <div class="prediction-main">
+            <div class="label">核心预测</div>
+            <div class="result">阿根廷胜</div>
+            <div class="confidence">信心指数：
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star empty">&#9733;</span>
+            </div>
+        </div>
+        <div class="scores-box">
+            <h4>最可能精确比分（按概率排序）</h4>
+            <div class="score-item">
+                <div class="score-rank">1</div>
+                <div class="score-value">2-1</div>
+                <div class="score-prob">概率 30%</div>
+            </div>
+            <div class="score-item">
+                <div class="score-rank rank2">2</div>
+                <div class="score-value">1-0</div>
+                <div class="score-prob">概率 25%</div>
+            </div>
+            <div class="score-item">
+                <div class="score-rank rank3">3</div>
+                <div class="score-value">2-0</div>
+                <div class="score-prob">概率 18%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Opta Bar -->
+    <div class="section">
+        <div class="section-title">Opta超算概率分布</div>
+        <div class="opta-bar">
+            <span class="home-bar" style="width:66%">阿根廷胜 66%</span>
+            <span class="draw-bar" style="width:21%">平 21%</span>
+            <span class="away-bar" style="width:13%">瑞士胜 13%</span>
+        </div>
+    </div>
+
+    <!-- Dimension 1 -->
+    <div class="section">
+        <div class="section-title">一、球队基本面与近期状态</div>
+        <div class="data-grid">
+            <div class="data-col home">
+                <h4>&#127462;&#127479; 阿根廷 (卫冕冠军 | FIFA第1)</h4>
+                <div class="data-item"><span class="data-label">近5场战绩</span><span class="data-value">5胜0平0负</span></div>
+                <div class="data-item"><span class="data-label">本届进球/失球</span><span class="data-value">14 / 5</span></div>
+                <div class="data-item"><span class="data-label">头号射手</span><span class="data-value">梅西 8球(射手榜第一)</span></div>
+                <div class="data-item"><span class="data-label">场均控球率</span><span class="data-value">65.2%</span></div>
+                <div class="data-item"><span class="data-label">伤停状况</span><span class="fit-tag">全员健康(仅阿库尼亚轻伤)</span></div>
+                <div class="data-item"><span class="data-label">加时消耗</span><span class="data-value">1/16决赛加时(对佛得角)</span></div>
+                <div class="data-item"><span class="data-label">淘汰赛失球</span><span class="data-value">2场丢4球(防线隐患)</span></div>
+                <div class="data-item"><span class="data-label">世界杯不败</span><span class="data-value">11场(自2022年起)</span></div>
+            </div>
+            <div class="data-col away">
+                <h4>&#127464;&#127469; 瑞士 (FIFA第12 | 身价3.2亿欧)</h4>
+                <div class="data-item"><span class="data-label">近5场战绩</span><span class="data-value">3胜1平1负</span></div>
+                <div class="data-item"><span class="data-label">本届进球/失球</span><span class="data-value">7 / 3</span></div>
+                <div class="data-item"><span class="data-label">零封场次</span><span class="data-value">2场(含120分钟零封哥伦比亚)</span></div>
+                <div class="data-item"><span class="data-label">场均控球率</span><span class="data-value">40.7%</span></div>
+                <div class="data-item"><span class="data-label">伤停状况</span><span class="injury-tag">曼赞比重伤报销 / 埃比舍尔伤停 / 雅奎兹伤停</span></div>
+                <div class="data-item"><span class="data-label">加时消耗</span><span class="data-value">1/8决赛120分钟+点球大战</span></div>
+                <div class="data-item"><span class="data-label">队史最佳</span><span class="data-value">72年来首次闯入八强</span></div>
+                <div class="data-item"><span class="data-label">黄牌风险</span><span class="data-value">恩博洛/奥卡福尔身背黄牌</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dimension 2 -->
+    <div class="section">
+        <div class="section-title">二、战术体系与历史交锋</div>
+        <div class="tactical-compare">
+            <div class="tactical-item home">4-3-3 控球渐进<br>梅西单兵攻坚+肋部穿插<br>德保罗/麦卡利斯特中场驱动<br>高位防线+边卫前压提供宽度<br><strong style="color:var(--danger)">短板：边卫身后空当+中卫回追慢</strong></div>
+            <div class="tactical-item center">战术<br>体系<br>对比</div>
+            <div class="tactical-item away">4-2-3-1 / 5-4-1 弹性切换<br>阿坎吉+埃尔维迪铁壁中卫<br>扎卡+弗罗伊勒中场绞杀<br>恩博洛反击偷袭<br><strong style="color:var(--danger)">短板：曼赞比报销后反击失去边路爆点</strong></div>
+        </div>
+        <div class="h2h-box">
+            <h5>历史交锋记录</h5>
+            <div class="h2h-stats">
+                <div class="h2h-stat"><div class="num">7</div><div class="desc">A级赛交手</div></div>
+                <div class="h2h-stat"><div class="num" style="color:var(--accent)">5</div><div class="desc">阿根廷胜</div></div>
+                <div class="h2h-stat"><div class="num">2</div><div class="desc">平局</div></div>
+                <div class="h2h-stat"><div class="num">0</div><div class="desc">瑞士胜</div></div>
+            </div>
+            <p style="margin-top:12px;font-size:0.9em;color:#666">
+                <strong>世界杯交锋：</strong>1966年小组赛阿根廷2-0瑞士；2014年1/8决赛——<strong>经典之战</strong>：90分钟0-0，加时第118分钟梅西助攻迪马利亚绝杀1-0。那场比赛瑞士死守118分钟几乎成功，为本场注入极大心理信心——"我们距离淘汰阿根廷只差2分钟"。<br>
+                <strong>60年从未输给瑞士</strong>，但2014年的艰难历程证明：瑞士的铁桶阵对阿根廷的阵地攻坚构成系统性克制。
+            </p>
+        </div>
+    </div>
+
+    <!-- Dimension 3 -->
+    <div class="section">
+        <div class="section-title">三、2026世界杯专属环境变量</div>
+        <div class="env-box">
+            <div class="env-item">
+                <div class="env-icon">&#9968;</div>
+                <div class="env-label">比赛地海拔</div>
+                <div class="env-value">~270m 无影响</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">&#127777;</div>
+                <div class="env-label">当日气温/湿度</div>
+                <div class="env-value">28-30°C / 68-84%</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">&#127783;</div>
+                <div class="env-label">降水概率</div>
+                <div class="env-value">阵雨可能(58%)</div>
+            </div>
+            <div class="env-item">
+                <div class="env-icon">&#127968;</div>
+                <div class="env-label">场地类型</div>
+                <div class="env-value">Arrowhead 露天球场</div>
+            </div>
+        </div>
+        <p style="margin-top:15px;font-size:0.9em;color:#666;line-height:1.9">
+            堪萨斯城7月湿热但不如迈阿密极端。比赛在北京时间上午9点（当地时间晚8点）开球，气温已从午间峰值回落至约25-28°C，相对有利于球员体能维持。阵雨概率58%但降水量小（预估0.05英寸），若场地微湿反而有利于阿根廷的地面传控配合。<br><br>
+            <strong>赛程对比：</strong>阿根廷1/8决赛90分钟解决战斗，休息5天；瑞士1/8鏖战120分钟+点球大战，仅休息4天，且主力中场扎卡/弗罗伊勒跑动数据严重透支。<strong>体能恢复天差地别。</strong>
+        </p>
+    </div>
+
+    <!-- Dimension 4 -->
+    <div class="section">
+        <div class="section-title">四、赛制与战意因素</div>
+        <p style="font-size:0.95em;line-height:1.9">
+            阿根廷作为卫冕冠军+本届仅存的南美独苗，背负着卫冕与捍卫美洲足球荣誉的双重使命。梅西本届8球状态火热，全队夺冠动力拉满。但淘汰赛连续两场3-2的惊险晋级暴露了攻坚效率下降和防线脆弱的隐患——面对瑞士铁桶阵，若再次陷入0-0僵局，心理压力将随时间推移转移至阿根廷一方。<br><br>
+            瑞士72年来首次闯入八强，全队无成绩包袱。他们的唯一目标就是复刻2014年的死守战术，将比赛拖入加时/点球——在那里，一切皆有可能。但曼赞比重伤报销使反击体系失去最锐利的边路武器，瑞士的进攻威胁大幅缩水。
+        </p>
+    </div>
+
+    <!-- Dimension 5 -->
+    <div class="section">
+        <div class="section-title">五、机构与市场风向</div>
+        <p style="font-size:0.95em;line-height:1.9">
+            Opta模型给出阿根廷常规时间胜率66%，欧赔主胜1.55区间。市场整体看好阿根廷晋级，但对比利时那场更为谨慎——瑞士的防守纪律和2014年的心理暗示，使得"瑞士+1.5"的受让盘存在一定吸引力。<br><br>
+            <strong>冷门风险：</strong>中等。若瑞士能复刻2014年90分钟0-0的剧本并进入点球大战，科贝尔的扑点能力将成为X因素。但曼赞比报销+120分钟加时后遗症使瑞士的爆冷概率显著低于2014年。
+        </p>
+    </div>
+
+    <!-- Deep Logic -->
+    <div class="section">
+        <div class="section-title">深度逻辑拆解</div>
+        <ul class="argument-list">
+            <li>
+                <strong>曼赞比报销=瑞士反击体系崩塌：</strong>曼赞比是瑞士本届世界杯最耀眼的进攻球员（3球），他的速度和突破是瑞士反击端唯一能制造纵深威胁的武器。失去他后，瑞士只能依赖恩博洛的个人能力和瓦尔加斯的零星穿插——火力密度远不足以持续威胁阿根廷。反击从"双路齐飞"降级为"单兵作战"。
+            </li>
+            <li>
+                <strong>梅西的定位球绝技=拆大巴核武器：</strong>本届世界杯梅西已多次通过定位球直接或间接制造进球。面对瑞士的5-4-1铁桶阵，运动战渗透效率必然受限，但定位球是破解密集防守最高效的手段。罗梅罗/奥塔门迪的头球争顶能力在定位球二次进攻中构成巨大威胁。
+            </li>
+            <li>
+                <strong>体能差距将在60分钟后决定比赛：</strong>瑞士上轮120分钟鏖战，扎卡/弗罗伊勒的跑动数据严重透支，Opta数据显示两人65分钟后拦截效率下降40%。阿根廷全部淘汰赛90分钟收工，劳塔罗/阿尔瓦雷斯两名轮换前锋可持续冲击老化的瑞士中场。2-1的比分模型正基于此：瑞士先靠防守僵持，60分钟后防线松动被连入两球，终场前偷回一个。
+            </li>
+            <li>
+                <strong>阿根廷淘汰赛韧性已被验证：</strong>连续两场0-2落后逆转（佛得角3-2加时、埃及3-2），展现出极强的心理抗压能力。即便瑞士率先偷球，阿根廷也具备逆转底气——这种"命硬"属性是卫冕冠军最可怕的特质。
+            </li>
+        </ul>
+    </div>
+
+    <!-- Goal Scenario -->
+    <div class="section">
+        <div class="section-title">进球剧本推演</div>
+        <div class="goal-scenario">
+            <div class="goal-card">
+                <div class="icon">&#9917;</div>
+                <div class="title">总进球数</div>
+                <div class="value">2-3球</div>
+                <div class="detail">瑞士防守纪律+曼赞比缺阵=低进球概率；但阿根廷攻坚能力+瑞士60分钟后体能崩盘=后半段打开局面</div>
+            </div>
+            <div class="goal-card">
+                <div class="icon">&#9201;</div>
+                <div class="title">关键进球时段</div>
+                <div class="value">60-85分钟</div>
+                <div class="detail">瑞士上轮120分钟体能透支，65分钟后防守专注力断崖；阿根廷换人提速冲击疲弱中场的黄金窗口</div>
+            </div>
+            <div class="goal-card">
+                <div class="icon">&#11088;</div>
+                <div class="title">关键破门球员</div>
+                <div class="value">梅西 / 罗梅罗 / 恩博洛</div>
+                <div class="detail">梅西定位球/肋部穿插是拆大巴核心；罗梅罗定位球头球是隐形杀招；恩博洛反击偷袭是瑞士唯一得分手段</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- X Factors -->
+    <div class="section">
+        <div class="section-title">隐藏X因素</div>
+        <ul class="xfactor-list">
+            <li><span class="xf-tag">2014心理复刻</span>瑞士上一次面对阿根廷死守了118分钟，这种"差一点就成功了"的经历可能让瑞士球员在关键时刻更加坚定——也可能在重复类似场景时因过度紧张而功亏一篑</li>
+            <li><span class="xf-tag">梅西射失点球</span>本届已出现梅西射失点球的情况，若本场获得点球机会且再次失手，可能动摇全队信心并给瑞士注入额外能量</li>
+            <li><span class="xf-tag">科贝尔扑点</span>多特蒙德门神大赛扑救成功率87%，若比赛进入点球大战，他的存在使瑞士爆冷概率从13%跃升至约35%</li>
+            <li><span class="xf-tag">阵雨影响</span>堪萨斯城58%阵雨概率，微湿场地有利于阿根廷地面传控；但若出现强降水，场地湿滑会增加防守失误概率，对双方都是双刃剑</li>
+            <li><span class="xf-tag">帕雷德斯黄牌</span>身背1黄需谨慎动作，若其不敢全力上抢，瑞士中场出球压力将减轻</li>
+        </ul>
+    </div>
+
+    <!-- Lineups -->
+    <div class="section">
+        <div class="section-title">预测首发阵容</div>
+        <div class="data-grid">
+            <div class="data-col home">
+                <h4>&#127462;&#127479; 阿根廷 (4-1-2-1-2)</h4>
+                <div class="lineup-box">
+                    <span class="pos">GK</span> 达米安-马丁内斯<br>
+                    <span class="pos">RB</span> 莫利纳 | <span class="pos">CB</span> 罗梅罗 | <span class="pos">CB</span> 利桑德罗-马丁内斯 | <span class="pos">LB</span> 梅迪纳/塔利亚菲科<br>
+                    <span class="pos">DM</span> 帕雷德斯<br>
+                    <span class="pos">CM</span> 德保罗 | <span class="pos">CM</span> 麦卡利斯特<br>
+                    <span class="pos">AM</span> 恩佐-费尔南德斯<br>
+                    <span class="pos">CF</span> 梅西 | <span class="pos">CF</span> 阿尔瓦雷斯/劳塔罗
+                </div>
+            </div>
+            <div class="data-col away">
+                <h4>&#127464;&#127469; 瑞士 (4-2-3-1)</h4>
+                <div class="lineup-box">
+                    <span class="pos">GK</span> 科贝尔<br>
+                    <span class="pos">RB</span> 扎卡里亚 | <span class="pos">CB</span> 埃尔维迪 | <span class="pos">CB</span> 阿坎吉 | <span class="pos">LB</span> 罗德里格斯<br>
+                    <span class="pos">DM</span> 弗罗伊勒 | <span class="pos">DM</span> 扎卡(C)<br>
+                    <span class="pos">RAM</span> 瓦尔加斯(加时替补) | <span class="pos">CAM</span> 贾沙里(替代曼赞比) | <span class="pos">LAM</span> 恩多耶<br>
+                    <span class="pos">CF</span> 恩博洛
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SUMMARY TABLE -->
+<!-- ============================================================ -->
+<div class="match-card">
+    <div class="section">
+        <div class="section-title">三场1/4决赛预测总览</div>
+        <table style="width:100%;border-collapse:collapse;font-size:0.9em;">
+            <thead>
+                <tr style="background:var(--primary);color:#fff;">
+                    <th style="padding:12px;text-align:left;">比赛</th>
+                    <th style="padding:12px;">预测结果</th>
+                    <th style="padding:12px;">首选比分</th>
+                    <th style="padding:12px;">信心指数</th>
+                    <th style="padding:12px;">爆冷风险</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom:1px solid #eee;">
+                    <td style="padding:12px;font-weight:600;">&#127466;&#127480; 西班牙 vs 比利时 &#127463;&#127466;</td>
+                    <td style="padding:12px;text-align:center;color:var(--accent);font-weight:700;">西班牙胜</td>
+                    <td style="padding:12px;text-align:center;font-weight:600;">1-0</td>
+                    <td style="padding:12px;text-align:center;color:var(--gold);">&#9733;&#9733;&#9733;&#9733;</td>
+                    <td style="padding:12px;text-align:center;">低 (8.9%)</td>
+                </tr>
+                <tr style="border-bottom:1px solid #eee;">
+                    <td style="padding:12px;font-weight:600;">&#127475;&#127476; 挪威 vs 英格兰 &#127468;&#127463;</td>
+                    <td style="padding:12px;text-align:center;color:var(--accent);font-weight:700;">英格兰胜</td>
+                    <td style="padding:12px;text-align:center;font-weight:600;">2-3</td>
+                    <td style="padding:12px;text-align:center;color:var(--gold);">&#9733;&#9733;&#9733;</td>
+                    <td style="padding:12px;text-align:center;color:var(--warning);">中高 (24%)</td>
+                </tr>
+                <tr>
+                    <td style="padding:12px;font-weight:600;">&#127462;&#127479; 阿根廷 vs 瑞士 &#127464;&#127469;</td>
+                    <td style="padding:12px;text-align:center;color:var(--accent);font-weight:700;">阿根廷胜</td>
+                    <td style="padding:12px;text-align:center;font-weight:600;">2-1</td>
+                    <td style="padding:12px;text-align:center;color:var(--gold);">&#9733;&#9733;&#9733;&#9733;</td>
+                    <td style="padding:12px;text-align:center;">中 (13%)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="footer">
+    <p>2026美加墨世界杯 1/4决赛深度前瞻 | 数据来源：FIFA官方、Opta、WhoScored、各国足协官方公告</p>
+    <p>本报告基于公开数据的客观推演，足球比赛存在不可预测性，请理性参考</p>
+</div>
+
+</div>
+</body>
+</html>
