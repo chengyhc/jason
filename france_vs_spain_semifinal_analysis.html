@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026世界杯半决赛深度前瞻 | 法国 VS 西班牙</title>
+    <style>
+        :root {
+            --france-blue: #002395;
+            --france-red: #ED2939;
+            --spain-red: #AA151B;
+            --spain-yellow: #F1BF00;
+            --bg-dark: #0a0e17;
+            --bg-card: #131a2b;
+            --bg-card-alt: #1a2238;
+            --text-primary: #e8ecf1;
+            --text-secondary: #8b95a8;
+            --accent-gold: #d4a843;
+            --accent-green: #2ecc71;
+            --accent-orange: #e67e22;
+            --accent-red: #e74c3c;
+            --border-color: #2a3550;
+            --gradient-france: linear-gradient(135deg, #002395, #0055a4, #ED2939);
+            --gradient-spain: linear-gradient(135deg, #AA151B, #F1BF00, #AA151B);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 50px 20px 40px;
+            background: linear-gradient(180deg, rgba(0,35,149,0.15) 0%, rgba(170,21,27,0.1) 50%, rgba(0,0,0,0) 100%);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(0,35,149,0.2), transparent 60%),
+                        radial-gradient(ellipse at 70% 50%, rgba(170,21,27,0.2), transparent 60%);
+            z-index: 0;
+        }
+
+        .header > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-gold), #b8922e);
+            color: #1a1a1a;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 20px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .header h1 .france-text { color: #5b8fd4; }
+        .header h1 .vs-text { color: var(--accent-gold); margin: 0 8px; font-size: 30px; }
+        .header h1 .spain-text { color: #e06060; }
+
+        .header .subtitle {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .match-info-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .match-info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .match-info-item .icon {
+            width: 18px;
+            height: 18px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        /* Core Conclusion - Hero Section */
+        .conclusion-hero {
+            background: linear-gradient(135deg, #1a2640, #1e2d4a);
+            border: 1px solid var(--accent-gold);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conclusion-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212,168,67,0.08), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .conclusion-hero h2 {
+            font-size: 22px;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .prediction-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .prediction-team {
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .prediction-team .team-flag {
+            font-size: 48px;
+            margin-bottom: 8px;
+        }
+
+        .prediction-team .team-name {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .prediction-vs {
+            text-align: center;
+        }
+
+        .prediction-vs .result-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-gold), #c49a30);
+            color: #1a1a1a;
+            font-size: 20px;
+            font-weight: 800;
+            padding: 10px 28px;
+            border-radius: 12px;
+            letter-spacing: 1px;
+        }
+
+        .prediction-vs .confidence {
+            display: block;
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--accent-gold);
+        }
+
+        .score-predictions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .score-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px 25px;
+            text-align: center;
+            min-width: 130px;
+        }
+
+        .score-card .rank {
+            font-size: 12px;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .score-card .score {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .score-card .prob {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 5px;
+        }
+
+        .score-card:first-child {
+            border-color: var(--accent-gold);
+            background: rgba(212,168,67,0.08);
+        }
+
+        /* Section Cards */
+        .section-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .section-card h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-card h2 .section-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--accent-gold);
+            color: #1a1a1a;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        /* Team Comparison Table */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 0;
+            margin-bottom: 10px;
+        }
+
+        .comparison-row {
+            display: contents;
+        }
+
+        .comp-cell {
+            padding: 10px 15px;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .comp-cell.label {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .comp-cell.france {
+            text-align: right;
+            font-weight: 600;
+            color: #5b8fd4;
+        }
+
+        .comp-cell.spain {
+            text-align: left;
+            font-weight: 600;
+            color: #e06060;
+        }
+
+        .comp-cell.highlight {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        /* Injury/Lineup Section */
+        .lineup-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        @media (max-width: 700px) {
+            .lineup-container { grid-template-columns: 1fr; }
+        }
+
+        .lineup-box {
+            background: var(--bg-card-alt);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .lineup-box h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lineup-box h3 .flag { font-size: 22px; }
+
+        .formation-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.08);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .player-list {
+            list-style: none;
+        }
+
+        .player-list li {
+            padding: 5px 0;
+            font-size: 13px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .player-list li .pos {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 11px;
+            min-width: 28px;
+        }
+
+        .player-list li .injury-tag {
+            font-size: 10px;
+            background: rgba(231,76,60,0.2);
+            color: var(--accent-red);
+            padding: 1px 6px;
+            border-radius: 4px;
+            margin-left: 4px;
+        }
+
+        .player-list li .fit-tag {
+            font-size: 10px;
+            background: rgba(46,204,113,0.2);
+            color: var(--accent-green);
+            padding: 1px 6px;
+            border-radius: 4px;
+            margin-left: 4px;
+        }
+
+        .injury-summary {
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .injury-summary h4 {
+            font-size: 13px;
+            color: var(--accent-orange);
+            margin-bottom: 8px;
+        }
+
+        .injury-summary p {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Tactical Analysis */
+        .tactical-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        @media (max-width: 700px) {
+            .tactical-grid { grid-template-columns: 1fr; }
+        }
+
+        .tactical-box {
+            background: var(--bg-card-alt);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .tactical-box h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tactical-box h3 .flag { font-size: 22px; }
+
+        .tactical-point {
+            margin-bottom: 12px;
+            padding-left: 14px;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .tactical-point .label {
+            font-size: 12px;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .tactical-point .desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .weakness-point {
+            border-left-color: var(--accent-red);
+        }
+
+        .weakness-point .label {
+            color: var(--accent-red);
+        }
+
+        /* Key Matchup */
+        .matchup-card {
+            background: linear-gradient(135deg, rgba(212,168,67,0.08), rgba(212,168,67,0.02));
+            border: 1px solid rgba(212,168,67,0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .matchup-card h3 {
+            color: var(--accent-gold);
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .matchup-card p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Environment Section */
+        .env-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .env-item {
+            background: var(--bg-card-alt);
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .env-item .env-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .env-item .env-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .env-item .env-note {
+            font-size: 11px;
+            color: var(--accent-orange);
+            margin-top: 6px;
+        }
+
+        /* Argument List */
+        .argument-list {
+            list-style: none;
+            counter-reset: arg-counter;
+        }
+
+        .argument-list li {
+            counter-increment: arg-counter;
+            margin-bottom: 18px;
+            padding: 18px 20px 18px 60px;
+            background: var(--bg-card-alt);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .argument-list li::before {
+            content: counter(arg-counter);
+            position: absolute;
+            left: 18px;
+            top: 18px;
+            width: 28px;
+            height: 28px;
+            background: var(--accent-gold);
+            color: #1a1a1a;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .argument-list li .arg-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .argument-list li .arg-body {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Goal Script Section */
+        .goal-script-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .goal-script-item {
+            background: var(--bg-card-alt);
+            border-radius: 12px;
+            padding: 18px;
+        }
+
+        .goal-script-item .gs-label {
+            font-size: 12px;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .goal-script-item .gs-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .goal-script-item .gs-detail {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 6px;
+            line-height: 1.6;
+        }
+
+        /* X-Factor Section */
+        .xfactor-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media (max-width: 700px) {
+            .xfactor-list { grid-template-columns: 1fr; }
+        }
+
+        .xfactor-item {
+            background: rgba(230,126,34,0.06);
+            border: 1px solid rgba(230,126,34,0.2);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .xfactor-item .xf-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-bottom: 6px;
+        }
+
+        .xfactor-item .xf-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Odds Table */
+        .odds-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .odds-table th, .odds-table td {
+            padding: 10px 14px;
+            text-align: center;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .odds-table th {
+            background: rgba(255,255,255,0.03);
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .odds-table td {
+            color: var(--text-primary);
+        }
+
+        .odds-table .highlight-cell {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        /* Market Signal */
+        .market-signals {
+            margin-top: 20px;
+        }
+
+        .signal-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 12px 16px;
+            background: var(--bg-card-alt);
+            border-radius: 10px;
+        }
+
+        .signal-item .signal-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .signal-item .signal-icon.warn {
+            background: rgba(230,126,34,0.15);
+            color: var(--accent-orange);
+        }
+
+        .signal-item .signal-icon.info {
+            background: rgba(91,143,212,0.15);
+            color: #5b8fd4;
+        }
+
+        .signal-item .signal-icon.danger {
+            background: rgba(231,76,60,0.15);
+            color: var(--accent-red);
+        }
+
+        .signal-item .signal-text {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .signal-item .signal-text strong {
+            color: var(--text-primary);
+        }
+
+        /* Data Source Footer */
+        .data-footer {
+            margin-top: 40px;
+            padding: 25px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .data-footer h3 {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .data-footer p {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .data-footer .sources {
+            margin-top: 10px;
+        }
+
+        .data-footer .sources a {
+            color: #5b8fd4;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .data-footer .sources a:hover {
+            text-decoration: underline;
+        }
+
+        /* Probability Bar */
+        .prob-bar-container {
+            margin: 20px 0;
+        }
+
+        .prob-bar {
+            display: flex;
+            height: 36px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .prob-bar .seg-france {
+            background: linear-gradient(90deg, #0035a4, #0055c8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .prob-bar .seg-draw {
+            background: #3a4560;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #ccc;
+        }
+
+        .prob-bar .seg-spain {
+            background: linear-gradient(90deg, #c42430, #aa151b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .prob-legend {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .prob-legend span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .prob-legend .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+        }
+
+        .prob-legend .dot.france { background: #0055c8; }
+        .prob-legend .dot.draw { background: #3a4560; }
+        .prob-legend .dot.spain { background: #aa151b; }
+
+        /* Head to Head */
+        .h2h-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 0;
+            margin-bottom: 15px;
+        }
+
+        .h2h-row {
+            display: contents;
+        }
+
+        .h2h-cell {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .h2h-cell.label {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .h2h-cell.france-val {
+            text-align: right;
+            font-weight: 700;
+            color: #5b8fd4;
+            font-size: 15px;
+        }
+
+        .h2h-cell.spain-val {
+            text-align: left;
+            font-weight: 700;
+            color: #e06060;
+            font-size: 15px;
+        }
+
+        .h2h-cell .detail {
+            font-size: 11px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 26px; }
+            .prediction-main { gap: 20px; }
+            .score-predictions { gap: 10px; }
+            .score-card { min-width: 100px; padding: 12px 16px; }
+            .container { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ======================== HEADER ======================== -->
+    <div class="header">
+        <div class="header-badge">2026 FIFA WORLD CUP SEMIFINAL</div>
+        <h1>
+            <span class="france-text">法国</span>
+            <span class="vs-text">VS</span>
+            <span class="spain-text">西班牙</span>
+        </h1>
+        <p class="subtitle">全维度深度前瞻 &amp; 胜负预测报告</p>
+        <div class="match-info-bar">
+            <div class="match-info-item">
+                <span class="icon">📅</span>
+                北京时间 2026-07-15 03:00
+            </div>
+            <div class="match-info-item">
+                <span class="icon">🏟</span>
+                达拉斯 AT&T 体育场
+            </div>
+            <div class="match-info-item">
+                <span class="icon">⚡</span>
+                半决赛 · 单场淘汰
+            </div>
+            <div class="match-info-item">
+                <span class="icon">🌍</span>
+                德克萨斯州阿灵顿
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== CORE CONCLUSION ======================== -->
+    <div class="conclusion-hero">
+        <h2>⭐ 核心结论</h2>
+
+        <div class="prediction-main">
+            <div class="prediction-team">
+                <div class="team-flag">🇫🇷</div>
+                <div class="team-name">法国</div>
+            </div>
+            <div class="prediction-vs">
+                <div class="result-badge">法国胜</div>
+                <span class="confidence">信心指数 ⭐⭐⭐☆☆（3/5星）</span>
+            </div>
+            <div class="prediction-team">
+                <div class="team-flag">🇪🇸</div>
+                <div class="team-name">西班牙</div>
+            </div>
+        </div>
+
+        <div class="prob-bar-container">
+            <div class="prob-bar">
+                <div class="seg-france" style="width:42%">法国 42%</div>
+                <div class="seg-draw" style="width:24%">平 24%</div>
+                <div class="seg-spain" style="width:34%">西班牙 34%</div>
+            </div>
+            <div class="prob-legend">
+                <span><span class="dot france"></span>法国常规时间取胜</span>
+                <span><span class="dot draw"></span>90分钟平局</span>
+                <span><span class="dot spain"></span>西班牙常规时间取胜</span>
+            </div>
+        </div>
+
+        <p style="text-align:center; color:var(--text-secondary); font-size:13px; margin: 15px 0 25px;">
+            Opta万次模拟：法国晋级决赛总概率 <strong style="color:#5b8fd4;">61%</strong> · 西班牙晋级总概率 <strong style="color:#e06060;">39%</strong>
+        </p>
+
+        <h3 style="font-size:14px; color:var(--accent-gold); margin-bottom:12px; text-align:center;">最可能的三组精确比分（按概率排序）</h3>
+        <div class="score-predictions">
+            <div class="score-card">
+                <div class="rank">概率最高</div>
+                <div class="score">2-1</div>
+                <div class="prob">法国胜 · 约15%</div>
+            </div>
+            <div class="score-card">
+                <div class="rank">概率第二</div>
+                <div class="score">1-1</div>
+                <div class="prob">平局进加时 · 约13%</div>
+            </div>
+            <div class="score-card">
+                <div class="rank">概率第三</div>
+                <div class="score">1-0</div>
+                <div class="prob">法国小胜 · 约11%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== DIMENSION 1: TEAM FUNDAMENTALS ======================== -->
+    <div class="section-card">
+        <h2><span class="section-num">1</span> 球队基本面与近期状态</h2>
+
+        <div class="comparison-grid">
+            <div class="comparison-row">
+                <div class="comp-cell france" style="font-size:16px; font-weight:800;">🇫🇷 法国</div>
+                <div class="comp-cell label">球队</div>
+                <div class="spain comp-cell" style="font-size:16px; font-weight:800;">🇪🇸 西班牙</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comp-cell france highlight">1</div>
+                <div class="comp-cell label">FIFA排名</div>
+                <div class="spain comp-cell">3</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comp-cell france highlight">15.2亿€</div>
+                <div class="comp-cell label">总身价</div>
+                <div class="spain comp-cell">12.2亿€</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comp-cell france highlight">6胜0平0负</div>
+                <div class="comp-cell label">本届战绩</div>
+                <div class="spain comp-cell">5胜1平0负</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comp-cell france highlight">16进 / 2失</div>
+                <div class="comp-cell label">进失球</div>
+                <div class="spain comp-cell">11进 / 1失</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comp-cell france highlight">2.67</div>
+                <div class="comp-cell label">场均进球</div>
+                <div class="spain comp-cell">1.83</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comp-cell france">0.33</div>
+                <div class="comp-cell label">场均失球</div>
+                <div class="spain comp-cell highlight">0.17</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comp-cell france highlight">18.2%</div>
+                <div class="comp-cell label">射门转化率</div>
+                <div class="spain comp-cell">11.6%</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comp-cell france highlight">2.44</div>
+                <div class="comp-cell label">场均xG</div>
+                <div class="spain comp-cell">1.58</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comp-cell france">0.58</div>
+                <div class="comp-cell label">对手场均xGA</div>
+                <div class="spain comp-cell highlight">0.36</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comp-cell france highlight">26.8%</div>
+                <div class="comp-cell label">定位球得分率</div>
+                <div class="spain comp-cell">15.7%</div>
+            </div>
+        </div>
+
+        <!-- Injury & Lineup -->
+        <h3 style="font-size:16px; margin: 25px 0 15px; color:var(--text-primary);">伤停情况与预测首发</h3>
+        <div class="lineup-container">
+            <div class="lineup-box">
+                <h3><span class="flag">🇫🇷</span> 法国 · 战力折损约4%</h3>
+                <div class="formation-tag">4-2-3-1</div>
+                <ul class="player-list">
+                    <li><span class="pos">GK</span> 迈尼昂</li>
+                    <li><span class="pos">RB</span> 孔德</li>
+                    <li><span class="pos">CB</span> 于帕梅卡诺 <span class="injury-tag">脚部轻伤</span></li>
+                    <li><span class="pos">CB</span> 萨利巴 <span class="injury-tag">背部轻伤</span></li>
+                    <li><span class="pos">LB</span> 迪涅</li>
+                    <li><span class="pos">CM</span> 楚阿梅尼 <span class="fit-tag">已恢复合练</span></li>
+                    <li><span class="pos">CM</span> 拉比奥</li>
+                    <li><span class="pos">RW</span> 登贝莱（5球2助）</li>
+                    <li><span class="pos">AM</span> 奥利塞（5助）</li>
+                    <li><span class="pos">LW</span> 杜埃 / 巴尔科拉</li>
+                    <li><span class="pos">ST</span> 姆巴佩（8球3助） <span class="fit-tag">脚踝已恢复</span></li>
+                </ul>
+                <div class="injury-summary">
+                    <h4>伤停要点</h4>
+                    <p>姆巴佩1/4决赛脚踝受撞后被换下，已恢复全队合练并表态"完全没问题"；楚阿梅尼因内收肌缺席1/4决赛，已回归训练有望首发；于帕梅卡诺、萨利巴预防性休训，预计不影响登场；全队黄牌已清零，无停赛。主力框架完整度约90%。</p>
+                </div>
+            </div>
+            <div class="lineup-box">
+                <h3><span class="flag">🇪🇸</span> 西班牙 · 战力折损约7%</h3>
+                <div class="formation-tag">4-3-3</div>
+                <ul class="player-list">
+                    <li><span class="pos">GK</span> 乌奈·西蒙（609分钟不失球）</li>
+                    <li><span class="pos">RB</span> 波罗</li>
+                    <li><span class="pos">CB</span> 库巴西</li>
+                    <li><span class="pos">CB</span> 拉波尔特</li>
+                    <li><span class="pos">LB</span> 库库雷利亚</li>
+                    <li><span class="pos">DM</span> 罗德里</li>
+                    <li><span class="pos">CM</span> 佩德里 / 梅里诺</li>
+                    <li><span class="pos">CM</span> 法比安·鲁伊斯</li>
+                    <li><span class="pos">RW</span> 亚马尔</li>
+                    <li><span class="pos">LW</span> 费兰·托雷斯</li>
+                    <li><span class="pos">ST</span> 奥亚萨瓦尔（4球1助）</li>
+                </ul>
+                <div class="injury-summary">
+                    <h4>伤停要点</h4>
+                    <p>替补边锋尼科·威廉姆斯脚踝伤势存疑，大概率替补待命，边路轮换厚度下降；其余主力全员健康；佩德里可能继续替补，梅里诺连续两场淘汰赛替补绝杀，有望竞争首发。全队黄牌已清零，无停赛。后防线平均身高不足，惧怕高空冲吊。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== DIMENSION 2: TACTICS & H2H ======================== -->
+    <div class="section-card">
+        <h2><span class="section-num">2</span> 战术体系与历史交锋</h2>
+
+        <div class="tactical-grid">
+            <div class="tactical-box">
+                <h3><span class="flag">🇫🇷</span> 法国 · 高效反击体系</h3>
+                <div class="tactical-point">
+                    <div class="label">战术核心</div>
+                    <div class="desc">4-2-3-1阵型下，楚阿梅尼/拉比奥双后腰屏障拦截断球，长传直接打防线身后；姆巴佩左路极速爆破+登贝莱右路内切+奥利斯居中组织串联，反击推进速度世界顶级。</div>
+                </div>
+                <div class="tactical-point">
+                    <div class="label">进攻逻辑</div>
+                    <div class="desc">本届攻入16球为赛事最多；主动让出控球权，追求攻防转换极致效率；淘汰赛连续三场零封证明防守端退守极快且纪律严明。</div>
+                </div>
+                <div class="tactical-point weakness-point">
+                    <div class="label">致命短板</div>
+                    <div class="desc">面对传控体系时中场控制力不足，长时间阵地战攻坚效率偏低；70分钟后体能断崖下滑，边后卫大幅回收留身后空当。</div>
+                </div>
+            </div>
+            <div class="tactical-box">
+                <h3><span class="flag">🇪🇸</span> 西班牙 · 传控渗透体系</h3>
+                <div class="tactical-point">
+                    <div class="label">战术核心</div>
+                    <div class="desc">4-3-3体系下罗德里单后腰掌控节奏，佩德里/法比安小范围传切拉扯防线；亚马尔右路持续持球牵制吸引2-3人包夹后分边，制造肋部渗透机会；场均控球率超65%。</div>
+                </div>
+                <div class="tactical-point">
+                    <div class="label">进攻逻辑</div>
+                    <div class="desc">大概率主导控球权，用传控消耗法国反击体能；梅里诺连续两场淘汰赛末段绝杀，擅长75分钟后持续施压；奥亚萨瓦尔4球状态火热。</div>
+                </div>
+                <div class="tactical-point weakness-point">
+                    <div class="label">致命短板</div>
+                    <div class="desc">缺乏正印中锋，面对密集防守时阵地战转化率偏低；中卫组合转身偏慢，边路前压留身后空档；全队平均身高不足，44.4%丢球来自定位球。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Matchup -->
+        <div class="matchup-card">
+            <h3>🎯 核心对位：姆巴佩 VS 亚马尔</h3>
+            <p>近10次交手中，亚马尔所在球队赢下8场，占据绝对上风。亚马尔擅长提前卡位封堵姆巴佩外线超车路线，这是姆巴佩最致命的突破方式。然而，姆巴佩本届8球的状态巅峰，其单点突破上限决定法国能否打破传控牢笼——姆巴佩左路对位库库雷利亚时，速度与冲击力形成碾压级优势，是法国最锋利的进攻武器。亚马尔的右路牵制能力则决定西班牙防线的容错率。</p>
+        </div>
+
+        <!-- Head to Head -->
+        <h3 style="font-size:16px; margin: 25px 0 15px; color:var(--text-primary);">历史交锋记录</h3>
+        <div class="h2h-grid">
+            <div class="h2h-row">
+                <div class="h2h-cell france-val">13胜</div>
+                <div class="h2h-cell label">总38次交手</div>
+                <div class="h2h-cell spain-val">18胜</div>
+            </div>
+            <div class="h2h-row">
+                <div class="h2h-cell france-val">—</div>
+                <div class="h2h-cell label">平局</div>
+                <div class="h2h-cell spain-val">7次</div>
+            </div>
+            <div class="h2h-row">
+                <div class="h2h-cell france-val" style="color:var(--accent-green);">法国 3-1</div>
+                <div class="h2h-cell label">世界杯唯一交手<br><span class="detail">2006年1/8决赛</span></div>
+                <div class="h2h-cell spain-val" style="color:var(--text-secondary);">西班牙</div>
+            </div>
+            <div class="h2h-row">
+                <div class="h2h-cell france-val" style="color:var(--accent-red);">法国 1-2</div>
+                <div class="h2h-cell label">2024欧洲杯半决赛<br><span class="detail">亚马尔世界波逆转</span></div>
+                <div class="h2h-cell spain-val">西班牙 ✓</div>
+            </div>
+            <div class="h2h-row">
+                <div class="h2h-cell france-val" style="color:var(--accent-red);">法国 4-5</div>
+                <div class="h2h-cell label">2025欧国联半决赛<br><span class="detail">高进球大战</span></div>
+                <div class="h2h-cell spain-val">西班牙 ✓</div>
+            </div>
+            <div class="h2h-row">
+                <div class="h2h-cell france-val" style="color:var(--accent-green);">法国 2-1 ✓</div>
+                <div class="h2h-cell label">2021欧国联决赛<br><span class="detail">法国唯一大赛半决赛胜西班牙</span></div>
+                <div class="h2h-cell spain-val" style="color:var(--text-secondary);">西班牙</div>
+            </div>
+        </div>
+        <p style="font-size:13px; color:var(--accent-orange); margin-top:12px;">
+            ⚠ 关键信息：近两届大赛半决赛西班牙连续淘汰法国；但2006年世界杯唯一交手法国3-1获胜。心理层面西班牙占优。
+        </p>
+    </div>
+
+    <!-- ======================== DIMENSION 3: ENVIRONMENT VARIABLES ======================== -->
+    <div class="section-card">
+        <h2><span class="section-num">3</span> 2026世界杯专属环境变量</h2>
+
+        <div class="env-grid">
+            <div class="env-item">
+                <div class="env-value">33°C</div>
+                <div class="env-label">达拉斯7月14日最高气温</div>
+                <div class="env-note">高温对传控型球队体能消耗更大</div>
+            </div>
+            <div class="env-item">
+                <div class="env-value">44-70%</div>
+                <div class="env-label">相对湿度</div>
+                <div class="env-note">午后湿度偏高，体感闷热</div>
+            </div>
+            <div class="env-item">
+                <div class="env-value">180m</div>
+                <div class="env-label">达拉斯海拔</div>
+                <div class="env-note">海拔极低，无高原影响</div>
+            </div>
+            <div class="env-item">
+                <div class="env-value">~2.5mm</div>
+                <div class="env-label">预计降水量</div>
+                <div class="env-note">有雷阵雨可能，湿滑场地利好反击</div>
+            </div>
+            <div class="env-item">
+                <div class="env-value">9.3万</div>
+                <div class="env-label">AT&T体育场容量</div>
+                <div class="env-note">本届承办场次最多场馆（9场）</div>
+            </div>
+            <div class="env-item">
+                <div class="env-value">可关闭</div>
+                <div class="env-label">顶棚状态</div>
+                <div class="env-note">如遇极端天气可关闭顶棚</div>
+            </div>
+        </div>
+
+        <div style="margin-top:20px; padding:18px; background:var(--bg-card-alt); border-radius:12px;">
+            <h4 style="font-size:14px; color:var(--accent-orange); margin-bottom:8px;">🌡 环境变量深度解读</h4>
+            <ul style="font-size:13px; color:var(--text-secondary); line-height:1.8; list-style:disc; padding-left:20px;">
+                <li><strong style="color:var(--text-primary)">高温影响</strong>：达拉斯7月高温达33°C以上，对持续跑动型传控体系（西班牙）的体能消耗远大于蹲守反击型球队（法国）。西班牙场均控球率65%+意味着球员需持续无球跑动接应，高温下乳酸堆积更快。</li>
+                <li><strong style="color:var(--text-primary)">降雨变量</strong>：气象预报显示7月14日有雷阵雨概率（降水量约2.5mm）。湿滑场地会加速传球失误率，对西班牙地面传控体系产生干扰，而法国的长传身后+速度突破反而受益于湿滑场地的身后球效果。</li>
+                <li><strong style="color:var(--text-primary)">赛程对比</strong>：法国1/4决赛7月9日完赛，西班牙1/4决赛7月10日完赛，法国多休息约1天，且法国全部6场比赛均在90分钟内解决，而西班牙连续两场淘汰赛依靠末段绝杀晋级，体能储备处于劣势。</li>
+                <li><strong style="color:var(--text-primary)">旅途因素</strong>：法国此前在波士顿比赛，西班牙在洛杉矶比赛，均需飞抵达拉斯；但法国训练基地位于本特利大学，已于7月12日提前抵达达拉斯，适应性略优。</li>
+                <li><strong style="color:var(--text-primary)">海拔无忧</strong>：达拉斯海拔仅约180米，与墨西哥城2200米海拔形成鲜明对比，不存在高原反应影响，两队均在正常海拔条件下比赛。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ======================== DIMENSION 4: MATCH CONTEXT & MOTIVATION ======================== -->
+    <div class="section-card">
+        <h2><span class="section-num">4</span> 赛制与战意因素</h2>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div style="background:var(--bg-card-alt); border-radius:12px; padding:20px;">
+                <h3 style="font-size:15px; color:#5b8fd4; margin-bottom:12px;">🇫🇷 法国战意权重：78%</h3>
+                <ul style="font-size:13px; color:var(--text-secondary); line-height:1.8; list-style:disc; padding-left:20px;">
+                    <li>冲击世界杯连冠伟业（2018冠军、2022亚军、2026？）</li>
+                    <li><strong style="color:var(--accent-red)">复仇执念</strong>：近两届大赛半决赛均被西班牙淘汰（2024欧洲杯、2025欧国联），全队复仇欲望极强</li>
+                    <li>姆巴佩冲击世界杯历史射手王（当前20球，距克洛泽16球纪录已大幅超越）</li>
+                    <li>连续三届世界杯闯入四强，经验优势无人能及</li>
+                </ul>
+            </div>
+            <div style="background:var(--bg-card-alt); border-radius:12px; padding:20px;">
+                <h3 style="font-size:15px; color:#e06060; margin-bottom:12px;">🇪🇸 西班牙战意权重：74%</h3>
+                <ul style="font-size:13px; color:var(--text-secondary); line-height:1.8; list-style:disc; padding-left:20px;">
+                    <li>冲击队史第三座世界杯冠军（2010后已16年无冠）</li>
+                    <li><strong style="color:var(--accent-green)">心理优势</strong>：近两次大赛半决赛均淘汰法国，球员对战心态占上风</li>
+                    <li>时隔16年重返世界杯四强，新一代球员渴望证明自己</li>
+                    <li>传控体系已找到克制法国反击的策略，自信能够再度取胜</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top:20px; padding:18px; background:rgba(212,168,67,0.06); border:1px solid rgba(212,168,67,0.2); border-radius:12px;">
+            <h4 style="font-size:14px; color:var(--accent-gold); margin-bottom:8px;">📋 新赛制影响分析</h4>
+            <p style="font-size:13px; color:var(--text-secondary); line-height:1.8;">
+                本届世界杯首次扩军至48队、12组赛制，但半决赛阶段新赛制的影响已弱化——能走到半决赛的球队均已历经6场高强度比赛的检验。关键变量在于<strong style="color:var(--text-primary)">晋级路径的体能消耗差异</strong>：法国6战全在90分钟内解决，全队无需经历加时苦战；西班牙连续两场淘汰赛依靠88-91分钟绝杀晋级，核心球员体能消耗显著更高。半决赛为单场淘汰制，90分钟平局进入30分钟加时赛+点球大战，这对法国更为有利——法国拥有更充沛的加时赛体能储备。
+            </p>
+        </div>
+    </div>
+
+    <!-- ======================== DIMENSION 5: MARKET & ODDS ======================== -->
+    <div class="section-card">
+        <h2><span class="section-num">5</span> 机构与市场风向</h2>
+
+        <h3 style="font-size:15px; margin-bottom:12px;">主流90分钟赔率（FanDuel / DraftKings）</h3>
+        <table class="odds-table">
+            <thead>
+                <tr>
+                    <th>市场</th>
+                    <th style="color:#5b8fd4;">法国</th>
+                    <th>平局</th>
+                    <th style="color:#e06060;">西班牙</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>90分钟胜负</td>
+                    <td class="highlight-cell">+130 / +135</td>
+                    <td>+210 / +220</td>
+                    <td>+220 / +230</td>
+                </tr>
+                <tr>
+                    <td>隐含概率</td>
+                    <td class="highlight-cell">~42%</td>
+                    <td>~24%</td>
+                    <td>~30%</td>
+                </tr>
+                <tr>
+                    <td>晋级决赛</td>
+                    <td class="highlight-cell">-148 / -155</td>
+                    <td>—</td>
+                    <td>+118 / +125</td>
+                </tr>
+                <tr>
+                    <td>晋级隐含概率</td>
+                    <td class="highlight-cell">~61%</td>
+                    <td>—</td>
+                    <td>~39%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="font-size:13px; color:var(--text-secondary); margin-top:12px;">
+            大小球盘口：2.5球（大球-114 / 小球-106）· 半全场平平赔率低至4.85 · 比分赔率：1-1(6.00)、2-1(6.50)、1-0(9.00)为热度最高三组
+        </p>
+
+        <div class="market-signals">
+            <div class="signal-item">
+                <div class="signal-icon warn">⚡</div>
+                <div class="signal-text"><strong>信号1：市场倾向法国但领先幅度不匹配统治级表现</strong><br>法国6战全胜进16球仅失2球，但90分钟胜赔仅+130/+135，领先西班牙的+220/+230并不算大，说明专业机构并不认为法国能轻松碾压对手，预留了西班牙爆冷空间。</div>
+            </div>
+            <div class="signal-item">
+                <div class="signal-icon info">📊</div>
+                <div class="signal-text"><strong>信号2：模型与市场方向出现分歧</strong><br>部分量化模型实际倾向西班牙晋级（考虑历史交锋压制因素），与市场定价形成背离。当模型倾向和市场热门指向不同方向时，暗示本场比表面数据更难判断，存在冷门风险。</div>
+            </div>
+            <div class="signal-item">
+                <div class="signal-icon danger">🔥</div>
+                <div class="signal-text"><strong>信号3：79%投注量涌入法国方向</strong><br>据DraftKings数据，79%的投注量押注法国取胜，资金大量流入主队方向，进一步压低法国赔率。这种过热现象需警惕——当大众一边倒时，冷门概率往往上升。</div>
+            </div>
+            <div class="signal-item">
+                <div class="signal-icon warn">🎯</div>
+                <div class="signal-text"><strong>信号4：半全场平平赔率最低</strong><br>半全场玩法中"平平"（半场平/全场平）赔率低至4.85，为所有组合中最低，暗示大数据测算下90分钟平局是概率最高的结果，法国取胜并非板上钉钉。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== DEEP LOGIC ======================== -->
+    <div class="section-card">
+        <h2><span class="section-num">6</span> 深度逻辑拆解</h2>
+
+        <ol class="argument-list">
+            <li>
+                <div class="arg-title">法国反击体系天然克制西班牙传控</div>
+                <div class="arg-body">本届世界杯法国场均xG高达2.44（对手仅0.58），反击高质量绝佳机会产量断层领先所有球队。西班牙场均控球率65%+，意味着法国将获得大量攻防转换空间——姆巴佩左路对位库库雷利亚（速度与冲击力碾压级优势）、登贝莱右路内切创造机会，两人合计10球4助攻，单点爆破能力足以击穿西班牙后防转身偏慢的弱点。法国6战全部90分钟内解决战斗，而西班牙连续两场末段绝杀说明面对密集防守攻坚效率有限。</div>
+            </li>
+            <li>
+                <div class="arg-title">体能与赛程：法国占据显著优势</div>
+                <div class="arg-body">法国1/4决赛7月9日完赛、西班牙7月10日完赛，法国多休1天。更关键的是，法国6场比赛全部在90分钟内结束，无需加时消耗；西班牙连续两场淘汰赛分别在第91分钟和第88分钟绝杀，核心球员（罗德里全勤、亚马尔高负荷持球）的体能储备已处于劣势。达拉斯33°C高温进一步放大这一差距——高温下持续传控跑动的乳酸堆积远比蹲守反击更严重，70分钟后西班牙的压迫强度可能显著下降。</div>
+            </li>
+            <li>
+                <div class="arg-title">定位球攻防：法国拥有碾压级优势</div>
+                <div class="arg-body">法国定位球得分率26.8%（西班牙仅15.7%），于帕梅卡诺、萨利巴、科纳特等均为身高1米90+的头球好手；西班牙中卫库巴西身高仅1米83，拉波尔特已32岁且起跳高度下滑，全队44.4%的丢球来自定位球攻防。这一对位差距在僵局中极可能成为决定性因素——一旦法国获得前场定位球，高空轰炸几乎必然制造威胁。</div>
+            </li>
+            <li>
+                <div class="arg-title">历史交锋心理压制：西班牙不可忽视的X因素</div>
+                <div class="arg-body">近两届大赛半决赛西班牙连续淘汰法国（2024欧洲杯2-1、2025欧国联5-4），亚马尔面对姆巴佩10次交手赢下8次。这种血脉压制般的历史数据意味着：即便法国纸面占优，关键时刻的心理博弈仍可能倾向西班牙。德拉富恩特的球队已找到克制法国反击的策略——高位逼抢压缩姆巴佩起速空间，亚马尔提前卡位封堵外线超车路线。如果法国无法在70分钟内建立领先，比赛进入末段后西班牙的绝杀属性将被激活。</div>
+            </li>
+        </ol>
+    </div>
+
+    <!-- ======================== GOAL SCRIPT ======================== -->
+    <div class="section-card">
+        <h2><span class="section-num">7</span> 进球剧本推演</h2>
+
+        <div class="goal-script-grid">
+            <div class="goal-script-item">
+                <div class="gs-label">总进球区间</div>
+                <div class="gs-value">2-3球（最可能）</div>
+                <div class="gs-detail">市场大小球2.5盘口两边赔付几乎持平，指向2-3球区间；近三次大赛交锋仅一场平局，双方进攻端都具备稳定得分手段，沉闷0-0概率极低。</div>
+            </div>
+            <div class="goal-script-item">
+                <div class="gs-label">进球时间段</div>
+                <div class="gs-value">0-15分钟 / 70-90分钟</div>
+                <div class="gs-detail">上半场开场阶段法国反击冲击力最猛，姆巴佩可能在西班牙防线尚未进入节奏时制造杀机；70分钟后随西班牙体能下降、法国替补提速（巴尔科拉/杜埃登场），出现进球窗口。若拖入加时，西班牙耐力更强但法国替补更深。</div>
+            </div>
+            <div class="goal-script-item">
+                <div class="gs-label">关键破门球员</div>
+                <div class="gs-value">姆巴佩 ＞ 登贝莱 ＞ 奥亚萨瓦尔</div>
+                <div class="gs-detail">姆巴佩本届8球3助，每65分钟进1球，对位库库雷利亚速度碾压；登贝莱5球2助为第二攻击点；西班牙端奥亚萨瓦尔4球状态最稳，梅里诺为末段绝杀变量。</div>
+            </div>
+            <div class="goal-script-item">
+                <div class="gs-label">比赛节奏预判</div>
+                <div class="gs-value">上半场僵持 · 下半场破局</div>
+                <div class="gs-detail">法国主动让出控球权蹲守反击，西班牙高位传控但难以穿透法国密集防线；0-0或0-1的僵局大概率持续至60分钟，随体能分化逐渐打开局面。最可能剧本：法国通过反击或定位球先破门，西班牙末段压上扳平或被法国替补提速锁定胜局。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== X-FACTORS ======================== -->
+    <div class="section-card">
+        <h2><span class="section-num">8</span> 隐藏X因素</h2>
+
+        <div class="xfactor-list">
+            <div class="xfactor-item">
+                <div class="xf-title">⛈ 极端天气变量</div>
+                <div class="xf-desc">达拉斯7月雷阵雨概率不低，若比赛期间遭遇强降雨，湿滑场地将严重干扰西班牙地面传控精度（短传失误率上升15-20%），而法国长传身后+速度突破反而受益。若场馆关闭顶棚则消除此变量，但当前天气预报显示降雨概率中等。</div>
+            </div>
+            <div class="xfactor-item">
+                <div class="xf-title">🟥 裁判尺度与红牌风险</div>
+                <div class="xf-desc">半决赛执法通常偏宽松，但法国双后腰（楚阿梅尼刚伤愈、拉比奥黄牌已清零但动作大）与西班牙技术型中场（罗德里护球习惯性拉拽）的对抗极易引发摩擦。若裁判早期掏牌较多，将迫使法国降低防守硬度，利好西班牙传控发挥。于帕梅卡诺防守动作偏大，面对亚马尔速度冲击时吃牌/红牌风险不容忽视。</div>
+            </div>
+            <div class="xfactor-item">
+                <div class="xf-title">🩹 伤病突发变量</div>
+                <div class="xf-desc">姆巴佩脚踝伤势虽已恢复，但高强度对抗下复发风险存在——一旦姆巴佩状态打折，法国反击体系威力减半；于帕梅卡诺/萨利巴带伤上阵，面对亚马尔持续冲击时中卫伤退风险高于常规；西班牙罗德里若赛中出现肌肉不适（此前已有先例），西班牙中场控制力将断崖下降。</div>
+            </div>
+            <div class="xfactor-item">
+                <div class="xf-title">🎯 点球大战概率</div>
+                <div class="xf-desc">90分钟平局概率约24%（机构定价隐含），加时赛后仍平则进入点球大战。法国门将迈尼昂扑点能力出色，但西班牙门将乌奈·西蒙本届已扑出2个点球。点球大战中经验往往压倒一切——法国连续三届世界杯四强经验可能成为关键。</div>
+            </div>
+            <div class="xfactor-item">
+                <div class="xf-title">📊 VAR与越位判定</div>
+                <div class="xf-desc">本届世界杯使用半自动越位技术+惯性测量芯片，精度达到毫米级。法国反击战术中姆巴佩的起跑时机至关重要——若半自动越位系统多次判罚法国越位在先，将严重打击反击节奏。反之，西班牙高位防线造越位策略也可能因精度提升而收益。</div>
+            </div>
+            <div class="xfactor-item">
+                <div class="xf-title">🧠 场外心理博弈</div>
+                <div class="xf-desc">德尚赛前强调"已做好打苦战的准备"，德拉富恩特则表示"信心十足"——两种截然不同的赛前信号。若法国开场即遭遇挫折（如早期失球或关键球员受伤），连续两年半决赛被淘汰的心理阴影可能被激活，球员心态波动将远超正常水准。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== DATA SOURCE ======================== -->
+    <div class="data-footer">
+        <h3>数据来源与声明</h3>
+        <p>
+            本报告数据来源：FIFA官网赛事数据、Opta赛事数据库、WhoScored球员对位数据、FBref射门/定位球统计、FanDuel/DraftKings/Betano等主流机构实时盘赔、欧洲中期天气预报中心(ECMWF)及和风天气历史/实时气象数据。
+        </p>
+        <p style="margin-top:8px; color:var(--accent-orange);">
+            ⚠ 免责声明：本报告为基于公开数据的客观分析，所有数据均来源于官方渠道公开信息，不构成任何投注建议。赛事赔率仅为市场资金数据参考，临场球员状态、裁判尺度、突发伤病都会改写赛果。理性观赛，切勿盲目依据赔率判定最终胜负。
+        </p>
+        <p style="margin-top:8px; color:var(--text-secondary); font-size:11px;">
+            报告生成时间：2026年7月13日 · 所有数据截至发布时点，后续可能存在变动
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
