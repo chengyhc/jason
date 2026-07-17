@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026美加墨世界杯决赛深度前瞻 | 西班牙 vs 阿根廷</title>
+    <style>
+        :root {
+            --spain-red: #C60B1E;
+            --spain-gold: #F1BF00;
+            --arg-blue: #75AADB;
+            --arg-white: #FFFFFF;
+            --bg-dark: #0a0e17;
+            --bg-card: #131929;
+            --bg-card2: #1a2236;
+            --text-primary: #e8eaf0;
+            --text-secondary: #8b95a8;
+            --accent: #F1BF00;
+            --accent2: #4FC3F7;
+            --border: #2a3450;
+            --success: #4CAF50;
+            --warning: #FF9800;
+            --danger: #f44336;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 50px 20px 40px;
+            background: linear-gradient(135deg, #0a0e17 0%, #1a1f3a 40%, #0a0e17 100%);
+            border-bottom: 2px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(198,11,30,0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(117,170,219,0.08) 0%, transparent 50%);
+        }
+        .header-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), #e6a800);
+            color: #000;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            position: relative;
+        }
+        .header .subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+        .match-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .team-block {
+            text-align: center;
+            min-width: 160px;
+        }
+        .team-flag {
+            font-size: 60px;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .team-name {
+            font-size: 22px;
+            font-weight: 700;
+        }
+        .team-sub {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .vs-divider {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--accent);
+            text-shadow: 0 0 20px rgba(241,191,0,0.3);
+        }
+        .match-info {
+            margin-top: 24px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .match-info span {
+            margin: 0 12px;
+            color: var(--border);
+        }
+
+        /* Section */
+        .section {
+            margin: 30px 0;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .section-header {
+            padding: 18px 28px;
+            background: linear-gradient(135deg, var(--bg-card2), var(--bg-card));
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-icon { font-size: 22px; }
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .section-body { padding: 24px 28px; }
+
+        /* Core Conclusion */
+        .conclusion-box {
+            background: linear-gradient(135deg, #1a2236, #1e2a44);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .conclusion-label {
+            font-size: 13px;
+            color: var(--accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .conclusion-verdict {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+        .conclusion-sub {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        .confidence-stars {
+            font-size: 22px;
+            color: var(--accent);
+            letter-spacing: 4px;
+        }
+        .confidence-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .score-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px 12px;
+            text-align: center;
+        }
+        .score-card.first {
+            border-color: var(--accent);
+            background: rgba(241,191,0,0.06);
+        }
+        .score-rank {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+        .score-value {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        .score-prob {
+            font-size: 13px;
+            color: var(--accent2);
+            margin-top: 4px;
+        }
+
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .score-grid { grid-template-columns: 1fr; }
+            .match-banner { gap: 16px; }
+            .header h1 { font-size: 24px; }
+        }
+
+        /* Stat Cards */
+        .stat-card {
+            background: var(--bg-card2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .stat-card h4 {
+            font-size: 14px;
+            color: var(--accent2);
+            margin-bottom: 8px;
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            font-size: 14px;
+        }
+        .stat-row .label { color: var(--text-secondary); }
+        .stat-row .value { font-weight: 700; }
+        .stat-bar-container {
+            margin-top: 8px;
+        }
+        .stat-bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+        .stat-bar {
+            height: 8px;
+            background: var(--bg-dark);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+        }
+        .stat-bar .spain-fill {
+            background: var(--spain-red);
+            border-radius: 4px 0 0 4px;
+        }
+        .stat-bar .arg-fill {
+            background: var(--arg-blue);
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Player highlight */
+        .player-highlight {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--bg-card2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .player-role {
+            font-size: 11px;
+            color: var(--accent);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .player-name { font-size: 15px; font-weight: 700; }
+        .player-stat { font-size: 13px; color: var(--text-secondary); }
+
+        /* Logic list */
+        .logic-list { list-style: none; counter-reset: logic; }
+        .logic-list li {
+            counter-increment: logic;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .logic-list li:last-child { border-bottom: none; }
+        .logic-num {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #e6a800);
+            color: #000;
+            font-weight: 800;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logic-text { font-size: 14px; line-height: 1.8; }
+        .logic-text strong { color: var(--accent); }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent2);
+            border: 2px solid var(--bg-dark);
+        }
+        .timeline-time {
+            font-size: 13px;
+            color: var(--accent2);
+            font-weight: 600;
+        }
+        .timeline-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* X-factor */
+        .xfactor-card {
+            background: rgba(255,152,0,0.06);
+            border: 1px solid rgba(255,152,0,0.3);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        .xfactor-card h4 {
+            color: var(--warning);
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .xfactor-card p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Odds table */
+        .odds-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .odds-table th {
+            text-align: left;
+            padding: 10px 12px;
+            background: var(--bg-dark);
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .odds-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .odds-table .highlight { color: var(--accent); font-weight: 700; }
+
+        /* Injury tag */
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .tag-danger { background: rgba(244,67,54,0.15); color: var(--danger); }
+        .tag-warning { background: rgba(255,152,0,0.15); color: var(--warning); }
+        .tag-success { background: rgba(76,175,80,0.15); color: var(--success); }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        /* Phase chart */
+        .phase-chart {
+            display: flex;
+            height: 30px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 12px 0;
+        }
+        .phase-spain { background: var(--spain-red); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 700; }
+        .phase-draw { background: var(--border); display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 11px; font-weight: 700; }
+        .phase-arg { background: var(--arg-blue); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 700; }
+
+        /* Matchup table */
+        .matchup-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 8px;
+            align-items: center;
+        }
+        .matchup-left { text-align: right; font-weight: 600; font-size: 14px; }
+        .matchup-center { color: var(--text-secondary); font-size: 12px; text-align: center; min-width: 60px; }
+        .matchup-right { text-align: left; font-weight: 600; font-size: 14px; }
+        .matchup-bar {
+            grid-column: 1 / -1;
+            height: 6px;
+            border-radius: 3px;
+            background: var(--bg-dark);
+            overflow: hidden;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <div class="header-badge">2026 FIFA World Cup Final | 深度前瞻报告</div>
+            <h1>西班牙 vs 阿根廷</h1>
+            <p class="subtitle">矛与盾的终极对决 — 体系传控 vs 巨星韧性</p>
+            <div class="match-banner">
+                <div class="team-block">
+                    <div class="team-flag">&#127466;&#127480;</div>
+                    <div class="team-name">西班牙</div>
+                    <div class="team-sub">欧洲杯冠军 / FIFA排名#2</div>
+                </div>
+                <div class="vs-divider">VS</div>
+                <div class="team-block">
+                    <div class="team-flag">&#127462;&#127479;</div>
+                    <div class="team-name">阿根廷</div>
+                    <div class="team-sub">卫冕世界杯冠军 / FIFA排名#1</div>
+                </div>
+            </div>
+            <div class="match-info">
+                2026年7月20日 (周日) 03:00 北京时间
+                <span>|</span>
+                纽约大都会人寿体育场 (MetLife Stadium)
+                <span>|</span>
+                容量 82,000+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- ========== 核心结论 ========== -->
+        <div class="conclusion-box">
+            <div class="conclusion-label">核心结论先行</div>
+            <div class="conclusion-verdict" style="color: var(--spain-red);">西班牙胜 (常规时间或加时)</div>
+            <div class="conclusion-sub">体系传控在决赛舞台上克制老迈防线，但比赛胶着度极高，平局概率不可忽视</div>
+            <div class="confidence-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+            <div class="confidence-label">信心指数：4星 / 5星</div>
+            <div class="score-grid">
+                <div class="score-card first">
+                    <div class="score-rank">第一可能</div>
+                    <div class="score-value">1 - 1</div>
+                    <div class="score-prob">平局(加时/点球决出) 35%</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-rank">第二可能</div>
+                    <div class="score-value">2 - 1</div>
+                    <div class="score-prob">西班牙胜 28%</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-rank">第三可能</div>
+                    <div class="score-value">1 - 0</div>
+                    <div class="score-prob">西班牙小胜 18%</div>
+                </div>
+            </div>
+            <div style="margin-top: 16px; font-size: 13px; color: var(--text-secondary);">
+                注：若90分钟战平进入加时/点球，阿根廷点球大战胜率显著占优（马丁内斯扑点能力顶尖），综合夺冠概率：西班牙 56.3% vs 阿根廷 43.7%
+            </div>
+        </div>
+
+        <!-- ========== 一、球队基本面与近期状态 ========== -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">&#128200;</span>
+                <span class="section-title">一、球队基本面与近期状态</span>
+            </div>
+            <div class="section-body">
+                <div class="grid-2">
+                    <!-- 西班牙 -->
+                    <div class="stat-card">
+                        <h4>&#127466;&#127480; 西班牙 — 7场赛事数据</h4>
+                        <div class="stat-row"><span class="label">战绩</span><span class="value">6胜1平0负</span></div>
+                        <div class="stat-row"><span class="label">进球 / 失球</span><span class="value">12 / 1</span></div>
+                        <div class="stat-row"><span class="label">零封场次</span><span class="value">6场 (世界杯历史首队)</span></div>
+                        <div class="stat-row"><span class="label">场均控球率</span><span class="value">66.1%</span></div>
+                        <div class="stat-row"><span class="label">传球成功率</span><span class="value">90%+</span></div>
+                        <div class="stat-row"><span class="label">平均年龄</span><span class="value">26.3岁</span></div>
+                        <div class="stat-row"><span class="label">加时赛次数</span><span class="value">0次</span></div>
+                        <div class="stat-row"><span class="label">连续不败</span><span class="value">37场 (队史纪录)</span></div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar-label"><span>防守稳固度</span><span>98/100</span></div>
+                            <div class="stat-bar"><div class="spain-fill" style="width:98%;"></div></div>
+                        </div>
+                    </div>
+                    <!-- 阿根廷 -->
+                    <div class="stat-card">
+                        <h4>&#127462;&#127479; 阿根廷 — 7场赛事数据</h4>
+                        <div class="stat-row"><span class="label">战绩</span><span class="value">7胜0平0负 (全胜)</span></div>
+                        <div class="stat-row"><span class="label">进球 / 失球</span><span class="value">19 / 7</span></div>
+                        <div class="stat-row"><span class="label">零封场次</span><span class="value">2场</span></div>
+                        <div class="stat-row"><span class="label">场均控球率</span><span class="value">~48% (淘汰赛)</span></div>
+                        <div class="stat-row"><span class="label">75分钟后进球占比</span><span class="value">~50%</span></div>
+                        <div class="stat-row"><span class="label">平均年龄</span><span class="value">28.7岁</span></div>
+                        <div class="stat-row"><span class="label">加时赛次数</span><span class="value">3次 (淘汰赛)</span></div>
+                        <div class="stat-row"><span class="label">世界杯连胜</span><span class="value">6场 (队史纪录)</span></div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar-label"><span>进攻火力</span><span>95/100</span></div>
+                            <div class="stat-bar"><div class="arg-fill" style="width:95%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin: 24px 0 14px; font-size: 16px;">核心球员状态与伤病影响权重</h3>
+                <div class="grid-2">
+                    <div>
+                        <div class="player-highlight">
+                            <div>
+                                <div class="player-role">中场基石 / 影响权重 9.5/10</div>
+                                <div class="player-name">罗德里 (Rodri)</div>
+                                <div class="player-stat">本届655次传球（1966年以来单届最多），攻防转换枢纽 <span class="tag tag-success">健康</span></div>
+                            </div>
+                        </div>
+                        <div class="player-highlight">
+                            <div>
+                                <div class="player-role">边路爆点 / 影响权重 9.0/10</div>
+                                <div class="player-name">亚马尔 (Lamine Yamal)</div>
+                                <div class="player-stat">19岁，速度+盘带顶尖，半决赛造点球，撕裂密集防守尖刀 <span class="tag tag-success">健康</span></div>
+                            </div>
+                        </div>
+                        <div class="player-highlight">
+                            <div>
+                                <div class="player-role">锋线终结 / 影响权重 8.5/10</div>
+                                <div class="player-name">奥亚萨瓦尔 (Oyarzabal)</div>
+                                <div class="player-stat">5球领跑队内射手榜，高压时刻罚点稳健 <span class="tag tag-success">健康</span></div>
+                            </div>
+                        </div>
+                        <div class="player-highlight">
+                            <div>
+                                <div class="player-role">边卫 / 影响权重 7.0/10</div>
+                                <div class="player-name">波罗 (Pedro Porro)</div>
+                                <div class="player-stat">半决赛进球，攻防两端贡献大 <span class="tag tag-warning">出战存疑</span></div>
+                            </div>
+                        </div>
+                        <div class="player-highlight">
+                            <div>
+                                <div class="player-role">替补边锋 / 影响权重 4.0/10</div>
+                                <div class="player-name">皮诺 (Yeremy Pino)</div>
+                                <div class="player-stat">肩锁关节扭伤，小组赛后未出场 <span class="tag tag-danger">缺席</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="player-highlight">
+                            <div>
+                                <div class="player-role">绝对核心 / 影响权重 10/10</div>
+                                <div class="player-name">梅西 (Messi)</div>
+                                <div class="player-stat">8球4助攻领跑射手+助攻榜，世界杯助攻历史纪录(12次)，70分钟后体能下滑 <span class="tag tag-success">健康</span></div>
+                            </div>
+                        </div>
+                        <div class="player-highlight">
+                            <div>
+                                <div class="player-role">中场枢纽 / 影响权重 8.5/10</div>
+                                <div class="player-name">恩佐·费尔南德斯 (Enzo)</div>
+                                <div class="player-stat">半决赛远射扳平英格兰，拦截+推进双重能力 <span class="tag tag-success">健康</span></div>
+                            </div>
+                        </div>
+                        <div class="player-highlight">
+                            <div>
+                                <div class="player-role">锋线双刀 / 影响权重 8.0/10</div>
+                                <div class="player-name">劳塔罗 + 阿尔瓦雷斯</div>
+                                <div class="player-stat">劳塔罗半决赛92分钟绝杀，门前终结稳定；阿尔瓦雷斯冲击力强 <span class="tag tag-success">健康</span></div>
+                            </div>
+                        </div>
+                        <div class="player-highlight">
+                            <div>
+                                <div class="player-role">中场工兵 / 影响权重 7.5/10</div>
+                                <div class="player-name">德保罗 (De Paul)</div>
+                                <div class="player-stat">贴身干扰出球线路，淘汰赛跑动覆盖大 <span class="tag tag-warning">肌肉疲劳</span></div>
+                            </div>
+                        </div>
+                        <div class="player-highlight">
+                            <div>
+                                <div class="player-role">中卫 / 影响权重 7.0/10</div>
+                                <div class="player-name">奥塔门迪 (Otamendi)</div>
+                                <div class="player-stat">37岁老将，经验充足但转身慢，冰敷处理引关注 <span class="tag tag-warning">体能隐忧</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 二、战术体系与历史交锋 ========== -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">&#9876;</span>
+                <span class="section-title">二、战术体系与历史交锋</span>
+            </div>
+            <div class="section-body">
+                <div class="grid-2">
+                    <div class="stat-card">
+                        <h4>&#127466;&#127480; 西班牙 — 改良版新式传控 4-3-3</h4>
+                        <p style="font-size:14px; color: var(--text-secondary); line-height:1.8;">
+                            <strong style="color:var(--spain-red);">核心逻辑：</strong>摒弃"无效倒脚"，兼顾控球压制与边路爆破。罗德里单后腰掌控节奏，佩德里/加维/法比安·鲁伊斯中场轮转，亚马尔和奥尔莫两翼穿插拉扯防线宽度，边后卫（库库雷利亚/波罗）高频前插制造人数优势。<br><br>
+                            <strong style="color:var(--spain-red);">防守机制：</strong>丢球后立即反抢（6秒法则），压缩对手出球空间，场均仅允许对手射正1次。中卫库巴西+拉波尔特出球适配高位体系，但<strong style="color:var(--warning);">转身偏慢</strong>，身后空当是对手唯一突破口。<br><br>
+                            <strong style="color:var(--spain-red);">轮换深度：</strong>梅里诺（91分钟绝杀葡萄牙）、费兰·托雷斯、尼科·威廉姆斯等替补冲击力十足，60分钟和80分钟两个换人节点均能维持高位压迫强度。
+                        </p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>&#127462;&#127479; 阿根廷 — 务实低位防守反击 4-3-3/5-4-1</h4>
+                        <p style="font-size:14px; color: var(--text-secondary); line-height:1.8;">
+                            <strong style="color:var(--arg-blue);">核心逻辑：</strong>斯卡洛尼主动放弃控球，全员收缩至30米防守区域，五人中场屏障（帕雷德斯/德保罗/恩佐/麦卡利斯特+梅西回撤）切断中路直塞线路，断球后第一时间长传找梅西发起反击。<br><br>
+                            <strong style="color:var(--arg-blue);">进攻设计：</strong>梅西右肋自由游走，吸引2-3人包夹拉扯中路空档，劳塔罗/阿尔瓦雷斯斜插身后冲刺。定位球是另一大杀招，梅西主罚角球+任意球精度顶尖。<br><br>
+                            <strong style="color:var(--arg-blue);">关键变招：</strong>70分钟前后换上劳塔罗强化终结，利用梅西最后20分钟持球能力搏杀。但<strong style="color:var(--warning);">中卫组合转身慢</strong>，面对亚马尔持续拉扯极为吃力；塔利亚菲科年龄偏大，回追节奏跟不上。
+                        </p>
+                    </div>
+                </div>
+
+                <h3 style="margin: 24px 0 14px; font-size: 16px;">战术克制关系分析</h3>
+                <div style="background: var(--bg-dark); border-radius: 8px; padding: 20px; border: 1px solid var(--border);">
+                    <div style="font-size: 14px; line-height: 2; color: var(--text-secondary);">
+                        <strong style="color: var(--accent);">&#10148; 亚马尔 vs 塔利亚菲科：</strong>西班牙最致命的进攻通道。亚马尔本届一对一过人成功率极高，塔利亚菲科34岁+连续加时消耗，回追和转身节奏难以匹配，西班牙大概率集中从右路发起冲击。<br>
+                        <strong style="color: var(--accent);">&#10148; 梅西 vs 罗德里+双中卫：</strong>全场最关键的中场博弈。罗德里拦截+调度是西班牙命脉，梅西回撤右肋吸引包夹拉扯空档。若西班牙双中卫跟进盯防过深，身后留出冲刺通道被劳塔罗利用。<br>
+                        <strong style="color: var(--accent);">&#10148; 西班牙高位压迫 vs 阿根廷后场出球：</strong>阿根廷后场出球能力有限，奥塔门迪/罗梅罗长传精度不足，西班牙持续逼抢可能切断梅西与中场的联系，压缩反击发起空间。<br>
+                        <strong style="color: var(--accent);">&#10148; 综合判定：</strong>西班牙传控体系<strong>天然克制</strong>阿根廷低位反击——控球消耗老将体能+高位逼抢切断出球线路，但梅西的单点突破和定位球是<strong>唯一不可完全锁死的变量</strong>。
+                    </div>
+                </div>
+
+                <h3 style="margin: 24px 0 14px; font-size: 16px;">历史交锋记录</h3>
+                <div class="grid-2">
+                    <div class="stat-card">
+                        <h4>总交锋 14次：6胜 2平 6负（完全均势）</h4>
+                        <table class="odds-table">
+                            <tr><th>日期</th><th>赛事</th><th>比分</th></tr>
+                            <tr><td>1966.07.13</td><td>世界杯小组赛</td><td class="highlight">阿根廷 2-1 西班牙</td></tr>
+                            <tr><td>2010.09.07</td><td>友谊赛</td><td>阿根廷 4-1 西班牙</td></tr>
+                            <tr><td>2018.03.27</td><td>友谊赛</td><td class="highlight">西班牙 6-1 阿根廷</td></tr>
+                        </table>
+                        <p style="font-size:13px; color:var(--text-secondary); margin-top:10px;">
+                            世界杯唯一交手：1966年小组赛阿根廷2-1胜。近三次交手各取一胜一大胜，无单方心理压制。2018年6-1大胜时梅西缺阵，参考价值有限。
+                        </p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>世界杯历史底蕴</h4>
+                        <div class="stat-row"><span class="label">西班牙世界杯参赛</span><span class="value">16次</span></div>
+                        <div class="stat-row"><span class="label">西班牙世界杯夺冠</span><span class="value">1次 (2010)</span></div>
+                        <div class="stat-row"><span class="label">西班牙世界杯决赛</span><span class="value">1次 (2010 冠军)</span></div>
+                        <div class="stat-row"><span class="label">阿根廷世界杯参赛</span><span class="value">18次</span></div>
+                        <div class="stat-row"><span class="label">阿根廷世界杯夺冠</span><span class="value">3次 (1978,1986,2022)</span></div>
+                        <div class="stat-row"><span class="label">阿根廷世界杯决赛</span><span class="value">7次 (3冠3亚,含本届)</span></div>
+                        <p style="font-size:13px; color:var(--text-secondary); margin-top:10px;">
+                            阿根廷半决赛6战全胜，大赛决赛经验远超首次冲击世界杯冠军的西班牙。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 三、2026世界杯专属环境变量 ========== -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">&#127757;</span>
+                <span class="section-title">三、2026世界杯专属环境变量（关键）</span>
+            </div>
+            <div class="section-body">
+                <div class="grid-3">
+                    <div class="stat-card" style="text-align:center;">
+                        <div style="font-size:36px;">&#127777;</div>
+                        <h4>天气条件</h4>
+                        <div class="stat-row"><span class="label">气温</span><span class="value">~31°C (88°F)</span></div>
+                        <div class="stat-row"><span class="label">湿度</span><span class="value">65-76%</span></div>
+                        <div class="stat-row"><span class="label">降水概率</span><span class="value">25-62%</span></div>
+                        <div class="stat-row"><span class="label">雷暴风险</span><span class="value">~12%</span></div>
+                        <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">
+                            纽约7月午后酷热+高湿，体感温度可达38°C。高温高湿有利体能充沛的西班牙持续高位逼抢，对连续加时消耗的阿根廷老将极为不利。
+                        </p>
+                    </div>
+                    <div class="stat-card" style="text-align:center;">
+                        <div style="font-size:36px;">&#9968;</div>
+                        <h4>场地信息</h4>
+                        <div class="stat-row"><span class="label">场地</span><span class="value">MetLife Stadium</span></div>
+                        <div class="stat-row"><span class="label">海拔</span><span class="value">~3m (近海平面)</span></div>
+                        <div class="stat-row"><span class="label">类型</span><span class="value">露天球场</span></div>
+                        <div class="stat-row"><span class="label">草皮</span><span class="value">天然草</span></div>
+                        <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">
+                            无海拔影响，利好双方。露天+高温使草皮偏干，球速略快，有利传控打法精准传递。雨天则球速加快、地面传控精度下降，利反击。
+                        </p>
+                    </div>
+                    <div class="stat-card" style="text-align:center;">
+                        <div style="font-size:36px;">&#128197;</div>
+                        <h4>赛程与体能</h4>
+                        <div class="stat-row"><span class="label">西班牙半决赛</span><span class="value">7月14日</span></div>
+                        <div class="stat-row"><span class="label">阿根廷半决赛</span><span class="value">7月15日</span></div>
+                        <div class="stat-row"><span class="label">决赛日</span><span class="value">7月19日</span></div>
+                        <div class="stat-row"><span class="label">西班牙休息</span><span class="value">5天 (充足)</span></div>
+                        <div class="stat-row"><span class="label">阿根廷休息</span><span class="value">4天 (偏短)</span></div>
+                        <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">
+                            西班牙全程0加时+多休息1天，体能碾压。阿根廷连续3场加时+少休1天，恢复窗口严重不足。
+                        </p>
+                    </div>
+                </div>
+
+                <h3 style="margin: 20px 0 10px; font-size: 16px;">环境变量综合影响判定</h3>
+                <div style="background: var(--bg-dark); border-radius: 8px; padding: 16px; border: 1px solid var(--border); font-size:14px; line-height:1.9; color: var(--text-secondary);">
+                    <strong style="color:var(--accent);">1. 高温高湿：</strong>显著利好西班牙。年轻阵容+全程未加时=下半场跑动覆盖碾压阿根廷，高温加速老将体能崩盘。阿根廷70分钟后跑动数据在本届淘汰赛已呈断崖式下滑。<br>
+                    <strong style="color:var(--accent);">2. 降水风险：</strong>若雨天成行，地面传控精度下降，球速加快利好长传反击——阿根廷的"梅西长传找劳塔罗"效率提升，属阿根廷利好变量。<br>
+                    <strong style="color:var(--accent);">3. 无海拔因素：</strong>纽约近海平面，双方均无高原适应问题，此因子中性。<br>
+                    <strong style="color:var(--accent);">4. 主场/时差因素：</strong>纽约距马德里约6小时时差，距布宜诺斯艾利斯约1小时时差——阿根廷时差调整略占优，但阿根廷此前淘汰赛已在美国多地辗转，适应力已验证。此因子影响轻微。<br>
+                    <strong style="color:var(--accent);">5. 综合判定：</strong>环境变量<strong>净利好西班牙</strong>，主要权重来自体能差距+高温加速老将消耗。
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 四、赛制与战意因素 ========== -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">&#127942;</span>
+                <span class="section-title">四、赛制与战意因素</span>
+            </div>
+            <div class="section-body">
+                <div class="grid-2">
+                    <div class="stat-card">
+                        <h4>&#127466;&#127480; 西班牙战意</h4>
+                        <p style="font-size:14px; color:var(--text-secondary); line-height:1.8;">
+                            <strong>历史动机：</strong>时隔16年重返世界杯决赛，全队无一人拥有世界杯夺冠经历，首次登顶的渴望极强。德拉富恩特若率队夺冠，将完成欧洲杯+世界杯双冠伟业。<br><br>
+                            <strong>战术倾向：</strong>西班牙<strong>必须争取常规时间解决战斗</strong>——队内点球大战经验匮乏，门将乌奈·西蒙扑点能力远逊马丁内斯。这一"怕点球"的心理暗示将驱动西班牙90分钟内全力进攻。<br><br>
+                            <strong>风险：</strong>久攻不下时年轻球员容易急躁，攻坚效率可能下降；全队缺少逆境翻盘的实战验证。
+                        </p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>&#127462;&#127479; 阿根廷战意</h4>
+                        <p style="font-size:14px; color:var(--text-secondary); line-height:1.8;">
+                            <strong>历史动机：</strong>冲击队史第四星+成为1962年巴西以来首支卫冕球队。梅西39岁最后一舞，全队为他而战的情感凝聚力无出其右。<br><br>
+                            <strong>战术倾向：</strong>阿根廷<strong>乐意拖入胶着乃至点球大战</strong>——马丁内斯足坛扑点天花板，连续两届大赛点球大战全胜。斯卡洛尼的算盘：先稳守90分钟，利用梅西灵光一现偷一个；若偷不到，点球大战赢面反超。<br><br>
+                            <strong>风险：</strong>若西班牙早早破门被迫压上，阿根廷老龄防线在持续高压下可能崩溃，无法像此前淘汰赛那样从容等反击。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 五、机构与市场风向 ========== -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">&#128176;</span>
+                <span class="section-title">五、机构与市场风向</span>
+            </div>
+            <div class="section-body">
+                <div class="grid-2">
+                    <div class="stat-card">
+                        <h4>主流赔率与隐含概率</h4>
+                        <table class="odds-table">
+                            <tr><th>方向</th><th>赔率</th><th>隐含概率</th></tr>
+                            <tr><td>西班牙胜</td><td class="highlight">2.02</td><td>45.2%</td></tr>
+                            <tr><td>平局</td><td>3.35</td><td>30.1%</td></tr>
+                            <tr><td>阿根廷胜</td><td>3.18</td><td>24.7%</td></tr>
+                        </table>
+                        <div style="margin-top: 12px;">
+                            <div class="stat-bar-label"><span>西班牙胜</span><span>平局</span><span>阿根廷胜</span></div>
+                            <div class="phase-chart">
+                                <div class="phase-spain" style="width:45.2%;">45.2%</div>
+                                <div class="phase-draw" style="width:30.1%;">30.1%</div>
+                                <div class="phase-arg" style="width:24.7%;">24.7%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h4>夺冠赔率 & 数据模型</h4>
+                        <table class="odds-table">
+                            <tr><th>来源</th><th>西班牙</th><th>阿根廷</th></tr>
+                            <tr><td>竞彩夺冠赔率</td><td class="highlight">1.47</td><td>2.25</td></tr>
+                            <tr><td>Opta 25000次模拟</td><td class="highlight">56.31%</td><td>43.69%</td></tr>
+                            <tr><td>EA FIFA模拟</td><td class="highlight">西班牙夺冠</td><td>-</td></tr>
+                        </table>
+                        <p style="font-size:13px; color:var(--text-secondary); margin-top:10px;">
+                            资金持续流入西班牙方向，阿根廷客胜赔率小幅抬升，市场对高龄阵容体能担忧加深。3.35平局赔率处于低位区间，机构预判90分钟僵持概率偏高。
+                        </p>
+                    </div>
+                </div>
+
+                <h3 style="margin: 20px 0 10px; font-size: 16px;">冷门风险评估</h3>
+                <div style="background: var(--bg-dark); border-radius: 8px; padding: 16px; border: 1px solid var(--border); font-size:14px; line-height:1.9; color: var(--text-secondary);">
+                    <strong style="color:var(--accent);">过热方向：</strong>西班牙方向资金持续涌入，若临场胜赔继续压低，需警惕"大热必死"——决赛舞台情感因素（梅西最后一舞）可能催生超常发挥。<br>
+                    <strong style="color:var(--accent);">冷门路径：</strong>阿根廷常规时间偷袭1-0或1-1拖入点球，概率虽低但不可忽视。历史上卫冕冠军在决赛中的表现（2014西班牙0-1、2018德国小组出局）偏负面，但阿根廷的逆境韧性打破了这一惯性。<br>
+                    <strong style="color:var(--accent);">综合判定：</strong>市场定价基本合理，西班牙小幅热门但未过度。3.35的平赔隐含的30%概率<strong>必须重视</strong>——这是本场比赛最核心的"防冷"方向。
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 深度逻辑拆解 ========== -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">&#128270;</span>
+                <span class="section-title">深度逻辑拆解（核心论据）</span>
+            </div>
+            <div class="section-body">
+                <ol class="logic-list">
+                    <li>
+                        <div class="logic-num">1</div>
+                        <div class="logic-text">
+                            <strong>体能代差是最大胜负手：</strong>西班牙全程0加时+多休1天+平均年龄26.3岁，下半场跑动覆盖可维持高位压迫全场；阿根廷连续3场加时+少休1天+梅西/奥塔门迪/德保罗均35岁+，70分钟后跑动断崖下滑已在半决赛最后20分钟实证。高温高湿（31°C/湿度75%）进一步加速老将消耗。西班牙60分钟后换上梅里诺/费兰·托雷斯等冲击替补维持强度，阿根廷替补席冲击力不足，此消彼长决定比赛末段走势。
+                        </div>
+                    </li>
+                    <li>
+                        <div class="logic-num">2</div>
+                        <div class="logic-text">
+                            <strong>传控体系天然克制低位反击：</strong>西班牙场均控球66.1%+传球成功率90%+，持续控球消耗阿根廷防线体能+高位逼抢切断后场出球（场均仅让对手射正1次）。阿根廷后场出球点有限（奥塔门迪/罗梅罗长传精度不足），若无法有效将球交到梅西脚下，反击发起频率将大幅下降。半决赛法国被西班牙完全压制（姆巴佩3射0正）已证明这套体系锁死顶级球星的能力。
+                        </div>
+                    </li>
+                    <li>
+                        <div class="logic-num">3</div>
+                        <div class="logic-text">
+                            <strong>亚马尔vs塔利亚菲科是一边倒的对位：</strong>亚马尔本届一对一过人成功率顶尖，半决赛造点球证明其高压下制造犯规能力；34岁塔利亚菲科+连续加时消耗=回追/转身节奏严重滞后。西班牙必然集中火力从右路（亚马尔侧）反复冲击，此通道极大概率制造进球或定位球机会。
+                        </div>
+                    </li>
+                    <li>
+                        <div class="logic-num">4</div>
+                        <div class="logic-text">
+                            <strong>但梅西是不可完全锁死的X因素：</strong>39岁梅西本届8球4助攻+12次世界杯助攻历史纪录，其狭小空间摆脱、穿透直塞、定位球精度三项技能仍是世界独一档。即便西班牙控球占70%，梅西只需1次持球+1次精准传送即可改写比分。阿根廷若拖入点球大战，马丁内斯扑点能力+全队点球心理优势将使胜率反转至60%以上。这决定了本场比赛<strong>不会是西班牙的单边碾压</strong>，胶着+悬念将持续到最后。
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ========== 进球剧本推演 ========== -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">&#9917;</span>
+                <span class="section-title">进球剧本推演</span>
+            </div>
+            <div class="section-body">
+                <div class="grid-2">
+                    <div class="stat-card">
+                        <h4>总进球数区间预测</h4>
+                        <div class="stat-row"><span class="label">最可能区间</span><span class="value" style="color:var(--accent);">2-3球</span></div>
+                        <div class="stat-row"><span class="label">1球概率</span><span class="value">18%</span></div>
+                        <div class="stat-row"><span class="label">2球概率</span><span class="value">35%</span></div>
+                        <div class="stat-row"><span class="label">3球概率</span><span class="value">28%</span></div>
+                        <div class="stat-row"><span class="label">4球+概率</span><span class="value">19%</span></div>
+                        <p style="font-size:13px; color:var(--text-secondary); margin-top:10px;">
+                            决赛双方容错率极低，开局必然互相试探。西班牙不会贸然全线压上，阿根廷更不会主动出击。上半场大概率0-0或1-0，进球集中在下半场60分钟后。
+                        </p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>进球时间段分布预测</h4>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-time">0-30分钟</div>
+                                <div class="timeline-text">双方互相试探，控球为主，进球概率低（~10%）。西班牙高位逼抢建立场面优势，阿根廷低位防守等待反击。</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-time">30-60分钟</div>
+                                <div class="timeline-text">西班牙加大边路冲击力度，亚马尔持续突破制造威胁。首球最可能在此区间诞生（~35%），方式：亚马尔突破造点/传中，奥亚萨瓦尔/莫拉塔终结。</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-time">60-80分钟</div>
+                                <div class="timeline-text">阿根廷老将体能临界点，斯卡洛尼换人调整。若落后，梅西回撤持球频率增加，反击+定位球破门概率上升（~30%）。</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-time">80分钟+补时</div>
+                                <div class="timeline-text">阿根廷若落后将全员压上搏命，西班牙反击空间增大。阿根廷半数进球诞生于75分钟后，绝杀/绝平概率不可忽视（~25%）。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin: 20px 0 10px; font-size: 16px;">关键破门球员预测</h3>
+                <div class="grid-3">
+                    <div class="stat-card" style="text-align:center; border-color: var(--spain-red);">
+                        <div style="font-size:13px; color:var(--spain-red); font-weight:700;">西班牙第一得分点</div>
+                        <div style="font-size:20px; font-weight:800; margin: 6px 0;">亚马尔</div>
+                        <div style="font-size:12px; color:var(--text-secondary);">突破造点/助攻/远射<br>破门概率: 40%</div>
+                    </div>
+                    <div class="stat-card" style="text-align:center; border-color: var(--spain-red);">
+                        <div style="font-size:13px; color:var(--spain-red); font-weight:700;">西班牙第二得分点</div>
+                        <div style="font-size:20px; font-weight:800; margin: 6px 0;">奥亚萨瓦尔</div>
+                        <div style="font-size:12px; color:var(--text-secondary);">点球/禁区内抢点<br>破门概率: 35%</div>
+                    </div>
+                    <div class="stat-card" style="text-align:center; border-color: var(--arg-blue);">
+                        <div style="font-size:13px; color:var(--arg-blue); font-weight:700;">阿根廷唯一得分点</div>
+                        <div style="font-size:20px; font-weight:800; margin: 6px 0;">梅西</div>
+                        <div style="font-size:12px; color:var(--text-secondary);">直塞/定位球/个人突破<br>破门或助攻概率: 55%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 隐藏X因素 ========== -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">&#9888;</span>
+                <span class="section-title">隐藏X因素</span>
+            </div>
+            <div class="section-body">
+                <div class="grid-2">
+                    <div class="xfactor-card">
+                        <h4>&#9889; 裁判尺度与犯规战术</h4>
+                        <p>
+                            决赛裁判组尚未最终公布，但裁判尺度将极大影响比赛走向。<strong>若裁判吹罚宽松</strong>，阿根廷中场（帕雷德斯/德保罗）可通过频繁战术犯规打断西班牙传控节奏，降低比赛流畅度——这是阿根廷克制传控的经典手段。<strong>若裁判严格出牌</strong>，阿根廷中场犯规累积黄牌风险加大，帕雷德斯等吃牌后防守强度被迫下降，西班牙传控将更加自如。此变量影响权重：7/10。
+                        </p>
+                    </div>
+                    <div class="xfactor-card">
+                        <h4>&#127783;&#65039; 极端天气：雷暴中断比赛</h4>
+                        <p>
+                            纽约7月雷暴概率约12%，FIFA规程规定：若闪电在体育场8英里范围内被检测到，比赛立即暂停至少30分钟。若比赛中断超过1小时，球员热身状态被打断、战术节奏被破坏，对控球方（西班牙）影响更大。重启后比赛节奏可能变得碎片化，利好防守方阿根廷。此变量影响权重：4/10。
+                        </p>
+                    </div>
+                    <div class="xfactor-card">
+                        <h4>&#128138; 阿根廷老将突发伤退</h4>
+                        <p>
+                            德保罗肌肉疲劳+奥塔门迪冰敷处理，决赛高强度下任何一人意外伤退都将严重削弱阿根廷。德保罗若无法出场，中场对罗德里的干扰力度骤降；奥塔门迪若中途退场，替补中卫经验与对抗能力断层。此变量影响权重：6/10。
+                        </p>
+                    </div>
+                    <div class="xfactor-card">
+                        <h4>&#127775; 梅西超常发挥/提前退场</h4>
+                        <p>
+                            两极化变量：梅西若打出2022决赛级别表现（2球+MVP），阿根廷可凭一人之力改写结局；若梅西被罗德里+双中卫彻底锁死，或在60分钟后体能提前耗尽无法持球，阿根廷进攻将陷入瘫痪。梅西的状态是全场最大单点变量。此变量影响权重：9/10。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 分阶段胜负天平 ========== -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">&#9878;</span>
+                <span class="section-title">分阶段胜负天平推演</span>
+            </div>
+            <div class="section-body">
+                <div class="stat-card" style="margin-bottom: 16px;">
+                    <h4>前60分钟：西班牙占优</h4>
+                    <div class="phase-chart">
+                        <div class="phase-spain" style="width:55%;">西班牙 55%</div>
+                        <div class="phase-draw" style="width:30%;">平 30%</div>
+                        <div class="phase-arg" style="width:15%;">阿根廷 15%</div>
+                    </div>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-top:8px;">
+                        体能充沛+控球主导场面，持续消耗阿根廷老将，大概率掌握场面主动权与更多射门机会。
+                    </p>
+                </div>
+                <div class="stat-card" style="margin-bottom: 16px;">
+                    <h4>60-90分钟：天平趋近</h4>
+                    <div class="phase-chart">
+                        <div class="phase-spain" style="width:40%;">西班牙 40%</div>
+                        <div class="phase-draw" style="width:30%;">平 30%</div>
+                        <div class="phase-arg" style="width:30%;">阿根廷 30%</div>
+                    </div>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-top:8px;">
+                        阿根廷老将咬牙顶住+梅西获得更多持球空间，定位球/反击破门概率大增。若阿根廷落后，搏命模式启动。
+                    </p>
+                </div>
+                <div class="stat-card" style="margin-bottom: 16px;">
+                    <h4>加时赛/点球大战：阿根廷优势逆转</h4>
+                    <div class="phase-chart">
+                        <div class="phase-spain" style="width:35%;">西班牙 35%</div>
+                        <div class="phase-draw" style="width:5%;">-</div>
+                        <div class="phase-arg" style="width:60%;">阿根廷 60%</div>
+                    </div>
+                    <p style="font-size:13px; color:var(--text-secondary); margin-top:8px;">
+                        西班牙年轻球员120分钟体能透支+心态紧绷，点球大战经验匮乏；阿根廷马丁内斯扑点buff+全队点球心理成熟度碾压。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 预测阵容 ========== -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-icon">&#128101;</span>
+                <span class="section-title">预测首发阵容</span>
+            </div>
+            <div class="section-body">
+                <div class="grid-2">
+                    <div class="stat-card">
+                        <h4>&#127466;&#127480; 西班牙 4-3-3</h4>
+                        <div style="font-size:13px; line-height:2; color: var(--text-secondary);">
+                            <strong style="color:var(--text-primary);">GK</strong> 乌奈·西蒙<br>
+                            <strong style="color:var(--text-primary);">RB</strong> 波罗 / <strong style="color:var(--text-primary);">CB</strong> 库巴西 · 拉波尔特 / <strong style="color:var(--text-primary);">LB</strong> 库库雷利亚<br>
+                            <strong style="color:var(--text-primary);">CM</strong> 罗德里 · 佩德里 · 法比安·鲁伊斯<br>
+                            <strong style="color:var(--text-primary);">RW</strong> 亚马尔 / <strong style="color:var(--text-primary);">CF</strong> 奥亚萨瓦尔 / <strong style="color:var(--text-primary);">LW</strong> 奥尔莫
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h4>&#127462;&#127479; 阿根廷 4-3-3</h4>
+                        <div style="font-size:13px; line-height:2; color: var(--text-secondary);">
+                            <strong style="color:var(--text-primary);">GK</strong> 埃米利亚诺·马丁内斯<br>
+                            <strong style="color:var(--text-primary);">RB</strong> 莫利纳 / <strong style="color:var(--text-primary);">CB</strong> 罗梅罗 · 奥塔门迪 / <strong style="color:var(--text-primary);">LB</strong> 塔利亚菲科<br>
+                            <strong style="color:var(--text-primary);">CM</strong> 帕雷德斯 · 恩佐 · 麦卡利斯特<br>
+                            <strong style="color:var(--text-primary);">RW</strong> 梅西 / <strong style="color:var(--text-primary);">CF</strong> 阿尔瓦雷斯 / <strong style="color:var(--text-primary);">LW</strong> 朱利安诺·西蒙尼
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 综合预测 ========== -->
+        <div class="conclusion-box" style="text-align: left;">
+            <div class="conclusion-label">综合预测摘要</div>
+            <div style="font-size: 14px; line-height: 2; color: var(--text-secondary);">
+                <p><strong style="color:var(--accent);">比赛基调：</strong>这是一场"体系足球 vs 巨星韧性"的终极对话。西班牙凭借传控体系、体能碾压、阵容深度在纸面实力上小幅领先；阿根廷拥有梅西独一档的决赛级个人能力、绝境翻盘基因、点球大战统治力，是任何模型都无法完全量化的"活变量"。</p>
+                <p><strong style="color:var(--accent);">最可能剧本：</strong>上半场胶着0-0或西班牙1-0领先（亚马尔通道破门），下半场梅西利用定位球或反击扳平1-1，90分钟战平概率高达30-41%。加时赛中西班牙体能优势逐渐显现，2-1绝杀概率最高。</p>
+                <p><strong style="color:var(--accent);">若拖入点球：</strong>阿根廷马丁内斯扑点+全队点球心理成熟度占绝对优势，阿根廷夺冠概率反超至60%+。</p>
+                <p><strong style="color:var(--accent);">历史注脚：</strong>19岁亚马尔 vs 39岁梅西，巴萨两代10号的命运交汇——无论谁捧杯，这场决赛都将载入足坛史册。</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>2026美加墨世界杯决赛前瞻报告 | 数据截止：2026年7月17日</p>
+        <p>数据来源：FIFA官方、Opta Analyst、环球时报、ESPN、The Athletic、Marca、TyC Sports、主流博彩机构</p>
+        <p>声明：本报告基于公开数据与专业分析，不构成任何投注建议。赛事赔率仅为市场资金模拟参考。</p>
+    </div>
+</body>
+</html>
