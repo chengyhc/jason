@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026美加墨世界杯收官战深度前瞻与胜负预测</title>
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #f5c518;
+            --text: #eaeaea;
+            --text-muted: #a0a0b0;
+            --card-bg: #0f3460;
+            --card-border: #1a4a7a;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #3498db;
+            --france: #002395;
+            --england: #cf081f;
+            --spain: #c60b1e;
+            --argentina: #74acdf;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1b2a 50%, var(--secondary) 100%);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 50px 20px 40px;
+            background: linear-gradient(180deg, rgba(233,69,96,0.15) 0%, transparent 100%);
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            background: linear-gradient(90deg, var(--gold), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .header .subtitle {
+            color: var(--text-muted);
+            font-size: 1.05em;
+        }
+
+        .header .meta {
+            margin-top: 15px;
+            font-size: 0.85em;
+            color: var(--text-muted);
+        }
+
+        /* Match Section */
+        .match-section {
+            margin-bottom: 50px;
+        }
+
+        .match-section .section-tag {
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tag-bronze { background: linear-gradient(90deg, #cd7f32, #b87333); color: #fff; }
+        .tag-gold { background: linear-gradient(90deg, var(--gold), #d4a017); color: #1a1a2e; }
+
+        .match-hero {
+            background: linear-gradient(145deg, var(--card-bg), #0a2647);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .match-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+        }
+
+        .hero-bronze::before { background: linear-gradient(90deg, var(--france), #fff, var(--england)); }
+        .hero-gold::before { background: linear-gradient(90deg, var(--spain), #f5c518, var(--argentina)); }
+
+        .match-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .team-block {
+            text-align: center;
+            flex: 1;
+            min-width: 160px;
+        }
+
+        .team-name {
+            font-size: 1.8em;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .team-flag {
+            font-size: 2.5em;
+            margin-bottom: 6px;
+        }
+
+        .team-sub {
+            font-size: 0.8em;
+            color: var(--text-muted);
+        }
+
+        .vs-block {
+            text-align: center;
+            font-size: 2em;
+            font-weight: 900;
+            color: var(--accent);
+            text-shadow: 0 0 20px rgba(233,69,96,0.5);
+        }
+
+        .match-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 0.9em;
+        }
+
+        .info-item .label {
+            color: var(--text-muted);
+            font-size: 0.8em;
+            margin-bottom: 3px;
+        }
+
+        .info-item .value {
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        /* Prediction Card */
+        .prediction-card {
+            background: linear-gradient(145deg, rgba(233,69,96,0.12), rgba(15,52,96,0.8));
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .prediction-card h3 {
+            font-size: 1.3em;
+            color: var(--accent);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(233,69,96,0.3);
+        }
+
+        .verdict-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .verdict-label {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--gold);
+            min-width: 100px;
+        }
+
+        .verdict-value {
+            font-size: 1.3em;
+            font-weight: 800;
+            padding: 8px 20px;
+            border-radius: 10px;
+            background: rgba(245,197,24,0.15);
+            border: 1px solid var(--gold);
+        }
+
+        .stars {
+            margin-left: auto;
+            font-size: 1.5em;
+        }
+
+        .star-filled { color: var(--gold); }
+        .star-empty { color: #444; }
+
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .score-item {
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .score-item .rank {
+            font-size: 0.75em;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .score-item .score {
+            font-size: 1.6em;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .score-item .prob {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Analysis Cards */
+        .analysis-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .analysis-card h4 {
+            color: var(--info);
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            padding-left: 12px;
+            border-left: 3px solid var(--info);
+        }
+
+        .analysis-card h4.red { color: var(--accent); border-color: var(--accent); }
+        .analysis-card h4.green { color: var(--success); border-color: var(--success); }
+        .analysis-card h4.gold { color: var(--gold); border-color: var(--gold); }
+
+        .arg-list {
+            list-style: none;
+        }
+
+        .arg-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .arg-list li:last-child { border-bottom: none; }
+
+        .arg-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Stats Comparison */
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+
+        .stats-table th, .stats-table td {
+            padding: 10px 14px;
+            text-align: center;
+        }
+
+        .stats-table thead th {
+            background: rgba(0,0,0,0.3);
+            color: var(--gold);
+            font-weight: 700;
+            border-bottom: 2px solid var(--card-border);
+        }
+
+        .stats-table tbody tr:nth-child(even) {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .stats-table tbody tr:hover {
+            background: rgba(255,255,255,0.06);
+        }
+
+        .highlight { color: var(--gold); font-weight: 700; }
+
+        /* Goal Scenario */
+        .goal-scenario {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .scenario-box {
+            background: rgba(0,0,0,0.25);
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .scenario-box .title {
+            color: var(--success);
+            font-weight: 700;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .scenario-box .detail {
+            font-size: 0.88em;
+            color: var(--text-muted);
+        }
+
+        .scenario-box .detail strong {
+            color: var(--text);
+        }
+
+        /* X-Factor */
+        .xfactor-card {
+            background: linear-gradient(145deg, rgba(243,156,18,0.1), rgba(15,52,96,0.6));
+            border: 1px solid rgba(243,156,18,0.4);
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 20px;
+        }
+
+        .xfactor-card h4 {
+            color: var(--warning);
+            font-size: 1.1em;
+            margin-bottom: 12px;
+        }
+
+        .xfactor-list {
+            list-style: none;
+        }
+
+        .xfactor-list li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 0.9em;
+        }
+
+        .xfactor-list li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Odds Section */
+        .odds-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .odds-box {
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .odds-box .outcome {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .odds-box .odds-val {
+            font-size: 1.4em;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .odds-box .prob {
+            font-size: 0.75em;
+            color: var(--text-muted);
+        }
+
+        /* Injury Table */
+        .injury-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85em;
+            margin: 10px 0;
+        }
+
+        .injury-table th {
+            background: rgba(0,0,0,0.3);
+            padding: 8px 12px;
+            text-align: left;
+            color: var(--gold);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .injury-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .tag-out {
+            background: var(--accent);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 700;
+        }
+
+        .tag-doubt {
+            background: var(--warning);
+            color: #1a1a2e;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 700;
+        }
+
+        .tag-fit {
+            background: var(--success);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            font-size: 0.8em;
+            border-top: 1px solid var(--card-border);
+            margin-top: 40px;
+        }
+
+        .disclaimer {
+            background: rgba(233,69,96,0.1);
+            border: 1px solid rgba(233,69,96,0.3);
+            border-radius: 10px;
+            padding: 16px;
+            margin-top: 20px;
+            font-size: 0.82em;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .match-header { gap: 15px; }
+            .team-name { font-size: 1.3em; }
+            .header h1 { font-size: 1.6em; }
+            .odds-grid { grid-template-columns: 1fr; }
+            .score-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Divider */
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            margin: 50px 0;
+            border: none;
+        }
+
+        /* Env badge */
+        .env-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(52,152,219,0.15);
+            border: 1px solid rgba(52,152,219,0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            color: var(--info);
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>2026美加墨世界杯 收官战深度前瞻</h1>
+        <div class="subtitle">五维度推演 · 数据驱动 · 战术拆解</div>
+        <div class="meta">分析时间：2026年7月18日 | 数据来源：FIFA官方、Opta、主流博彩机构、NWS气象局</div>
+    </div>
+
+    <!-- ==================== MATCH 1: FRANCE vs ENGLAND ==================== -->
+    <div class="match-section">
+
+        <span class="section-tag tag-bronze">季军争夺战 · 第三四名决赛</span>
+
+        <div class="match-hero hero-bronze">
+            <div class="match-header">
+                <div class="team-block">
+                    <div class="team-flag">🇫🇷</div>
+                    <div class="team-name" style="color:#002395;">法国</div>
+                    <div class="team-sub">Les Bleus · 世界排名第2</div>
+                </div>
+                <div class="vs-block">VS</div>
+                <div class="team-block">
+                    <div class="team-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+                    <div class="team-name" style="color:#cf081f;">英格兰</div>
+                    <div class="team-sub">Three Lions · 世界排名第4</div>
+                </div>
+            </div>
+
+            <div class="match-info-grid">
+                <div class="info-item">
+                    <div class="label">比赛时间</div>
+                    <div class="value">7月18日 17:00 ET / 北京时间7月19日 05:00</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">比赛场地</div>
+                    <div class="value">迈阿密硬岩体育场 (Hard Rock Stadium)</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">场地海拔</div>
+                    <div class="value">约2米（海平面）</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">预计天气</div>
+                    <div class="value">小雨转多云 · 32°C / 湿度78% · 体感温度41°C</div>
+                </div>
+            </div>
+
+            <div style="margin-top:15px; text-align:center;">
+                <span class="env-badge">🌡️ 高温高湿预警</span>
+                <span class="env-badge">⛈️ 30%雷阵雨概率</span>
+                <span class="env-badge">✈️ 法国从波士顿飞抵迈阿密</span>
+                <span class="env-badge">🏟️ 英格兰获FIFA特批在堪萨斯城训练</span>
+            </div>
+        </div>
+
+        <!-- Core Prediction -->
+        <div class="prediction-card">
+            <h3>核心结论 · 季军战</h3>
+
+            <div class="verdict-row">
+                <span class="verdict-label">胜负预测</span>
+                <span class="verdict-value">法国胜</span>
+                <span class="stars">
+                    <span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-empty">★</span><span class="star-empty">★</span>
+                </span>
+                <span style="color:var(--text-muted);font-size:0.85em;">信心指数 3/5</span>
+            </div>
+
+            <div style="margin-bottom:12px;color:var(--text-muted);font-size:0.9em;">最可能精确比分（按概率高低排序）：</div>
+            <div class="score-grid">
+                <div class="score-item">
+                    <div class="rank">第一概率</div>
+                    <div class="score">2-1</div>
+                    <div class="prob">约11%</div>
+                </div>
+                <div class="score-item">
+                    <div class="rank">第二概率</div>
+                    <div class="score">3-1</div>
+                    <div class="prob">约7%</div>
+                </div>
+                <div class="score-item">
+                    <div class="rank">第三概率</div>
+                    <div class="score">2-2（加时/点球法国胜）</div>
+                    <div class="prob">约6%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dimension 1: Form & Status -->
+        <div class="analysis-card">
+            <h4>维度一：球队基本面与近期状态</h4>
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>指标</th><th>法国 🇫🇷</th><th>英格兰 🏴󠁧󠁢󠁥󠁮󠁧󠁿</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>本届战绩</td><td>6胜1负</td><td>5胜1平1负</td></tr>
+                    <tr><td>进/失球</td><td class="highlight">16/4（+12）</td><td>14/9（+5）</td></tr>
+                    <tr><td>场均进球</td><td>2.28</td><td>2.00</td></tr>
+                    <tr><td>场均失球</td><td class="highlight">0.57</td><td>1.29</td></tr>
+                    <tr><td>零封场次</td><td class="highlight">4场</td><td>1场</td></tr>
+                    <tr><td>淘汰赛加时</td><td class="highlight">0次</td><td>1次（1/4决赛120分钟）</td></tr>
+                    <tr><td>半决赛体力消耗</td><td class="highlight">仅90分钟</td><td>90分钟（但连续鏖战）</td></tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top:18px;">
+                <strong style="color:var(--accent);">伤病/停赛清单：</strong>
+            </div>
+            <table class="injury-table">
+                <thead>
+                    <tr><th>球队</th><th>球员</th><th>状况</th><th>影响权重</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>法国</td><td>萨利巴（主力中卫）</td><td><span class="tag-out">缺阵</span> 背部重伤</td><td>★★★★★ 防线核心，防空&出球体系坍塌</td></tr>
+                    <tr><td>法国</td><td>桑巴（替补门将）</td><td><span class="tag-out">缺阵</span> 小腿伤</td><td>★★ 影响有限，迈尼昂继续首发</td></tr>
+                    <tr><td>法国</td><td>姆巴佩（前锋）</td><td><span class="tag-doubt">带伤出战</span> 脚踝轻微挫伤</td><td>★★★★ 冲击金靴战意极强，个人决定比赛</td></tr>
+                    <tr><td>法国</td><td>楚阿梅尼/拉比奥（中场）</td><td><span class="tag-doubt">轻微疲劳</span></td><td>★★★ 下半场或轮换，首发无碍</td></tr>
+                    <tr><td>英格兰</td><td>亨德森（中场老将）</td><td><span class="tag-out">缺阵</span> 手腕骨折</td><td>★★★ 替补领袖，更衣室影响大于场上</td></tr>
+                    <tr><td>英格兰</td><td>里斯·詹姆斯（右后卫）</td><td><span class="tag-doubt">替补30分钟</span> 腿筋伤反复</td><td>★★★★ 右路防守真空，姆巴佩重点打击区</td></tr>
+                    <tr><td>英格兰</td><td>赖斯（后腰）</td><td><span class="tag-doubt">疲劳出战</span> 肠胃病毒+体能透支</td><td>★★★★ 中场防守枢纽不在100%状态</td></tr>
+                    <tr><td>英格兰</td><td>宽萨（中卫）</td><td><span class="tag-fit">解禁复出</span></td><td>★★ 补充后卫深度</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Dimension 2: Tactics & H2H -->
+        <div class="analysis-card">
+            <h4 class="red">维度二：战术体系与历史交锋</h4>
+
+            <ul class="arg-list">
+                <li><strong>战术克制分析：</strong>法国主打4-2-3-1低位收缩+高速边路反击，巴尔科拉和登贝莱两翼爆破为姆巴佩创造空间；英格兰4-2-3-1控球压迫体系，但右路斯彭斯客串边后卫面对姆巴佩速度严重失配——这是全场最关键的对位漏洞。法国战术天然克制英格兰慢转身中卫，直线冲刺专门针对格伊、斯通斯身后空档。</li>
+                <li><strong>防空博弈：</strong>萨利巴缺阵后，法国中卫组合（于帕梅卡诺/科纳特+拉克鲁瓦）协同防空、转身补位能力大幅下滑，正好暴露在凯恩支点头球+贝林厄姆后插上抢点的刀锋下。英格兰高空球是破局关键手段之一。</li>
+                <li><strong>中场对位：</strong>楚阿梅尼贴身限制贝林厄姆前插路线，切断其与锋线联系。英格兰中场整体控球、逼抢能力占优，但赖斯体能透支后70分钟拦截效率断崖下滑。</li>
+            </ul>
+
+            <div style="margin-top:15px;">
+                <strong style="color:var(--info);">近3次正式A级交锋：</strong>
+            </div>
+            <table class="stats-table">
+                <thead>
+                    <tr><th>日期</th><th>赛事</th><th>比分</th><th>关键</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>2022.12.10</td><td>世界杯1/4决赛</td><td class="highlight">法国 2-1 英格兰</td><td>楚阿梅尼+吉鲁破门，凯恩罚失关键点球</td></tr>
+                    <tr><td>2017.06.13</td><td>友谊赛</td><td>法国 3-2 英格兰</td><td>姆巴佩首秀期，乌姆蒂蒂绝杀</td></tr>
+                    <tr><td>2015.11.17</td><td>友谊赛</td><td>英格兰 2-0 法国</td><td>巴黎恐袭后温情比赛，竞技参考有限</td></tr>
+                </tbody>
+            </table>
+            <p style="margin-top:10px;color:var(--text-muted);font-size:0.88em;">
+                世界杯正赛交手3次：英格兰1966年2-0、1982年3-1取胜，法国2022年2-1逆转。近6次正式交手法国4胜1平1负占据心理优势。2022年卡塔尔1/4决赛凯恩罚失扳平点球、姆巴佩大笑的画面仍是英格兰心中之痛，复仇欲望与现实实力的矛盾是本场关键心理变量。
+            </p>
+        </div>
+
+        <!-- Dimension 3: Environment Variables -->
+        <div class="analysis-card">
+            <h4 class="green">维度三：2026世界杯专属环境变量</h4>
+
+            <ul class="arg-list">
+                <li><strong>迈阿密高温高湿环境：</strong>7月18日迈阿密气温32°C、湿度78%，体感温度高达41°C（NWS发布高温预警）。这对双方体能消耗极大，尤其英格兰连续淘汰赛鏖战（1/4决赛120分钟加时+半决赛90分钟高强度），主力贝林厄姆、赖斯跑动数据下半场已显著下滑。高温环境下技术流球队的传球精度和冲刺恢复都会受损，比赛后半段体能将成为胜负分水岭。</li>
+                <li><strong>降雨概率：</strong>30%雷阵雨概率，若比赛中出现降水，湿滑场地有利于速度型球员突破（利好姆巴佩），不利于传控型球队地面配合。</li>
+                <li><strong>海拔因素：</strong>迈阿密海拔约2米，与两队日常训练环境基本一致，不存在高原适应问题（与墨西哥城2200米赛场完全不同）。</li>
+                <li><strong>赛程与休息：</strong>法国半决赛7月15日（90分钟完赛），英格兰半决赛7月16日——法国多休24小时且未踢加时，体能储备明显占优。法国从波士顿飞抵迈阿密（约3小时航程），英格兰从亚特兰大飞迈阿密（约2小时航程），两者飞行消耗差异不大。</li>
+                <li><strong>主场/中立因素：</strong>迈阿密拉丁裔居民占比超70%，预计现场法国和拉美裔球迷声势较大，对英格兰形成微弱"客场氛围"。</li>
+            </ul>
+        </div>
+
+        <!-- Dimension 4: Motivation -->
+        <div class="analysis-card">
+            <h4 class="gold">维度四：赛制与战意因素</h4>
+
+            <ul class="arg-list">
+                <li><strong>季军战特殊性：</strong>三四名决赛向来是"没人想踢但输不起"的比赛。德尚拒绝球员请假外出，明确表示不愿以两连败结束14年法国队执教任期——这是他执教谢幕战，全队有为其体面送行的战意加成。姆巴佩为冲击世界杯金靴（目前8球与梅西并列）必全力进攻，个人动力远超集体荣誉。</li>
+                <li><strong>英格兰复仇心切但体能见底：</strong>2022年被法国淘汰的伤痛仍在，凯恩赛前表示"要让这段回忆变得不同"。但连续高强度鏖战后主力体能透支，图赫尔面临战意与轮换的两难抉择。</li>
+                <li><strong>季军战进球规律：</strong>近21场世界杯季军赛78%打出总进球3球以上大比分，极少出现0-0或1-0。双方同步破门是主流格局，防守强度系统性下降。</li>
+            </ul>
+        </div>
+
+        <!-- Dimension 5: Market -->
+        <div class="analysis-card">
+            <h4>维度五：机构与市场风向</h4>
+
+            <div class="odds-grid">
+                <div class="odds-box">
+                    <div class="outcome">法国胜</div>
+                    <div class="odds-val">1.90</div>
+                    <div class="prob">隐含概率 54%</div>
+                </div>
+                <div class="odds-box">
+                    <div class="outcome">平局</div>
+                    <div class="odds-val">3.75</div>
+                    <div class="prob">隐含概率 26%</div>
+                </div>
+                <div class="odds-box">
+                    <div class="outcome">英格兰胜</div>
+                    <div class="odds-val">3.70</div>
+                    <div class="prob">隐含概率 27%</div>
+                </div>
+            </div>
+
+            <ul class="arg-list">
+                <li><strong>市场共识：</strong>主流机构（Betfred 1.90、William Hill 1.85、Smarkets 1.97）一致看好法国，主胜赔率稳定在1.85-1.97区间。双方进球（BTTS）赔率仅1.40，市场高度预期大比分对攻格局。</li>
+                <li><strong>冷门风险：</strong>法国胜赔在季军战背景下略显偏低——季军战变数大、轮换幅度不可预测，英格兰复仇心态下的超常发挥是主要冷门路径。但英格兰主力体能透支+右路防守黑洞使冷门概率受限。</li>
+                <li><strong>Opta 25000次模拟：</strong>法国胜48%、平局26%、英格兰胜26%，与赔率隐含概率高度吻合。</li>
+            </ul>
+        </div>
+
+        <!-- Deep Logic -->
+        <div class="analysis-card">
+            <h4 class="red">深度逻辑拆解 · 支撑法国胜的4条核心论据</h4>
+            <ul class="arg-list">
+                <li><strong>体能代差决定后半段走势：</strong>法国半决赛仅90分钟消耗，全队未经历加时；英格兰1/4决赛120分钟鏖战，赖斯肠胃病毒+贝林厄姆连续高强度作战，70分钟后跑动、回追效率断崖下滑。迈阿密41°C体感高温将成倍放大这一差距，法国下半场换人冲击的"后手牌"远多于英格兰。</li>
+                <li><strong>姆巴佩对斯彭斯的速度碾压：</strong>英格兰右路斯彭斯客串边后卫，面对姆巴佩+巴尔科拉的轮番冲击完全失配。法国进攻重心将集中在左路（姆巴佩内切+特奥套边），反复冲击这一薄弱环节。2022世界杯1/4决赛姆巴佩就在英格兰防线身上收获进球，本场金靴战意更足。</li>
+                <li><strong>德尚谢幕战的防守底线：</strong>法国本届7场仅丢4球，即便萨利巴缺阵，迈尼昂+于帕梅卡诺的中轴仍有足够硬度。德尚不会允许以两连败结束14年执教，战术纪律性是法国的下限保障。</li>
+                <li><strong>季军战历史规律偏向火力占优方：</strong>近10届世界杯季军战，进球更多的一方9次获胜。法国本届场均2.28球远高于英格兰的2.00球，反击转换效率全赛事顶级，在开放对攻格局中更可能占据主动。</li>
+            </ul>
+        </div>
+
+        <!-- Goal Scenario -->
+        <div class="analysis-card">
+            <h4>进球剧本推演 · 季军战</h4>
+            <div class="goal-scenario">
+                <div class="scenario-box">
+                    <div class="title">总进球数区间</div>
+                    <div class="detail"><strong>3-4球</strong>（概率最高），季军赛78%打出3+球大比分，BTTS赔率1.40佐证双方同步破门极高概率</div>
+                </div>
+                <div class="scenario-box">
+                    <div class="title">进球时间段</div>
+                    <div class="detail"><strong>60-80分钟</strong>为进球高峰窗口，英格兰主力体能断档期+法国换人冲击期叠加。上半场双方试探，20-30分钟或有1球入账</div>
+                </div>
+                <div class="scenario-box">
+                    <div class="title">关键破门球员</div>
+                    <div class="detail"><strong>姆巴佩（法国）</strong>冲金靴战意极强，对位斯彭斯速度碾压；<strong>凯恩（英格兰）</strong>支点头球针对法国防空短板；<strong>贝林厄姆</strong>后插上抢点是第二威胁</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- X-Factor -->
+        <div class="xfactor-card">
+            <h4>隐藏X因素 · 季军战</h4>
+            <ul class="xfactor-list">
+                <li>德尚轮换幅度不可预测——坎特本届首秀、谢尔基/小图拉姆可能首次首发，替补阵容默契度存疑</li>
+                <li>迈阿密雷暴天气中断比赛的可能——NWS预报30%雷阵雨概率，若比赛中断30分钟以上将完全改变体能恢复节奏</li>
+                <li>季军战裁判尺度——通常偏松，允许更多身体对抗，有利于英格兰的强硬踢法，不利于技术流持球</li>
+                <li>姆巴佩带伤出战的风险——脚踝挫伤可能在冲刺中加重，一旦提前退场将彻底改变比赛平衡</li>
+                <li>英格兰定位球效率——凯恩角球/任意球直接针对法国残缺中卫线，是低投入高回报的破局手段</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- ==================== DIVIDER ==================== -->
+    <hr class="section-divider">
+
+    <!-- ==================== MATCH 2: SPAIN vs ARGENTINA ==================== -->
+    <div class="match-section">
+
+        <span class="section-tag tag-gold">世界杯决赛 · 冠军之战</span>
+
+        <div class="match-hero hero-gold">
+            <div class="match-header">
+                <div class="team-block">
+                    <div class="team-flag">🇪🇸</div>
+                    <div class="team-name" style="color:#c60b1e;">西班牙</div>
+                    <div class="team-sub">La Roja · 世界排名第3 · 欧洲杯冠军</div>
+                </div>
+                <div class="vs-block">VS</div>
+                <div class="team-block">
+                    <div class="team-flag">🇦🇷</div>
+                    <div class="team-name" style="color:#74acdf;">阿根廷</div>
+                    <div class="team-sub">La Albiceleste · 世界排名第1 · 卫冕冠军</div>
+                </div>
+            </div>
+
+            <div class="match-info-grid">
+                <div class="info-item">
+                    <div class="label">比赛时间</div>
+                    <div class="value">7月19日 15:00 ET / 北京时间7月20日 03:00</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">比赛场地</div>
+                    <div class="value">大都会人寿体育场 (MetLife Stadium) · 容量82,500人</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">场地海拔</div>
+                    <div class="value">约7米（接近海平面）</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">预计天气</div>
+                    <div class="value">晴朗 · 28°C / 湿度57% · 西北风11mph · 降水概率6%</div>
+                </div>
+            </div>
+
+            <div style="margin-top:15px; text-align:center;">
+                <span class="env-badge">☀️ 天气条件良好</span>
+                <span class="env-badge">🌡️ 温度适中 28°C</span>
+                <span class="env-badge">🏟️ 两代巴萨10号终极对决</span>
+                <span class="env-badge">🏆 梅西最后一舞 vs 亚马尔新王登基</span>
+            </div>
+        </div>
+
+        <!-- Core Prediction -->
+        <div class="prediction-card">
+            <h3>核心结论 · 决赛</h3>
+
+            <div class="verdict-row">
+                <span class="verdict-label">胜负预测</span>
+                <span class="verdict-value">西班牙胜（常规时间或加时）</span>
+                <span class="stars">
+                    <span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-empty">★</span>
+                </span>
+                <span style="color:var(--text-muted);font-size:0.85em;">信心指数 4/5</span>
+            </div>
+
+            <div style="margin-bottom:12px;color:var(--text-muted);font-size:0.9em;">最可能精确比分（按概率高低排序）：</div>
+            <div class="score-grid">
+                <div class="score-item">
+                    <div class="rank">第一概率</div>
+                    <div class="score">2-1</div>
+                    <div class="prob">约12%</div>
+                </div>
+                <div class="score-item">
+                    <div class="rank">第二概率</div>
+                    <div class="score">1-0</div>
+                    <div class="prob">约10%</div>
+                </div>
+                <div class="score-item">
+                    <div class="rank">第三概率</div>
+                    <div class="score">2-0</div>
+                    <div class="prob">约8%</div>
+                </div>
+            </div>
+
+            <div style="margin-top:15px;padding:12px;background:rgba(0,0,0,0.2);border-radius:8px;font-size:0.88em;">
+                <strong style="color:var(--warning);">备选剧本：</strong>若比赛拖入加时/点球，阿根廷凭借大马丁的点球神力+卫冕冠军大赛心态，逆袭概率显著提升。平局赔率3.35处于低位区间，90分钟1-1僵局是不可忽视的防冷分支。
+            </div>
+        </div>
+
+        <!-- Dimension 1: Form & Status -->
+        <div class="analysis-card">
+            <h4>维度一：球队基本面与近期状态</h4>
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>指标</th><th>西班牙 🇪🇸</th><th>阿根廷 🇦🇷</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>本届战绩</td><td class="highlight">6胜1平0负</td><td class="highlight">7胜0平0负</td></tr>
+                    <tr><td>进/失球</td><td>13/1（+12）</td><td class="highlight">19/7（+12）</td></tr>
+                    <tr><td>场均进球</td><td>1.86</td><td class="highlight">2.71</td></tr>
+                    <tr><td>场均失球</td><td class="highlight">0.14</td><td>1.00</td></tr>
+                    <tr><td>零封场次</td><td class="highlight">6场 / 7场</td><td>2场 / 7场</td></tr>
+                    <tr><td>场均控球率</td><td class="highlight">63.9%</td><td>59.4%</td></tr>
+                    <tr><td>淘汰赛加时次数</td><td class="highlight">0次</td><td>2次</td></tr>
+                    <tr><td>全队平均年龄</td><td class="highlight">24.6岁</td><td>29.1岁</td></tr>
+                    <tr><td>跨赛事不败</td><td class="highlight">37场</td><td>13场（世界杯）</td></tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top:18px;">
+                <strong style="color:var(--accent);">伤病/状态清单：</strong>
+            </div>
+            <table class="injury-table">
+                <thead>
+                    <tr><th>球队</th><th>球员</th><th>状况</th><th>影响权重</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>西班牙</td><td>亚马尔（右边锋）</td><td><span class="tag-doubt">轻微</span> 左大腿绷带，单独训练</td><td>★★★★★ 进攻爆点，预期可出战</td></tr>
+                    <tr><td>西班牙</td><td>波罗（右后卫）</td><td><span class="tag-doubt">轻微</span> 肌肉负荷管理</td><td>★★★ 半决赛进球功臣，预期首发</td></tr>
+                    <tr><td>西班牙</td><td>其余主力</td><td><span class="tag-fit">全员健康</span></td><td>— 全队体能储备最佳</td></tr>
+                    <tr><td>阿根廷</td><td>梅西（核心前锋）</td><td><span class="tag-fit">健康</span> 8球4助攻</td><td>★★★★★ 决定比赛走向的第一变量</td></tr>
+                    <tr><td>阿根廷</td><td>奥塔门迪（中卫）</td><td><span class="tag-doubt">体能隐忧</span> 连续多场120分钟</td><td>★★★★ 转身/回追速度偏慢，亚马尔重点打击</td></tr>
+                    <tr><td>阿根廷</td><td>德保罗（中场）</td><td><span class="tag-fit">预计首发</span> 半决赛替补登场表现出色</td><td>★★★ 中场节奏控制者</td></tr>
+                    <tr><td>阿根廷</td><td>劳塔罗（前锋）</td><td><span class="tag-fit">超级替补</span> 连续3场淘汰赛替补进球</td><td>★★★★ 后手杀招，是否首发是战术谜题</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Dimension 2: Tactics & H2H -->
+        <div class="analysis-card">
+            <h4 class="red">维度二：战术体系与历史交锋</h4>
+
+            <ul class="arg-list">
+                <li><strong>战术克制——矛与盾的终极博弈：</strong>西班牙是本届赛事"控防双绝"的体系型球队，场均控球率63.9%+7场仅丢1球，罗德里单后腰拦截屏障+佩德里/奥尔莫串联+亚马尔边路爆破，半决赛将法国xG限制到0.31；阿根廷则是"逆风翻盘"的韧性型球队，7场19球为赛事最强攻击，但7个丢球说明防线并不稳固。核心矛盾：西班牙能否用持续控球压制阿根廷、避免比赛拖入后段胶着？阿根廷能否利用反击抓住西班牙边后卫前压的身后空档？</li>
+                <li><strong>梅西限制方案：</strong>西班牙半决赛用2-3人合围姆巴佩的策略极为成功，决赛将照搬至梅西——罗德里+法比安+库巴西形成三角围剿，断绝球王接球空间。但梅西与姆巴佩的区别在于：梅西更擅长在极小空间内一脚出球创造机会，即便被围困也能送出致命直塞。</li>
+                <li><strong>年龄代差与体能悬崖：</strong>西班牙平均年龄24.6岁，阿根廷29.1岁——4.5岁的差距在决赛90分钟后半段将被放大为跑动覆盖的鸿沟。阿根廷多名核心（梅西39岁、奥塔门迪38岁、塔利亚菲科36岁）连续多场踢满120分钟，60分钟后体能断崖式下滑恰恰是西班牙持续冲击的黄金窗口。</li>
+                <li><strong>阿根廷反击威胁：</strong>斯卡洛尼大概率主动放弃控球权，全员收缩稳固防线，等待西班牙边后卫（波罗/库库雷利亚）前压后留下的身后空当，恩佐/麦卡利斯特长传发动快速反击。这是对付高位传控最经典的战术，半决赛英格兰先进球后正是防线前压给了阿根廷反击空间。</li>
+            </ul>
+
+            <div style="margin-top:15px;">
+                <strong style="color:var(--info);">历史交锋与世界杯表现：</strong>
+            </div>
+            <table class="stats-table">
+                <thead>
+                    <tr><th>维度</th><th>数据</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>历史14次A级交手</td><td>6胜2平6负——完全持平，互无碾压</td></tr>
+                    <tr><td>唯一世界杯正赛交手</td><td class="highlight">1966年小组赛 阿根廷2-1西班牙</td></tr>
+                    <tr><td>2018年友谊赛</td><td>西班牙6-1阿根廷（奥塔门迪等现役球员亲历惨败）</td></tr>
+                    <tr><td>2010年友谊赛</td><td>阿根廷4-1西班牙（复仇刚加冕的世界冠军）</td></tr>
+                    <tr><td>西班牙世界杯历史</td><td>2010年冠军、本届时隔16年再进决赛</td></tr>
+                    <tr><td>阿根廷世界杯历史</td><td class="highlight">6进决赛3冠3亚，连续2届进决赛，卫冕冠军</td></tr>
+                </tbody>
+            </table>
+            <p style="margin-top:10px;color:var(--text-muted);font-size:0.88em;">
+                两队大量球员常年征战西甲，梅西与亚马尔两代巴萨10号直接对位，双方战术特点、球员习惯彼此高度熟悉，不存在信息盲区。2018年友谊赛6-1惨败的心理阴影对阿根廷老将影响不可忽视，但友谊赛参考价值有限，决赛是全新的战场。
+            </p>
+        </div>
+
+        <!-- Dimension 3: Environment Variables -->
+        <div class="analysis-card">
+            <h4 class="green">维度三：2026世界杯专属环境变量</h4>
+
+            <ul class="arg-list">
+                <li><strong>新泽西7月19日天气条件极佳：</strong>晴朗、28°C、湿度57%、西北风11mph、降水概率仅6%——这对双方都是理想的比赛环境，不存在高温高湿的额外体能消耗（与迈阿密季军战形成鲜明对比），但温度适中略偏向技术流球队的地面配合。</li>
+                <li><strong>海拔因素：</strong>大都会人寿体育场海拔约7米（接近海平面），对两支习惯低海拔比赛的球队均无适应问题。</li>
+                <li><strong>赛程与体能差异：</strong>西班牙本届全程未踢加时赛，7场比赛全部90分钟内解决，全队体能储备为四强中最优。阿根廷淘汰赛两度加时（1/16决赛vs佛得角、1/4决赛vs瑞士），半决赛对英格兰又是90分钟高强度逆转。休息日：西班牙7月15日半决赛后休息4天，阿根廷7月16日半决赛后仅休息3天。</li>
+                <li><strong>长途跨国因素：</strong>西班牙半决赛在达拉斯，阿根廷半决赛在亚特兰大，两队均需飞往纽约/新泽西，航程约2-3小时，差异不大。</li>
+                <li><strong>东道主/球迷因素：</strong>新泽西大都会地区拥有大量拉美裔居民，阿根廷球迷声势预计占据压倒性优势——MetLife Stadium可能变成阿根廷"主场"，这对梅西和队友是巨大的精神加成。</li>
+            </ul>
+        </div>
+
+        <!-- Dimension 4: Motivation -->
+        <div class="analysis-card">
+            <h4 class="gold">维度四：赛制与战意因素</h4>
+
+            <ul class="arg-list">
+                <li><strong>决赛的终极意义：</strong>对阿根廷而言，这是梅西39岁的世界杯最后一舞——罗梅罗赛前公开恳求"如果夺冠就继续征战"，全队以队长为精神核心的凝聚力冠绝赛事；对西班牙而言，这是继2010年后时隔16年重返决赛、新一代球员建立王朝的起点，亚马尔19岁的决赛舞台意义不亚于梅西的谢幕。</li>
+                <li><strong>卫冕vs新王的叙事张力：</strong>阿根廷若夺冠将成为历史上第三支卫冕世界杯的球队（继1934/38意大利、1958/62巴西），历史地位将达新高度；西班牙若夺冠将完成欧洲杯+世界杯大赛连冠（2024欧洲杯冠军+2026世界杯冠军），确立新时代霸权。</li>
+                <li><strong>决赛心理模式：</strong>世界杯决赛向来谨慎——近5届决赛4次上半场0-0或1-0，双方容错率极低。西班牙更擅长打"控制型决赛"（控球消耗等待机会），阿根廷更擅长打"逆境型决赛"（2022年决赛0-2落后追至3-3最终点球夺冠），两种决赛心态的碰撞将决定走势。</li>
+            </ul>
+        </div>
+
+        <!-- Dimension 5: Market -->
+        <div class="analysis-card">
+            <h4>维度五：机构与市场风向</h4>
+
+            <div class="odds-grid">
+                <div class="odds-box">
+                    <div class="outcome">西班牙胜</div>
+                    <div class="odds-val">2.02</div>
+                    <div class="prob">隐含概率 45.2%</div>
+                </div>
+                <div class="odds-box">
+                    <div class="outcome">平局</div>
+                    <div class="odds-val">3.35</div>
+                    <div class="prob">隐含概率 30.1%</div>
+                </div>
+                <div class="odds-box">
+                    <div class="outcome">阿根廷胜</div>
+                    <div class="odds-val">3.18</div>
+                    <div class="prob">隐含概率 24.7%</div>
+                </div>
+            </div>
+
+            <div style="margin:15px 0;">
+                <strong style="color:var(--info);">夺冠赔率（含加时/点球）：</strong>
+                <span style="color:var(--gold);font-size:1.1em;font-weight:700;">西班牙 -163（约7/10）</span> vs
+                <span style="color:var(--argentina);font-size:1.1em;font-weight:700;">阿根廷 +130（约7/5）</span>
+            </div>
+
+            <ul class="arg-list">
+                <li><strong>市场共识：</strong>主流机构一致看好西班牙。Opta 25000次蒙特卡洛模拟显示西班牙夺冠概率56.31%，阿根廷43.69%，与赔率高度契合。Squawka Signal模型给出西班牙60.9% vs 阿根廷39.1%。Kalshi预测市场西班牙58%。</li>
+                <li><strong>资金流向：</strong>资金持续流入西班牙方向，阿根廷客胜赔率小幅抬升，凸显市场对高龄阵容的担忧。但3.35的平局赔率处于低位区间，机构预判90分钟僵持概率偏高——决赛的谨慎特性+两队战术互相克制=高概率拖入加时。</li>
+                <li><strong>过热风险：</strong>西班牙方向资金占比过大，若决赛中阿根廷利用反击先入一球，市场将剧烈反转。阿根廷赔率3.18存在价值空间——这是一支拥有梅西、连续逆转的卫冕冠军，24.7%的隐含概率可能偏低。</li>
+            </ul>
+        </div>
+
+        <!-- Deep Logic -->
+        <div class="analysis-card">
+            <h4 class="red">深度逻辑拆解 · 支撑西班牙胜的4条核心论据</h4>
+            <ul class="arg-list">
+                <li><strong>体能代差是决赛最大变量：</strong>西班牙全队0次加时、平均年龄24.6岁 vs 阿根廷2次加时、平均年龄29.1岁。决赛下半场60分钟后，阿根廷老将跑动覆盖将出现不可逆的下滑，而西班牙年轻主力（亚马尔、库巴西、佩德里）仍可维持90分钟高强度折返。半决赛西班牙2-0零封法国时全场限制对手xG至0.31——这种"窒息式控球"将加速阿根廷的体能枯竭。</li>
+                <li><strong>7场仅丢1球的防守体系是夺冠基石：</strong>西班牙创下世界杯650分钟连续不失球纪录，6场零封是赛事断层领先的数据。罗德里单后腰拦截+库巴西/拉波尔特中卫组合+乌奈·西蒙门线稳定，构成三层防线。阿根廷虽然进攻火力19球冠绝赛事，但面对这种级别的防守尚未真正接受考验——此前对手的防线质量远不及西班牙。</li>
+                <li><strong>决赛经验vs决赛心态的博弈：</strong>西班牙全队无人拥有世界杯决赛经验，但德拉富恩特执教下37场不败的稳定心态是另一种"经验"——他们从未在压力下崩盘。阿根廷拥有2022年决赛逆转的传奇经历，但这种"逆境依赖"也是隐患：半决赛若非梅西补时助攻劳塔罗绝杀，阿根廷已被淘汰。决赛面对西班牙的控球体系，阿根廷可能长期得不到球权，这种"被动忍耐"与"逆境逆转"是完全不同的心理挑战。</li>
+                <li><strong>亚马尔对阿根廷高龄防线的持续冲击：</strong>19岁亚马尔本届23次射门、31次触球进入禁区，一对一突破能力是阿根廷高龄边卫（莫利纳、塔利亚菲科）无法持续90分钟应对的威胁。西班牙的进攻节奏是"慢控+快突"——前60分钟用传控消耗对手体能，65-80分钟亚马尔/奥亚萨瓦尔加速收割，半决赛对法国的2个进球全部来自下半场就是这个模式。</li>
+            </ul>
+        </div>
+
+        <!-- Goal Scenario -->
+        <div class="analysis-card">
+            <h4>进球剧本推演 · 决赛</h4>
+            <div class="goal-scenario">
+                <div class="scenario-box">
+                    <div class="title">总进球数区间</div>
+                    <div class="detail"><strong>2-3球</strong>，决赛谨慎开场，上半场大概率0-0或1-0。西班牙65-80分钟发力期最可能产生进球，阿根廷若反击先入一球则可能打开局面</div>
+                </div>
+                <div class="scenario-box">
+                    <div class="title">进球时间段</div>
+                    <div class="detail"><strong>65-80分钟</strong>为西班牙进球高峰窗口（7场中13球仅4球来自上半场）；阿根廷进球窗口在<strong>75-90+分钟</strong>，梅西/劳塔罗的绝杀时段</div>
+                </div>
+                <div class="scenario-box">
+                    <div class="title">关键破门球员</div>
+                    <div class="detail"><strong>奥亚萨瓦尔（西班牙）</strong>本届5球队内射手王，决赛舞台大心脏；<strong>梅西（阿根廷）</strong>8球4助攻赛事MVP级表现；<strong>劳塔罗（阿根廷）</strong>超级替补连续3场淘汰赛破门；<strong>亚马尔（西班牙）</strong>决赛爆点</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- X-Factor -->
+        <div class="xfactor-card">
+            <h4>隐藏X因素 · 决赛</h4>
+            <ul class="xfactor-list">
+                <li><strong>点球大战——阿根廷的终极底牌：</strong>大马丁（Emi Martínez）是世界顶级点球门神，阿根廷连续两届大赛点球决胜胜率极高。一旦比赛拖入点球大战，阿根廷晋级概率将大幅反超。西班牙全队年轻，从未经历过世界杯决赛生死点球考验。</li>
+                <li><strong>梅西的"最后一次"光环效应：</strong>39岁梅西的每一触球都承载着"最后一舞"的情感重量，裁判可能在关键判罚（禁区接触、犯规尺度）上潜意识偏向传奇的谢幕。这种隐形的心理暗示在决赛中可能改变一两个关键判罚。</li>
+                <li><strong>亚马尔伤情变数：</strong>左大腿绷带+单独训练虽被官方定性为"预防措施"，但若决赛中亚马尔伤情反复被迫提前退场，西班牙进攻将失去最大爆点，战术体系将被迫重构。</li>
+                <li><strong>决赛特殊压力——年轻球员的第一次：</strong>西班牙全队无世界杯决赛经验，82000名观众的窒息氛围+全球数十亿观众注视下，年轻球员的心态波动不可预测。2022年决赛阿根廷0-2落后时的"崩盘-反弹"证明决赛的心理压力可以瞬间摧毁任何体系。</li>
+                <li><strong>斯卡洛尼的战术变招：</strong>半决赛用西蒙尼首发中场是失败尝试，决赛德保罗回归几乎确定。更大的变量是劳塔罗——连续3场替补进球的他是否首发？若劳塔罗首发+阿尔瓦雷斯替补，阿根廷的进攻弹性将完全不同。</li>
+                <li><strong>现场球迷因素：</strong>新泽西大都会地区拉美裔居民密集，MetLife Stadium预计阿根廷球迷声势压倒性占优——82000人高呼"Messi"的氛围可能成为阿根廷的"第12人"，也可能在落后时给西班牙施加额外的心理压迫。</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+        <strong>声明：</strong>本报告所有数据来源于FIFA官方、Opta、主流博彩机构、美国国家气象局(NWS)等公开渠道，分析结论仅供球迷观赛参考，不构成任何投注或资金操作建议。足球比赛存在战术调整、临场发挥、裁判判罚、突发伤病等多重不可控变量，赛果无绝对定论。请理性观赛。
+    </div>
+
+    <div class="footer">
+        <p>2026美加墨世界杯收官战深度前瞻与胜负预测 | 数据截止时间：2026年7月18日</p>
+        <p>数据来源：FIFA.com · Opta · NWS · Betfred · William Hill · Smarkets · TheSoccerOdds · Squawka</p>
+    </div>
+
+</div>
+
+</body>
+</html>
